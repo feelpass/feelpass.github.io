@@ -1,5 +1,6 @@
 ---
 layout: post
+subject: blog
 title: 'jekyll와 Github 연동하여 블로그 세팅을 해보자'
 date: 2023-02-22 13:06:36 +0900
 categories: jekyll update
