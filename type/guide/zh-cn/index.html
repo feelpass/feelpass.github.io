@@ -8,46 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-            color: #e0e0e0;
-            line-height: 1.7;
-        }
-        .container { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
-        .header { padding: 40px 0 20px; text-align: center; color: white; }
-        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
-        .header p { opacity: 0.7; font-size: 0.95rem; }
-        .lang-links { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-        .lang-switch { display: inline-block; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.82rem; transition: background 0.2s; }
-        .lang-switch:hover { background: rgba(255,255,255,0.1); }
-        .toc { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 24px; margin: 24px 0 32px; }
-        .toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 12px; }
-        .toc ol { padding-left: 20px; }
-        .toc li { margin: 6px 0; }
-        .toc a { color: #7ecfff; text-decoration: none; font-size: 0.95rem; }
-        .toc a:hover { text-decoration: underline; }
-        section { margin-bottom: 40px; }
-        h2 { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 16px; padding-top: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
-        h3 { font-size: 1.1rem; font-weight: 600; color: #b0d4f1; margin: 20px 0 8px; }
-        p { margin-bottom: 12px; }
-        ul, ol { padding-left: 20px; margin-bottom: 12px; }
-        li { margin: 4px 0; }
-        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #7ecfff; }
-        .table-wrap { overflow-x: auto; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-        th, td { padding: 10px 12px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
-        th { background: rgba(255,255,255,0.08); color: white; font-weight: 600; white-space: nowrap; }
-        td code { font-size: 0.85em; }
-        .tip { background: rgba(126,207,255,0.08); border-left: 3px solid #7ecfff; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 0.92rem; }
-        .tip strong { color: #7ecfff; }
-        .back-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
-        .back-top.show { opacity: 1; pointer-events: auto; }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <div class="container">
@@ -208,12 +169,12 @@
             <tr><td><code>//command/lock</code></td><td>锁屏</td></tr>
             <tr><td><code>//command/flash</code></td><td>手电筒开/关</td></tr>
             <tr><td><code>//command/dark</code></td><td>深色模式切换</td></tr>
-            <tr><td><code>//command/play</code></td><td>播放/暂停</td></tr>
-            <tr><td><code>//command/next</code></td><td>下一首</td></tr>
-            <tr><td><code>//command/prev</code></td><td>上一首</td></tr>
-            <tr><td><code>//command/vol_up</code></td><td>音量增大</td></tr>
-            <tr><td><code>//command/vol_down</code></td><td>音量减小</td></tr>
-            <tr><td><code>//command/mute</code></td><td>静音切换</td></tr>
+            </table></div><h3>媒体控制（<code>//media/</code>）</h3><div class="table-wrap"><table><tr><th>触发词</th><th>操作</th></tr><tr><td><code>//media/play</code></td><td>播放/暂停</td></tr>
+            <tr><td><code>//media/next</code></td><td>下一首</td></tr>
+            <tr><td><code>//media/prev</code></td><td>上一首</td></tr>
+            <tr><td><code>//media/vol_up</code></td><td>音量增大</td></tr>
+            <tr><td><code>//media/vol_down</code></td><td>音量减小</td></tr>
+            <tr><td><code>//media/mute</code></td><td>静音切换</td></tr>
         </table></div>
         <h3>设置快捷方式（<code>//setting/</code>）</h3>
         <div class="table-wrap"><table>
