@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type — User Guide</title>
+    <meta name="description" content="Complete guide for the type app. Text replacement, actions, command palette, calculator, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+
+        /* Header */
+        .header {
+            padding: 40px 0 20px;
+            text-align: center;
+            color: white;
+        }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
+        .header p { opacity: 0.7; font-size: 0.95rem; }
+        .lang-switch {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 16px;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .lang-switch:hover { background: rgba(255,255,255,0.1); }
+
+        /* TOC */
+        .toc {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 24px 0 32px;
+        }
+        .toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 12px; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin: 6px 0; }
+        .toc a { color: #7ecfff; text-decoration: none; font-size: 0.95rem; }
+        .toc a:hover { text-decoration: underline; }
+
+        /* Sections */
+        section { margin-bottom: 40px; }
+        h2 {
+            font-size: 1.5rem; font-weight: 700; color: white;
+            margin-bottom: 16px; padding-top: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+        }
+        h3 { font-size: 1.1rem; font-weight: 600; color: #b0d4f1; margin: 20px 0 8px; }
+        p { margin-bottom: 12px; }
+        ul, ol { padding-left: 20px; margin-bottom: 12px; }
+        li { margin: 4px 0; }
+
+        /* Code */
+        code {
+            background: rgba(255,255,255,0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9em;
+            color: #7ecfff;
+        }
+        pre {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+            margin-bottom: 16px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+        pre code { background: none; padding: 0; color: #c8e6ff; }
+
+        /* Tables */
+        .table-wrap { overflow-x: auto; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
+        table {
+            width: 100%; border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+        th { background: rgba(255,255,255,0.08); color: white; font-weight: 600; white-space: nowrap; }
+        td code { font-size: 0.85em; }
+
+        /* Tip box */
+        .tip {
+            background: rgba(126,207,255,0.08);
+            border-left: 3px solid #7ecfff;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+            font-size: 0.92rem;
+        }
+        .tip strong { color: #7ecfff; }
+
+        /* Back to top */
+        .back-top {
+            position: fixed; bottom: 24px; right: 24px;
+            width: 44px; height: 44px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: white; font-size: 1.2rem;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none;
+            opacity: 0; transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .back-top.show { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>type</h1>
+        <p>User Guide</p>
+        <a href="../ko/" class="lang-switch">🇰🇷 한국어</a>
+    </div>
+
+    <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#text-replacement">Text Replacement</a></li>
+            <li><a href="#actions">Actions</a></li>
+            <li><a href="#command-palette">Command Palette</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#system-commands">Built-in System Commands</a></li>
+            <li><a href="#tips">Tips</a></li>
+        </ol>
+    </nav>
+
+    <!-- 1. Getting Started -->
+    <section id="getting-started">
+        <h2>1. Getting Started</h2>
+        <p><strong>type</strong> expands short text triggers into full text, launches apps, runs actions, and more — all from any text field on your device.</p>
+
+        <h3>Enable Accessibility Service</h3>
+        <ol>
+            <li>Open the <strong>type</strong> app</li>
+            <li>Tap the activation toggle</li>
+            <li>Follow the prompt to enable the Accessibility Service</li>
+            <li>Grant the necessary permissions</li>
+        </ol>
+
+        <h3>How It Works</h3>
+        <p>Type a trigger keyword anywhere (e.g. in a messaging app, browser, notes), and <strong>type</strong> instantly replaces it with your configured text or executes an action.</p>
+
+        <div class="tip">
+            <strong>💡 Example:</strong> Type <code>//email</code> → automatically replaced with <code>yourname@example.com</code>
+        </div>
+    </section>
+
+    <!-- 2. Text Replacement -->
+    <section id="text-replacement">
+        <h2>2. Text Replacement</h2>
+
+        <h3>Create a Shortcut</h3>
+        <ol>
+            <li>Tap the <strong>+</strong> button</li>
+            <li>Enter a <strong>trigger</strong> (the text you type)</li>
+            <li>Enter the <strong>replacement</strong> (the text it expands to)</li>
+            <li>Tap <strong>Save</strong></li>
+        </ol>
+
+        <h3>Variables</h3>
+        <p>Insert dynamic content into replacements using variables:</p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Variable</th><th>Description</th><th>Example Output</th></tr>
+            <tr><td><code>{date}</code></td><td>Current date</td><td>2025-02-24</td></tr>
+            <tr><td><code>{time}</code></td><td>Current time</td><td>14:30</td></tr>
+            <tr><td><code>{day}</code></td><td>Day of the week</td><td>Monday</td></tr>
+            <tr><td><code>{clipboard}</code></td><td>Clipboard content</td><td>(pasted text)</td></tr>
+            <tr><td><code>{random:a,b,c}</code></td><td>Random selection</td><td>b</td></tr>
+        </table>
+        </div>
+
+        <h3>Folders</h3>
+        <p>Organize your shortcuts into folders. Assign colors and icons to keep things tidy.</p>
+    </section>
+
+    <!-- 3. Actions -->
+    <section id="actions">
+        <h2>3. Actions</h2>
+        <p>Shortcuts aren't limited to text — they can trigger powerful actions:</p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Action</th><th>Description</th></tr>
+            <tr><td><strong>Launch App</strong></td><td>Open any installed app</td></tr>
+            <tr><td><strong>Open URL</strong></td><td>Open a URL or deep link</td></tr>
+            <tr><td><strong>Phone Call</strong></td><td>Dial a phone number</td></tr>
+            <tr><td><strong>System Settings</strong></td><td>Jump to a specific settings page</td></tr>
+            <tr><td><strong>Copy to Clipboard</strong></td><td>Copy text to clipboard</td></tr>
+            <tr><td><strong>System Tool</strong></td><td>Home, back, screenshot, flashlight, etc.</td></tr>
+            <tr><td><strong>Shell Command</strong></td><td>Execute a shell command (advanced)</td></tr>
+        </table>
+        </div>
+    </section>
+
+    <!-- 4. Command Palette -->
+    <section id="command-palette">
+        <h2>4. Command Palette</h2>
+        <p>A quick launcher for all your shortcuts — accessible from any screen.</p>
+
+        <h3>How to Open</h3>
+        <ul>
+            <li><strong>Volume Down (long press)</strong> — default trigger</li>
+            <li><strong>Digital Assistant (power key)</strong> — optional</li>
+            <li><strong>Physical keyboard shortcut</strong> — configurable</li>
+        </ul>
+
+        <h3>Searching</h3>
+        <p>Start typing to fuzzy-search through your shortcuts. Matching characters are highlighted in green.</p>
+
+        <h3>Keyboard Navigation</h3>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Key</th><th>Action</th></tr>
+            <tr><td><code>↑</code> / <code>↓</code></td><td>Navigate between results</td></tr>
+            <tr><td><code>Enter</code> / <code>Done</code></td><td>Execute selected shortcut</td></tr>
+            <tr><td><code>Esc</code> / <code>Back</code></td><td>Close palette</td></tr>
+        </table>
+        </div>
+    </section>
+
+    <!-- 5. Calculator -->
+    <section id="calculator">
+        <h2>5. Calculator</h2>
+        <p>The Command Palette includes a built-in inline calculator. Type a math expression and the result appears instantly above the search results.</p>
+
+        <div class="tip">
+            <strong>💡 Tip:</strong> Tap the green result card or press Enter to copy the result to your clipboard.
+        </div>
+
+        <h3>Basic Arithmetic</h3>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Input</th><th>Result</th></tr>
+            <tr><td><code>2+3</code></td><td>5</td></tr>
+            <tr><td><code>10/3</code></td><td>3.3333333333</td></tr>
+            <tr><td><code>7%3</code></td><td>1 (remainder)</td></tr>
+            <tr><td><code>2^10</code></td><td>1024</td></tr>
+            <tr><td><code>(2+3)*4</code></td><td>20</td></tr>
+        </table>
+        </div>
+
+        <h3>Math Functions</h3>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Function</th><th>Description</th><th>Example</th></tr>
+            <tr><td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td><td>Trigonometry (radians)</td><td><code>sin(pi/2)</code> → 1</td></tr>
+            <tr><td><code>sqrt(x)</code></td><td>Square root</td><td><code>sqrt(9)</code> → 3</td></tr>
+            <tr><td><code>log(x)</code></td><td>Log base 10</td><td><code>log(100)</code> → 2</td></tr>
+            <tr><td><code>ln(x)</code></td><td>Natural log</td><td><code>ln(e)</code> → 1</td></tr>
+            <tr><td><code>abs(x)</code></td><td>Absolute value</td><td><code>abs(-5)</code> → 5</td></tr>
+            <tr><td><code>pow(x,y)</code></td><td>Power</td><td><code>pow(2,3)</code> → 8</td></tr>
+            <tr><td><code>ceil</code>, <code>floor</code>, <code>round</code></td><td>Rounding</td><td><code>ceil(3.2)</code> → 4</td></tr>
+        </table>
+        </div>
+
+        <h3>Constants &amp; Implicit Multiplication</h3>
+        <p>Use <code>pi</code> (π) and <code>e</code> directly. Implicit multiplication is supported:</p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Input</th><th>Interpreted As</th><th>Result</th></tr>
+            <tr><td><code>2pi</code></td><td>2 × π</td><td>6.2831...</td></tr>
+            <tr><td><code>2(3+4)</code></td><td>2 × (3+4)</td><td>14</td></tr>
+            <tr><td><code>2sqrt(9)</code></td><td>2 × √9</td><td>6</td></tr>
+        </table>
+        </div>
+
+        <h3>Unit Conversion</h3>
+        <p>Use the format: <code>value unit to unit</code></p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Input</th><th>Result</th></tr>
+            <tr><td><code>100cm to inch</code></td><td>39.3700787402 in</td></tr>
+            <tr><td><code>1mi to km</code></td><td>1.609344 km</td></tr>
+            <tr><td><code>1kg to lb</code></td><td>2.2046226218 lb</td></tr>
+            <tr><td><code>100c to f</code></td><td>212 F</td></tr>
+            <tr><td><code>100km/h to mph</code></td><td>62.1371192237 mph</td></tr>
+            <tr><td><code>1gb to mb</code></td><td>1024 MB</td></tr>
+        </table>
+        </div>
+
+        <p><strong>Supported categories:</strong> Length (mm, cm, m, km, in, ft, yd, mi), Weight (mg, g, kg, lb, oz, t), Temperature (C, F, K), Speed (m/s, km/h, mph, knot), Data Size (B, KB, MB, GB, TB)</p>
+
+        <div class="tip">
+            <strong>💡 Korean units also work:</strong> <code>100센티미터 to 인치</code>
+        </div>
+
+        <h3>Display Prettification</h3>
+        <p>Expressions are automatically prettified on the result card:</p>
+        <ul>
+            <li><code>pi</code> → <strong>π</strong></li>
+            <li><code>*</code> → <strong>×</strong></li>
+            <li><code>sqrt</code> → <strong>√</strong></li>
+            <li>Redundant parentheses are removed</li>
+        </ul>
+    </section>
+
+    <!-- 6. System Commands -->
+    <section id="system-commands">
+        <h2>6. Built-in System Commands</h2>
+        <p>type comes with built-in commands that work without any setup.</p>
+
+        <h3>System Commands (<code>//command/</code>)</h3>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Trigger</th><th>Action</th></tr>
+            <tr><td><code>//command/home</code></td><td>Go to home screen</td></tr>
+            <tr><td><code>//command/back</code></td><td>Go back</td></tr>
+            <tr><td><code>//command/recent</code></td><td>Recent apps</td></tr>
+            <tr><td><code>//command/noti</code></td><td>Open notification shade</td></tr>
+            <tr><td><code>//command/quick</code></td><td>Quick settings panel</td></tr>
+            <tr><td><code>//command/screenshot</code></td><td>Take screenshot</td></tr>
+            <tr><td><code>//command/lock</code></td><td>Lock screen</td></tr>
+            <tr><td><code>//command/power</code></td><td>Power menu</td></tr>
+            <tr><td><code>//command/flash</code></td><td>Toggle flashlight</td></tr>
+            <tr><td><code>//command/dark</code></td><td>Toggle dark mode</td></tr>
+            <tr><td><code>//command/play</code></td><td>Play / Pause media</td></tr>
+            <tr><td><code>//command/next</code></td><td>Next track</td></tr>
+            <tr><td><code>//command/prev</code></td><td>Previous track</td></tr>
+            <tr><td><code>//command/stop</code></td><td>Stop media</td></tr>
+            <tr><td><code>//command/vol_up</code></td><td>Volume up</td></tr>
+            <tr><td><code>//command/vol_down</code></td><td>Volume down</td></tr>
+            <tr><td><code>//command/mute</code></td><td>Toggle mute</td></tr>
+        </table>
+        </div>
+
+        <h3>Settings Shortcuts (<code>//setting/</code>)</h3>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Trigger</th><th>Opens</th></tr>
+            <tr><td><code>//setting/wifi</code></td><td>Wi-Fi settings</td></tr>
+            <tr><td><code>//setting/bt</code></td><td>Bluetooth settings</td></tr>
+            <tr><td><code>//setting/sound</code></td><td>Sound settings</td></tr>
+            <tr><td><code>//setting/display</code></td><td>Display settings</td></tr>
+            <tr><td><code>//setting/battery</code></td><td>Battery settings</td></tr>
+            <tr><td><code>//setting/storage</code></td><td>Storage settings</td></tr>
+            <tr><td><code>//setting/app</code></td><td>App management</td></tr>
+            <tr><td><code>//setting/location</code></td><td>Location settings</td></tr>
+            <tr><td><code>//setting/dnd</code></td><td>Do Not Disturb</td></tr>
+            <tr><td><code>//setting/notification</code></td><td>Notification settings</td></tr>
+            <tr><td><code>//setting/keyboard</code></td><td>Keyboard / Input settings</td></tr>
+            <tr><td><code>//setting/dev</code></td><td>Developer options</td></tr>
+        </table>
+        </div>
+
+        <div class="tip">
+            <strong>💡 Auto-scan:</strong> type automatically discovers additional settings pages on your device beyond the built-in list.
+        </div>
+
+        <h3>App Launcher (<code>//application/</code>)</h3>
+        <p>All installed apps are automatically registered. Search by app name in the Command Palette to launch them instantly.</p>
+    </section>
+
+    <!-- 7. Tips -->
+    <section id="tips">
+        <h2>7. Tips</h2>
+        <ul>
+            <li><strong>Fuzzy search</strong> — The Command Palette uses fuzzy matching. Type <code>chm</code> to find <code>chrome</code>.</li>
+            <li><strong>Shortcut key</strong> — Configure a physical keyboard shortcut to open the Command Palette in Settings.</li>
+            <li><strong>Themes</strong> — Choose between System, Light, and Dark themes in Settings.</li>
+            <li><strong>Test button</strong> — Use the test button in the shortcut editor to preview actions before saving.</li>
+            <li><strong>Trigger prefix</strong> — Starting triggers with <code>//</code> helps avoid accidental activations.</li>
+        </ul>
+    </section>
+</div>
+
+<a href="#" class="back-top" id="backTop">↑</a>
+
+<script>
+    const btn = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+    });
+</script>
+</body>
+</html>
