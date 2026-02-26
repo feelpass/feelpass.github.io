@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type — 用户指南</title>
+    <meta name="description" content="type应用使用指南。文本替换、操作、命令面板、计算器等全部功能介绍。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+        .header { padding: 40px 0 20px; text-align: center; color: white; }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
+        .header p { opacity: 0.7; font-size: 0.95rem; }
+        .lang-links { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .lang-switch { display: inline-block; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.82rem; transition: background 0.2s; }
+        .lang-switch:hover { background: rgba(255,255,255,0.1); }
+        .toc { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 24px; margin: 24px 0 32px; }
+        .toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 12px; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin: 6px 0; }
+        .toc a { color: #7ecfff; text-decoration: none; font-size: 0.95rem; }
+        .toc a:hover { text-decoration: underline; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 16px; padding-top: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+        h3 { font-size: 1.1rem; font-weight: 600; color: #b0d4f1; margin: 20px 0 8px; }
+        p { margin-bottom: 12px; }
+        ul, ol { padding-left: 20px; margin-bottom: 12px; }
+        li { margin: 4px 0; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #7ecfff; }
+        .table-wrap { overflow-x: auto; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th, td { padding: 10px 12px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        th { background: rgba(255,255,255,0.08); color: white; font-weight: 600; white-space: nowrap; }
+        td code { font-size: 0.85em; }
+        .tip { background: rgba(126,207,255,0.08); border-left: 3px solid #7ecfff; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 0.92rem; }
+        .tip strong { color: #7ecfff; }
+        .back-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .back-top.show { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>type</h1>
+        <p>用户指南</p>
+        <div class="lang-links">
+            <a href="../en/" class="lang-switch">🇺🇸 English</a>
+            <a href="../ko/" class="lang-switch">🇰🇷 한국어</a>
+            <a href="../ja/" class="lang-switch">🇯🇵 日本語</a>
+            <a href="../zh-tw/" class="lang-switch">🇹🇼 繁體中文</a>
+        </div>
+    </div>
+
+    <nav class="toc">
+        <h2>目录</h2>
+        <ol>
+            <li><a href="#getting-started">快速入门</a></li>
+            <li><a href="#text-replacement">文本替换</a></li>
+            <li><a href="#actions">操作</a></li>
+            <li><a href="#command-palette">命令面板</a></li>
+            <li><a href="#calculator">计算器</a></li>
+            <li><a href="#system-commands">系统命令</a></li>
+            <li><a href="#tips">实用技巧</a></li>
+        </ol>
+    </nav>
+
+    <section id="getting-started">
+        <h2>1. 快速入门</h2>
+        <p><strong>type</strong>是一款文本快捷替换工具。输入简短的触发文本，即可自动展开为完整内容，或执行启动应用、系统控制等操作。</p>
+        <h3>启用无障碍服务</h3>
+        <ol>
+            <li>打开<strong>type</strong>应用</li>
+            <li>点击启用开关</li>
+            <li>按照提示开启无障碍服务</li>
+            <li>授予所需权限</li>
+        </ol>
+        <h3>工作原理</h3>
+        <p>在任何应用（聊天、浏览器、记事本等）中输入触发词，<strong>type</strong>会自动将其替换为设定的文本或执行相应操作。</p>
+        <div class="tip"><strong>💡 示例：</strong>输入<code>//email</code> → 自动替换为<code>yourname@example.com</code></div>
+    </section>
+
+    <section id="text-replacement">
+        <h2>2. 文本替换</h2>
+        <h3>创建快捷方式</h3>
+        <ol>
+            <li>点击<strong>+</strong>按钮</li>
+            <li>输入<strong>触发词</strong>（您要输入的文本）</li>
+            <li>输入<strong>替换文本</strong>（展开后的内容）</li>
+            <li>点击<strong>保存</strong></li>
+        </ol>
+        <h3>变量</h3>
+        <p>在替换文本中使用变量插入动态内容：</p>
+        <div class="table-wrap"><table>
+            <tr><th>变量</th><th>说明</th><th>输出示例</th></tr>
+            <tr><td><code>{date}</code></td><td>当前日期</td><td>2025-02-24</td></tr>
+            <tr><td><code>{time}</code></td><td>当前时间</td><td>14:30</td></tr>
+            <tr><td><code>{day}</code></td><td>星期几</td><td>星期一</td></tr>
+            <tr><td><code>{clipboard}</code></td><td>剪贴板内容</td><td>（粘贴文本）</td></tr>
+            <tr><td><code>{random:a,b,c}</code></td><td>随机选择</td><td>b</td></tr>
+        </table></div>
+        <h3>文件夹</h3>
+        <p>将快捷方式分类到文件夹中，设置颜色和图标方便管理。</p>
+    </section>
+
+    <section id="actions">
+        <h2>3. 操作</h2>
+        <p>快捷方式不仅限于文本替换，还可以执行各种操作：</p>
+        <div class="table-wrap"><table>
+            <tr><th>操作</th><th>说明</th></tr>
+            <tr><td><strong>启动应用</strong></td><td>打开已安装的应用</td></tr>
+            <tr><td><strong>打开URL</strong></td><td>打开网址或Deep Link</td></tr>
+            <tr><td><strong>拨打电话</strong></td><td>直接拨打电话号码</td></tr>
+            <tr><td><strong>系统设置</strong></td><td>跳转到指定设置页面</td></tr>
+            <tr><td><strong>复制到剪贴板</strong></td><td>将文本复制到剪贴板</td></tr>
+            <tr><td><strong>系统工具</strong></td><td>主页、返回、截图、手电筒等</td></tr>
+            <tr><td><strong>Shell命令</strong></td><td>执行Shell命令（高级功能）</td></tr>
+        </table></div>
+    </section>
+
+    <section id="command-palette">
+        <h2>4. 命令面板</h2>
+        <p>在任何界面都能快速搜索和执行快捷方式的启动器。</p>
+        <h3>打开方式</h3>
+        <ul>
+            <li><strong>长按音量减</strong> — 默认触发方式</li>
+            <li><strong>数字助手（电源键）</strong> — 可选</li>
+            <li><strong>物理键盘快捷键</strong> — 可在设置中更改</li>
+        </ul>
+        <h3>搜索</h3>
+        <p>输入文本即可模糊搜索快捷方式。匹配的字符会以绿色高亮显示。</p>
+        <h3>键盘导航</h3>
+        <div class="table-wrap"><table>
+            <tr><th>按键</th><th>操作</th></tr>
+            <tr><td><code>↑</code> / <code>↓</code></td><td>在结果间移动</td></tr>
+            <tr><td><code>Enter</code> / <code>Done</code></td><td>执行选中的快捷方式</td></tr>
+            <tr><td><code>Esc</code> / <code>Back</code></td><td>关闭面板</td></tr>
+        </table></div>
+    </section>
+
+    <section id="calculator">
+        <h2>5. 计算器</h2>
+        <p>命令面板内置的行内计算器。输入数学表达式，结果会以绿色卡片显示在搜索结果上方。</p>
+        <div class="tip"><strong>💡 提示：</strong>点击结果卡片或按Enter键，计算结果将复制到剪贴板。</div>
+        <h3>基本运算</h3>
+        <div class="table-wrap"><table>
+            <tr><th>输入</th><th>结果</th></tr>
+            <tr><td><code>2+3</code></td><td>5</td></tr>
+            <tr><td><code>10/3</code></td><td>3.3333333333</td></tr>
+            <tr><td><code>7%3</code></td><td>1（余数）</td></tr>
+            <tr><td><code>2^10</code></td><td>1024</td></tr>
+            <tr><td><code>(2+3)*4</code></td><td>20</td></tr>
+        </table></div>
+        <h3>数学函数</h3>
+        <div class="table-wrap"><table>
+            <tr><th>函数</th><th>说明</th><th>示例</th></tr>
+            <tr><td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td><td>三角函数（弧度）</td><td><code>sin(pi/2)</code> → 1</td></tr>
+            <tr><td><code>sqrt(x)</code></td><td>平方根</td><td><code>sqrt(9)</code> → 3</td></tr>
+            <tr><td><code>log(x)</code></td><td>常用对数（以10为底）</td><td><code>log(100)</code> → 2</td></tr>
+            <tr><td><code>ln(x)</code></td><td>自然对数</td><td><code>ln(e)</code> → 1</td></tr>
+            <tr><td><code>abs(x)</code></td><td>绝对值</td><td><code>abs(-5)</code> → 5</td></tr>
+            <tr><td><code>pow(x,y)</code></td><td>幂运算</td><td><code>pow(2,3)</code> → 8</td></tr>
+            <tr><td><code>ceil</code>, <code>floor</code>, <code>round</code></td><td>上取整、下取整、四舍五入</td><td><code>ceil(3.2)</code> → 4</td></tr>
+        </table></div>
+        <h3>常量与隐式乘法</h3>
+        <p>可直接使用<code>pi</code>（π）和<code>e</code>，并支持省略乘号：</p>
+        <div class="table-wrap"><table>
+            <tr><th>输入</th><th>解释</th><th>结果</th></tr>
+            <tr><td><code>2pi</code></td><td>2 × π</td><td>6.2831...</td></tr>
+            <tr><td><code>2(3+4)</code></td><td>2 × (3+4)</td><td>14</td></tr>
+            <tr><td><code>2sqrt(9)</code></td><td>2 × √9</td><td>6</td></tr>
+        </table></div>
+        <h3>单位换算</h3>
+        <p>使用<code>数值 单位 to 单位</code>格式输入。</p>
+        <div class="table-wrap"><table>
+            <tr><th>输入</th><th>结果</th></tr>
+            <tr><td><code>100cm to inch</code></td><td>39.3700787402 in</td></tr>
+            <tr><td><code>1mi to km</code></td><td>1.609344 km</td></tr>
+            <tr><td><code>1kg to lb</code></td><td>2.2046226218 lb</td></tr>
+            <tr><td><code>100c to f</code></td><td>212 F</td></tr>
+            <tr><td><code>1gb to mb</code></td><td>1024 MB</td></tr>
+        </table></div>
+        <p><strong>支持类别：</strong>长度、重量、温度、速度、数据大小</p>
+    </section>
+
+    <section id="system-commands">
+        <h2>6. 系统命令</h2>
+        <p>无需设置即可使用的内置命令。</p>
+        <h3>系统操作（<code>//command/</code>）</h3>
+        <div class="table-wrap"><table>
+            <tr><th>触发词</th><th>操作</th></tr>
+            <tr><td><code>//command/home</code></td><td>回到主屏幕</td></tr>
+            <tr><td><code>//command/back</code></td><td>返回</td></tr>
+            <tr><td><code>//command/recent</code></td><td>最近应用</td></tr>
+            <tr><td><code>//command/noti</code></td><td>打开通知栏</td></tr>
+            <tr><td><code>//command/quick</code></td><td>快速设置面板</td></tr>
+            <tr><td><code>//command/screenshot</code></td><td>截图</td></tr>
+            <tr><td><code>//command/lock</code></td><td>锁屏</td></tr>
+            <tr><td><code>//command/flash</code></td><td>手电筒开/关</td></tr>
+            <tr><td><code>//command/dark</code></td><td>深色模式切换</td></tr>
+            <tr><td><code>//command/play</code></td><td>播放/暂停</td></tr>
+            <tr><td><code>//command/next</code></td><td>下一首</td></tr>
+            <tr><td><code>//command/prev</code></td><td>上一首</td></tr>
+            <tr><td><code>//command/vol_up</code></td><td>音量增大</td></tr>
+            <tr><td><code>//command/vol_down</code></td><td>音量减小</td></tr>
+            <tr><td><code>//command/mute</code></td><td>静音切换</td></tr>
+        </table></div>
+        <h3>设置快捷方式（<code>//setting/</code>）</h3>
+        <div class="table-wrap"><table>
+            <tr><th>触发词</th><th>打开设置</th></tr>
+            <tr><td><code>//setting/wifi</code></td><td>Wi-Fi</td></tr>
+            <tr><td><code>//setting/bt</code></td><td>蓝牙</td></tr>
+            <tr><td><code>//setting/sound</code></td><td>声音</td></tr>
+            <tr><td><code>//setting/display</code></td><td>显示</td></tr>
+            <tr><td><code>//setting/battery</code></td><td>电池</td></tr>
+            <tr><td><code>//setting/dnd</code></td><td>勿扰模式</td></tr>
+            <tr><td><code>//setting/notification</code></td><td>通知</td></tr>
+            <tr><td><code>//setting/keyboard</code></td><td>键盘/输入法</td></tr>
+            <tr><td><code>//setting/dev</code></td><td>开发者选项</td></tr>
+        </table></div>
+        <div class="tip"><strong>💡 自动扫描：</strong>type会自动发现设备上的其他设置页面并注册。</div>
+        <h3>启动应用（<code>//application/</code>）</h3>
+        <p>所有已安装的应用会自动注册。在命令面板中搜索应用名即可快速启动。</p>
+    </section>
+
+    <section id="tips">
+        <h2>7. 实用技巧</h2>
+        <ul>
+            <li><strong>模糊搜索</strong> — 命令面板支持模糊匹配。输入<code>chm</code>即可找到<code>chrome</code>。</li>
+            <li><strong>快捷键</strong> — 在设置中更改物理键盘快捷键。</li>
+            <li><strong>主题</strong> — 在设置中选择跟随系统、浅色或深色主题。</li>
+            <li><strong>测试按钮</strong> — 在编辑界面使用测试按钮预览操作效果。</li>
+            <li><strong>触发词前缀</strong> — 以<code>//</code>开头可防止误触发。</li>
+        </ul>
+    </section>
+</div>
+<a href="#" class="back-top" id="backTop">↑</a>
+<script>
+    const btn = document.getElementById('backTop');
+    window.addEventListener('scroll', () => { btn.classList.toggle('show', window.scrollY > 400); });
+</script>
+</body>
+</html>

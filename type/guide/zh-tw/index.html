@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type — 使用指南</title>
+    <meta name="description" content="type應用使用指南。文字替換、動作、命令面板、計算機等全部功能介紹。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+        .header { padding: 40px 0 20px; text-align: center; color: white; }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
+        .header p { opacity: 0.7; font-size: 0.95rem; }
+        .lang-links { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .lang-switch { display: inline-block; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.82rem; transition: background 0.2s; }
+        .lang-switch:hover { background: rgba(255,255,255,0.1); }
+        .toc { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 24px; margin: 24px 0 32px; }
+        .toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 12px; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin: 6px 0; }
+        .toc a { color: #7ecfff; text-decoration: none; font-size: 0.95rem; }
+        .toc a:hover { text-decoration: underline; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 16px; padding-top: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+        h3 { font-size: 1.1rem; font-weight: 600; color: #b0d4f1; margin: 20px 0 8px; }
+        p { margin-bottom: 12px; }
+        ul, ol { padding-left: 20px; margin-bottom: 12px; }
+        li { margin: 4px 0; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #7ecfff; }
+        .table-wrap { overflow-x: auto; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th, td { padding: 10px 12px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        th { background: rgba(255,255,255,0.08); color: white; font-weight: 600; white-space: nowrap; }
+        td code { font-size: 0.85em; }
+        .tip { background: rgba(126,207,255,0.08); border-left: 3px solid #7ecfff; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 0.92rem; }
+        .tip strong { color: #7ecfff; }
+        .back-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .back-top.show { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>type</h1>
+        <p>使用指南</p>
+        <div class="lang-links">
+            <a href="../en/" class="lang-switch">🇺🇸 English</a>
+            <a href="../ko/" class="lang-switch">🇰🇷 한국어</a>
+            <a href="../ja/" class="lang-switch">🇯🇵 日本語</a>
+            <a href="../zh-cn/" class="lang-switch">🇨🇳 简体中文</a>
+        </div>
+    </div>
+
+    <nav class="toc">
+        <h2>目錄</h2>
+        <ol>
+            <li><a href="#getting-started">快速入門</a></li>
+            <li><a href="#text-replacement">文字替換</a></li>
+            <li><a href="#actions">動作</a></li>
+            <li><a href="#command-palette">命令面板</a></li>
+            <li><a href="#calculator">計算機</a></li>
+            <li><a href="#system-commands">系統命令</a></li>
+            <li><a href="#tips">實用技巧</a></li>
+        </ol>
+    </nav>
+
+    <section id="getting-started">
+        <h2>1. 快速入門</h2>
+        <p><strong>type</strong>是一款文字快捷替換工具。輸入簡短的觸發文字，即可自動展開為完整內容，或執行啟動應用程式、系統控制等動作。</p>
+        <h3>啟用無障礙服務</h3>
+        <ol>
+            <li>開啟<strong>type</strong>應用程式</li>
+            <li>點擊啟用開關</li>
+            <li>依照提示開啟無障礙服務</li>
+            <li>授予所需權限</li>
+        </ol>
+        <h3>運作原理</h3>
+        <p>在任何應用程式（通訊、瀏覽器、記事本等）中輸入觸發詞，<strong>type</strong>會自動將其替換為設定的文字或執行相應動作。</p>
+        <div class="tip"><strong>💡 範例：</strong>輸入<code>//email</code> → 自動替換為<code>yourname@example.com</code></div>
+    </section>
+
+    <section id="text-replacement">
+        <h2>2. 文字替換</h2>
+        <h3>建立捷徑</h3>
+        <ol>
+            <li>點擊<strong>+</strong>按鈕</li>
+            <li>輸入<strong>觸發詞</strong>（您要輸入的文字）</li>
+            <li>輸入<strong>替換文字</strong>（展開後的內容）</li>
+            <li>點擊<strong>儲存</strong></li>
+        </ol>
+        <h3>變數</h3>
+        <p>在替換文字中使用變數插入動態內容：</p>
+        <div class="table-wrap"><table>
+            <tr><th>變數</th><th>說明</th><th>輸出範例</th></tr>
+            <tr><td><code>{date}</code></td><td>今天日期</td><td>2025-02-24</td></tr>
+            <tr><td><code>{time}</code></td><td>目前時間</td><td>14:30</td></tr>
+            <tr><td><code>{day}</code></td><td>星期幾</td><td>星期一</td></tr>
+            <tr><td><code>{clipboard}</code></td><td>剪貼簿內容</td><td>（貼上文字）</td></tr>
+            <tr><td><code>{random:a,b,c}</code></td><td>隨機選擇</td><td>b</td></tr>
+        </table></div>
+        <h3>資料夾</h3>
+        <p>將捷徑分類到資料夾中，設定顏色和圖示方便管理。</p>
+    </section>
+
+    <section id="actions">
+        <h2>3. 動作</h2>
+        <p>捷徑不僅限於文字替換，還可以執行各種動作：</p>
+        <div class="table-wrap"><table>
+            <tr><th>動作</th><th>說明</th></tr>
+            <tr><td><strong>啟動應用程式</strong></td><td>開啟已安裝的應用程式</td></tr>
+            <tr><td><strong>開啟URL</strong></td><td>開啟網址或Deep Link</td></tr>
+            <tr><td><strong>撥打電話</strong></td><td>直接撥打電話號碼</td></tr>
+            <tr><td><strong>系統設定</strong></td><td>跳轉至指定設定頁面</td></tr>
+            <tr><td><strong>複製到剪貼簿</strong></td><td>將文字複製到剪貼簿</td></tr>
+            <tr><td><strong>系統工具</strong></td><td>主畫面、返回、截圖、手電筒等</td></tr>
+            <tr><td><strong>Shell命令</strong></td><td>執行Shell命令（進階功能）</td></tr>
+        </table></div>
+    </section>
+
+    <section id="command-palette">
+        <h2>4. 命令面板</h2>
+        <p>在任何畫面都能快速搜尋和執行捷徑的啟動器。</p>
+        <h3>開啟方式</h3>
+        <ul>
+            <li><strong>長按音量減</strong> — 預設觸發方式</li>
+            <li><strong>數位助理（電源鍵）</strong> — 可選</li>
+            <li><strong>實體鍵盤快捷鍵</strong> — 可在設定中更改</li>
+        </ul>
+        <h3>搜尋</h3>
+        <p>輸入文字即可模糊搜尋捷徑。匹配的字元會以綠色醒目顯示。</p>
+        <h3>鍵盤導覽</h3>
+        <div class="table-wrap"><table>
+            <tr><th>按鍵</th><th>動作</th></tr>
+            <tr><td><code>↑</code> / <code>↓</code></td><td>在結果間移動</td></tr>
+            <tr><td><code>Enter</code> / <code>Done</code></td><td>執行選取的捷徑</td></tr>
+            <tr><td><code>Esc</code> / <code>Back</code></td><td>關閉面板</td></tr>
+        </table></div>
+    </section>
+
+    <section id="calculator">
+        <h2>5. 計算機</h2>
+        <p>命令面板內建的行內計算機。輸入數學運算式，結果會以綠色卡片顯示在搜尋結果上方。</p>
+        <div class="tip"><strong>💡 提示：</strong>點擊結果卡片或按Enter鍵，計算結果將複製到剪貼簿。</div>
+        <h3>基本運算</h3>
+        <div class="table-wrap"><table>
+            <tr><th>輸入</th><th>結果</th></tr>
+            <tr><td><code>2+3</code></td><td>5</td></tr>
+            <tr><td><code>10/3</code></td><td>3.3333333333</td></tr>
+            <tr><td><code>7%3</code></td><td>1（餘數）</td></tr>
+            <tr><td><code>2^10</code></td><td>1024</td></tr>
+            <tr><td><code>(2+3)*4</code></td><td>20</td></tr>
+        </table></div>
+        <h3>數學函數</h3>
+        <div class="table-wrap"><table>
+            <tr><th>函數</th><th>說明</th><th>範例</th></tr>
+            <tr><td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td><td>三角函數（弧度）</td><td><code>sin(pi/2)</code> → 1</td></tr>
+            <tr><td><code>sqrt(x)</code></td><td>平方根</td><td><code>sqrt(9)</code> → 3</td></tr>
+            <tr><td><code>log(x)</code></td><td>常用對數（以10為底）</td><td><code>log(100)</code> → 2</td></tr>
+            <tr><td><code>ln(x)</code></td><td>自然對數</td><td><code>ln(e)</code> → 1</td></tr>
+            <tr><td><code>abs(x)</code></td><td>絕對值</td><td><code>abs(-5)</code> → 5</td></tr>
+            <tr><td><code>pow(x,y)</code></td><td>次方</td><td><code>pow(2,3)</code> → 8</td></tr>
+            <tr><td><code>ceil</code>, <code>floor</code>, <code>round</code></td><td>無條件進位、捨去、四捨五入</td><td><code>ceil(3.2)</code> → 4</td></tr>
+        </table></div>
+        <h3>常數與隱式乘法</h3>
+        <p>可直接使用<code>pi</code>（π）和<code>e</code>，並支援省略乘號：</p>
+        <div class="table-wrap"><table>
+            <tr><th>輸入</th><th>解釋</th><th>結果</th></tr>
+            <tr><td><code>2pi</code></td><td>2 × π</td><td>6.2831...</td></tr>
+            <tr><td><code>2(3+4)</code></td><td>2 × (3+4)</td><td>14</td></tr>
+            <tr><td><code>2sqrt(9)</code></td><td>2 × √9</td><td>6</td></tr>
+        </table></div>
+        <h3>單位換算</h3>
+        <p>使用<code>數值 單位 to 單位</code>格式輸入。</p>
+        <div class="table-wrap"><table>
+            <tr><th>輸入</th><th>結果</th></tr>
+            <tr><td><code>100cm to inch</code></td><td>39.3700787402 in</td></tr>
+            <tr><td><code>1mi to km</code></td><td>1.609344 km</td></tr>
+            <tr><td><code>1kg to lb</code></td><td>2.2046226218 lb</td></tr>
+            <tr><td><code>100c to f</code></td><td>212 F</td></tr>
+            <tr><td><code>1gb to mb</code></td><td>1024 MB</td></tr>
+        </table></div>
+        <p><strong>支援類別：</strong>長度、重量、溫度、速度、資料大小</p>
+    </section>
+
+    <section id="system-commands">
+        <h2>6. 系統命令</h2>
+        <p>無需設定即可使用的內建命令。</p>
+        <h3>系統操作（<code>//command/</code>）</h3>
+        <div class="table-wrap"><table>
+            <tr><th>觸發詞</th><th>動作</th></tr>
+            <tr><td><code>//command/home</code></td><td>回到主畫面</td></tr>
+            <tr><td><code>//command/back</code></td><td>返回</td></tr>
+            <tr><td><code>//command/recent</code></td><td>最近使用的應用程式</td></tr>
+            <tr><td><code>//command/noti</code></td><td>開啟通知列</td></tr>
+            <tr><td><code>//command/quick</code></td><td>快速設定面板</td></tr>
+            <tr><td><code>//command/screenshot</code></td><td>截圖</td></tr>
+            <tr><td><code>//command/lock</code></td><td>鎖定螢幕</td></tr>
+            <tr><td><code>//command/flash</code></td><td>手電筒開/關</td></tr>
+            <tr><td><code>//command/dark</code></td><td>深色模式切換</td></tr>
+            <tr><td><code>//command/play</code></td><td>播放/暫停</td></tr>
+            <tr><td><code>//command/next</code></td><td>下一首</td></tr>
+            <tr><td><code>//command/prev</code></td><td>上一首</td></tr>
+            <tr><td><code>//command/vol_up</code></td><td>提高音量</td></tr>
+            <tr><td><code>//command/vol_down</code></td><td>降低音量</td></tr>
+            <tr><td><code>//command/mute</code></td><td>靜音切換</td></tr>
+        </table></div>
+        <h3>設定捷徑（<code>//setting/</code>）</h3>
+        <div class="table-wrap"><table>
+            <tr><th>觸發詞</th><th>開啟設定</th></tr>
+            <tr><td><code>//setting/wifi</code></td><td>Wi-Fi</td></tr>
+            <tr><td><code>//setting/bt</code></td><td>藍牙</td></tr>
+            <tr><td><code>//setting/sound</code></td><td>聲音</td></tr>
+            <tr><td><code>//setting/display</code></td><td>顯示</td></tr>
+            <tr><td><code>//setting/battery</code></td><td>電池</td></tr>
+            <tr><td><code>//setting/dnd</code></td><td>勿擾模式</td></tr>
+            <tr><td><code>//setting/notification</code></td><td>通知</td></tr>
+            <tr><td><code>//setting/keyboard</code></td><td>鍵盤/輸入法</td></tr>
+            <tr><td><code>//setting/dev</code></td><td>開發人員選項</td></tr>
+        </table></div>
+        <div class="tip"><strong>💡 自動掃描：</strong>type會自動偵測裝置上的其他設定頁面並註冊。</div>
+        <h3>啟動應用程式（<code>//application/</code>）</h3>
+        <p>所有已安裝的應用程式會自動註冊。在命令面板中搜尋應用程式名稱即可快速啟動。</p>
+    </section>
+
+    <section id="tips">
+        <h2>7. 實用技巧</h2>
+        <ul>
+            <li><strong>模糊搜尋</strong> — 命令面板支援模糊比對。輸入<code>chm</code>即可找到<code>chrome</code>。</li>
+            <li><strong>快捷鍵</strong> — 在設定中更改實體鍵盤快捷鍵。</li>
+            <li><strong>佈景主題</strong> — 在設定中選擇跟隨系統、淺色或深色主題。</li>
+            <li><strong>測試按鈕</strong> — 在編輯畫面使用測試按鈕預覽動作效果。</li>
+            <li><strong>觸發詞前綴</strong> — 以<code>//</code>開頭可防止誤觸發。</li>
+        </ul>
+    </section>
+</div>
+<a href="#" class="back-top" id="backTop">↑</a>
+<script>
+    const btn = document.getElementById('backTop');
+    window.addEventListener('scroll', () => { btn.classList.toggle('show', window.scrollY > 400); });
+</script>
+</body>
+</html>

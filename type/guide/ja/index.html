@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type — ユーザーガイド</title>
+    <meta name="description" content="typeアプリの使い方ガイド。テキスト置換、アクション、コマンドパレット、電卓など全機能を紹介。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+        .header { padding: 40px 0 20px; text-align: center; color: white; }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
+        .header p { opacity: 0.7; font-size: 0.95rem; }
+        .lang-links { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .lang-switch {
+            display: inline-block; padding: 6px 14px;
+            border: 1px solid rgba(255,255,255,0.25); border-radius: 20px;
+            color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.82rem;
+            transition: background 0.2s;
+        }
+        .lang-switch:hover { background: rgba(255,255,255,0.1); }
+        .toc { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 24px; margin: 24px 0 32px; }
+        .toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 12px; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin: 6px 0; }
+        .toc a { color: #7ecfff; text-decoration: none; font-size: 0.95rem; }
+        .toc a:hover { text-decoration: underline; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 16px; padding-top: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+        h3 { font-size: 1.1rem; font-weight: 600; color: #b0d4f1; margin: 20px 0 8px; }
+        p { margin-bottom: 12px; }
+        ul, ol { padding-left: 20px; margin-bottom: 12px; }
+        li { margin: 4px 0; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: #7ecfff; }
+        .table-wrap { overflow-x: auto; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th, td { padding: 10px 12px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        th { background: rgba(255,255,255,0.08); color: white; font-weight: 600; white-space: nowrap; }
+        td code { font-size: 0.85em; }
+        .tip { background: rgba(126,207,255,0.08); border-left: 3px solid #7ecfff; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 0.92rem; }
+        .tip strong { color: #7ecfff; }
+        .back-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .back-top.show { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>type</h1>
+        <p>ユーザーガイド</p>
+        <div class="lang-links">
+            <a href="../en/" class="lang-switch">🇺🇸 English</a>
+            <a href="../ko/" class="lang-switch">🇰🇷 한국어</a>
+            <a href="../zh-cn/" class="lang-switch">🇨🇳 简体中文</a>
+            <a href="../zh-tw/" class="lang-switch">🇹🇼 繁體中文</a>
+        </div>
+    </div>
+
+    <nav class="toc">
+        <h2>目次</h2>
+        <ol>
+            <li><a href="#getting-started">はじめに</a></li>
+            <li><a href="#text-replacement">テキスト置換</a></li>
+            <li><a href="#actions">アクション</a></li>
+            <li><a href="#command-palette">コマンドパレット</a></li>
+            <li><a href="#calculator">電卓</a></li>
+            <li><a href="#system-commands">システムコマンド</a></li>
+            <li><a href="#tips">ヒント</a></li>
+        </ol>
+    </nav>
+
+    <section id="getting-started">
+        <h2>1. はじめに</h2>
+        <p><strong>type</strong>は、短いトリガーテキストを入力するだけで、長い文章に展開したり、アプリの起動やシステム操作などのアクションを実行できるアプリです。</p>
+        <h3>ユーザー補助サービスの有効化</h3>
+        <ol>
+            <li><strong>type</strong>アプリを開きます</li>
+            <li>有効化トグルをタップします</li>
+            <li>案内に従ってユーザー補助サービスをオンにします</li>
+            <li>必要な権限を許可します</li>
+        </ol>
+        <h3>仕組み</h3>
+        <p>メッセンジャー、ブラウザ、メモアプリなど、どこでもトリガーを入力すると、<strong>type</strong>が自動的に設定したテキストに置換するか、アクションを実行します。</p>
+        <div class="tip"><strong>💡 例：</strong><code>//email</code>と入力 → 自動的に<code>yourname@example.com</code>に置換</div>
+    </section>
+
+    <section id="text-replacement">
+        <h2>2. テキスト置換</h2>
+        <h3>ショートカットの作成</h3>
+        <ol>
+            <li><strong>+</strong>ボタンをタップ</li>
+            <li><strong>トリガー</strong>を入力（入力するテキスト）</li>
+            <li><strong>置換テキスト</strong>を入力（展開されるテキスト）</li>
+            <li><strong>保存</strong>をタップ</li>
+        </ol>
+        <h3>変数</h3>
+        <p>置換テキストに変数を使って動的なコンテンツを挿入できます：</p>
+        <div class="table-wrap"><table>
+            <tr><th>変数</th><th>説明</th><th>出力例</th></tr>
+            <tr><td><code>{date}</code></td><td>今日の日付</td><td>2025-02-24</td></tr>
+            <tr><td><code>{time}</code></td><td>現在時刻</td><td>14:30</td></tr>
+            <tr><td><code>{day}</code></td><td>曜日</td><td>月曜日</td></tr>
+            <tr><td><code>{clipboard}</code></td><td>クリップボードの内容</td><td>（貼り付けテキスト）</td></tr>
+            <tr><td><code>{random:a,b,c}</code></td><td>ランダム選択</td><td>b</td></tr>
+        </table></div>
+        <h3>フォルダ</h3>
+        <p>ショートカットをフォルダに分類できます。色やアイコンを設定して整理しましょう。</p>
+    </section>
+
+    <section id="actions">
+        <h2>3. アクション</h2>
+        <p>ショートカットはテキスト置換だけでなく、さまざまなアクションを実行できます：</p>
+        <div class="table-wrap"><table>
+            <tr><th>アクション</th><th>説明</th></tr>
+            <tr><td><strong>アプリ起動</strong></td><td>インストール済みアプリを開く</td></tr>
+            <tr><td><strong>URL を開く</strong></td><td>WebアドレスやDeep Linkを開く</td></tr>
+            <tr><td><strong>電話発信</strong></td><td>電話番号に直接発信</td></tr>
+            <tr><td><strong>システム設定</strong></td><td>特定の設定画面にジャンプ</td></tr>
+            <tr><td><strong>クリップボードにコピー</strong></td><td>テキストをクリップボードにコピー</td></tr>
+            <tr><td><strong>システムツール</strong></td><td>ホーム、戻る、スクリーンショット、ライトなど</td></tr>
+            <tr><td><strong>シェルコマンド</strong></td><td>シェルコマンドの実行（上級者向け）</td></tr>
+        </table></div>
+    </section>
+
+    <section id="command-palette">
+        <h2>4. コマンドパレット</h2>
+        <p>どの画面からでもショートカットを素早く検索・実行できるランチャーです。</p>
+        <h3>開き方</h3>
+        <ul>
+            <li><strong>音量ダウン長押し</strong> — デフォルトトリガー</li>
+            <li><strong>デジタルアシスタント（電源キー）</strong> — オプション</li>
+            <li><strong>物理キーボードショートカット</strong> — 設定で変更可能</li>
+        </ul>
+        <h3>検索</h3>
+        <p>テキストを入力するとファジー検索でショートカットを検索します。マッチした文字は緑色でハイライトされます。</p>
+        <h3>キーボードナビゲーション</h3>
+        <div class="table-wrap"><table>
+            <tr><th>キー</th><th>動作</th></tr>
+            <tr><td><code>↑</code> / <code>↓</code></td><td>結果間を移動</td></tr>
+            <tr><td><code>Enter</code> / <code>Done</code></td><td>選択したショートカットを実行</td></tr>
+            <tr><td><code>Esc</code> / <code>Back</code></td><td>パレットを閉じる</td></tr>
+        </table></div>
+    </section>
+
+    <section id="calculator">
+        <h2>5. 電卓</h2>
+        <p>コマンドパレットに内蔵のインライン電卓です。数式を入力すると検索結果の上に緑色の結果カードが表示されます。</p>
+        <div class="tip"><strong>💡 ヒント：</strong>結果カードをタップするかEnterを押すと、結果がクリップボードにコピーされます。</div>
+        <h3>基本演算</h3>
+        <div class="table-wrap"><table>
+            <tr><th>入力</th><th>結果</th></tr>
+            <tr><td><code>2+3</code></td><td>5</td></tr>
+            <tr><td><code>10/3</code></td><td>3.3333333333</td></tr>
+            <tr><td><code>7%3</code></td><td>1（余り）</td></tr>
+            <tr><td><code>2^10</code></td><td>1024</td></tr>
+            <tr><td><code>(2+3)*4</code></td><td>20</td></tr>
+        </table></div>
+        <h3>数学関数</h3>
+        <div class="table-wrap"><table>
+            <tr><th>関数</th><th>説明</th><th>例</th></tr>
+            <tr><td><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code></td><td>三角関数（ラジアン）</td><td><code>sin(pi/2)</code> → 1</td></tr>
+            <tr><td><code>sqrt(x)</code></td><td>平方根</td><td><code>sqrt(9)</code> → 3</td></tr>
+            <tr><td><code>log(x)</code></td><td>常用対数（底10）</td><td><code>log(100)</code> → 2</td></tr>
+            <tr><td><code>ln(x)</code></td><td>自然対数</td><td><code>ln(e)</code> → 1</td></tr>
+            <tr><td><code>abs(x)</code></td><td>絶対値</td><td><code>abs(-5)</code> → 5</td></tr>
+            <tr><td><code>pow(x,y)</code></td><td>べき乗</td><td><code>pow(2,3)</code> → 8</td></tr>
+            <tr><td><code>ceil</code>, <code>floor</code>, <code>round</code></td><td>切り上げ、切り捨て、四捨五入</td><td><code>ceil(3.2)</code> → 4</td></tr>
+        </table></div>
+        <h3>定数と暗黙の乗算</h3>
+        <p><code>pi</code>（π）と<code>e</code>を直接使用でき、乗算記号なしで続けて書けます：</p>
+        <div class="table-wrap"><table>
+            <tr><th>入力</th><th>解釈</th><th>結果</th></tr>
+            <tr><td><code>2pi</code></td><td>2 × π</td><td>6.2831...</td></tr>
+            <tr><td><code>2(3+4)</code></td><td>2 × (3+4)</td><td>14</td></tr>
+            <tr><td><code>2sqrt(9)</code></td><td>2 × √9</td><td>6</td></tr>
+        </table></div>
+        <h3>単位変換</h3>
+        <p><code>値 単位 to 単位</code>の形式で入力します。</p>
+        <div class="table-wrap"><table>
+            <tr><th>入力</th><th>結果</th></tr>
+            <tr><td><code>100cm to inch</code></td><td>39.3700787402 in</td></tr>
+            <tr><td><code>1mi to km</code></td><td>1.609344 km</td></tr>
+            <tr><td><code>1kg to lb</code></td><td>2.2046226218 lb</td></tr>
+            <tr><td><code>100c to f</code></td><td>212 F</td></tr>
+            <tr><td><code>1gb to mb</code></td><td>1024 MB</td></tr>
+        </table></div>
+        <p><strong>対応カテゴリ：</strong>長さ、重さ、温度、速度、データサイズ</p>
+    </section>
+
+    <section id="system-commands">
+        <h2>6. システムコマンド</h2>
+        <p>設定不要ですぐ使える内蔵コマンドです。</p>
+        <h3>システム操作（<code>//command/</code>）</h3>
+        <div class="table-wrap"><table>
+            <tr><th>トリガー</th><th>動作</th></tr>
+            <tr><td><code>//command/home</code></td><td>ホーム画面へ</td></tr>
+            <tr><td><code>//command/back</code></td><td>戻る</td></tr>
+            <tr><td><code>//command/recent</code></td><td>最近のアプリ</td></tr>
+            <tr><td><code>//command/noti</code></td><td>通知パネルを開く</td></tr>
+            <tr><td><code>//command/quick</code></td><td>クイック設定</td></tr>
+            <tr><td><code>//command/screenshot</code></td><td>スクリーンショット</td></tr>
+            <tr><td><code>//command/lock</code></td><td>画面ロック</td></tr>
+            <tr><td><code>//command/flash</code></td><td>ライト ON/OFF</td></tr>
+            <tr><td><code>//command/dark</code></td><td>ダークモード切替</td></tr>
+            <tr><td><code>//command/play</code></td><td>再生/一時停止</td></tr>
+            <tr><td><code>//command/next</code></td><td>次の曲</td></tr>
+            <tr><td><code>//command/prev</code></td><td>前の曲</td></tr>
+            <tr><td><code>//command/vol_up</code></td><td>音量アップ</td></tr>
+            <tr><td><code>//command/vol_down</code></td><td>音量ダウン</td></tr>
+            <tr><td><code>//command/mute</code></td><td>ミュート切替</td></tr>
+        </table></div>
+        <h3>設定ショートカット（<code>//setting/</code>）</h3>
+        <div class="table-wrap"><table>
+            <tr><th>トリガー</th><th>開く設定</th></tr>
+            <tr><td><code>//setting/wifi</code></td><td>Wi-Fi</td></tr>
+            <tr><td><code>//setting/bt</code></td><td>Bluetooth</td></tr>
+            <tr><td><code>//setting/sound</code></td><td>サウンド</td></tr>
+            <tr><td><code>//setting/display</code></td><td>ディスプレイ</td></tr>
+            <tr><td><code>//setting/battery</code></td><td>バッテリー</td></tr>
+            <tr><td><code>//setting/dnd</code></td><td>おやすみモード</td></tr>
+            <tr><td><code>//setting/notification</code></td><td>通知</td></tr>
+            <tr><td><code>//setting/keyboard</code></td><td>キーボード/入力</td></tr>
+            <tr><td><code>//setting/dev</code></td><td>開発者オプション</td></tr>
+        </table></div>
+        <div class="tip"><strong>💡 自動スキャン：</strong>typeはデバイスの追加設定画面を自動的に検出・登録します。</div>
+        <h3>アプリ起動（<code>//application/</code>）</h3>
+        <p>インストール済みのすべてのアプリが自動登録されます。コマンドパレットでアプリ名を検索して即座に起動できます。</p>
+    </section>
+
+    <section id="tips">
+        <h2>7. ヒント</h2>
+        <ul>
+            <li><strong>ファジー検索</strong> — コマンドパレットはファジーマッチングに対応。<code>chm</code>で<code>chrome</code>を検索可能。</li>
+            <li><strong>ショートカットキー</strong> — 設定で物理キーボードのショートカットを変更可能。</li>
+            <li><strong>テーマ</strong> — システム、ライト、ダークテーマを設定で選択。</li>
+            <li><strong>テストボタン</strong> — ショートカット編集画面のテストボタンで保存前にアクションを確認。</li>
+            <li><strong>トリガープレフィックス</strong> — <code>//</code>で始めると誤動作を防止。</li>
+        </ul>
+    </section>
+</div>
+<a href="#" class="back-top" id="backTop">↑</a>
+<script>
+    const btn = document.getElementById('backTop');
+    window.addEventListener('scroll', () => { btn.classList.toggle('show', window.scrollY > 400); });
+</script>
+</body>
+</html>
