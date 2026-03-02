@@ -91,7 +91,25 @@
             <li><strong>音量ダウン長押し</strong> — デフォルトトリガー</li>
             <li><strong>デジタルアシスタント（電源キー）</strong> — オプション</li>
             <li><strong>物理キーボードショートカット</strong> — 設定で変更可能</li>
+            <li><strong>ディープリンク</strong> — <code>typeaction://palette</code></li>
         </ul>
+
+        <h3>ディープリンクで起動</h3>
+        <p><code>typeaction://palette</code> ディープリンクを使うと、他のアプリや自動化ツールからコマンドパレットを直接起動できます。</p>
+
+        <div class="table-wrap">
+        <table>
+            <tr><th>連携方法</th><th>設定</th></tr>
+            <tr><td><strong>Tasker</strong></td><td>Action → Send Intent → Data URI: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>MacroDroid</strong></td><td>Actions → Applications → Open Website: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>type パッド</strong></td><td>アクションタイプ: ディープリンク起動、URL: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>他のランチャーアプリ</strong></td><td>ディープリンク/URL実行アクションに <code>typeaction://palette</code> を入力</td></tr>
+        </table>
+        </div>
+
+        <div class="tip">
+            <strong>💡 注意:</strong> ディープリンクで起動するにはアクセシビリティサービスが有効である必要があります。サービスがオフの場合、アプリ設定画面に案内されます。
+        </div>
         <h3>検索</h3>
         <p>テキストを入力するとファジー検索でショートカットを検索します。マッチした文字は緑色でハイライトされます。</p>
         <h3>キーボードナビゲーション</h3>

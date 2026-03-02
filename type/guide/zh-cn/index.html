@@ -91,7 +91,25 @@
             <li><strong>长按音量减</strong> — 默认触发方式</li>
             <li><strong>数字助手（电源键）</strong> — 可选</li>
             <li><strong>物理键盘快捷键</strong> — 可在设置中更改</li>
+            <li><strong>深度链接</strong> — <code>typeaction://palette</code></li>
         </ul>
+
+        <h3>通过深度链接启动</h3>
+        <p>使用 <code>typeaction://palette</code> 深度链接，可以从其他应用或自动化工具直接启动命令面板。</p>
+
+        <div class="table-wrap">
+        <table>
+            <tr><th>集成方式</th><th>设置</th></tr>
+            <tr><td><strong>Tasker</strong></td><td>Action → Send Intent → Data URI: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>MacroDroid</strong></td><td>Actions → Applications → Open Website: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>type 面板</strong></td><td>动作类型：启动深度链接，URL：<code>typeaction://palette</code></td></tr>
+            <tr><td><strong>其他启动器应用</strong></td><td>在深度链接/URL执行动作中输入 <code>typeaction://palette</code></td></tr>
+        </table>
+        </div>
+
+        <div class="tip">
+            <strong>💡 注意：</strong>通过深度链接启动需要无障碍服务处于启用状态。如果服务已关闭，将引导至应用设置页面。
+        </div>
         <h3>搜索</h3>
         <p>输入文本即可模糊搜索快捷方式。匹配的字符会以绿色高亮显示。</p>
         <h3>键盘导航</h3>

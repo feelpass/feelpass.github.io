@@ -109,7 +109,25 @@
             <li><strong>Volume Down (long press)</strong> — default trigger</li>
             <li><strong>Digital Assistant (power key)</strong> — optional</li>
             <li><strong>Physical keyboard shortcut</strong> — configurable</li>
+            <li><strong>Deep Link</strong> — <code>typeaction://palette</code></li>
         </ul>
+
+        <h3>Open via Deep Link</h3>
+        <p>Use the <code>typeaction://palette</code> deep link to launch the Command Palette from other apps or automation tools.</p>
+
+        <div class="table-wrap">
+        <table>
+            <tr><th>Integration</th><th>Setup</th></tr>
+            <tr><td><strong>Tasker</strong></td><td>Action → Send Intent → Data URI: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>MacroDroid</strong></td><td>Actions → Applications → Open Website: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>type Pad</strong></td><td>Action type: Launch Deeplink, URL: <code>typeaction://palette</code></td></tr>
+            <tr><td><strong>Other launcher apps</strong></td><td>Use deeplink/URL action with <code>typeaction://palette</code></td></tr>
+        </table>
+        </div>
+
+        <div class="tip">
+            <strong>💡 Note:</strong> The Accessibility Service must be enabled for the deep link to work. If the service is off, you'll be redirected to the app settings.
+        </div>
 
         <h3>Searching</h3>
         <p>Start typing to fuzzy-search through your shortcuts. Matching characters are highlighted in green.</p>
