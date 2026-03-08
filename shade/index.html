@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shade - 화면 보호 프라이버시 필터</title>
+    <meta name="description" content="엿보기 방지 화면 필터. 6가지 프라이버시 모드로 내 화면을 보호하세요.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #263238 0%, #37474F 50%, #455A64 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #000;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Features */
+        .features {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .feature-icon { font-size: 48px; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #333; }
+        .feature-card p { color: #666; line-height: 1.6; }
+
+        /* Modes */
+        .modes {
+            background: #f0f2f5;
+            padding: 80px 0;
+        }
+
+        .modes h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .mode-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+
+        .mode-card:hover { transform: translateY(-3px); }
+        .mode-icon { font-size: 32px; flex-shrink: 0; }
+        .mode-card h3 { font-size: 1.1rem; margin-bottom: 6px; color: #263238; }
+        .mode-card p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+
+        /* Comparison */
+        .comparison {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .comparison h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .plan-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .plan-card.pro {
+            background: linear-gradient(135deg, #263238, #37474F);
+            color: white;
+        }
+
+        .plan-card h3 { font-size: 1.4rem; margin-bottom: 20px; }
+        .plan-card.pro h3 { color: #B0BEC5; }
+        .plan-card ul { list-style: none; text-align: left; }
+        .plan-card li { padding: 8px 0; font-size: 0.95rem; }
+        .plan-card li::before { content: '✓ '; color: #4CAF50; font-weight: bold; }
+        .plan-card.pro li::before { color: #81C784; }
+        .plan-badge {
+            display: inline-block;
+            background: #B0BEC5;
+            color: #263238;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a { color: #90A4AE; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .copyright { color: #888; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 1.2rem; }
+            .hero { padding: 60px 0; }
+            .plan-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="app-icon">🛡️</div>
+                <div>
+                    <h1>Shade</h1>
+                    <p class="tagline">내 화면은 내 눈만 볼 수 있도록<br>6가지 프라이버시 필터로 화면을 보호하세요</p>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.yp.shade" class="download-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                    </svg>
+                    Google Play에서 다운로드
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>주요 기능</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>원터치 토글</h3>
+                    <p>빠른 설정 타일이나 알림으로 한 번의 터치로 프라이버시 필터를 켜고 끄세요.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>앱별 자동 활성화</h3>
+                    <p>원하는 앱을 열면 자동으로 Shade가 켜지고, 나가면 꺼집니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>완전한 커스터마이징</h3>
+                    <p>색상, 간격, 굵기, 각도까지 나만의 필터를 자유롭게 설정하세요.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h3>가볍고 효율적</h3>
+                    <p>배터리 친화적 설계. 필요할 때만 작동하고 백그라운드 부담 최소화.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>프라이버시 최우선</h3>
+                    <p>화면 내용을 읽거나 기록하지 않습니다. 개인 데이터 수집 없음.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Material Design 3</h3>
+                    <p>깔끔하고 모던한 디자인. 직관적인 인터페이스로 누구나 쉽게.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 Modes -->
+    <section class="modes">
+        <div class="container">
+            <h2>🛡️ 6가지 프라이버시 모드</h2>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <span class="mode-icon">🌑</span>
+                    <div>
+                        <h3>다크 필터</h3>
+                        <p>시스템 한계를 넘어 화면을 어둡게. OLED에서 완벽한 블랙.</p>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <span class="mode-icon">📏</span>
+                    <div>
+                        <h3>스트라이프 패턴</h3>
+                        <p>줄무늬로 옆에서 보는 걸 차단. 방향, 색상, 간격 커스텀.</p>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <span class="mode-icon">📡</span>
+                    <div>
+                        <h3>노이즈</h3>
+                        <p>랜덤 노이즈 오버레이로 거리 밖에서는 화면 판독 불가.</p>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <span class="mode-icon">🌅</span>
+                    <div>
+                        <h3>그라디언트</h3>
+                        <p>한쪽부터 점진적으로 어두워져 옆 사람만 차단.</p>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <span class="mode-icon">🔲</span>
+                    <div>
+                        <h3>픽셀레이트</h3>
+                        <p>픽셀화 효과로 정면이 아니면 내용 식별 불가.</p>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <span class="mode-icon">💧</span>
+                    <div>
+                        <h3>블러</h3>
+                        <p>부드러운 블러로 은은한 프라이버시 보호.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free vs Pro -->
+    <section class="comparison">
+        <div class="container">
+            <h2>무료 vs Pro</h2>
+            <div class="plan-container">
+                <div class="plan-card">
+                    <h3>무료</h3>
+                    <ul>
+                        <li>다크 필터 (투명도 조절)</li>
+                        <li>기본 스트라이프 패턴</li>
+                        <li>빠른 설정 타일</li>
+                        <li>알림 토글</li>
+                    </ul>
+                </div>
+                <div class="plan-card pro">
+                    <span class="plan-badge">일회성 구매</span>
+                    <h3>Pro</h3>
+                    <ul>
+                        <li>6가지 모드 전체</li>
+                        <li>앱별 자동 활성화</li>
+                        <li>앱별 개별 필터 모드</li>
+                        <li>패턴 완전 커스터마이징</li>
+                        <li>광고 제거</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy_en.html">개인정보처리방침</a>
+                <a href="mailto:philleeran@gmail.com">문의하기</a>
+                <a href="../">전체 앱 보기</a>
+            </div>
+            <p class="copyright">© 2025 Shade. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
