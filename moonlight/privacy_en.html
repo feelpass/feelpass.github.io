@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Moonlight</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #1565C0; }
+        .app-name { color: #666; margin-bottom: 30px; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #1565C0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f1f3f5; color: #333; }
+        code {
+            background: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .highlight {
+            background: #E3F2FD;
+            border-left: 4px solid #1565C0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="app-name">Moonlight - Soft Flashlight &amp; Moon</p>
+
+        <div class="highlight">
+            <strong>Summary:</strong> Moonlight is a free utility app supported by ads. It uses Firebase (Analytics, Crashlytics, Remote Config), Google AdMob (banner &amp; interstitial), and Google Play Billing (in-app purchases). Payment details are handled entirely by Google Play — Moonlight never sees them. Your approximate location is used only on-device for moon calculations and never sent to any server.
+        </div>
+
+        <h2>1. Information We Collect</h2>
+        <p>Moonlight collects the following information through integrated third-party SDKs to deliver a free, supported experience and to improve quality. The app itself does not run any custom servers.</p>
+
+        <h3 style="margin-top:20px;">1.1 Automatically collected (Firebase Analytics / Crashlytics)</h3>
+        <ul>
+            <li>App usage events: screen views, feature usage, session length</li>
+            <li>Device info: model, OS version, language, country, screen resolution</li>
+            <li>Crash logs: stack traces and device state on abnormal termination</li>
+            <li>Firebase Installation ID (FID) and a non-identifying app instance ID</li>
+        </ul>
+        <p>This information is processed in anonymous/aggregated form and is not used to identify you personally. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Information</a>.</p>
+
+        <h3 style="margin-top:20px;">1.2 Advertising identifier (Google AdMob)</h3>
+        <ul>
+            <li>Google Advertising ID (AAID) — for frequency capping and personalized/non-personalized ad delivery</li>
+            <li>IP address (used for coarse geolocation by Google's ad systems)</li>
+            <li>Ad interaction data (impressions, clicks)</li>
+        </ul>
+        <p>Moonlight contains <strong>banner</strong> and <strong>interstitial</strong> ads. See <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Policies</a>. You can reset your advertising ID or opt out of personalized ads from <em>Settings &rarr; Google &rarr; Ads</em>.</p>
+
+        <h3 style="margin-top:20px;">1.3 Payment information (Google Play Billing)</h3>
+        <p>Moonlight may offer in-app purchases (e.g. ad removal, pro features).</p>
+        <ul>
+            <li>All payments are processed <strong>directly by Google Play Store</strong>. Moonlight never receives or stores payment method information such as credit card numbers.</li>
+            <li>Moonlight only receives the purchase token and SKU (product ID) to confirm purchase status.</li>
+            <li>Receipt verification uses Google Play's standard libraries.</li>
+        </ul>
+
+        <h3 style="margin-top:20px;">1.4 Location (optional)</h3>
+        <ul>
+            <li>Approximate location (<code>ACCESS_COARSE_LOCATION</code>) is used to compute accurate moon phase, moonrise and moonset times for your area.</li>
+            <li>Your location is processed <strong>entirely on-device</strong> and is never sent to any server, including not to Firebase Analytics. (Analytics may automatically log a coarse country/city derived by Google from your IP, which is separate.)</li>
+            <li>You may instead pick a city manually without granting this permission.</li>
+        </ul>
+
+        <h2>2. Permissions We Request</h2>
+        <table>
+            <tr><th>Permission</th><th>Purpose</th></tr>
+            <tr><td><code>CAMERA</code> / <code>FLASHLIGHT</code></td><td>Toggle the camera LED torch. No photos or videos are captured.</td></tr>
+            <tr><td><code>ACCESS_COARSE_LOCATION</code></td><td>On-device moon information for your area. Not transmitted.</td></tr>
+            <tr><td><code>POST_NOTIFICATIONS</code></td><td>Show foreground service / timer notifications.</td></tr>
+            <tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Ensure sleep timer fires on time.</td></tr>
+            <tr><td><code>VIBRATE</code></td><td>Haptic feedback for interactions.</td></tr>
+            <tr><td><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_SPECIAL_USE</code></td><td>Keep flashlight, screen light, and timer running reliably in the background.</td></tr>
+            <tr><td><code>INTERNET</code> (auto-granted)</td><td>Required for Firebase Analytics, Crashlytics, AdMob, and Google Play Billing.</td></tr>
+            <tr><td><code>ACCESS_NETWORK_STATE</code> (auto-granted)</td><td>Detect connectivity for ad loading and purchase flows.</td></tr>
+        </table>
+
+        <h2>3. Third-Party Services</h2>
+        <table>
+            <tr><th>Service</th><th>Purpose</th><th>Data</th><th>Policy</th></tr>
+            <tr><td>Firebase Analytics</td><td>Anonymous usage statistics</td><td>Screen events, device info, app instance ID</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td></tr>
+            <tr><td>Firebase Crashlytics</td><td>Crash diagnostics</td><td>Stack traces, OS/device info</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td></tr>
+            <tr><td>Firebase Remote Config</td><td>Remote configuration / feature flags</td><td>Configuration values only (no personal data)</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td></tr>
+            <tr><td>Google AdMob</td><td>Ad delivery</td><td>Advertising ID, IP, ad interactions</td><td><a href="https://policies.google.com/technologies/ads" target="_blank">Link</a></td></tr>
+            <tr><td>Google Play Billing</td><td>In-app purchase processing</td><td>Purchase token, SKU</td><td><a href="https://policies.google.com/privacy" target="_blank">Link</a></td></tr>
+            <tr><td>Google Play Services</td><td>Core libraries for ads &amp; billing</td><td>(via the services above)</td><td><a href="https://policies.google.com/privacy" target="_blank">Link</a></td></tr>
+        </table>
+        <p>Moonlight does <strong>not</strong> include any other analytics, ad mediation, or user-tracking SDKs.</p>
+
+        <h2>4. How We Use Information</h2>
+        <ul>
+            <li>To deliver core features (flashlight, screen light, timer, moon information)</li>
+            <li>To serve ads that fund the free tier</li>
+            <li>To process in-app purchases such as ad removal and to restore purchases</li>
+            <li>To diagnose crashes and improve app stability</li>
+            <li>To analyze anonymous feature-usage statistics</li>
+        </ul>
+        <p>Information is never sold, used for marketing emails, or used to build personal profiles beyond what Google's services do as part of standard ad delivery.</p>
+
+        <h2>5. Data Retention and Deletion</h2>
+        <table>
+            <tr><th>Data</th><th>Stored at</th><th>How to delete</th></tr>
+            <tr><td>App preferences (location, color temperature, etc.)</td><td>On-device DataStore</td><td>Uninstall the app</td></tr>
+            <tr><td>Firebase Analytics events</td><td>Google servers</td><td>Default Firebase retention (up to 14 months)</td></tr>
+            <tr><td>Crashlytics crash logs</td><td>Google servers</td><td>Default Firebase retention (~90 days)</td></tr>
+            <tr><td>Ad-ID-based data</td><td>Google servers</td><td>Reset advertising ID in device settings</td></tr>
+            <tr><td>In-app purchase receipts</td><td>Your Google Play account</td><td>Per Google Play policy</td></tr>
+        </table>
+        <p>You may also email us (see Section 9) to request deletion of any data tied to your Firebase app instance ID.</p>
+
+        <h2>6. Children's Privacy</h2>
+        <p>Moonlight is not directed at children under 13 and does not knowingly collect personal information from them. If a child uses the app, we recommend configuring AdMob to serve only non-personalized ads (planned for a future build).</p>
+
+        <h2>7. Effect of Denying Permissions</h2>
+        <ul>
+            <li><strong>Camera denied:</strong> The LED torch (flashlight) cannot be used. The screen moonlight mode still works.</li>
+            <li><strong>Location denied:</strong> Automatic moon info is unavailable. Pick a city manually instead.</li>
+            <li><strong>Notifications denied:</strong> The foreground service notification is hidden, but core features still work.</li>
+            <li><strong>Exact alarm denied:</strong> Sleep timer accuracy may be slightly reduced.</li>
+            <li><strong>No network:</strong> Ads will not show and purchases cannot be restored. All offline features still work.</li>
+        </ul>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time, especially when SDKs are added or removed. Significant changes will be reflected in the effective date below.</p>
+
+        <h2>9. Contact Us</h2>
+        <p>For privacy inquiries or concerns, please contact us at: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
+
+        <p class="date">Effective Date: April 11, 2026</p>
+    </div>
+</body>
+</html>
