@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - LongShot Marker</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #D32F2F; }
+        .app-name { color: #666; margin-bottom: 30px; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        h3 { font-size: 1.05rem; margin-top: 20px; color: #444; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #D32F2F; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th { background: #f1f3f5; color: #333; }
+        code {
+            background: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .highlight {
+            background: #FFEBEE;
+            border-left: 4px solid #D32F2F;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="app-name">LongShot Marker - Stitched Screenshot Annotator</p>
+
+        <div class="highlight">
+            <strong>Summary:</strong> LongShot Marker is a free, ad-supported utility for annotating long stitched screenshots. All image processing happens entirely on your device — your photos are never uploaded or sent to any server. The app uses Google AdMob for ads and Google Play Billing for optional in-app purchases. Payment details are handled entirely by Google Play — LongShot Marker never sees them.
+        </div>
+
+        <h2>1. Information We Collect</h2>
+        <p>LongShot Marker does not run any custom servers and does not collect personal information directly. The only data collected is what integrated third-party SDKs require to deliver ads and process purchases.</p>
+
+        <h3>1.1 Images you import</h3>
+        <ul>
+            <li>Images you select from the photo picker, or share into the app via "Share to LongShot Marker", are read <strong>only on your device</strong> for stitching, annotation and export.</li>
+            <li>Imported images, edits, and the exported PNG never leave your device. Nothing is uploaded to LongShot Marker servers (we don't operate any) or to any third party.</li>
+            <li>The exported result is saved to your device's Pictures gallery (MediaStore) — only you control it.</li>
+        </ul>
+
+        <h3>1.2 Advertising identifier (Google AdMob)</h3>
+        <ul>
+            <li>Google Advertising ID (AAID) — for frequency capping and personalized/non-personalized ad delivery</li>
+            <li>IP address (used for coarse geolocation by Google's ad systems)</li>
+            <li>Ad interaction data (impressions, clicks)</li>
+        </ul>
+        <p>LongShot Marker contains <strong>banner</strong>, <strong>rewarded</strong>, and <strong>app-open</strong> ads. See <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Policies</a>. You can reset your advertising ID or opt out of personalized ads from <em>Settings &rarr; Google &rarr; Ads</em>.</p>
+
+        <h3>1.3 Payment information (Google Play Billing)</h3>
+        <p>LongShot Marker may offer in-app purchases (e.g. ad removal, premium features).</p>
+        <ul>
+            <li>All payments are processed <strong>directly by Google Play Store</strong>. LongShot Marker never receives or stores payment method information such as credit card numbers.</li>
+            <li>The app only receives the purchase token and SKU (product ID) to confirm purchase status.</li>
+            <li>Receipt verification uses Google Play's standard libraries.</li>
+        </ul>
+
+        <h3>1.4 Local preferences</h3>
+        <ul>
+            <li>App settings (such as floating-control side preference and current editing session) are stored on-device using Android <code>SharedPreferences</code> and DataStore.</li>
+            <li>This data never leaves your device and is removed when you uninstall the app.</li>
+        </ul>
+
+        <h2>2. Permissions We Request</h2>
+        <table>
+            <tr><th>Permission</th><th>Purpose</th></tr>
+            <tr><td><code>INTERNET</code></td><td>Required for Google AdMob and Google Play Billing.</td></tr>
+            <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Detect connectivity for ad loading and purchase flows.</td></tr>
+        </table>
+        <p>LongShot Marker does <strong>not</strong> request access to your photo library, camera, location, contacts, or microphone. Image selection uses Android's system Photo Picker, which grants the app one-time access only to the images you explicitly pick — no persistent storage permission is required.</p>
+
+        <h2>3. Third-Party Services</h2>
+        <table>
+            <tr><th>Service</th><th>Purpose</th><th>Data</th><th>Policy</th></tr>
+            <tr><td>Google AdMob</td><td>Ad delivery (banner / rewarded / app-open)</td><td>Advertising ID, IP, ad interactions</td><td><a href="https://policies.google.com/technologies/ads" target="_blank">Link</a></td></tr>
+            <tr><td>Google Play Billing</td><td>In-app purchase processing</td><td>Purchase token, SKU</td><td><a href="https://policies.google.com/privacy" target="_blank">Link</a></td></tr>
+            <tr><td>Google Play Services</td><td>Core libraries for ads &amp; billing</td><td>(via the services above)</td><td><a href="https://policies.google.com/privacy" target="_blank">Link</a></td></tr>
+        </table>
+        <p>LongShot Marker does <strong>not</strong> include Firebase Analytics, Firebase Crashlytics, ad mediation networks, or any other user-tracking SDKs.</p>
+
+        <h2>4. How We Use Information</h2>
+        <ul>
+            <li>To deliver core features (image stitching, annotation, export)</li>
+            <li>To serve ads that fund the free tier</li>
+            <li>To process in-app purchases such as ad removal and to restore purchases</li>
+        </ul>
+        <p>Information is never sold, used for marketing emails, or used to build personal profiles beyond what Google's services do as part of standard ad delivery.</p>
+
+        <h2>5. Data Retention and Deletion</h2>
+        <table>
+            <tr><th>Data</th><th>Stored at</th><th>How to delete</th></tr>
+            <tr><td>App preferences and current editing session</td><td>On-device SharedPreferences / DataStore</td><td>Uninstall the app, or clear app data from system settings</td></tr>
+            <tr><td>Imported images and exported PNGs</td><td>Your device only</td><td>Delete from your gallery</td></tr>
+            <tr><td>Ad-ID-based data</td><td>Google servers</td><td>Reset advertising ID in device settings</td></tr>
+            <tr><td>In-app purchase receipts</td><td>Your Google Play account</td><td>Per Google Play policy</td></tr>
+        </table>
+
+        <h2>6. Children's Privacy</h2>
+        <p>LongShot Marker is not directed at children under 13 and does not knowingly collect personal information from them. If a child uses the app, we recommend configuring AdMob to serve only non-personalized ads.</p>
+
+        <h2>7. Effect of Denying Permissions / No Network</h2>
+        <ul>
+            <li><strong>No network:</strong> Ads will not load and purchases cannot be made or restored. <strong>All core image-stitching and annotation features still work fully offline.</strong></li>
+        </ul>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time, especially when SDKs are added or removed. Significant changes will be reflected in the effective date below.</p>
+
+        <h2>9. Contact Us</h2>
+        <p>For privacy inquiries or concerns, please contact us at: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
+
+        <p class="date">Effective Date: May 4, 2026</p>
+    </div>
+</body>
+</html>
