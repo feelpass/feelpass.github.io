@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>개인정보처리방침 - Type History</title>
     <style>
+        :root { color-scheme: light dark; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
@@ -34,6 +36,20 @@
         .highlight strong { color: #4A6CF7; }
         .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
         a { color: #4A6CF7; }
+
+        /* 다크 모드 — 페이지가 직접 대응한다(앱 WebView의 알고리즘 다크닝을 쓰지 않기 위함) */
+        @media (prefers-color-scheme: dark) {
+            body { color: #c9ccd4; background: #0f1114; }
+            .container { background: #16181d; }
+            h1 { color: #f2f3f5; }
+            h2 { color: #e3e5ea; }
+            p, li { color: #b4b8c2; }
+            .app-name { color: #8b909b; }
+            .highlight { background: #1a1f31; border-color: #2c3654; }
+            .highlight strong { color: #93a9ff; }
+            .date { color: #7b808b; }
+            a { color: #93a9ff; }
+        }
     </style>
 </head>
 <body>
