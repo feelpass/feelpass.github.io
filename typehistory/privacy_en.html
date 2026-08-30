@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Type History</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #1a1a2e; }
+        .app-name { color: #666; margin-bottom: 30px; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        .highlight {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border: 1px solid #dde4ff;
+        }
+        .highlight strong { color: #4A6CF7; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #4A6CF7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="app-name">Type History &middot; com.coco.typehistory</p>
+
+        <div class="highlight">
+            <strong>In short:</strong> The text Type History records is stored only in a local database on this device. It is never uploaded, never synced, and never shared with anyone, including the developer. Password fields are never recorded. However, this app shows ads through Google AdMob and collects anonymous usage and crash reports, so <strong>an internet connection and your advertising ID are used to load those ads and send anonymous statistics.</strong> Your typed records are not part of that traffic.
+        </div>
+
+        <h2>1. Information We Collect</h2>
+        <p>Type History has no account, no login, and no server of its own. The information the app handles is as follows.</p>
+        <ul>
+            <li><strong>Text you type — stored on your device only (never transmitted):</strong> Through the Accessibility Service, the app reads text you type into text fields in other apps and saves it, along with the app name and a timestamp, in a local database (Room) on this device. This data never leaves the device.</li>
+            <li><strong>Password fields — never recorded:</strong> Fields flagged as password fields (<code>isPassword</code>) are skipped at the code level before any text is read.</li>
+            <li><strong>App settings — stored on your device only:</strong> Your retention period, pause state, excluded app list, and PIN lock preference are kept in the app's private storage. Your PIN is stored only as a SHA-256 hash with a random salt, never as plain text, and cannot be reversed.</li>
+            <li><strong>Advertising data — collected by Google AdMob (sent to a server):</strong> To serve ads, the AdMob SDK may collect and use device identifiers such as the advertising ID (AD_ID), approximate location, and app interaction data. This is collected by Google; the developer receives only aggregated ad performance reports. See section 4 below.</li>
+            <li><strong>Anonymous usage and diagnostic data — collected by Firebase Analytics and Crashlytics (sent to a server):</strong> To improve the app and keep it stable, anonymous usage events (aggregate figures such as how often a feature was used or which settings are on) and crash reports are sent. <strong>Neither the text you type nor the package name of the app you typed it in is included in these events.</strong> See section 4 below.</li>
+            <li><strong>What we do not collect:</strong> No name, email address, phone number, contacts, photos, files, precise location, financial information, or health information.</li>
+        </ul>
+
+        <h2>2. Use of the Accessibility Service</h2>
+        <p>Type History uses the Android Accessibility Service for its core feature: keeping an on-device copy of the text you type in other apps so you can recover it later. This is the only way Android allows an app to provide that feature.</p>
+        <ul>
+            <li><strong>What it reads:</strong> The app subscribes to exactly one event type, text change events (<code>TYPE_VIEW_TEXT_CHANGED</code>). From those events it reads the text in the field and the package name of the app you typed it in.</li>
+            <li><strong>What it is used for:</strong> The text is saved to the local database on this device solely so you can look it up, search it, and copy it back later.</li>
+            <li><strong>What it does not read:</strong> Password fields are skipped. Nothing is recorded for apps you have excluded, or while capture is paused.</li>
+            <li><strong>No actions on your behalf:</strong> The app never clicks, scrolls, navigates, or fills in forms for you. It is a read-only service and declares no gesture capability (<code>canPerformGestures</code>) and no key event filtering.</li>
+            <li><strong>Your control:</strong> The Accessibility Service is off by default. Before you enable it, the app shows a dedicated disclosure screen explaining exactly what it reads and where it is stored, and requires your explicit consent. You can turn it off again at any time in Android Settings.</li>
+            <li>This app is not a monitoring or spy tool. It cannot access another person's device or messages, and it does not recover messages deleted by someone else.</li>
+        </ul>
+
+        <h2>3. Permissions We Request</h2>
+        <ul>
+            <li><strong>Accessibility Service:</strong> Read the text you type in other apps and save it on this device (core feature).</li>
+            <li><strong>Internet (INTERNET) and network state (ACCESS_NETWORK_STATE):</strong> Used only to load ads and to send anonymous usage statistics and crash reports. Your typed records are not included in that traffic, and the app's capture and recovery features work fully without an internet connection.</li>
+            <li><strong>Advertising ID (AD_ID) and ad services permissions (ACCESS_ADSERVICES_*):</strong> Declared by the Google AdMob SDK for ad serving and measurement.</li>
+            <li><strong>Biometrics (USE_BIOMETRIC):</strong> Used to unlock the app when you enable fingerprint or face unlock alongside the PIN lock. Biometric data is handled entirely by the Android system; the app only receives whether authentication succeeded.</li>
+            <li><strong>WAKE_LOCK, FOREGROUND_SERVICE:</strong> Declared automatically by Google libraries bundled with the ad SDK (such as WorkManager). The app itself does not use them.</li>
+        </ul>
+
+        <h2>4. Third-Party Services</h2>
+        <p>Type History uses the following third-party services.</p>
+        <ul>
+            <li><strong>Google AdMob:</strong> Serves in-app ads (a native ad and an app-open ad at launch). AdMob may collect and use device identifiers such as the advertising ID, approximate location, and app interaction and diagnostic data to serve relevant ads and measure them; this information is provided to Google. See the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob's data disclosure</a>.</li>
+            <li><strong>Firebase Analytics:</strong> Collects anonymous usage events so the developer can see how the app is used. The text you type and the package name of the target app are never included — only aggregate figures such as counts and setting values are sent. See the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</li>
+            <li><strong>Firebase Crashlytics:</strong> Collects crash reports and diagnostic information to improve app stability. See the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</li>
+            <li>The text records you type are never sent to AdMob, Firebase, or any other third party.</li>
+            <li>You can reset your advertising ID or opt out of personalized ads in Android Settings &gt; Google &gt; Ads.</li>
+        </ul>
+
+        <h2>5. How Information Is Used</h2>
+        <p>The records stored on your device are used only so that you can look them up, search them, and copy, share, or delete them from within the app. The developer has no access to this data. None of the app's information is ever sold.</p>
+
+        <h2>6. Data Retention and Deletion</h2>
+        <ul>
+            <li><strong>Automatic deletion:</strong> Records older than your retention period are deleted automatically. The default is 7 days, and you can choose 1 day, 3 days, 7 days, 30 days, 90 days, 180 days, or 1 year.</li>
+            <li><strong>Manual deletion:</strong> You can delete individual records, or wipe everything at once with "Delete all records" in Settings.</li>
+            <li><strong>Stopping capture:</strong> You can pause capture in Settings, or exclude specific apps from being recorded.</li>
+            <li><strong>Uninstalling:</strong> Removing the app deletes your records and settings from the device. There is no copy on any server, so no separate deletion request process is needed.</li>
+            <li><strong>App lock:</strong> A PIN lock with optional fingerprint or face unlock keeps your records closed even if you hand your device to someone for a moment.</li>
+        </ul>
+
+        <h2>7. Children's Privacy</h2>
+        <p>This app is not directed at children under 13 and does not knowingly collect personal information from children.</p>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>This privacy policy may be updated as needed. Changes will be posted on this page.</p>
+
+        <h2>9. Contact</h2>
+        <p>For privacy inquiries: <a href="mailto:youngpil.lee@gmail.com">youngpil.lee@gmail.com</a></p>
+
+        <p class="date">Last updated: 2026-08-22 &middot; <a href="./privacy_ko.html">한국어</a></p>
+    </div>
+</body>
+</html>
