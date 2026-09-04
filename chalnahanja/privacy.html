@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - 찰나한자</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; line-height: 1.8; color: #333; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background: white; min-height: 100vh; }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #1a1a1a; }
+        .app-name { color: #666; margin-bottom: 10px; }
+        .lang-switch { margin-bottom: 30px; font-size: 0.9rem; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        .highlight { background: #fdf1ef; border-radius: 10px; padding: 16px 20px; margin: 20px 0; border: 1px solid #f3cfc9; }
+        .highlight strong { color: #c8392b; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #c8392b; }
+        @media (prefers-color-scheme: dark) {
+            body { background: #121212; color: #ddd; }
+            .container { background: #1a1a1a; }
+            h1, h2 { color: #eee; }
+            p, li { color: #bbb; }
+            .highlight { background: #2a1c1a; border-color: #4a2a26; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>개인정보처리방침</h1>
+        <p class="app-name">찰나한자 (Chalna Hanja) · com.coco.chalnahanja</p>
+        <p class="lang-switch"><a href="privacy_en.html">English version</a></p>
+
+        <p>찰나한자("앱")는 이용자의 개인정보를 소중히 여기며, 아래와 같이 데이터를 처리합니다.</p>
+
+        <div class="highlight">
+            <strong>핵심 원칙:</strong> 앱은 로그인 없이 완전히 동작하며, 학습 기록은 기본적으로 이용자의 기기에만 저장됩니다. 이용자가 선택해서 Google 계정으로 로그인한 경우에만 학습 진도가 앱 운영자의 서버(Supabase)에 저장되어 기기 간에 동기화됩니다. 앱에는 광고가 없으며 광고 식별자를 수집하지 않습니다.
+        </div>
+
+        <h2>1. 기기에만 저장되는 데이터</h2>
+        <ul>
+            <li><strong>학습 기록</strong> — 글자별 학습 상태(복습 간격·다음 복습일·★ 표시), 일별 학습 집계(학습 글자 수·정답/오답·학습 시간·목표 달성·휴가 표시), 세션 기록</li>
+            <li><strong>앱 설정</strong> — 목표 급수·시험일·하루 학습량·휴가 모드·알림 시각·테마·구매한 급수팩</li>
+        </ul>
+        <p>로그인하지 않은 경우 앱을 삭제하거나 기기를 바꾸면 이 데이터는 복구되지 않습니다.</p>
+
+        <h2>2. 로그인 시 수집·저장되는 정보 (선택)</h2>
+        <p>설정에서 <strong>Google로 로그인</strong>을 선택하면 아래 정보가 처리됩니다. 로그인은 기기 간 동기화와 구매 복원 보조를 위한 선택 기능이며, 로그인하지 않아도 모든 학습 기능을 사용할 수 있습니다.</p>
+        <ul>
+            <li><strong>계정 정보</strong> — Google 계정의 이메일 주소와 고유 식별자. 이용자 식별과 동기화 대상 구분에만 사용합니다.</li>
+            <li><strong>학습 진도</strong> — 위 1항의 글자별 학습 상태와 일별 학습 집계가 서버에 저장되어 같은 계정으로 로그인한 다른 기기와 동기화됩니다.</li>
+            <li><strong>기기 정보</strong> — 동기화를 구분하기 위한 앱 내부 기기 식별자(무작위 생성), 플랫폼, 앱 버전, 마지막 동기화 시각.</li>
+            <li><strong>구매 자격</strong> — 급수팩 구매 여부(상품 ID)와 구매 토큰의 해시값. 기기 간 구매 복원과 부정 사용 방지에 사용합니다.</li>
+        </ul>
+        <p>서버는 Supabase(대한민국 서울 리전)에서 운영됩니다. 설정의 <strong>로그아웃</strong>은 이 기기의 기록을 남기고 동기화만 중단하며, <strong>계정 삭제</strong>를 선택하면 서버에 저장된 계정과 모든 진도가 즉시 삭제됩니다.</p>
+
+        <h2>3. 제3자 서비스</h2>
+        <p>앱은 아래 서비스를 사용하며, 각 서비스는 제한된 데이터를 자체 서버에서 수집할 수 있습니다:</p>
+        <ul>
+            <li><strong>Google 로그인</strong> — 이용자가 선택한 경우 Google 계정으로 인증합니다. Google이 제공하는 이메일·식별자만 받으며 연락처 등 다른 정보는 요청하지 않습니다.</li>
+            <li><strong>Supabase</strong> — 계정·학습 진도·구매 자격을 저장하는 서버입니다(로그인한 이용자만).</li>
+            <li><strong>Google Play 결제</strong> — 급수팩 일회성 구매를 처리합니다. 결제 정보는 Google Play가 관리하며 앱은 구매 여부만 저장합니다.</li>
+            <li><strong>Google Analytics for Firebase</strong> — 화면 이동·기능 사용 등 익명화된 사용 통계를 수집합니다. 앱 개선 목적으로만 사용합니다.</li>
+            <li><strong>Firebase Crashlytics</strong> — 앱 오류 발생 시 기기 모델, OS 버전, 오류 로그를 수집합니다. 안정성 개선 목적으로만 사용합니다.</li>
+        </ul>
+        <p>앱에는 <strong>광고가 없으며</strong> 광고 식별자(광고 ID)를 수집하지 않습니다. 각 서비스의 데이터 처리는 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>, <a href="https://supabase.com/privacy">Supabase 개인정보처리방침</a>을 참고해주세요.</p>
+
+        <h2>4. 알림</h2>
+        <p>학습 리마인더는 기기 안에서 예약·표시되는 로컬 알림입니다. 서버 푸시 알림은 없으며, 알림 권한은 언제든 기기 설정에서 끌 수 있습니다.</p>
+
+        <h2>5. 콘텐츠 출처</h2>
+        <p>급수 배정 한자와 훈음은 (사)한국어문회 자료를, 획순·자원(字源) 정보는 Make Me a Hanzi(Arphic Public License)를 바탕으로 합니다. 콘텐츠 자체는 개인정보가 아니며 앱 안에 내장되어 있습니다.</p>
+
+        <h2>6. 아동의 개인정보</h2>
+        <p>앱은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 로그인은 선택 기능이며, 아동이 보호자 동의 없이 계정을 연결한 사실을 알게 되면 해당 데이터를 삭제합니다.</p>
+
+        <h2>7. 이용자의 권리</h2>
+        <p>이용자는 앱의 설정 &gt; 계정에서 언제든 로그아웃하거나 계정과 서버 데이터를 삭제할 수 있습니다. 그 밖의 열람·정정·삭제 요청은 아래 연락처로 문의해주세요.</p>
+
+        <h2>8. 방침 변경</h2>
+        <p>이 방침이 변경되는 경우 앱 업데이트 또는 이 페이지를 통해 알려드립니다.</p>
+
+        <h2>9. 문의</h2>
+        <p>개인정보 관련 문의는 아래로 연락해주세요:</p>
+        <p>이메일: philleeran@gmail.com</p>
+
+        <p class="date">시행일: 2026년 9월 5일</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Chalna Hanja</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; line-height: 1.8; color: #333; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background: white; min-height: 100vh; }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #1a1a1a; }
+        .app-name { color: #666; margin-bottom: 10px; }
+        .lang-switch { margin-bottom: 30px; font-size: 0.9rem; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        .highlight { background: #fdf1ef; border-radius: 10px; padding: 16px 20px; margin: 20px 0; border: 1px solid #f3cfc9; }
+        .highlight strong { color: #c8392b; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #c8392b; }
+        @media (prefers-color-scheme: dark) {
+            body { background: #121212; color: #ddd; }
+            .container { background: #1a1a1a; }
+            h1, h2 { color: #eee; }
+            p, li { color: #bbb; }
+            .highlight { background: #2a1c1a; border-color: #4a2a26; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="app-name">Chalna Hanja · com.coco.chalnahanja</p>
+        <p class="lang-switch"><a href="privacy.html">한국어</a></p>
+
+        <p>Chalna Hanja ("the App") respects your privacy and handles data as described below.</p>
+
+        <div class="highlight">
+            <strong>Core principle:</strong> The App works fully without an account, and your study records stay on your device by default. Only if you choose to sign in with Google is your study progress stored on the operator's server (Supabase) to sync across devices. The App has no ads and does not collect advertising identifiers.
+        </div>
+
+        <h2>1. Data stored only on your device</h2>
+        <ul>
+            <li><strong>Study records</strong> — per-character learning state (review interval, next due date, starred), daily totals (characters studied, correct/wrong, study time, goal met, vacation days), session records</li>
+            <li><strong>App settings</strong> — target level, exam date, daily amount, vacation mode, reminder time, theme, purchased level packs</li>
+        </ul>
+        <p>If you are not signed in, this data cannot be recovered after uninstalling the App or changing devices.</p>
+
+        <h2>2. Data collected when you sign in (optional)</h2>
+        <p>If you choose <strong>Sign in with Google</strong> in Settings, the following is processed. Signing in is optional and only used for cross-device sync and purchase restoration; all study features work without it.</p>
+        <ul>
+            <li><strong>Account</strong> — the email address and unique identifier of your Google account, used only to identify you and scope your synced data.</li>
+            <li><strong>Study progress</strong> — the per-character state and daily totals from section 1 are stored on the server and synced to other devices signed in with the same account.</li>
+            <li><strong>Device info</strong> — a randomly generated in-app device identifier, platform, app version, and last sync time.</li>
+            <li><strong>Purchase entitlements</strong> — purchased level pack IDs and a hash of the purchase token, used for cross-device restoration and abuse prevention.</li>
+        </ul>
+        <p>The server runs on Supabase (Seoul, South Korea region). <strong>Sign out</strong> keeps this device's records and only stops syncing; <strong>Delete account</strong> immediately removes your account and all progress from the server.</p>
+
+        <h2>3. Third-party services</h2>
+        <ul>
+            <li><strong>Google Sign-In</strong> — authenticates you with your Google account when you choose to. Only the email and identifier are requested.</li>
+            <li><strong>Supabase</strong> — the server that stores accounts, progress, and entitlements (signed-in users only).</li>
+            <li><strong>Google Play Billing</strong> — processes one-time level pack purchases. Payment details are handled by Google Play; the App stores only whether a pack is owned.</li>
+            <li><strong>Google Analytics for Firebase</strong> — collects anonymized usage statistics (screen views, feature use) to improve the App.</li>
+            <li><strong>Firebase Crashlytics</strong> — collects device model, OS version, and error logs when the App crashes, to improve stability.</li>
+        </ul>
+        <p>The App has <strong>no ads</strong> and does not collect the advertising ID. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://supabase.com/privacy">Supabase Privacy Policy</a> for those services.</p>
+
+        <h2>4. Notifications</h2>
+        <p>Study reminders are local notifications scheduled and shown on your device. There are no server push notifications, and you can disable notifications in system settings at any time.</p>
+
+        <h2>5. Content sources</h2>
+        <p>Level-assigned characters and readings are based on materials of the Korean Language Society (한국어문회); stroke order and etymology data come from Make Me a Hanzi (Arphic Public License). Content is bundled in the App and is not personal data.</p>
+
+        <h2>6. Children</h2>
+        <p>The App does not knowingly collect personal information from children under 14. Sign-in is optional; if we learn a child has linked an account without parental consent, we will delete that data.</p>
+
+        <h2>7. Your rights</h2>
+        <p>You can sign out or delete your account and server data at any time in Settings &gt; Account. For other access, correction, or deletion requests, contact us below.</p>
+
+        <h2>8. Changes</h2>
+        <p>Changes to this policy will be announced through an App update or on this page.</p>
+
+        <h2>9. Contact</h2>
+        <p>Email: philleeran@gmail.com</p>
+
+        <p class="date">Effective: September 5, 2026</p>
+    </div>
+</body>
+</html>
