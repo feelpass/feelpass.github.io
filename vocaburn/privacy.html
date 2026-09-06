@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - 보카번 (Vocaburn)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #1a1a2e; }
+        .app-name { color: #666; margin-bottom: 10px; }
+        .lang-switch { margin-bottom: 30px; font-size: 0.9rem; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        h3 { font-size: 1.05rem; margin: 20px 0 8px; color: #444; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #e5e5e5; padding: 8px 10px; text-align: left; vertical-align: top; color: #555; }
+        th { background: #f6f6f8; color: #333; }
+        .highlight {
+            background: #f3f0ff;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border: 1px solid #e0d7ff;
+        }
+        .highlight strong { color: #6750a4; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #6750a4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>개인정보처리방침</h1>
+        <p class="app-name">보카번 (Vocaburn) · com.coco.vocaburn</p>
+        <p class="lang-switch"><a href="privacy_en.html">English version</a></p>
+
+        <p>보카번("앱")은 이용자의 개인정보를 소중히 여기며, 아래와 같이 데이터를 처리합니다.</p>
+
+        <div class="highlight">
+            <strong>핵심 요약:</strong> 로그인은 선택 사항입니다. 로그인하지 않으면 단어장과 학습 기록은 이용자의 기기에만 저장됩니다. Google 계정으로 로그인하면 단어장이 앱 운영자의 서버(대한민국 서울 리전)에 저장되어 여러 기기에서 동기화되며, 설정에서 언제든 계정과 서버 데이터를 즉시 삭제할 수 있습니다. 입력한 단어·뜻·메모는 광고·분석 서비스에 전송되지 않습니다.
+        </div>
+
+        <h2>1. 수집하는 정보</h2>
+
+        <h3>1-1. 계정 정보 (Google 로그인 시)</h3>
+        <ul>
+            <li><strong>Google 계정 기본 프로필</strong> — 이메일 주소, 이름, 프로필 사진 URL. 로그인 요청 범위는 <code>email</code>·<code>profile</code>뿐이며 Google 계정의 다른 데이터(연락처·드라이브 등)에는 접근하지 않습니다.</li>
+            <li><strong>닉네임·이모지</strong> — 가입 시 Google 계정 이름을 기본 닉네임으로 설정하며, 앱에서 자유롭게 바꿀 수 있습니다. 닉네임은 이용자가 "전체 공개"로 게시한 단어장에 작성자 이름으로 표시됩니다.</li>
+            <li><strong>프리미엄 여부</strong> — 여러 기기에서 같은 혜택을 적용하기 위해 구매 여부만 저장합니다.</li>
+        </ul>
+
+        <h3>1-2. 동기화 데이터 (Google 로그인 시)</h3>
+        <p>로그인하면 아래 데이터가 서버에 저장되어 같은 계정으로 로그인한 다른 기기와 동기화됩니다.</p>
+        <table>
+            <tr><th>항목</th><th>내용</th></tr>
+            <tr><td>단어장</td><td>단어·뜻·메모·예문·중요 표시, 단어별 정답/오답 횟수, 마지막 학습 시각</td></tr>
+            <tr><td>그룹·컬렉션</td><td>이름, 언어 태그, 소속 관계</td></tr>
+            <tr><td>일별 통계</td><td>날짜별 학습 단어 수·정답·오답 수·목표 달성 여부</td></tr>
+            <tr><td>학습 기록 (프리미엄 이용자만)</td><td>학습 시도별 기록(단어, 방향, 정오답, 레벨 변화, 시각). 무료 이용자의 학습 기록은 기기에만 저장됩니다.</td></tr>
+            <tr><td>기기 정보</td><td>앱이 생성한 무작위 기기 ID(하드웨어 식별자가 아님), 플랫폼, 앱 버전, 마지막 동기화 시각</td></tr>
+        </table>
+
+        <h3>1-3. 공유 단어장 (게시 시)</h3>
+        <ul>
+            <li>단어장을 게시하면 제목·설명·언어와 게시 시점의 단어 목록(단어·뜻·메모·예문) 사본이 서버에 저장됩니다.</li>
+            <li><strong>전체 공개</strong>로 게시한 단어장은 다른 이용자가 검색·열람할 수 있으며 작성자 닉네임이 함께 표시됩니다. <strong>링크 공개</strong> 단어장은 공유 코드를 아는 사람만 열람할 수 있습니다.</li>
+            <li>다른 이용자의 단어장을 가져오면 구독 기록(어떤 단어장을 언제 가져왔는지)이 저장됩니다. 구독 기록은 본인만 볼 수 있습니다.</li>
+            <li>게시한 단어장은 앱에서 직접 삭제할 수 있습니다.</li>
+        </ul>
+
+        <h3>1-4. 자동으로 수집되는 정보</h3>
+        <ul>
+            <li><strong>사용 통계</strong> — 화면 이동, 기능 사용 등 익명화된 이벤트 (Google Analytics for Firebase)</li>
+            <li><strong>오류 정보</strong> — 앱 오류 발생 시 기기 모델, OS 버전, 오류 로그 (Firebase Crashlytics)</li>
+            <li><strong>광고 식별자</strong> — 무료 이용자에게 광고를 표시하기 위한 광고 ID와 광고 상호작용 데이터 (Google AdMob)</li>
+        </ul>
+        <p>위 정보에는 이용자가 입력한 단어·뜻·메모 등의 내용이 포함되지 않습니다.</p>
+
+        <h2>2. 수집하지 않는 정보</h2>
+        <ul>
+            <li><strong>위치</strong> — 위치 권한을 요청하지도, 사용하지도 않습니다.</li>
+            <li><strong>연락처·사진·마이크</strong> — 해당 권한을 요청하지 않습니다. 발음 재생(TTS)은 기기의 음성 엔진을 사용하며 녹음하지 않습니다.</li>
+            <li><strong>결제 정보</strong> — 카드 번호 등 결제 정보는 Google Play가 처리하며 앱은 접근하지 않습니다.</li>
+        </ul>
+
+        <h2>3. 기기에만 저장되는 데이터</h2>
+        <ul>
+            <li>로그인하지 않은 이용자의 단어장·그룹·컬렉션·학습 기록·통계 전체</li>
+            <li>무료 이용자의 학습 시도 기록</li>
+            <li>앱 설정 — 테마·언어·학습 옵션·리마인더 시각·무료 체험 시작 시각</li>
+        </ul>
+        <p>로그인하지 않은 상태에서 앱을 삭제하거나 기기를 바꾸면 이 데이터는 복구되지 않습니다(Android 자동 백업이 켜져 있으면 Google 계정 백업에 포함될 수 있습니다). 설정의 <strong>CSV 내보내기</strong>로 이용자가 선택한 위치에 직접 백업할 수 있으며, 내보낸 파일은 앱이 접근하지 않습니다.</p>
+
+        <h2>4. 이용 목적</h2>
+        <ul>
+            <li>여러 기기 간 단어장·학습 통계 동기화 및 기기 변경 시 복원</li>
+            <li>단어장 공유 기능 제공</li>
+            <li>프리미엄 혜택 적용</li>
+            <li>앱 오류 수정 및 기능 개선</li>
+            <li>무료 이용자에 대한 광고 표시</li>
+        </ul>
+
+        <h2>5. 보관 기간과 삭제</h2>
+        <ul>
+            <li><strong>동기화 데이터</strong> — 계정을 삭제할 때까지 보관합니다. 앱에서 삭제한 단어·그룹·컬렉션은 다른 기기에 삭제를 전파하기 위해 삭제 표시 상태로 최대 30일간 보관된 뒤 서버에서 영구 삭제됩니다.</li>
+            <li><strong>계정 삭제</strong> — 앱의 <strong>설정 &gt; 계정 &gt; 계정 삭제</strong>를 누르면 계정, 프로필, 동기화 데이터, 게시한 공유 단어장이 서버에서 즉시 삭제되며 복구할 수 없습니다. 기기에 있는 데이터는 그대로 남습니다.</li>
+            <li><strong>로그아웃</strong> — 로그아웃만으로는 서버 데이터가 삭제되지 않습니다. 다시 로그인하면 복원됩니다.</li>
+            <li><strong>사용 통계·오류 정보</strong> — Firebase의 기본 보관 정책을 따릅니다.</li>
+        </ul>
+        <p>앱에 접근할 수 없는 경우 아래 문의 이메일로 계정 삭제를 요청할 수 있습니다.</p>
+
+        <h2>6. 제3자 서비스</h2>
+        <p>앱은 아래 서비스를 사용하며, 각 서비스는 제한된 데이터를 자체 서버에서 처리할 수 있습니다:</p>
+        <ul>
+            <li><strong>Supabase</strong> — 계정 인증과 동기화·공유 데이터를 저장하는 서버 호스팅. 서버는 대한민국 서울 리전(ap-northeast-2)에 있으며, 데이터베이스 접근은 로그인한 본인의 데이터로 제한됩니다. (<a href="https://supabase.com/privacy">Supabase 개인정보처리방침</a>)</li>
+            <li><strong>Google 로그인</strong> — 계정 인증. 이메일·이름·프로필 사진만 제공받습니다.</li>
+            <li><strong>Google AdMob</strong> — 무료 이용자에게 광고를 표시합니다. 광고 게재를 위해 광고 식별자와 광고 상호작용 데이터를 수집하고 Google 광고 네트워크와 공유할 수 있습니다. 유럽 등 동의가 필요한 지역에서는 최초 실행 시 동의 화면이 표시되며, 설정 &gt; 개인정보 옵션에서 변경할 수 있습니다.</li>
+            <li><strong>Google Play 결제</strong> — 프리미엄 일회성 구매를 처리합니다. 구매 내역은 Google Play가 관리하며 앱은 구매 여부만 저장합니다.</li>
+            <li><strong>Google Analytics for Firebase</strong> — 익명화된 사용 통계. 앱 개선 목적으로만 사용합니다.</li>
+            <li><strong>Firebase Crashlytics</strong> — 앱 오류 정보. 안정성 개선 목적으로만 사용합니다.</li>
+            <li><strong>Firebase Remote Config</strong> — 앱 업데이트 안내 등 설정값을 내려받습니다. 개인정보를 보내지 않습니다.</li>
+        </ul>
+        <p>기기 설정에서 광고 ID를 재설정하거나 맞춤 광고를 해제할 수 있습니다. Google 서비스의 데이터 처리는 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 참고해주세요. 앱은 이용자의 개인정보를 제3자에게 판매하지 않습니다.</p>
+
+        <h2>7. 개인정보의 국외 이전</h2>
+        <p>동기화·공유 데이터가 저장되는 Supabase 서버는 대한민국(서울)에 있습니다. Google 로그인, AdMob, Firebase는 Google의 전 세계 인프라에서 처리되며 이용자의 데이터가 국외 서버에서 처리될 수 있습니다.</p>
+
+        <h2>8. 보안</h2>
+        <p>앱과 서버 간 통신은 모두 암호화(HTTPS)됩니다. 서버 데이터는 행 단위 접근 제어로 보호되어 로그인한 본인만 자신의 동기화 데이터에 접근할 수 있으며, 공유 단어장은 이용자가 선택한 공개 범위로만 노출됩니다.</p>
+
+        <h2>9. 알림</h2>
+        <p>학습 리마인더와 자동재생 미디어 알림은 모두 기기 안에서 예약·표시되는 로컬 알림입니다. 서버 푸시 알림은 없으며, 알림 권한은 언제든 기기 설정에서 끌 수 있습니다.</p>
+
+        <h2>10. 이용자의 권리</h2>
+        <p>이용자는 앱에서 자신의 데이터를 열람·수정·삭제하고(단어장 편집, CSV 내보내기, 계정 삭제), 로그인을 중단해 동기화를 멈출 수 있습니다. 그 밖의 열람·정정·삭제 요청은 아래 이메일로 연락해주시면 지체 없이 처리합니다.</p>
+
+        <h2>11. 아동의 개인정보</h2>
+        <p>앱은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 아동의 정보가 수집된 사실을 알게 되면 즉시 삭제합니다.</p>
+
+        <h2>12. 방침 변경</h2>
+        <p>이 방침이 변경되는 경우 이 페이지와 앱 업데이트를 통해 알려드립니다.</p>
+
+        <h2>13. 문의</h2>
+        <p>개인정보 관련 문의 및 삭제 요청은 아래로 연락해주세요:</p>
+        <p>이메일: philleeran@gmail.com</p>
+
+        <p class="date">시행일: 2026년 9월 7일</p>
+    </div>
+</body>
+</html>
