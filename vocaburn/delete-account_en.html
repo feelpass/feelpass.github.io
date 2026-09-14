@@ -51,7 +51,7 @@
             <li>Tap <strong>Account</strong>.</li>
             <li>Tap <strong>Delete account</strong> and confirm.</li>
         </ol>
-        <p>Your account and all server data are deleted immediately upon confirmation and cannot be recovered.</p>
+        <p>Upon confirmation, your account and all data linked to it are deleted from the server immediately, and the word list and study history stored on this device are deleted as well. This cannot be undone.</p>
 
         <h2>Option 2. Request by email</h2>
         <p>If you have already uninstalled the App or no longer have access to your device, send a deletion request to the email below.</p>
@@ -64,18 +64,23 @@
 
         <h2>Data that will be deleted</h2>
         <ul>
-            <li>Account information — email, name, profile picture, nickname, emoji, Lifetime status</li>
+            <li>Account information — email, name, profile picture, nickname, emoji, Lifetime (one-time in-app purchase) status</li>
             <li>Synced word list — words, meanings, notes, examples, groups, collections</li>
             <li>Study data — daily stats and study history</li>
             <li>Word sets you published and your subscriptions</li>
-            <li>Registered device information</li>
+            <li>Registered device information — device ID, platform, app version, Firebase Cloud Messaging device token</li>
+            <li>Privacy policy consent records</li>
+            <li>Purchase records — product ID, purchase token, order ID, purchase state and times, purchase details returned by Google Play</li>
+            <li>(Option 1, deleted in the App) the word list, groups, collections, study history and stats stored on the device you deleted from</li>
         </ul>
 
         <h2>Data that is not deleted</h2>
         <ul>
-            <li><strong>Data on your device</strong> — account deletion removes server data only. The word list and study history on your device remain until you uninstall the App or clear them in the App's settings.</li>
+            <li><strong>Data on other devices and after an email request</strong> — deleting in the App removes local data only from the device you deleted the account on. The word list and study history stored on other devices signed in to the same account, and on your devices if you delete your account by email request (Option 2), are not deleted automatically and remain on those devices.</li>
             <li><strong>Anonymized usage statistics and crash logs</strong> — these are not linked to your account and are retained and deleted according to the default retention policies of Google Analytics for Firebase and Firebase Crashlytics.</li>
             <li><strong>Google Play purchase history</strong> — managed by Google Play and cannot be deleted by the developer.</li>
+            <li><strong>Refund records</strong> — refund records sent by Google Play (the notification as received, including purchase token, order ID and refund type) are used to make sure a refunded purchase is not treated as valid again; they are kept without an account ID and are not deleted.</li>
+            <li><strong>Word auto-fill records</strong> — the per-term cache of generated results is shared data not linked to any account or device, so it is not deleted. Daily usage limit records (device ID, date, lookup count) are not linked to your account and are periodically deleted after 7 days.</li>
         </ul>
 
         <h2>To keep your account but stop syncing</h2>
@@ -84,7 +89,7 @@
         <h2>Contact</h2>
         <p>Email: philleeran@gmail.com</p>
 
-        <p class="date">Last updated: September 7, 2026</p>
+        <p class="date">Last updated: September 14, 2026</p>
     </div>
 </body>
 </html>
