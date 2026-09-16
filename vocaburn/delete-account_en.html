@@ -51,7 +51,7 @@
             <li>Tap <strong>Account</strong>.</li>
             <li>Tap <strong>Delete account</strong> and confirm.</li>
         </ol>
-        <p>Upon confirmation, your account and all data linked to it are deleted from the server immediately, and the word list and study history stored on this device are deleted as well. This cannot be undone.</p>
+        <p>Upon confirmation, your account and the data linked to it are deleted from the server immediately (except the data listed under "Data that is not deleted" below), and the word list and study history stored on this device are deleted as well. This cannot be undone.</p>
 
         <h2>Option 2. Request by email</h2>
         <p>If you have already uninstalled the App or no longer have access to your device, send a deletion request to the email below.</p>
@@ -60,7 +60,7 @@
             <p><strong>Subject:</strong> [Vocaburn] Account deletion request</p>
             <p><strong>Body:</strong> the Google account email address you used to sign in to Vocaburn</p>
         </div>
-        <p>To verify your identity, please <strong>send the request from the Google account you used to sign in</strong>. We will complete the deletion and reply within <strong>7 days</strong> of receiving your request.</p>
+        <p>To verify your identity, please <strong>send the request from the Google account you used to sign in</strong>. We will complete the deletion and reply within <strong>7 days</strong> of receiving your request. On the server, a deletion requested by email is processed the same way as deleting in the App (see "Data that will be deleted" and "Data that is not deleted" below), and for study groups you own, ownership passes automatically to another member just as when you delete in the App.</p>
 
         <h2>Data that will be deleted</h2>
         <ul>
@@ -68,8 +68,9 @@
             <li>Synced word list — words, meanings, notes, examples, groups, collections</li>
             <li>Study data — daily stats and study history</li>
             <li>Word sets you published and your subscriptions</li>
+            <li>Study groups — memberships, chat messages you sent, notices showing your nickname (joins, leaves, removals, added or updated word sets, test results), test results, reports you made, block records (both those you made and those against you), removal records about you, and notification text for the deleted messages</li>
             <li>Registered device information — device ID, platform, app version, Firebase Cloud Messaging device token</li>
-            <li>Privacy policy consent records</li>
+            <li>Terms of Use and privacy policy consent records</li>
             <li>Purchase records — product ID, purchase token, order ID, purchase state and times, purchase details returned by Google Play</li>
             <li>(Option 1, deleted in the App) the word list, groups, collections, study history and stats stored on the device you deleted from</li>
         </ul>
@@ -80,6 +81,12 @@
             <li><strong>Anonymized usage statistics and crash logs</strong> — these are not linked to your account and are retained and deleted according to the default retention policies of Google Analytics for Firebase and Firebase Crashlytics.</li>
             <li><strong>Google Play purchase history</strong> — managed by Google Play and cannot be deleted by the developer.</li>
             <li><strong>Refund records</strong> — refund records sent by Google Play (the notification as received, including purchase token, order ID and refund type) are used to make sure a refunded purchase is not treated as valid again; they are kept without an account ID and are not deleted.</li>
+            <li><strong>Word sets you uploaded to study groups</strong> — they belong to the group, so they stay in the group with only the uploader removed.</li>
+            <li><strong>Groups you own</strong> — ownership passes automatically to the editor who joined earliest, or, if there is no editor, to the member who joined earliest. If there are no other members, the group is dissolved; a dissolved group's records are no longer shown to members and are permanently deleted from the server by a weekly cleanup 30 days after the group is dissolved (within about 37 days).</li>
+            <li><strong>Words other members saved</strong> — words that other members saved to their own word lists from a study group word set or from missed test words ("Save to my wordbook") stay in those members' word lists (and in their synced data if they sync).</li>
+            <li><strong>Removals you made and reports about you</strong> — removal records you made stay with only the remover removed, and reports other users made about you are kept for review.</li>
+            <li><strong>Real-time chat delivery log</strong> — your account ID in read and removal signals left in Supabase Realtime while chat is delivered in real time is deleted within about 4 days, independently of account deletion.</li>
+            <li><strong>Study group rate-limit counters</strong> — per-account and per-group counts used to prevent abuse of chat, password attempts, reports and similar actions are periodically deleted after 2 days.</li>
             <li><strong>Word auto-fill records</strong> — the per-term cache of generated results is shared data not linked to any account or device, so it is not deleted. Daily usage limit records (device ID, date, lookup count) are not linked to your account and are periodically deleted after 7 days.</li>
         </ul>
 
@@ -89,7 +96,7 @@
         <h2>Contact</h2>
         <p>Email: philleeran@gmail.com</p>
 
-        <p class="date">Last updated: September 14, 2026</p>
+        <p class="date">Last updated: {{EFFECTIVE_DATE}}</p>
     </div>
 </body>
 </html>
