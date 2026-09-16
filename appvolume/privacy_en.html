@@ -24,6 +24,14 @@
         h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
         p, li { margin-bottom: 12px; color: #555; }
         ul { padding-left: 20px; }
+        li ul { margin-top: 8px; }
+        .highlight {
+            background: #f6effa;
+            border: 1px solid #e3cfee;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
         .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
         a { color: #7B1FA2; }
     </style>
@@ -33,37 +41,93 @@
         <h1>Privacy Policy</h1>
         <p class="app-name">AppVolume - Per-App Volume Control</p>
 
-        <h2>1. Information We Collect</h2>
-        <p>AppVolume is designed with privacy as a core principle. AppVolume does not collect, store, or transmit any personal data. The app makes no network requests and contains no analytics tools, advertising SDKs, or tracking technologies.</p>
+        <div class="highlight">
+            <strong>In short:</strong> AppVolume has no account or login, and your per-app volume settings are stored on your device. However, the app shows ads through Google AdMob and sends usage events and crash reports to Google through Firebase Analytics and Firebase Crashlytics. <strong>Usage events include the package name (for example, com.google.android.youtube) and volume level of the apps you configure. In particular, every time the Accessibility Service detects that one of those apps has come to the foreground and applies its volume, this information is sent to Firebase Analytics.</strong>
+        </div>
 
-        <h2>2. Data Stored on Your Device</h2>
+        <h2>1. Information We Collect and Process</h2>
+        <p>The information AppVolume handles is as follows.</p>
         <ul>
-            <li><strong>Configured apps and volume levels:</strong> The list of apps you configure and each app's media volume level are stored only on your device's local storage.</li>
-            <li>This information is never transmitted anywhere and is removed when you uninstall the app.</li>
+            <li><strong>Per-app volume settings — stored on your device:</strong> For each app you configure, the app stores the package name, app name, whether the setting is on, the media volume level (%), the time a per-app pause ends, and the times the setting was created and last changed, in a database on your device.</li>
+            <li><strong>App settings — stored on your device:</strong> The time a global pause ends, your theme, and your language setting are stored in the app's storage on your device.</li>
+            <li><strong>Installed app list — read on your device:</strong> So you can choose which apps to configure, the app loads the package name, name, and icon of the apps shown on your home screen (launcher) from your device and displays them. The full list is not stored; only apps you turn on in the list, or whose settings you change on the volume editor screen, are saved to the volume settings above.</li>
+            <li><strong>Usage events — sent to Firebase Analytics:</strong> The app sends the following events to Firebase Analytics. App names are not included in these events.
+                <ul>
+                    <li><code>screen_view</code>: when you open the home, app list, settings, or selection screen — the screen name</li>
+                    <li><code>enable_service_clicked</code>: when you tap the card on the home screen saying the Accessibility Service is not enabled (no additional values)</li>
+                    <li><code>service_connected</code>: when the Accessibility Service connects — the number of apps whose volume setting is on</li>
+                    <li><code>managed_app_added</code>: when you turn on an app in the app list — that app's package name</li>
+                    <li><code>managed_app_removed</code>: when you turn off an app in the app list or delete an app on the home screen — that app's package name and where it happened (app list / home)</li>
+                    <li><code>volume_preset_changed</code>: when you change the volume on the volume editor screen and leave with the back button at the top — that app's package name and the new volume level (%)</li>
+                    <li><code>volume_applied</code>: when the Accessibility Service applies the volume to an app you configured (for example, when it detects that the app has come to the foreground, when a global pause ends, or when the service connects) — that app's package name and the applied volume level (%)</li>
+                </ul>
+                For the information Firebase Analytics collects automatically alongside these events, see section 4.
+            </li>
+            <li><strong>Crash reports — sent to Firebase Crashlytics:</strong> When the app crashes, error details, device diagnostic information, and a commit hash identifying the app build (<code>git_hash</code>) are sent. See section 4.</li>
+            <li><strong>Advertising data — collected by Google AdMob:</strong> To serve ads, the AdMob SDK may collect and use device identifiers such as the advertising ID and ad interaction data. See section 4.</li>
+            <li><strong>Information the app does not ask for:</strong> The app does not ask you to enter a name, email address, or phone number, and does not request permissions to access your contacts, photos, files, precise location, camera, or microphone.</li>
         </ul>
 
-        <h2>3. Accessibility Service</h2>
-        <p>AppVolume uses the Accessibility Service to detect which app is currently in the foreground. The detected app's package name is used only transiently in memory to apply the media volume you set for that app; it is never stored or transmitted. The Accessibility Service is not used to read or collect any screen content.</p>
-
-        <h2>4. Permissions We Request</h2>
+        <h2>2. Accessibility Service</h2>
+        <p>AppVolume uses the Android Accessibility Service for its core feature: switching to the media volume you set for an app when that app comes to the foreground.</p>
         <ul>
-            <li><strong>Accessibility Service:</strong> Detects the foreground app and switches the media volume automatically. No data is collected, stored, or transmitted.</li>
-            <li><strong>Query installed apps:</strong> Used to display the list of installed apps so you can choose which ones to configure.</li>
+            <li><strong>Events it receives:</strong> The service subscribes to exactly one event type, window state change events (<code>TYPE_WINDOW_STATE_CHANGED</code>).</li>
+            <li><strong>What it reads:</strong> It reads the package name and window class name from each event, and the package name of the currently active window, to determine which app is in the foreground. The service configuration declares window content retrieval (<code>canRetrieveWindowContent</code>) and view ID reporting (<code>flagReportViewIds</code>), but the only value the app's code reads from the active window is its package name; it does not read text shown on the screen or anything you type.</li>
+            <li><strong>What it does:</strong> When an app you configured and turned on comes to the foreground, the service changes the device's media volume to your setting, and restores the previous volume when you leave that app. When it changes the volume, and when it restores the volume after you leave that app, it briefly shows a notice at the bottom of the screen. This notice is not an Android notification but a window the Accessibility Service draws over the screen (an accessibility overlay), and only the notice shown when the volume is changed has a pause button.</li>
+            <li><strong>What is sent:</strong> Each time the volume is applied, that app's package name and volume level are sent to Firebase Analytics as a <code>volume_applied</code> event. When the service connects, the number of apps whose volume setting is on is sent as a <code>service_connected</code> event. No <code>volume_applied</code> event is sent when you switch to an app you have not configured, have turned off, or have paused.</li>
+            <li><strong>On-device storage:</strong> The app's code does not separately store a history of foreground app switches on your device, and the only values the Accessibility Service itself writes to your device are pause states — when you choose to pause with the pause button on the notice, or when a global pause period ends. However, events sent to Firebase, such as <code>volume_applied</code>, are temporarily kept on your device by the Firebase SDK until they are sent.</li>
+            <li><strong>No actions on your behalf:</strong> The service does not tap, scroll, or type for you. It does not declare the gesture capability (<code>canPerformGestures</code>).</li>
+            <li><strong>Your control:</strong> The Accessibility Service works only after you turn it on yourself in Android Settings. Before taking you to the accessibility settings screen, the app shows a disclosure dialog and asks for your consent. You can turn the service off at any time in Android Settings.</li>
         </ul>
 
-        <h2>5. Third Parties</h2>
-        <p>Because AppVolume collects no personal information, nothing is shared with or disclosed to third parties.</p>
+        <h2>3. Permissions</h2>
+        <ul>
+            <li><strong>Accessibility Service (BIND_ACCESSIBILITY_SERVICE):</strong> Detects the foreground app and changes the media volume automatically (see section 2).</li>
+            <li><strong>Installed app queries:</strong> To show the list of apps you can configure, the app declares that it queries apps shown on your home screen (launcher). Libraries bundled with the app (such as the ad SDK) also declare some app query entries automatically. The app does not request the permission to query all apps (<code>QUERY_ALL_PACKAGES</code>).</li>
+            <li><strong>Internet (INTERNET) and network state (ACCESS_NETWORK_STATE):</strong> Used to load ads, to send Firebase Analytics and Crashlytics data, and to open this privacy policy page from the settings screen.</li>
+            <li><strong>Advertising ID (AD_ID) and ad services permissions (ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS):</strong> Declared by the Google AdMob SDK and Firebase Analytics for ad serving and measurement.</li>
+            <li><strong>WAKE_LOCK and install referrer access (BIND_GET_INSTALL_REFERRER_SERVICE):</strong> Declared by Firebase Analytics. The install referrer is Google Play information about how the app was installed.</li>
+            <li><strong>FOREGROUND_SERVICE and REORDER_TASKS:</strong> Declared automatically by Android libraries bundled with the app (WorkManager, AndroidX Test). The app's code does not use them directly.</li>
+        </ul>
 
-        <h2>6. Children's Privacy</h2>
-        <p>AppVolume does not collect personal information from anyone, including children.</p>
+        <h2>4. Third-Party Services</h2>
+        <p>AppVolume uses the following third-party services.</p>
+        <ul>
+            <li><strong>Google AdMob:</strong> Shows a banner ad at the bottom of the home screen, an interstitial ad when you leave the app with the back button on the home screen, and an app open ad when you open or return to the app (for example, when you come back from another app or from Android Settings). When the app process starts, the app initializes the AdMob SDK and requests app open and interstitial ads in advance. While the Accessibility Service is on, the app process runs in the background, so AdMob SDK initialization and advance ad requests may occur even if you have not opened the app's screens (for example, when the Accessibility Service connects after you restart your device). To serve and measure ads, AdMob may collect and use device identifiers such as the advertising ID, your IP address and the approximate location derived from it, and ad interaction and diagnostic data; this information is processed by Google. The app does not set any option in its ad requests to limit personalized ads, so personalized ads may be shown depending on your Google settings. See the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob's data disclosure</a>.</li>
+            <li><strong>Firebase Analytics (Google Analytics for Firebase):</strong> Collects the usage events listed in section 1. Separately, the Firebase Analytics SDK automatically collects information such as an app instance ID, device model, OS version, app version, language, and approximate region (such as country), along with events such as first open, session start, and engagement time. The app does not apply the setting that turns off advertising ID collection, so the advertising ID may also be collected. Events are processed in connection with the app instance ID (and the advertising ID, if collected), so they are not anonymous. See the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</li>
+            <li><strong>Firebase Crashlytics:</strong> In release builds, when the app crashes, it sends the error stack trace, diagnostic information such as device model, OS version, and app version, and an installation identifier, together with a commit hash identifying the build (<code>git_hash</code>). Because the app also uses Firebase Analytics, crash reports may include recent Analytics events logged before the crash (including the usage events in section 1). Firebase Sessions, included with Crashlytics, may also send app session information. See the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</li>
+            <li><strong>GitHub Pages:</strong> When you tap "Privacy Policy" in the settings screen, an in-app web view loads this page from feelpass.github.io. Standard web request information, such as your IP address, is sent to GitHub's servers.</li>
+            <li>You can reset or delete your advertising ID (or opt out of personalized ads) in Android Settings &gt; Google &gt; Ads. Menu names may differ by device and Android version.</li>
+        </ul>
 
-        <h2>7. Changes to This Policy</h2>
+        <h2>5. How Information Is Used</h2>
+        <ul>
+            <li><strong>Settings stored on your device:</strong> Used for automatic per-app volume switching, pausing, and applying your theme and language.</li>
+            <li><strong>Firebase Analytics events:</strong> Used to understand how features are used and which apps volume settings are used for, in order to improve the app.</li>
+            <li><strong>Crashlytics reports:</strong> Used to find the causes of errors and improve app stability.</li>
+            <li><strong>AdMob:</strong> Used to show ads so the app can be offered for free.</li>
+        </ul>
+
+        <h2>6. Data Retention and Deletion</h2>
+        <ul>
+            <li><strong>Deleting settings:</strong> Turning an app off in the app list keeps its setting on your device in the off state; deleting an app on the home screen removes that app's volume setting from your device.</li>
+            <li><strong>Uninstalling:</strong> Uninstalling the app deletes the volume settings and app settings stored on your device.</li>
+            <li><strong>Android Auto Backup:</strong> The app allows Android Auto Backup and does not set rules limiting what is backed up. So if Google backup is turned on for your device, your volume settings and app settings may be included in your Google Account backup and restored to a new device. You can manage backups from the Google backup menu in Android Settings.</li>
+            <li><strong>Information sent to Google:</strong> Information sent to AdMob, Firebase Analytics, and Firebase Crashlytics is retained by Google under each service's policies. Uninstalling the app does not delete information that has already been sent.</li>
+            <li><strong>Stopping transmission:</strong> The app has no in-app setting to turn off Firebase Analytics or Crashlytics. Turning off the Accessibility Service stops automatic volume switching, and <code>volume_applied</code> and <code>service_connected</code> events are no longer generated. Even with the Accessibility Service turned off, events from using the app's screens and ad requests still occur when you use the app. Also, while the Accessibility Service is on, ad requests may occur even when you have not opened the app's screens (see section 4).</li>
+            <li>For questions about information that has been sent, or to request its deletion, please contact us using the address below.</li>
+        </ul>
+
+        <h2>7. Children's Privacy</h2>
+        <p>AppVolume is not directed at children under 13 and does not knowingly collect personal information from children.</p>
+
+        <h2>8. Changes to This Policy</h2>
         <p>We may update this policy as needed. Any changes will be posted on this page.</p>
 
-        <h2>8. Contact</h2>
+        <h2>9. Contact</h2>
         <p>If you have any questions about this privacy policy, contact us at <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a>.</p>
 
-        <p class="date">Effective date: May 31, 2026</p>
+        <p class="date">Effective date: September 17, 2026</p>
     </div>
 </body>
 </html>
