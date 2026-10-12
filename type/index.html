@@ -3,244 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>type — Smart Text Replacement</title>
-    <meta name="description" content="Type less, do more. Expand shortcuts into full text, launch apps, and automate actions — all from your keyboard.">
-    <link rel="icon" type="image/png" href="images/icon-192.png">
-    <meta property="og:title" content="type — Smart Text Replacement">
-    <meta property="og:description" content="Type less, do more. Smart text replacement & action shortcuts for Android.">
-    <meta property="og:image" content="https://feelpass.github.io/type/images/icon-512.png">
+    <title>Type — Text shortcuts for Android</title>
+    <meta name="description" content="Type less, say more. Short keywords expand into full text across your apps, with the keyboard you already use.">
+    <link rel="icon" type="image/png" href="images/app-icon.png">
     <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:url" content="https://feelpass.github.io/type/">
+    <meta property="og:title" content="Type — Text shortcuts for Android">
+    <meta property="og:description" content="Type less, say more. Text shortcuts that work across your apps.">
+    <meta property="og:image" content="https://feelpass.github.io/type/images/og.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Type — Text shortcuts for Android">
+    <meta name="twitter:description" content="Type less, say more. Text shortcuts that work across your apps.">
+    <meta name="twitter:image" content="https://feelpass.github.io/type/images/og.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --ink: #101412;
+            --sub: rgba(16, 20, 18, .68);
+            --dim: rgba(16, 20, 18, .5);
+            --green: #15803D;
+            --cursor: #22C55E;
+            --night: #171717;
+            --line: rgba(16, 20, 18, .1);
+            --mono: ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.5;
             min-height: 100vh;
-            color: #333;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 0% 0%, rgba(34, 197, 94, .2) 0%, rgba(34, 197, 94, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 100% 100%, rgba(34, 197, 94, .13) 0%, rgba(34, 197, 94, 0) 70%),
+                linear-gradient(172deg, #fbfdfb 0%, #f1f5f2 55%, #e9efeb 100%);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; box-shadow: 0 0 0 1px var(--line); }
+        .lang { display: flex; gap: 2px; }
+        .lang[hidden] { display: none; }
+        .lang button {
+            font: inherit; font-size: 14px; font-weight: 500; color: var(--sub);
+            background: none; border: 0; padding: 8px 10px; border-radius: 8px; cursor: pointer;
+        }
+        .lang button:hover { color: var(--ink); }
+        .lang button[aria-pressed="true"] { color: var(--ink); font-weight: 700; }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 64px; padding-bottom: 88px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 80px); line-height: 1.1; letter-spacing: -.022em; }
+        .lead { margin-top: 22px; max-width: 26em; font-size: clamp(17px, 2.1vw, 21px); font-weight: 500; color: var(--sub); letter-spacing: -.005em; }
+        .nb { display: inline-block; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 34px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #2a2c2b; }
+        .play svg { flex: none; }
+
+        /* 데모: 알약 카드 + 메시지 입력줄 */
+        .demo { width: 100%; max-width: 420px; justify-self: center; }
+        .pill {
+            display: flex; align-items: center; gap: 12px; width: max-content; max-width: 100%;
+            margin: 0 14px 16px auto;
+            padding: 13px 22px; border-radius: 20px; background: #fff; font-size: clamp(19px, 5.6vw, 25px); white-space: nowrap;
+            box-shadow: 0 0 0 2px rgba(21, 128, 61, .5), 0 20px 44px rgba(20, 50, 32, .2);
+        }
+        .pill-key { color: var(--dim); }
+        .pill-key.mono { font-family: var(--mono); }
+        .pill-out { font-weight: 700; letter-spacing: -.01em; }
+        .pill svg { flex: none; width: 1em; height: 1em; }
+        .pill svg, .pill-out { transition: opacity .25s; }
+        .demo.is-waiting .pill svg, .demo.is-waiting .pill-out { opacity: .22; }
+
+        .chat {
+            padding: 14px 12px 12px; border-radius: 26px; background: #f7f9fe;
+            box-shadow: 0 0 0 2px var(--line), 0 30px 70px rgba(20, 50, 32, .2);
+        }
+        .bubble { width: fit-content; max-width: 86%; padding: 11px 16px; border-radius: 20px; background: #eceef6; font-size: 15px; line-height: 1.4; color: #1f2123; }
+        .stamp { margin: 6px 0 14px 8px; font-size: 11px; color: #5b5e66; }
+        .field { display: flex; align-items: center; gap: 10px; }
+        .field > svg { flex: none; }
+        .input {
+            flex: 1; min-width: 0; display: flex; align-items: center; height: 46px; padding: 0 16px;
+            border-radius: 23px; background: #eceef6; font-size: 15px; color: #1f2123; white-space: nowrap; overflow: hidden;
+        }
+        .typed { border-radius: 4px; }
+        .typed.is-new { animation: land .8s ease-out; }
+        .caret { flex: none; width: 2px; height: 20px; margin-left: 1px; background: var(--cursor); }
+        .demo.is-live .caret { animation: blink 1.06s steps(1) infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        @keyframes land { from { background: rgba(34, 197, 94, .34); box-shadow: 0 0 0 3px rgba(34, 197, 94, .34); } to { background: rgba(34, 197, 94, 0); box-shadow: 0 0 0 3px rgba(34, 197, 94, 0); } }
+
+        /* ── 기능 ─────────────────────────────── */
+        .rows { display: grid; gap: 88px; padding-bottom: 104px; }
+        .row { display: grid; gap: 36px; align-items: center; }
+        h2 { font-weight: 800; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.14; letter-spacing: -.02em; }
+        .row p { margin-top: 16px; max-width: 24em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #d3dad5, 0 0 0 1px #c3ccc6, 0 30px 70px rgba(20, 50, 32, .18);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #f1f4fb; }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(32px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy em { color: #4ADE80; }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--cursor); font-size: 16px; line-height: 1.55; color: rgba(255, 255, 255, .86); }
+        .privacy .note { margin-top: 26px; font-size: 14px; line-height: 1.55; color: rgba(255, 255, 255, .64); }
+        .privacy .more { display: inline-block; margin-top: 14px; font-weight: 600; color: #4ADE80; text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: #4ADE80; }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 420px; gap: 48px; padding-top: 96px; padding-bottom: 128px; }
+            .demo { justify-self: end; }
+            .rows { gap: 120px; padding-bottom: 136px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .app-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .app-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #000;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        /* Features Section */
-        .features {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: #333;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a2e;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        footer a {
-            color: #a0a0ff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .copyright {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .tagline { font-size: 1.2rem; }
-            .hero { padding: 60px 0; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="app-icon"><img src="images/icon-192.png" alt="type app icon"></div>
-                <div>
-                    <h1>type</h1>
-                    <p class="tagline">Type less, do more.<br>Smart text replacement &amp; action shortcuts for Android.</p>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.coco.typeaction" class="download-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                    </svg>
-                    Get it on Google Play
+    <header class="wrap top">
+        <div class="brand"><img src="images/app-icon.png" width="44" height="44" alt="">Type</div>
+        <div class="lang" role="group" aria-label="Language" hidden>
+            <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+            <button type="button" data-lang="ko" aria-pressed="false" lang="ko">한국어</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1 data-i18n="h1">Type less,<br><em>say more</em></h1>
+                <p class="lead" data-i18n="lead">Short keywords expand into full text across your apps. <span class="nb">Keep the keyboard you already use.</span></p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.typeaction">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span data-i18n="play">Get it on Google Play</span>
                 </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Text Shortcuts</h3>
-                    <p>Type a short trigger and instantly expand it into full sentences, email templates, or addresses.</p>
+            <div class="demo" aria-hidden="true">
+                <div class="pill">
+                    <span class="pill-key mono">ty</span>
+                    <svg viewBox="0 0 24 24"><path fill="#15803D" d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"/></svg>
+                    <span class="pill-out">thank you</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Action Shortcuts</h3>
-                    <p>Launch apps, make calls, open websites, or jump to system settings — all with a simple trigger.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔤</div>
-                    <h3>Variables</h3>
-                    <p>Use dynamic variables like date, time, clipboard content, and custom inputs in your shortcuts.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h3>Built-in Commands</h3>
-                    <p>Access useful built-in commands for quick actions without creating your own shortcuts.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Smart Search</h3>
-                    <p>Find any shortcut, app, or setting instantly with universal search and Korean initial consonant support.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Usage Stats</h3>
-                    <p>Track how much time you save with detailed usage statistics for each shortcut.</p>
+                <div class="chat">
+                    <div class="bubble" data-i18n="bubble">Hey! I just sent over the slides for tomorrow's meeting.</div>
+                    <div class="stamp" data-i18n="stamp">9:40 AM</div>
+                    <div class="field">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#44474e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+                        <div class="input"><span class="typed">thank you</span><span class="caret"></span></div>
+                        <svg width="26" height="26" viewBox="0 0 24 24"><path fill="none" stroke="#4a5fa8" stroke-width="1.8" stroke-linejoin="round" d="M4 4.5l16 7.5-16 7.5v-5.8l9-1.7-9-1.7z"/></svg>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="mailto:philleeran@gmail.com">Contact Us</a>
-            </div>
-            <p class="copyright">© 2025 type. All rights reserved.</p>
+        <section class="wrap rows">
+            <article class="row">
+                <div class="row-text">
+                    <h2 data-i18n="f1h">Smart text<br><em>with variables</em></h2>
+                    <p data-i18n="f1p">Insert today's date, the time, your clipboard and more.</p>
+                </div>
+                <div class="phone"><img data-shot="edit" data-alt-ko="단축어 수정 화면. 본문에 날짜·시간 변수가 들어 있어요." src="images/shot-edit-en.webp" width="720" height="1607" loading="lazy" alt="The shortcut editor, with date and time variables in the text."></div>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2 data-i18n="f2h">More than text:<br><em>actions</em></h2>
+                    <p data-i18n="f2p">Type // to open apps and run commands.</p>
+                </div>
+                <div class="phone"><img data-shot="command" data-alt-ko="메시지 앱에서 //를 입력하자 명령·설정·앱 추천이 뜬 화면." src="images/shot-command-en.webp" width="720" height="1607" loading="lazy" alt="A messaging app where typing // brings up command, setting and app suggestions."></div>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2 data-i18n="f3h">Everything,<br><em>one search away</em></h2>
+                    <p data-i18n="f3p">Find apps, settings and shortcuts from anywhere.</p>
+                </div>
+                <div class="phone"><img data-shot="palette" data-alt-ko="검색창에 입력하자 앱·설정·단축어가 한 목록에 나온 화면." src="images/shot-palette-en.webp" width="720" height="1607" loading="lazy" alt="A search panel listing apps, settings and shortcuts that match the query."></div>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2 data-i18n="f4h">All your shortcuts,<br><em>neatly organized</em></h2>
+                    <p data-i18n="f4p">Sort them into folders and subfolders. One switch turns off every shortcut inside a folder.</p>
+                </div>
+                <div class="phone"><img data-shot="list" data-alt-ko="폴더와 단축어가 정리된 Type 첫 화면." src="images/shot-list-en.webp" width="720" height="1607" loading="lazy" alt="The Type home screen, with folders and a list of shortcuts."></div>
+            </article>
+        </section>
+
+        <div class="wrap">
+            <section class="privacy">
+                <h2 data-i18n="ph">Stored on your device,<br><em>processed on your device</em></h2>
+                <div>
+                    <ul>
+                        <li data-i18n="p1">Your shortcuts, your settings and the text you type are stored and processed on your device. The developer has no server that receives them.</li>
+                        <li data-i18n="p2">The text you type is never sent to any server.</li>
+                        <li data-i18n="p3">The accessibility service is what runs your shortcuts: it detects what you type, swaps in the text or runs the action, and shows suggestions.</li>
+                        <li data-i18n="p4">Type sends a copy of your shortcuts off your device only if you export them to a file or turn on Google Drive backup yourself.</li>
+                    </ul>
+                    <p class="note" data-i18n="pnote">The privacy policy also covers what the ad, usage statistics and crash reporting services included in the app collect.</p>
+                    <a class="more" href="privacy.html" data-i18n="pmore">Read the privacy policy</a>
+                </div>
+            </section>
         </div>
+    </main>
+
+    <footer class="wrap foot">
+        <nav>
+            <a href="guide/en/index.html" data-href-ko="guide/ko/index.html" data-i18n="guide">User guide</a>
+            <a href="privacy.html" data-i18n="policy">Privacy policy</a>
+            <a href="mailto:philleeran@gmail.com" data-i18n="contact">Contact</a>
+        </nav>
+        <p>© 2026 Type</p>
     </footer>
+
+    <script>
+    (function () {
+        var KO = {
+            h1: '짧게 입력하고,<br><em>길게 완성하세요</em>',
+            lead: '키워드 하나가 여러 앱에서 긴 문장으로 바뀌어요. <span class="nb">키보드는 지금 쓰는 그대로예요.</span>',
+            play: 'Google Play에서 받기',
+            bubble: '내일 회의 자료 방금 보냈어요!',
+            stamp: '오전 9:40',
+            f1h: '변수로 만드는<br><em>똑똑한 문장</em>',
+            f1p: '오늘 날짜, 시간, 클립보드를 자동으로 넣어요.',
+            f2h: '텍스트를 넘어<br><em>액션까지</em>',
+            f2p: '//를 입력해 앱을 열고 명령을 실행하세요.',
+            f3h: '검색 한 번이면<br><em>무엇이든</em>',
+            f3p: '앱·설정·단축어를 어디서나 찾아 실행해요.',
+            f4h: '모든 단축어를<br><em>폴더로 깔끔하게</em>',
+            f4p: '폴더와 하위 폴더로 정리하세요. 스위치 하나로 폴더 안 단축어를 모두 끌 수 있어요.',
+            ph: '기기에 저장하고,<br><em>기기에서 처리해요</em>',
+            p1: '단축어와 설정, 입력한 글은 기기에 저장되고 기기에서 처리돼요. 개발자에게는 이를 받는 서버가 없어요.',
+            p2: '입력한 글은 어떤 서버로도 전송되지 않아요.',
+            p3: '접근성 서비스는 단축어를 실행하는 데 써요. 입력을 감지하고, 글자를 바꾸거나 액션을 실행하고, 추천 팝업을 띄워요.',
+            p4: 'Type이 단축어 사본을 기기 밖으로 보내는 건 직접 파일로 내보내거나 Google Drive 백업을 켰을 때뿐이에요.',
+            pnote: '앱에 들어 있는 광고·사용 통계·오류 보고 서비스가 무엇을 수집하는지도 개인정보처리방침에 적어 두었어요.',
+            pmore: '개인정보처리방침 보기',
+            guide: '사용 가이드',
+            policy: '개인정보처리방침',
+            contact: '문의'
+        };
+        var META = {
+            en: { title: document.title, group: 'Language' },
+            ko: { title: 'Type — Android 텍스트 단축어', group: '언어' }
+        };
+        var EXAMPLES = {
+            en: [['ty', 'thank you'], ['omw', 'On my way!'], ['brb', 'Be right back']],
+            ko: [['ㄱㅅ', '감사합니다!'], ['ㅇㅋ', '알겠습니다'], ['ㅎㅇ', '안녕하세요!']]
+        };
+
+        var root = document.documentElement;
+        var texts = [].slice.call(document.querySelectorAll('[data-i18n]'));
+        var EN = {};
+        texts.forEach(function (el) { EN[el.getAttribute('data-i18n')] = el.innerHTML; });
+        var shots = [].slice.call(document.querySelectorAll('img[data-shot]'));
+        shots.forEach(function (img) { img.setAttribute('data-alt-en', img.alt); });
+        var links = [].slice.call(document.querySelectorAll('[data-href-ko]'));
+        links.forEach(function (a) { a.setAttribute('data-href-en', a.getAttribute('href')); });
+        var group = document.querySelector('.lang');
+        var buttons = [].slice.call(group.querySelectorAll('button'));
+
+        var demo = document.querySelector('.demo');
+        var pillKey = demo.querySelector('.pill-key');
+        var pillOut = demo.querySelector('.pill-out');
+        var typed = demo.querySelector('.typed');
+        var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var run = 0;   // 언어를 바꾸면 값이 올라가 이전 순환이 멈춘다
+
+        function showPair(pair, lang) {
+            pillKey.textContent = pair[0];
+            pillOut.textContent = pair[1];
+            pillKey.classList.toggle('mono', lang === 'en');   // 모노스페이스 글꼴에는 한글이 없다
+        }
+
+        function playDemo(lang) {
+            var list = EXAMPLES[lang], id = ++run, i = 0;
+            typed.classList.remove('is-new');
+            if (still) {
+                demo.classList.remove('is-waiting', 'is-live');
+                showPair(list[0], lang);
+                typed.textContent = list[0][1];
+                return;
+            }
+            demo.classList.add('is-live');
+            function later(fn, ms) { setTimeout(function () { if (id === run) fn(); }, ms); }
+            function next() {
+                var pair = list[i++ % list.length], n = 0;
+                showPair(pair, lang);
+                demo.classList.add('is-waiting');
+                typed.classList.remove('is-new');
+                typed.textContent = '';
+                (function key() {
+                    if (n < pair[0].length) {
+                        typed.textContent = pair[0].slice(0, ++n);
+                        later(key, 170);
+                    } else {
+                        later(function () {
+                            typed.textContent = pair[1];
+                            void typed.offsetWidth;
+                            typed.classList.add('is-new');
+                            demo.classList.remove('is-waiting');
+                            later(next, 2400);
+                        }, 480);
+                    }
+                })();
+            }
+            next();
+        }
+
+        function setLang(lang) {
+            var dict = lang === 'ko' ? KO : EN;
+            root.lang = lang;
+            document.title = META[lang].title;
+            group.setAttribute('aria-label', META[lang].group);
+            texts.forEach(function (el) { el.innerHTML = dict[el.getAttribute('data-i18n')]; });
+            shots.forEach(function (img) {
+                img.src = 'images/shot-' + img.getAttribute('data-shot') + '-' + lang + '.webp';
+                img.alt = img.getAttribute('data-alt-' + lang);
+            });
+            links.forEach(function (a) { a.setAttribute('href', a.getAttribute('data-href-' + lang)); });
+            buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+            playDemo(lang);
+        }
+
+        var lang = null;
+        try { lang = localStorage.getItem('type-lang'); } catch (e) {}
+        if (lang !== 'en' && lang !== 'ko') lang = /^ko/i.test(navigator.language || '') ? 'ko' : 'en';
+
+        buttons.forEach(function (b) {
+            b.addEventListener('click', function () {
+                var to = b.getAttribute('data-lang');
+                try { localStorage.setItem('type-lang', to); } catch (e) {}
+                setLang(to);
+            });
+        });
+        group.hidden = false;
+        setLang(lang);
+    })();
+    </script>
 </body>
 </html>
