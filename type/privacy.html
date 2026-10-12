@@ -26,10 +26,12 @@
         ul { padding-left: 20px; }
         .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
         a { color: #2c5364; }
+        .lang { float: right; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="container">
+        <p class="lang"><a href="privacy_ko.html" lang="ko">한국어</a></p>
         <h1>Privacy Policy</h1>
         <p class="app-name">type</p>
 
@@ -44,11 +46,18 @@
         <h2>2. Accessibility Service</h2>
         <p>type uses the Android Accessibility Service API to provide its core functionality:</p>
         <ul>
-            <li>Detecting text input to trigger shortcut replacements</li>
+            <li>Detecting text input to trigger your shortcuts</li>
             <li>Performing text replacement in the active text field</li>
-            <li>Displaying suggestion popups for matching shortcuts</li>
+            <li>Displaying type's own windows on top of other apps: the suggestion popup, the command palette, the optional floating button, and short notices</li>
+            <li>Running action shortcuts, including system actions such as Home, Back, lock screen, and screenshot</li>
+            <li>Knowing which app is in front and whether a keyboard is showing, so that shortcuts limited to certain apps work only there, the command palette closes when you leave, and the optional per-app keyboard auto switch can change the keyboard</li>
+            <li>Receiving hardware key presses to move through, confirm, or close the suggestion popup and to open the command palette with its keyboard shortcut</li>
+            <li>Reading the text you select or copy, so that the clipboard variable can insert it. This text is kept in memory only and is not saved</li>
+            <li>Switching to the Type keyboard while you try it in the app, and switching back when you leave</li>
+            <li>Opening type's own screens, such as returning to the app right after you turn the service on</li>
         </ul>
-        <p>The Accessibility Service is used solely for the app's text replacement functionality. No data from other apps is collected, stored, or transmitted.</p>
+        <p>The Accessibility Service is used only to provide type's features, including those listed above. What it reads is processed on your device, and type does not send it to any server.</p>
+        <p>Separately, if you turn on the optional Usage access permission (Type Keyboard settings), per-app keyboard auto switch also reads which app most recently came to the front, on screens the Accessibility Service cannot see. The same permission also lets the play/pause action find the music app you used last. This is processed on your device and is not sent anywhere.</p>
 
         <h2>3. Use of Information</h2>
         <p>Usage statistics and crash reports are used only to understand how features are used and to fix problems. Advertising data is used by Google AdMob to show ads in the free version.</p>
@@ -89,7 +98,7 @@
         <h2>10. Contact Us</h2>
         <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
 
-        <p class="date">Effective date: October 10, 2026</p>
+        <p class="date">Effective date: October 13, 2026</p>
     </div>
 </body>
 </html>

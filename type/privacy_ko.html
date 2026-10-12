@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - type</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #2c5364; }
+        .app-name { color: #666; margin-bottom: 30px; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #2c5364; }
+        .lang { float: right; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="lang"><a href="privacy.html" lang="en">English</a></p>
+        <h1>개인정보처리방침</h1>
+        <p class="app-name">type</p>
+
+        <h2>1. 수집하는 정보</h2>
+        <p>단축어, 설정, 입력한 글은 기기에 저장되고 기기에서 처리됩니다. type은 이를 수집하지 않으며, 개발자에게는 이를 받는 서버가 없습니다. 앱에 포함된 제3자 서비스가 수집하는 제한된 기술 정보는 7절에 적었습니다.</p>
+        <ul>
+            <li><strong>단축어 데이터:</strong> 기기 내부 저장소에 저장됩니다. 사본이 기기 밖으로 나가는 것은 직접 파일로 내보내거나 Google Drive 백업을 켰을 때뿐입니다(6절).</li>
+            <li><strong>앱 설정:</strong> 기기 내부 저장소에 저장됩니다.</li>
+            <li><strong>입력한 글은 어떤 서버로도 전송되지 않습니다.</strong></li>
+        </ul>
+
+        <h2>2. 접근성 서비스</h2>
+        <p>type은 핵심 기능을 제공하기 위해 Android 접근성 서비스 API를 사용합니다.</p>
+        <ul>
+            <li>글자 입력을 감지해 단축어를 실행합니다.</li>
+            <li>입력 중인 칸의 글자를 바꿉니다.</li>
+            <li>다른 앱 위에 type의 창을 띄웁니다. 추천 팝업, 커맨드 팔레트, 선택 기능인 플로팅 버튼, 짧은 안내가 여기에 해당합니다.</li>
+            <li>액션 단축어를 실행합니다. 홈, 뒤로, 화면 잠금, 스크린샷 같은 시스템 액션이 포함됩니다.</li>
+            <li>지금 앞에 있는 앱이 무엇인지, 키보드가 떠 있는지 확인합니다. 특정 앱에서만 쓰도록 정한 단축어를 그 앱에서만 동작시키고, 앱을 벗어나면 커맨드 팔레트를 닫고, 선택 기능인 키보드 앱별 자동 전환이 키보드를 바꾸는 데 씁니다.</li>
+            <li>하드웨어 키 입력을 받아 추천 팝업 안에서 이동·선택하거나 팝업을 닫고, 단축키로 커맨드 팔레트를 엽니다.</li>
+            <li>선택하거나 복사한 글을 읽어 클립보드 변수가 넣을 수 있게 합니다. 이 글은 메모리에만 두고 저장하지 않습니다.</li>
+            <li>앱 안에서 Type 키보드를 써 보는 동안 Type 키보드로 바꾸고, 벗어나면 원래 키보드로 되돌립니다.</li>
+            <li>type의 화면을 엽니다. 서비스를 켠 직후 앱으로 돌아오는 것이 그 예입니다.</li>
+        </ul>
+        <p>접근성 서비스는 위에 적은 것을 포함해 type의 기능을 제공하는 데만 사용합니다. 서비스가 읽은 내용은 기기에서 처리하며, type은 이를 어떤 서버로도 보내지 않습니다.</p>
+        <p>이와 별개로, 선택 권한인 사용 정보 접근(Type 키보드 설정)을 직접 켜면 키보드 앱별 자동 전환이 접근성 서비스가 볼 수 없는 화면에서 가장 최근에 앞으로 온 앱이 무엇인지를 추가로 읽습니다. 같은 권한으로 재생/일시정지 액션이 마지막으로 쓴 음악 앱을 찾기도 합니다. 이 정보는 기기에서 처리하며 어디로도 보내지 않습니다.</p>
+
+        <h2>3. 정보의 이용</h2>
+        <p>사용 통계와 오류 보고는 기능이 어떻게 쓰이는지 파악하고 문제를 고치는 데만 사용합니다. 광고 데이터는 Google AdMob이 무료 버전에 광고를 표시하는 데 사용합니다.</p>
+
+        <h2>4. 보관과 삭제</h2>
+        <p>기기에 저장된 데이터는 앱을 삭제하면 함께 삭제됩니다. 백업을 위해 단축어를 파일로 내보내고 가져올 수도 있으며, 내보낸 파일은 저장한 위치에 그대로 남습니다.</p>
+        <p>Google Drive 백업을 켰다면 앱을 삭제한 뒤에도 백업이 Google Drive에 남습니다. 앱을 삭제하기 전에 앱에서(설정 &gt; 백업 및 복원 &gt; 드라이브의 백업 삭제) 지우거나, Google Drive의 설정 &gt; 앱 관리에서 지우세요.</p>
+        <p>Google 계정에서 Android 자체 기기 백업을 켜 두었다면, Android가 type의 앱 데이터를 그 기기 백업에 포함할 수 있습니다. 그 백업은 type이 아니라 Android와 Google이 만들고 관리합니다.</p>
+
+        <h2>5. 제3자 제공</h2>
+        <p>type은 단축어나 입력한 글을 누구와도 공유하지 않습니다. 7절의 제3자 서비스는 각자 수집하는 기술 정보를 받습니다.</p>
+
+        <h2>6. Google Drive 백업 (선택)</h2>
+        <p>Google Drive 백업은 직접 켜기 전까지 꺼져 있습니다. 프리미엄 기능입니다.</p>
+        <ul>
+            <li><strong>저장되는 것:</strong> 단축어(대치 텍스트, 이미지, 액션 단축어에 쓰는 전화번호나 링크처럼 단축어에 넣은 모든 내용 포함)와 폴더입니다. 앱 설정은 포함되지 않습니다.</li>
+            <li><strong>저장되는 곳:</strong> 사용자 본인의 Google Drive 안에 있는, 숨겨진 앱 전용 폴더입니다. 개발자에게는 서버가 없으며 이 백업을 보거나 접근할 수 없습니다.</li>
+            <li><strong>Google 계정 접근:</strong> type은 Google Drive 안의 자기 데이터를 관리하는 권한만 요청합니다. Drive의 다른 파일은 볼 수 없고, 이름·이메일 주소·프로필을 수집하거나 저장하지 않습니다.</li>
+            <li><strong>전송되는 때:</strong> ‘지금 백업’을 누를 때, 그리고 ‘자동 백업’을 켰다면 하루에 한 번입니다.</li>
+            <li><strong>중지와 삭제:</strong> 설정 &gt; 백업 및 복원에서 자동 백업을 끄거나, 드라이브의 백업을 삭제하거나, Google Drive 연결을 해제할 수 있습니다. Google 계정 설정에서 type의 접근 권한을 직접 삭제할 수도 있습니다.</li>
+        </ul>
+        <p>백업은 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>에 따라 Google이 보관합니다. type이 Google API에서 받은 정보를 사용하는 방식은 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>을 준수합니다.</p>
+
+        <h2>7. 제3자 서비스</h2>
+        <p>type은 다음 제3자 서비스를 사용할 수 있습니다.</p>
+        <ul>
+            <li><strong>Google AdMob:</strong> 광고 표시에 사용합니다. 광고는 무료 버전에만 표시됩니다. AdMob은 광고 게재와 개인 맞춤 광고를 위해 기기 정보와 광고 ID를 수집할 수 있습니다. <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>을 참고하세요.</li>
+            <li><strong>Google Play 결제:</strong> 인앱 구매 처리에 사용합니다. 구매 데이터는 Google Play가 처리합니다.</li>
+            <li><strong>Firebase (Analytics, Crashlytics, Remote Config):</strong> 사용 통계, 오류 보고, 원격 앱 설정에 사용합니다. Firebase는 앱 인스턴스 식별자, 기기와 OS 정보, 어떤 종류의 기능을 썼는지 같은 이벤트를 수집합니다. 입력한 글과 단축어의 내용은 포함되지 않습니다. <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>을 참고하세요.</li>
+        </ul>
+
+        <h2>8. 아동의 개인정보</h2>
+        <p>type은 만 13세 미만 아동의 개인정보를 알면서 수집하지 않습니다. 아동이 개인정보를 제공했다고 생각되면 문의해 주세요.</p>
+
+        <h2>9. 방침의 변경</h2>
+        <p>이 개인정보처리방침은 필요에 따라 바뀔 수 있습니다. 바뀐 내용은 시행일을 갱신해 이 페이지에 게시합니다.</p>
+
+        <h2>10. 문의</h2>
+        <p>이 개인정보처리방침에 관해 궁금한 점은 <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a>으로 문의해 주세요.</p>
+
+        <p class="date">시행일: 2026년 10월 13일</p>
+    </div>
+</body>
+</html>
