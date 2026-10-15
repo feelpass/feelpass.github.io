@@ -1,0 +1,46 @@
+# plantcode
+
+> plantcode is the Google Play developer behind a set of Android apps: Type (text expander), Type History (typing history), Shade (privacy screen filter), Cloak (app lock), One Swipe (edge gestures), Shortcut Pro (home screen shortcuts) and PromptPal (AI prompt manager). Contact: philleeran@gmail.com
+
+## Type
+
+> Type is a text expander for Android: short keywords expand into full text, open apps or run system actions, with the keyboard you already use. Free for up to 20 shortcuts; a one-time lifetime upgrade removes the limit and ads.
+
+- Platform: Android 10 and later. No iPhone, iPad or PC version. Developer: plantcode.
+- Works with your current keyboard through Android's accessibility service; keywords expand on the last character, no space needed.
+- Features: variables ({date}, {time}, {clipboard}, {fill:name}), action shortcuts (open apps, split screen, call a contact, websites, Tasker), built-in // commands, a command palette (Ctrl+Space on a physical keyboard), a calculator with unit conversion, folders, and image shortcuts.
+- Pricing: free for 20 shortcuts and 1 folder, with ads. Premium is a one-time lifetime purchase (US$29.99 / ₩44,000; prices vary by region) that removes the limits and ads and adds excluded apps and shortcut packs.
+- Privacy: shortcuts and settings are stored on the device, and typed text is never sent to any server. The free version includes AdMob ads; Firebase handles usage stats and crash reports. No account needed.
+- Limits: in web text fields (such as in-app browsers) the result is copied to the clipboard instead of replaced. Backup is a .json export/import file; there's no cloud sync.
+- App languages: English, Korean, Japanese, Simplified Chinese, Traditional Chinese.
+
+- [About Type](https://feelpass.github.io/type/)
+- [About Type (Korean)](https://feelpass.github.io/type/ko/)
+- [Google Play](https://play.google.com/store/apps/details?id=com.coco.typeaction)
+- [User guide](https://feelpass.github.io/type/guide/en/)
+- [Privacy policy](https://feelpass.github.io/type/privacy.html)
+
+## Type History
+
+> Android app that automatically keeps what you type in other apps (and, optionally, what you copy) on your device, so you can recover text lost to a crash or a failed send.
+
+- Platform: Android 10 and later only. No iOS app.
+- Price: free with ads. Premium is a one-time lifetime purchase (US$19.99; US$9.99 for the first 7 days after first launch), not a subscription.
+- Free: typing history, clipboard history, search and editing; records kept up to 7 days; latest 10 records viewable per app. Premium: no ads, all records, retention up to 1 year, Keep forever, export & import.
+- Storage: typing and clipboard history stay in a local database on the device; not uploaded or synced. No account. The network is used only for ads, Google Play purchase checks, anonymous usage statistics and crash reports, and opening the privacy policy.
+- Permission: uses Android's accessibility service to read text typed into other apps; hidden password fields are skipped. Works with the keyboard you already use.
+- Clipboard history is optional and off by default; it saves a copy only when it notices a Copy button or a "Copied" message, so some copies are missed.
+- Keeps only what the user types and copies on their own device; it does not collect other people's messages or recover messages deleted by others.
+
+- [About Type History](https://feelpass.github.io/typehistory/)
+- [About Type History (Korean)](https://feelpass.github.io/typehistory/ko/)
+- [Google Play](https://play.google.com/store/apps/details?id=com.coco.typehistory)
+- [Privacy policy](https://feelpass.github.io/typehistory/privacy_en.html)
+
+## Other apps
+
+- [Shade](https://feelpass.github.io/shade/): privacy screen filter for Android with 6 privacy modes and a one-tap toggle. [Google Play](https://play.google.com/store/apps/details?id=com.coco.shade)
+- [Cloak](https://play.google.com/store/apps/details?id=com.feelpass.applocker): Android app lock with fingerprint unlock, a disguise mode and intruder photos.
+- [One Swipe](https://play.google.com/store/apps/details?id=com.oneswipe): Android edge gestures; swipe from the edge of the screen, drag and release to launch.
+- [Shortcut Pro](https://play.google.com/store/apps/details?id=com.oneswipe.shortcut): creates Android home screen shortcuts for apps and contacts.
+- [PromptPal](https://feelpass.github.io/promptpal/index_en.html): Android AI prompt manager; save, organize and share prompts, and reuse them with variables. [Google Play](https://play.google.com/store/apps/details?id=com.yp.promptpal)

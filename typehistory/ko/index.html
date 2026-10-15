@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type History — 입력 기록·텍스트 복구 Android 앱</title>
+    <meta name="description" content="다른 앱에 입력한 글을 기기 안에 자동으로 남겨, 앱 튕김·전송 실패로 날아간 글을 되찾는 Android 앱. 무료(광고 포함).">
+    <link rel="canonical" href="https://feelpass.github.io/typehistory/ko/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/typehistory/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/typehistory/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/typehistory/">
+    <link rel="icon" type="image/svg+xml" href="../images/app-icon.svg">
+    <link rel="icon" type="image/png" href="../images/app-icon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Type History">
+    <meta property="og:url" content="https://feelpass.github.io/typehistory/ko/">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Type History — 앱은 튕겨도, 쓴 글은 남습니다">
+    <meta property="og:description" content="입력한 글과, 켜 두면 복사한 글까지 이 기기 안에 자동으로 남겨 두는 Android 앱입니다. 기록은 서버로 보내지 않습니다.">
+    <meta property="og:image" content="https://feelpass.github.io/typehistory/images/og-ko.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Type History — 앱은 튕겨도, 쓴 글은 남습니다">
+    <meta name="twitter:description" content="입력한 글과, 켜 두면 복사한 글까지 이 기기 안에 자동으로 남겨 두는 Android 앱입니다. 기록은 서버로 보내지 않습니다.">
+    <meta name="twitter:image" content="https://feelpass.github.io/typehistory/images/og-ko.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Type History",
+  "url": "https://feelpass.github.io/typehistory/ko/",
+  "description": "다른 앱에 입력한 글을 기기 안에 자동으로 남겨, 앱 튕김·전송 실패로 날아간 글을 되찾는 Android 앱. 무료(광고 포함).",
+  "operatingSystem": "Android 10 이상",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "ko",
+  "image": "https://feelpass.github.io/typehistory/images/og-ko.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.typehistory&hl=ko",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.typehistory&hl=ko",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW",
+    "description": "무료(광고 포함)로 쓸 수 있고, 광고 제거와 최대 1년 보관은 구독이 아닌 한 번 구매하는 평생 이용권(₩27,000)으로 엽니다."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "plantcode",
+    "url": "https://feelpass.github.io/",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "앱이 튕겨서 날아간 글, 되살릴 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, Type History를 켜 둔 뒤에 입력한 글이라면 되살릴 수 있습니다. Type History를 열어 '입력 기록' 탭에서 그 앱을 누르거나 검색해 찾은 뒤, 복사해서 다시 붙여넣으면 됩니다. 고쳐 쓴 글은 버전 히스토리에서 이전 문장을 고를 수도 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "앱을 깔기 전에 쓴 글도 찾을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, 찾을 수 없습니다. Type History는 접근성 서비스가 켜진 동안 입력한 글만 기록하므로, 그전에 쓴 글은 남아 있지 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "무료로 어디까지 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "입력 기록, 클립보드 기록, 검색, 편집은 모두 무료입니다. 무료 버전은 보관 기간을 최대 7일까지 고를 수 있고, 앱마다 최근 10개를 열어 볼 수 있으며, 클립보드 기록은 복사한 뒤 7일까지 보관합니다. 광고가 나옵니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "프리미엄은 얼마이고, 구독인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "구독이 아니라 한 번 사는 평생 이용권이고, 한국 가격은 ₩27,000입니다. 첫 실행 후 7일 동안은 웰컴 할인가 ₩14,000으로 살 수 있습니다. 광고 제거, 열람 제한 해제, 최대 1년 보관, 영구 보관, 파일 내보내기·가져오기가 풀립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "입력한 글이 서버로 올라가나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, 입력 기록은 이 기기의 데이터베이스에만 저장되고 전송·동기화되지 않습니다. 네트워크는 광고 표시, Google Play 구매 확인, 익명 사용 통계·오류 리포트, 개인정보처리방침 페이지 열기에만 쓰며, 기록은 그 통신에 들어가지 않습니다. 계정과 로그인도 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "인터넷이 없어도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 기록과 복구는 인터넷 없이도 됩니다. 다만 광고, 사용 통계, 구매 확인에는 인터넷을 씁니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "접근성 권한은 왜 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "쓰던 키보드를 바꾸지 않고 여러 앱의 입력을 기록하려면, Android 접근성 서비스로 입력란의 글을 읽어야 하기 때문입니다. 켜기 전에 무엇을 읽는지 안내하고 동의를 받으며, Android 설정에서 언제든 끌 수 있습니다. 연락처·사진·위치·마이크·카메라 권한은 요청하지 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "비밀번호도 기록되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가려진 비밀번호 입력란은 읽지 않고 건너뜁니다. 화면에 보이게 입력한 비밀번호나 메모 앱에서 복사한 비밀번호는 기록될 수 있으니, 그런 앱은 '제외할 앱'으로 지정해 두세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "메신저에서 상대가 지운 메시지도 볼 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. Type History는 내가 이 기기에서 입력한 글과, 켜 두면 내가 복사한 글만 남깁니다. 다른 사람이 보낸 메시지를 모으거나, 삭제된 메시지를 복구하지 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "복사한 글이 전부 기록되지 않아요.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "클립보드 기록은 복사 버튼을 누르거나 '복사됨' 안내가 뜬 것을 감지했을 때만 남기므로, 일부 복사는 빠집니다. Android 10부터는 앱이 백그라운드에서 클립보드를 마음대로 읽을 수 없기 때문입니다. 기록할 때 ‘Type History이(가) 클립보드에서 붙여넣음’ 같은 시스템 안내가 보일 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "휴대폰을 바꾸면 기록을 옮길 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "클라우드 백업과 동기화는 없어서, 프리미엄의 내보내기로만 옮길 수 있습니다. 기록을 파일(JSON)로 저장해 새 휴대폰에서 가져오면 됩니다. 이 파일은 암호화되지 않으니 안전한 곳에 보관하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "iPhone에서도 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, Type History는 Android 10 이상에서만 쓸 수 있습니다. iOS 앱은 없습니다."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --ink: #101412;
+            --sub: rgba(16, 20, 18, .7);
+            --dim: rgba(16, 20, 18, .52);
+            --green: #0E9444;
+            --accent: #30D158;
+            --mint: #4ADE80;
+            --night: #1b1c1d;
+            --line: rgba(16, 20, 18, .1);
+            --card: #ffffff;
+            --tint: #E4F2E7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
+            min-height: 100vh;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 100% 0%, rgba(48, 209, 88, .2) 0%, rgba(48, 209, 88, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 0% 38%, rgba(48, 209, 88, .1) 0%, rgba(48, 209, 88, 0) 70%),
+                linear-gradient(176deg, #fbfdf7 0%, #f0f5f0 50%, var(--tint) 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 16px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+        .lang { font-size: 14px; font-weight: 600; color: var(--sub); text-decoration: none; padding: 8px 12px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+        .lang:hover { color: var(--ink); background: rgba(255, 255, 255, .6); }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 96px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 76px); line-height: 1.1; letter-spacing: -.022em; }
+        .def { margin-top: 26px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .def + .def { margin-top: 12px; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #2c2e2f; }
+        .play svg { flex: none; color: var(--mint); }
+        .meta { margin-top: 14px; font-size: 14px; color: var(--sub); }
+
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #d3dad5, 0 0 0 1px #c3ccc6, 0 30px 70px rgba(18, 70, 35, .2);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #fbfdf7; }
+        .hero .phone { box-shadow: inset 0 0 0 2px #d3dad5, 0 0 0 3px rgba(48, 209, 88, .45), 0 30px 80px rgba(18, 70, 35, .26); }
+
+        /* ── 공통 섹션 ────────────────────────── */
+        .block { padding-bottom: 104px; }
+        h2 { font-weight: 800; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.16; letter-spacing: -.02em; }
+        h3 { font-weight: 700; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.3; letter-spacing: -.012em; }
+        .intro { margin-top: 16px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+
+        /* ── 기능 ─────────────────────────────── */
+        .cards { display: grid; gap: 16px; margin-top: 40px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(18, 70, 35, .08); }
+        .card h3 { display: flex; align-items: center; gap: 10px; }
+        .card h3::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+        .card p { margin-top: 10px; font-size: 16px; color: var(--sub); }
+
+        .rows { display: grid; gap: 80px; margin-top: 80px; }
+        .row { display: grid; gap: 32px; align-items: center; }
+        .row p { margin-top: 12px; max-width: 26em; font-size: clamp(16px, 1.8vw, 18px); font-weight: 500; color: var(--sub); }
+        .row h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -.018em; }
+
+        /* ── 표 ───────────────────────────────── */
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(18, 70, 35, .22), rgba(18, 70, 35, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(18, 70, 35, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #f3f7f3; border-bottom-color: rgba(16, 20, 18, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 34%; }
+        .cmp { min-width: 760px; }
+        .cmp thead td { width: 22%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(48, 209, 88, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #e3f5e7; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        /* ── 맞는 분 / 안 맞는 분 ─────────────── */
+        .fit { display: grid; gap: 16px; }
+        .fit .card h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: rgba(16, 20, 18, .42); }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(14, 148, 68, .34), 0 14px 34px rgba(18, 70, 35, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(48, 209, 88, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(28px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .86); }
+        .privacy a { font-weight: 600; color: var(--mint); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--mint); }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; font-weight: 600; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; padding-top: 88px; padding-bottom: 128px; }
+            .hero .phone { justify-self: end; }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .rows { gap: 112px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .fit { grid-template-columns: 1fr 1fr; }
+            .block { padding-bottom: 128px; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+        }
+
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="wrap top">
+        <a class="brand" href="./"><img src="../images/app-icon.svg" width="44" height="44" alt="">Type History</a>
+        <a class="lang" href="../" hreflang="en" lang="en">EN</a>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>앱은 튕겨도,<br><em>쓴 글은 남습니다</em></h1>
+                <p class="def">Type History는 다른 앱에 입력한 글과, 켜 두면 복사한 글까지 기기 안에 자동으로 남겨 두어, 앱이 튕기거나 전송이 실패해 날아간 글을 다시 찾아 복사할 수 있게 해 주는 Android 앱입니다.</p>
+                <p class="def">무료(광고 포함)로 쓸 수 있고, 광고 제거와 최대 1년 보관은 구독이 아닌 한 번 구매하는 평생 이용권(₩27,000)으로 엽니다.</p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.typehistory&hl=ko">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Google Play에서 받기</span>
+                </a>
+                <p class="meta">Android 10 이상 · 무료(광고 포함) · 계정 없음</p>
+            </div>
+            <div class="phone"><img src="../images/shot-home-ko.webp" width="720" height="1607" alt="Type History의 입력 기록 탭. 메시지·Gmail·Chrome·Maps·캘린더 앱별로 기록이 묶여 있습니다."></div>
+        </section>
+
+        <section class="wrap block" id="features">
+            <h2>핵심 기능</h2>
+            <p class="intro">다른 앱에 입력한 글을 이 기기 안에 자동으로 남겨 둡니다. 날아간 메시지·메일·댓글을 찾아 그대로 복사하세요.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>입력하는 동안 자동 저장</h3>
+                    <p>&quot;저장&quot; 버튼은 없습니다. 다른 앱에 글을 쓰는 동안 이 기기에 계속 기록하고, 키보드는 쓰던 것을 그대로 씁니다.</p>
+                </div>
+                <div class="card">
+                    <h3>기록은 이 기기 안에만</h3>
+                    <p>기록은 기기 안 데이터베이스에만 저장되고 서버로 보내거나 동기화하지 않습니다. 보관 기간이 지난 기록은 자동으로 지워집니다(기본 7일).</p>
+                </div>
+            </div>
+            <div class="rows">
+            <article class="row">
+                <div class="row-text">
+                    <h3>앱별로 찾아서 그대로 복사</h3>
+                    <p>&#x27;입력 기록&#x27; 탭에서 앱마다 묶어 보고, 단어·날짜·앱으로 검색합니다. 찾은 글은 고친 뒤 복사하거나 공유할 수 있습니다.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-search-ko.webp" width="720" height="1607" loading="lazy" alt="‘견적’ 검색 결과. 최근 7일과 Gmail로 걸러져 있습니다."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>고쳐 쓰기 전 문장으로</h3>
+                    <p>같은 글을 고쳐 쓴 이력을 덮어쓰지 않고 남깁니다. 버전 히스토리에서 이전 문장을 골라 복사합니다.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-versions-ko.webp" width="720" height="1607" loading="lazy" alt="한 메시지의 버전 기록 화면. 맨 위가 최신 버전이고 아래로 이전 문장이 이어집니다."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>복사한 글도 따로 (선택)</h3>
+                    <p>설정에서 클립보드 기록을 켜면 다른 앱에서 복사한 글을 &#x27;클립보드 기록&#x27; 탭에 모읍니다. 기본은 꺼져 있고, 복사한 이미지까지 남기도록 켤 수도 있습니다.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-clipboard-ko.webp" width="720" height="1607" loading="lazy" alt="클립보드 기록 탭. 복사한 글이 복사한 앱별로 묶여 있습니다."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>잠그고, 빼고, 멈추고</h3>
+                    <p>PIN과 지문·얼굴 인증으로 앱을 잠급니다. 기록하지 않을 앱을 고를 수 있고, 설정의 &#x27;사용 중&#x27; 스위치를 끄면 접근성 서비스가 꺼져 기록이 멈춥니다.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-settings-ko.webp" width="720" height="1607" loading="lazy" alt="설정 탭. 사용 중 스위치, 제외할 앱, 클립보드 기록, 보관 기간 항목이 보입니다."></div>
+            </article>
+            </div>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>무료와 프리미엄</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">무료</th><th scope="col" class="pro">프리미엄 (평생 이용권)</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">입력 기록·클립보드 기록·검색·편집</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">보관 기간</th><td>1일·3일·7일 중 선택</td><td class="pro">1일~1년 중 선택 (30일·90일·180일·1년 추가)</td></tr>
+                            <tr><th scope="row">앱마다 열어 볼 수 있는 기록</th><td>최근 10개 (넘는 기록은 지우지 않고 잠가 둠)</td><td class="pro">전부</td></tr>
+                            <tr><th scope="row">클립보드 기록 보관</th><td>복사한 뒤 7일</td><td class="pro">고른 보관 기간을 따름</td></tr>
+                            <tr><th scope="row">영구 보관(자동 삭제 제외)</th><td>—</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">파일로 내보내기·가져오기</th><td>—</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">광고</th><td>있음</td><td class="pro">없음</td></tr>
+                            <tr><th scope="row">가격</th><td>무료</td><td class="pro">₩27,000 한 번 (첫 실행 후 7일 동안 ₩14,000)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">구독이 아닙니다. 한 번 사면 계속 쓰고, 앱 안에서 구매를 복원할 수 있습니다. 가격은 한국 기준이며 Google Play가 나라별 통화로 보여 줍니다.</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>이런 분께 맞습니다</h2>
+                <ul>
+                        <li>긴 메시지·메일·댓글을 쓰다가 앱이 튕기거나 전송이 실패해 글을 날려 본 분</li>
+                        <li>키보드를 바꾸지 않고 여러 앱에서 쓴 글을 남겨 두고 싶은 분</li>
+                        <li>계정 없이, 기록이 휴대폰 밖으로 나가지 않는 방식을 원하는 분</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>이런 분께는 맞지 않습니다</h2>
+                <ul>
+                        <li>iPhone이나 PC를 쓰거나, 여러 기기에서 기록을 동기화해야 하는 분 — Type History는 Android 전용이고 동기화·클라우드 백업이 없습니다.</li>
+                        <li>접근성 서비스 권한을 주고 싶지 않은 분 — 이 권한 없이는 입력을 기록할 수 없습니다.</li>
+                        <li>다른 사람이 보낸 메시지나 상대가 지운 메시지를 보고 싶은 분 — 내가 이 기기에서 입력하고 복사한 글만 남깁니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="compare">
+            <h2>비교</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">Type History</th><th scope="col">키보드에 든 클립보드·실행 취소</th><th scope="col">클립보드 관리 앱</th><th scope="col">메모 앱에 먼저 쓰기</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">다른 앱에 입력한 글이 저절로 남나요</th><td class="us">남습니다 (접근성 서비스가 켜진 동안)</td><td>보통 복사한 것만 남습니다</td><td>복사한 것만 남습니다</td><td>직접 옮겨 쓴 것만 남습니다</td></tr>
+                            <tr><th scope="row">쓰던 키보드를 그대로 쓰나요</th><td class="us">그대로 씁니다</td><td>그 키보드를 써야 합니다</td><td>보통 그대로 씁니다</td><td>그대로 씁니다</td></tr>
+                            <tr><th scope="row">복사한 글을 빠짐없이 모으나요</th><td class="us">선택 기능이고, 일부 복사는 빠집니다</td><td>그 키보드를 쓰는 동안 모읍니다</td><td>주된 기능입니다</td><td>해당 없음</td></tr>
+                            <tr><th scope="row">고쳐 쓰기 전 문장을 되찾나요</th><td class="us">버전 히스토리로 되찾습니다</td><td>보통 안 됩니다</td><td>보통 안 됩니다</td><td>직접 남긴 것만</td></tr>
+                            <tr><th scope="row">따로 주는 권한</th><td class="us">접근성 서비스가 필요합니다</td><td>키보드로 설정만 하면 됩니다</td><td>앱마다 다릅니다</td><td>필요 없습니다</td></tr>
+                            <tr><th scope="row">다른 기기와 동기화</th><td class="us">안 됩니다 (기기에만 저장)</td><td>키보드마다 다릅니다</td><td>앱마다 다릅니다</td><td>앱마다 다릅니다</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">범주 칸은 일반적인 특징이며 앱마다 다를 수 있습니다.</p>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>자주 묻는 질문</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>앱이 튕겨서 날아간 글, 되살릴 수 있나요?</h3></summary>
+                    <p>네, Type History를 켜 둔 뒤에 입력한 글이라면 되살릴 수 있습니다. Type History를 열어 &#x27;입력 기록&#x27; 탭에서 그 앱을 누르거나 검색해 찾은 뒤, 복사해서 다시 붙여넣으면 됩니다. 고쳐 쓴 글은 버전 히스토리에서 이전 문장을 고를 수도 있습니다.</p>
+                </details>
+                <details>
+                    <summary><h3>앱을 깔기 전에 쓴 글도 찾을 수 있나요?</h3></summary>
+                    <p>아니요, 찾을 수 없습니다. Type History는 접근성 서비스가 켜진 동안 입력한 글만 기록하므로, 그전에 쓴 글은 남아 있지 않습니다.</p>
+                </details>
+                <details>
+                    <summary><h3>무료로 어디까지 쓸 수 있나요?</h3></summary>
+                    <p>입력 기록, 클립보드 기록, 검색, 편집은 모두 무료입니다. 무료 버전은 보관 기간을 최대 7일까지 고를 수 있고, 앱마다 최근 10개를 열어 볼 수 있으며, 클립보드 기록은 복사한 뒤 7일까지 보관합니다. 광고가 나옵니다.</p>
+                </details>
+                <details>
+                    <summary><h3>프리미엄은 얼마이고, 구독인가요?</h3></summary>
+                    <p>구독이 아니라 한 번 사는 평생 이용권이고, 한국 가격은 ₩27,000입니다. 첫 실행 후 7일 동안은 웰컴 할인가 ₩14,000으로 살 수 있습니다. 광고 제거, 열람 제한 해제, 최대 1년 보관, 영구 보관, 파일 내보내기·가져오기가 풀립니다.</p>
+                </details>
+                <details>
+                    <summary><h3>입력한 글이 서버로 올라가나요?</h3></summary>
+                    <p>아니요, 입력 기록은 이 기기의 데이터베이스에만 저장되고 전송·동기화되지 않습니다. 네트워크는 광고 표시, Google Play 구매 확인, 익명 사용 통계·오류 리포트, 개인정보처리방침 페이지 열기에만 쓰며, 기록은 그 통신에 들어가지 않습니다. 계정과 로그인도 없습니다.</p>
+                </details>
+                <details>
+                    <summary><h3>인터넷이 없어도 되나요?</h3></summary>
+                    <p>네, 기록과 복구는 인터넷 없이도 됩니다. 다만 광고, 사용 통계, 구매 확인에는 인터넷을 씁니다.</p>
+                </details>
+                <details>
+                    <summary><h3>접근성 권한은 왜 필요한가요?</h3></summary>
+                    <p>쓰던 키보드를 바꾸지 않고 여러 앱의 입력을 기록하려면, Android 접근성 서비스로 입력란의 글을 읽어야 하기 때문입니다. 켜기 전에 무엇을 읽는지 안내하고 동의를 받으며, Android 설정에서 언제든 끌 수 있습니다. 연락처·사진·위치·마이크·카메라 권한은 요청하지 않습니다.</p>
+                </details>
+                <details>
+                    <summary><h3>비밀번호도 기록되나요?</h3></summary>
+                    <p>가려진 비밀번호 입력란은 읽지 않고 건너뜁니다. 화면에 보이게 입력한 비밀번호나 메모 앱에서 복사한 비밀번호는 기록될 수 있으니, 그런 앱은 &#x27;제외할 앱&#x27;으로 지정해 두세요.</p>
+                </details>
+                <details>
+                    <summary><h3>메신저에서 상대가 지운 메시지도 볼 수 있나요?</h3></summary>
+                    <p>아니요. Type History는 내가 이 기기에서 입력한 글과, 켜 두면 내가 복사한 글만 남깁니다. 다른 사람이 보낸 메시지를 모으거나, 삭제된 메시지를 복구하지 않습니다.</p>
+                </details>
+                <details>
+                    <summary><h3>복사한 글이 전부 기록되지 않아요.</h3></summary>
+                    <p>클립보드 기록은 복사 버튼을 누르거나 &#x27;복사됨&#x27; 안내가 뜬 것을 감지했을 때만 남기므로, 일부 복사는 빠집니다. Android 10부터는 앱이 백그라운드에서 클립보드를 마음대로 읽을 수 없기 때문입니다. 기록할 때 ‘Type History이(가) 클립보드에서 붙여넣음’ 같은 시스템 안내가 보일 수 있습니다.</p>
+                </details>
+                <details>
+                    <summary><h3>휴대폰을 바꾸면 기록을 옮길 수 있나요?</h3></summary>
+                    <p>클라우드 백업과 동기화는 없어서, 프리미엄의 내보내기로만 옮길 수 있습니다. 기록을 파일(JSON)로 저장해 새 휴대폰에서 가져오면 됩니다. 이 파일은 암호화되지 않으니 안전한 곳에 보관하세요.</p>
+                </details>
+                <details>
+                    <summary><h3>iPhone에서도 쓸 수 있나요?</h3></summary>
+                    <p>아니요, Type History는 Android 10 이상에서만 쓸 수 있습니다. iOS 앱은 없습니다.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap" id="privacy">
+            <section class="privacy">
+                <h2>프라이버시 요약</h2>
+                <ul>
+                        <li>입력한 글과 복사한 글은 이 기기에만 저장되고, 서버로 보내거나 동기화하지 않습니다. 계정도 로그인도 없습니다.</li>
+                        <li>네트워크는 광고 표시, Google Play 구매 확인, 익명 사용 통계·오류 리포트, 개인정보처리방침 페이지 열기에만 쓰며, 기록은 그 통신에 들어가지 않습니다.</li>
+                        <li>가려진 비밀번호 입력란은 기록하지 않고, 보관 기간이 지난 기록은 자동으로 지워집니다. 자세한 내용은 <a href="../privacy_ko.html">개인정보처리방침</a>에서 볼 수 있습니다.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <ul>
+            <li>개발: <a href="https://feelpass.github.io/">plantcode</a></li>
+            <li>문의: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></li>
+            <li><a href="../privacy_ko.html">개인정보처리방침</a></li>
+        </ul>
+        <p>최종 업데이트 2026-10-15</p>
+    </footer>
+</body>
+</html>

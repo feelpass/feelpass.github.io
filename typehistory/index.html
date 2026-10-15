@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type History — Typing &amp; Clipboard History for Android</title>
+    <meta name="description" content="Type History saves what you type in other apps on your Android phone, so you can recover text lost to a crash or a failed send. Free with ads.">
+    <link rel="canonical" href="https://feelpass.github.io/typehistory/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/typehistory/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/typehistory/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/typehistory/">
+    <link rel="icon" type="image/svg+xml" href="images/app-icon.svg">
+    <link rel="icon" type="image/png" href="images/app-icon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Type History">
+    <meta property="og:url" content="https://feelpass.github.io/typehistory/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:title" content="Type History — Apps crash. Your words stay.">
+    <meta property="og:description" content="An Android app that keeps what you type — and, if you want, what you copy — on your device. Your history is never uploaded.">
+    <meta property="og:image" content="https://feelpass.github.io/typehistory/images/og-en.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Type History — Apps crash. Your words stay.">
+    <meta name="twitter:description" content="An Android app that keeps what you type — and, if you want, what you copy — on your device. Your history is never uploaded.">
+    <meta name="twitter:image" content="https://feelpass.github.io/typehistory/images/og-en.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Type History",
+  "url": "https://feelpass.github.io/typehistory/",
+  "description": "Type History saves what you type in other apps on your Android phone, so you can recover text lost to a crash or a failed send. Free with ads.",
+  "operatingSystem": "Android 10 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "en",
+  "image": "https://feelpass.github.io/typehistory/images/og-en.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.typehistory&hl=en",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.typehistory&hl=en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free with ads. Premium is a one-time lifetime in-app purchase (US$19.99; US$9.99 for the first 7 days after first launch), not a subscription."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "plantcode",
+    "url": "https://feelpass.github.io/",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I get back text I lost when an app crashed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if you typed it after turning Type History on. Open Type History, tap the app in your typing history or search for it, then copy the text and paste it back. If you rewrote it, you can also pick an earlier version from version history."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it recover text I typed before installing it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Type History only saves what you type while its accessibility service is on, so anything from before isn't there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typing history, clipboard history, search and editing are all free. The free version keeps records for up to 7 days, shows the latest 10 per app, and keeps clipboard history for 7 days after copying. It shows ads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is Premium, and is it a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a one-time lifetime purchase, not a subscription: US$19.99. For the first 7 days after you first open the app, a welcome offer brings it to US$9.99. Premium removes ads, lifts the 10-per-app limit, and adds up to 1 year of retention, Keep forever, and export & import."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my typing get uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your typing history is stored only in a database on your device and is never uploaded or synced. The network is used only to show ads, confirm purchases with Google Play, send anonymous usage statistics and crash reports, and open the privacy policy page — your history isn't part of that traffic. There's no account or sign-in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work without internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — saving and recovering text works without an internet connection. Ads, usage statistics and purchase checks do use the internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it need accessibility access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To save typing across apps without replacing your keyboard, Type History has to read the text in input fields through Android's accessibility service. The app explains what it reads and asks for your consent before you turn it on, and you can turn it off in Android Settings at any time. It doesn't ask for contacts, photos, location, microphone or camera access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it save passwords?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hidden password fields are skipped. A password you type with it visible, or copy from a notes app, may be saved — add apps like that to Excluded apps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see messages someone else deleted in a chat app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Type History keeps only what you type on this device and, if you turn it on, what you copy. It doesn't collect other people's messages or recover deleted ones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why isn't every copy in my clipboard history?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clipboard history saves a copy only when it notices a Copy button tap or a \"Copied\" message, so some copies are missed. Since Android 10, apps can't freely read the clipboard in the background. You may also see a system notice like \"Type History pasted from your clipboard\" when a copy is saved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I move my history to a new phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only with Premium's export, since there's no cloud backup or sync. Export your history to a file (JSON) and import it on the new phone. The file isn't encrypted, so keep it somewhere safe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an iPhone version?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Type History runs on Android 10 and later only; there's no iOS app."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --ink: #101412;
+            --sub: rgba(16, 20, 18, .7);
+            --dim: rgba(16, 20, 18, .52);
+            --green: #0E9444;
+            --accent: #30D158;
+            --mint: #4ADE80;
+            --night: #1b1c1d;
+            --line: rgba(16, 20, 18, .1);
+            --card: #ffffff;
+            --tint: #E4F2E7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
+            min-height: 100vh;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 100% 0%, rgba(48, 209, 88, .2) 0%, rgba(48, 209, 88, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 0% 38%, rgba(48, 209, 88, .1) 0%, rgba(48, 209, 88, 0) 70%),
+                linear-gradient(176deg, #fbfdf7 0%, #f0f5f0 50%, var(--tint) 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 16px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+        .lang { font-size: 14px; font-weight: 600; color: var(--sub); text-decoration: none; padding: 8px 12px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+        .lang:hover { color: var(--ink); background: rgba(255, 255, 255, .6); }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 96px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 76px); line-height: 1.1; letter-spacing: -.022em; }
+        .def { margin-top: 26px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .def + .def { margin-top: 12px; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #2c2e2f; }
+        .play svg { flex: none; color: var(--mint); }
+        .meta { margin-top: 14px; font-size: 14px; color: var(--sub); }
+
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #d3dad5, 0 0 0 1px #c3ccc6, 0 30px 70px rgba(18, 70, 35, .2);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #fbfdf7; }
+        .hero .phone { box-shadow: inset 0 0 0 2px #d3dad5, 0 0 0 3px rgba(48, 209, 88, .45), 0 30px 80px rgba(18, 70, 35, .26); }
+
+        /* ── 공통 섹션 ────────────────────────── */
+        .block { padding-bottom: 104px; }
+        h2 { font-weight: 800; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.16; letter-spacing: -.02em; }
+        h3 { font-weight: 700; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.3; letter-spacing: -.012em; }
+        .intro { margin-top: 16px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+
+        /* ── 기능 ─────────────────────────────── */
+        .cards { display: grid; gap: 16px; margin-top: 40px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(18, 70, 35, .08); }
+        .card h3 { display: flex; align-items: center; gap: 10px; }
+        .card h3::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+        .card p { margin-top: 10px; font-size: 16px; color: var(--sub); }
+
+        .rows { display: grid; gap: 80px; margin-top: 80px; }
+        .row { display: grid; gap: 32px; align-items: center; }
+        .row p { margin-top: 12px; max-width: 26em; font-size: clamp(16px, 1.8vw, 18px); font-weight: 500; color: var(--sub); }
+        .row h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -.018em; }
+
+        /* ── 표 ───────────────────────────────── */
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(18, 70, 35, .22), rgba(18, 70, 35, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(18, 70, 35, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #f3f7f3; border-bottom-color: rgba(16, 20, 18, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 34%; }
+        .cmp { min-width: 760px; }
+        .cmp thead td { width: 22%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(48, 209, 88, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #e3f5e7; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        /* ── 맞는 분 / 안 맞는 분 ─────────────── */
+        .fit { display: grid; gap: 16px; }
+        .fit .card h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: rgba(16, 20, 18, .42); }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(14, 148, 68, .34), 0 14px 34px rgba(18, 70, 35, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(48, 209, 88, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(28px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .86); }
+        .privacy a { font-weight: 600; color: var(--mint); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--mint); }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; font-weight: 600; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; padding-top: 88px; padding-bottom: 128px; }
+            .hero .phone { justify-self: end; }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .rows { gap: 112px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .fit { grid-template-columns: 1fr 1fr; }
+            .block { padding-bottom: 128px; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+        }
+
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="wrap top">
+        <a class="brand" href="./"><img src="images/app-icon.svg" width="44" height="44" alt="">Type History</a>
+        <a class="lang" href="ko/" hreflang="ko" lang="ko">한국어</a>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>Apps crash.<br><em>Your words stay.</em></h1>
+                <p class="def">Type History is an Android app that automatically keeps what you type in other apps — and, if you turn it on, what you copy — on your device, so you can find and copy back text lost to a crash or a failed send.</p>
+                <p class="def">It&#x27;s free with ads; a one-time lifetime purchase (US$19.99, not a subscription) removes ads and lets you keep records for up to a year.</p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.typehistory&hl=en">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Get it on Google Play</span>
+                </a>
+                <p class="meta">Android 10+ · Free with ads · No account</p>
+            </div>
+            <div class="phone"><img src="images/shot-home-en.webp" width="720" height="1607" alt="The Typing tab in Type History, with saved text grouped by app: Messages, Gmail, Chrome, Maps and Calendar."></div>
+        </section>
+
+        <section class="wrap block" id="features">
+            <h2>Features</h2>
+            <p class="intro">Type History saves what you type in other apps, right on your phone. When a message, email or comment disappears, find it and copy it back.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Saved as you type</h3>
+                    <p>There&#x27;s no Save button. Type History keeps recording on your device while you type in other apps, and you keep using the keyboard you already have.</p>
+                </div>
+                <div class="card">
+                    <h3>Your history stays on your phone</h3>
+                    <p>Records live in a database on your device and are never uploaded or synced. Anything older than your retention period is deleted automatically (7 days by default).</p>
+                </div>
+            </div>
+            <div class="rows">
+            <article class="row">
+                <div class="row-text">
+                    <h3>Find it by app, copy it back</h3>
+                    <p>Your typing history is grouped by app, and you can search by word, date or app. Edit what you find, then copy or share it.</p>
+                </div>
+                <div class="phone"><img src="images/shot-search-en.webp" width="720" height="1607" loading="lazy" alt="Search results for “quote”, filtered to the last 7 days and Gmail."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Go back to an earlier draft</h3>
+                    <p>When you rewrite the same text, the old versions stay. Pick an earlier wording from version history and copy it.</p>
+                </div>
+                <div class="phone"><img src="images/shot-versions-en.webp" width="720" height="1607" loading="lazy" alt="Version history for one message, with the latest version at the top and earlier drafts below."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Clipboard history, if you want it</h3>
+                    <p>Turn on clipboard history in Settings and the text you copy in other apps gets its own tab. It&#x27;s off by default, and you can include copied images too.</p>
+                </div>
+                <div class="phone"><img src="images/shot-clipboard-en.webp" width="720" height="1607" loading="lazy" alt="The Clipboard tab, with copied text grouped by the app it was copied from."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Lock it, exclude apps, pause it</h3>
+                    <p>Lock the app with a PIN, fingerprint or face. Pick apps that are never recorded, or flip the &quot;In use&quot; switch off to turn the accessibility service off and stop recording.</p>
+                </div>
+                <div class="phone"><img src="images/shot-settings-en.webp" width="720" height="1607" loading="lazy" alt="Settings, with the In use switch, Excluded apps, clipboard history and retention options."></div>
+            </article>
+            </div>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>Free vs Premium</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">Free</th><th scope="col" class="pro">Premium (lifetime)</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">Typing history, clipboard history, search, editing</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Retention</th><td>1, 3 or 7 days</td><td class="pro">1 day to 1 year (adds 30, 90 and 180 days and 1 year)</td></tr>
+                            <tr><th scope="row">Records you can open per app</th><td>Latest 10 (older ones are locked, not deleted)</td><td class="pro">All</td></tr>
+                            <tr><th scope="row">Clipboard history kept for</th><td>7 days after copying</td><td class="pro">Your retention setting</td></tr>
+                            <tr><th scope="row">Keep forever (skip auto-delete)</th><td>—</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Export &amp; import to a file</th><td>—</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Ads</th><td>Yes</td><td class="pro">No</td></tr>
+                            <tr><th scope="row">Price</th><td>Free</td><td class="pro">US$19.99 once (US$9.99 for 7 days after first launch)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Not a subscription. Pay once, keep it, and restore your purchase from inside the app. Prices shown are US prices; Google Play shows your local currency.</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>A good fit if you</h2>
+                <ul>
+                        <li>Write long messages, emails or comments and have lost one to a crash or a failed send</li>
+                        <li>Want your typing saved across apps without switching keyboards</li>
+                        <li>Want no account, and your history kept on your phone</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>Not a fit if you</h2>
+                <ul>
+                        <li>Use an iPhone or a PC, or need your history synced across devices — Type History is Android-only, with no sync or cloud backup.</li>
+                        <li>Don&#x27;t want to grant accessibility access — the app can&#x27;t record typing without it.</li>
+                        <li>Want to read messages other people sent or deleted — it only keeps what you type and copy on your own device.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="compare">
+            <h2>How it compares</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">Type History</th><th scope="col">Keyboard&#x27;s built-in clipboard &amp; undo</th><th scope="col">Clipboard manager apps</th><th scope="col">Writing in a notes app first</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">Saves what you type in other apps automatically</th><td class="us">Yes, while the accessibility service is on</td><td>Usually only what you copy</td><td>Only what you copy</td><td>Only what you write there</td></tr>
+                            <tr><th scope="row">Works with your current keyboard</th><td class="us">Yes</td><td>Only with that keyboard</td><td>Usually</td><td>Yes</td></tr>
+                            <tr><th scope="row">Catches every copy</th><td class="us">Optional, and some copies are missed</td><td>While you use that keyboard</td><td>That&#x27;s the main job</td><td>—</td></tr>
+                            <tr><th scope="row">Earlier versions of a draft</th><td class="us">Yes, version history</td><td>Usually not</td><td>Usually not</td><td>Only what you saved yourself</td></tr>
+                            <tr><th scope="row">Extra permission</th><td class="us">Accessibility service</td><td>Just set it as your keyboard</td><td>Varies by app</td><td>None</td></tr>
+                            <tr><th scope="row">Sync across devices</th><td class="us">No (on-device only)</td><td>Varies by keyboard</td><td>Varies by app</td><td>Varies by app</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Category columns describe typical behavior; individual apps vary.</p>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>FAQ</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>Can I get back text I lost when an app crashed?</h3></summary>
+                    <p>Yes, if you typed it after turning Type History on. Open Type History, tap the app in your typing history or search for it, then copy the text and paste it back. If you rewrote it, you can also pick an earlier version from version history.</p>
+                </details>
+                <details>
+                    <summary><h3>Can it recover text I typed before installing it?</h3></summary>
+                    <p>No. Type History only saves what you type while its accessibility service is on, so anything from before isn&#x27;t there.</p>
+                </details>
+                <details>
+                    <summary><h3>What&#x27;s free?</h3></summary>
+                    <p>Typing history, clipboard history, search and editing are all free. The free version keeps records for up to 7 days, shows the latest 10 per app, and keeps clipboard history for 7 days after copying. It shows ads.</p>
+                </details>
+                <details>
+                    <summary><h3>How much is Premium, and is it a subscription?</h3></summary>
+                    <p>It&#x27;s a one-time lifetime purchase, not a subscription: US$19.99. For the first 7 days after you first open the app, a welcome offer brings it to US$9.99. Premium removes ads, lifts the 10-per-app limit, and adds up to 1 year of retention, Keep forever, and export &amp; import.</p>
+                </details>
+                <details>
+                    <summary><h3>Does my typing get uploaded to a server?</h3></summary>
+                    <p>No. Your typing history is stored only in a database on your device and is never uploaded or synced. The network is used only to show ads, confirm purchases with Google Play, send anonymous usage statistics and crash reports, and open the privacy policy page — your history isn&#x27;t part of that traffic. There&#x27;s no account or sign-in.</p>
+                </details>
+                <details>
+                    <summary><h3>Does it work without internet?</h3></summary>
+                    <p>Yes — saving and recovering text works without an internet connection. Ads, usage statistics and purchase checks do use the internet.</p>
+                </details>
+                <details>
+                    <summary><h3>Why does it need accessibility access?</h3></summary>
+                    <p>To save typing across apps without replacing your keyboard, Type History has to read the text in input fields through Android&#x27;s accessibility service. The app explains what it reads and asks for your consent before you turn it on, and you can turn it off in Android Settings at any time. It doesn&#x27;t ask for contacts, photos, location, microphone or camera access.</p>
+                </details>
+                <details>
+                    <summary><h3>Does it save passwords?</h3></summary>
+                    <p>Hidden password fields are skipped. A password you type with it visible, or copy from a notes app, may be saved — add apps like that to Excluded apps.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I see messages someone else deleted in a chat app?</h3></summary>
+                    <p>No. Type History keeps only what you type on this device and, if you turn it on, what you copy. It doesn&#x27;t collect other people&#x27;s messages or recover deleted ones.</p>
+                </details>
+                <details>
+                    <summary><h3>Why isn&#x27;t every copy in my clipboard history?</h3></summary>
+                    <p>Clipboard history saves a copy only when it notices a Copy button tap or a &quot;Copied&quot; message, so some copies are missed. Since Android 10, apps can&#x27;t freely read the clipboard in the background. You may also see a system notice like &quot;Type History pasted from your clipboard&quot; when a copy is saved.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I move my history to a new phone?</h3></summary>
+                    <p>Only with Premium&#x27;s export, since there&#x27;s no cloud backup or sync. Export your history to a file (JSON) and import it on the new phone. The file isn&#x27;t encrypted, so keep it somewhere safe.</p>
+                </details>
+                <details>
+                    <summary><h3>Is there an iPhone version?</h3></summary>
+                    <p>No. Type History runs on Android 10 and later only; there&#x27;s no iOS app.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap" id="privacy">
+            <section class="privacy">
+                <h2>Privacy at a glance</h2>
+                <ul>
+                        <li>What you type and copy stays on this device. It isn&#x27;t uploaded or synced, and there&#x27;s no account or sign-in.</li>
+                        <li>The network is used only for ads, Google Play purchase checks, anonymous usage statistics and crash reports, and opening the privacy policy — your history isn&#x27;t part of that traffic.</li>
+                        <li>Hidden password fields are skipped, and records older than your retention period are deleted automatically. Read the full <a href="privacy_en.html">privacy policy</a>.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <ul>
+            <li>Developer: <a href="https://feelpass.github.io/">plantcode</a></li>
+            <li>Contact: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></li>
+            <li><a href="privacy_en.html">Privacy policy</a></li>
+        </ul>
+        <p>Last updated 2026-10-15</p>
+    </footer>
+</body>
+</html>

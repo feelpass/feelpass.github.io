@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemi Eraser — 제미나이(Gemini) 워터마크 제거 안드로이드 앱</title>
+    <meta name="description" content="Gemini로 만든 이미지 오른쪽 아래 별 모양 로고를 폰 안에서 지워요. 업로드 없이, 하루 횟수 제한 없이 무료(광고 포함).">
+    <link rel="canonical" href="https://feelpass.github.io/geminieraser/ko/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/geminieraser/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/geminieraser/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/geminieraser/">
+    <link rel="icon" type="image/png" href="../images/app-icon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gemi Eraser">
+    <meta property="og:url" content="https://feelpass.github.io/geminieraser/ko/">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Gemi Eraser — Gemini 워터마크 제거">
+    <meta property="og:description" content="Gemini 이미지의 별 로고를 원래 그림으로 되돌려요. 이미지는 업로드되지 않아요.">
+    <meta property="og:image" content="https://feelpass.github.io/geminieraser/images/og-ko.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gemi Eraser — Gemini 워터마크 제거">
+    <meta name="twitter:description" content="Gemini 이미지의 별 로고를 원래 그림으로 되돌려요. 이미지는 업로드되지 않아요.">
+    <meta name="twitter:image" content="https://feelpass.github.io/geminieraser/images/og-ko.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Gemi Eraser",
+  "url": "https://feelpass.github.io/geminieraser/ko/",
+  "description": "Gemini로 만든 이미지 오른쪽 아래 별 모양 로고를 폰 안에서 지워요. 업로드 없이, 하루 횟수 제한 없이 무료(광고 포함).",
+  "operatingSystem": "Android 10 이상",
+  "applicationCategory": "MultimediaApplication",
+  "inLanguage": "ko",
+  "image": "https://feelpass.github.io/geminieraser/images/og-ko.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.geminieraser&hl=ko",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.geminieraser&hl=ko",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW",
+    "description": "무료(광고 포함), 하루 처리 횟수 제한 없음. 광고 제거 평생 이용권은 구독이 아닌 한 번 결제하는 인앱 구매(₩2,900)예요."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mountain24",
+    "url": "https://play.google.com/store/apps/developer?id=Mountain24",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "폰에서 제미나이(나노바나나) 이미지 워터마크 지우는 앱 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gemi Eraser가 그 앱이에요. Gemini로 만든 이미지 오른쪽 아래의 반투명 별 모양 로고를 폰 안에서 계산해 지워요. 이미지를 고르면 워터마크를 자동으로 찾아 지우니 따로 설정할 건 없어요. 안드로이드 10 이상에서 쓸 수 있어요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "무료로 쓸 수 있나요? 하루 제한이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 무료로 쓸 수 있고 하루 처리 횟수 제한도 없어요. 대신 워터마크가 감지되면 결과를 보여 주기 전에 광고가 한 편 나오고, 앱 안에도 광고가 있어요. 결과 전 광고는 하루 첫 1회만이에요. 끝까지 보면 그날 남은 처리는 광고 없이 바로 결과가 나오고, 중간에 닫으면 그 결과는 취소돼요. 여러 장을 한 번에 처리하는 건 프리미엄이에요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "광고 없애려면 얼마예요? 구독인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "구독이 아니라 한 번 결제하는 '광고 제거 평생 이용권'이에요. 한국에서는 ₩2,900이고, 가격은 지역마다 다를 수 있어요. 사면 모든 광고가 사라지고 여러 장 일괄 처리가 열려요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "\"No watermark detected\"가 떠요. 왜 안 지워지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대부분 Gemini 원본 파일이 아닐 때 그래요. Gemi Eraser는 Gemini가 이미지에 넣는 별 모양 로고만 지워서, 다른 서비스의 로고나 워터마크가 없는 일반 사진에서는 찾을 게 없어요. Gemini 이미지라도 스크린샷이나 자르고 크기를 바꾼 사본, 다른 앱에서 다시 저장한 이미지는 감지되지 않을 수 있어요. Gemini에서 내려받은 그대로의 원본으로 해 보세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "워터마크가 조금 남았어요.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "결과 화면의 '다른 결과 후보 보기'에서 다른 후보를 확대해 비교해 보세요. 그래도 남으면 그 화면의 '보정'에서 위치·크기·강도를 직접 맞추면 돼요. 흔적이 남는 건 대부분 원본 파일이 아닐 때예요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이미지가 서버로 올라가나요? 인터넷 없이도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, 이미지는 폰 안에서 처리되고 업로드되지 않아요. 그래서 이미지 처리는 인터넷 없이도 돼요. 앱이 인터넷을 쓰는 곳은 광고, 익명 사용 통계와 오류 보고, 앱 업데이트 확인, Google Play 구매 확인이에요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "사진 접근 권한을 줘야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, 사진·저장소 읽기 권한은 요청하지 않아요. 이미지는 안드로이드 사진 선택기로 고르거나 다른 앱에서 공유한 것만 받아요. 접근성 권한도 쓰지 않아요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "화질이 떨어지나요? 결과는 어디에 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "워터마크 자리의 픽셀만 바뀌고 나머지는 그대로예요. 저장하거나 공유하면 무손실 PNG로 기기의 Pictures/GeminiEraser 폴더에 저장되고, 원본 파일은 바뀌지 않아요. 다만 약 1,890만 화소를 넘는 아주 큰 이미지는 처리 전에 축소돼요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SynthID도 지워지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, SynthID는 그대로 남아요. Gemini 이미지에는 보이는 로고와 함께 보이지 않는 워터마크인 SynthID도 들어 있는데, Gemi Eraser는 보이는 로고만 지워요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "여러 장을 한 번에 지울 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "프리미엄에서 돼요. 무료는 한 장씩이에요. 여러 장을 고르면 차례로 처리되고, 한 번에 고를 수 있는 장수는 안드로이드 사진 선택기가 정해요. 갤러리 같은 다른 앱에서 여러 장을 공유해 보내도 일괄 처리로 이어져요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "아이폰이나 동영상에서도 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, Gemi Eraser는 안드로이드 10 이상용 앱이고 iPhone 버전은 없어요. 지울 수 있는 것도 이미지뿐이라, Flow 같은 도구로 만든 동영상의 워터마크는 지우지 못해요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "폰을 바꾸면 보관함은 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "보관함 이미지는 앱 안에만 저장되고, 앱을 지우면 함께 지워져요. 남겨 둘 이미지는 미리 저장해 두세요. 저장한 이미지는 기기의 Pictures/GeminiEraser 폴더에 있어요. 계정이나 로그인은 따로 없어요."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --ink: #12101e;
+            --sub: rgba(18, 16, 30, .7);
+            --dim: rgba(18, 16, 30, .52);
+            --green: #5B43D6;
+            --accent: #7C63F0;
+            --mint: #C9BCFF;
+            --night: #0d0c1c;
+            --line: rgba(18, 16, 30, .1);
+            --card: #ffffff;
+            --tint: #F1EEFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
+            min-height: 100vh;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 100% 0%, rgba(124, 99, 240, .2) 0%, rgba(124, 99, 240, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 0% 38%, rgba(124, 99, 240, .1) 0%, rgba(124, 99, 240, 0) 70%),
+                linear-gradient(176deg, #fbfaff 0%, #f3f1fc 50%, var(--tint) 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 16px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+        .lang { font-size: 14px; font-weight: 600; color: var(--sub); text-decoration: none; padding: 8px 12px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+        .lang:hover { color: var(--ink); background: rgba(255, 255, 255, .6); }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 96px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 76px); line-height: 1.1; letter-spacing: -.022em; }
+        .def { margin-top: 26px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .def + .def { margin-top: 12px; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #24223a; }
+        .play svg { flex: none; color: var(--mint); }
+        .meta { margin-top: 14px; font-size: 14px; color: var(--sub); }
+
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #dcd7ee, 0 0 0 1px #cdc6e6, 0 30px 70px rgba(50, 30, 120, .2);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #fbfaff; }
+        .hero .phone { box-shadow: inset 0 0 0 2px #dcd7ee, 0 0 0 3px rgba(124, 99, 240, .45), 0 30px 80px rgba(50, 30, 120, .26); }
+
+        /* ── 공통 섹션 ────────────────────────── */
+        .block { padding-bottom: 104px; }
+        h2 { font-weight: 800; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.16; letter-spacing: -.02em; }
+        h3 { font-weight: 700; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.3; letter-spacing: -.012em; }
+        .intro { margin-top: 16px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+
+        /* ── 기능 ─────────────────────────────── */
+        .cards { display: grid; gap: 16px; margin-top: 40px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(50, 30, 120, .08); }
+        .card h3 { display: flex; align-items: center; gap: 10px; }
+        .card h3::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+        .card p { margin-top: 10px; font-size: 16px; color: var(--sub); }
+
+        .rows { display: grid; gap: 80px; margin-top: 80px; }
+        .row { display: grid; gap: 32px; align-items: center; }
+        .row p { margin-top: 12px; max-width: 26em; font-size: clamp(16px, 1.8vw, 18px); font-weight: 500; color: var(--sub); }
+        .row h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -.018em; }
+
+        /* ── 표 ───────────────────────────────── */
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(50, 30, 120, .22), rgba(50, 30, 120, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(50, 30, 120, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #f5f3fd; border-bottom-color: rgba(18, 16, 30, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 34%; }
+        .cmp { min-width: 760px; }
+        .cmp thead td { width: 22%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(124, 99, 240, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #e9e4ff; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        /* ── 맞는 분 / 안 맞는 분 ─────────────── */
+        .fit { display: grid; gap: 16px; }
+        .fit .card h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: rgba(18, 16, 30, .42); }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(91, 67, 214, .34), 0 14px 34px rgba(50, 30, 120, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(124, 99, 240, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(28px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .86); }
+        .privacy a { font-weight: 600; color: var(--mint); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--mint); }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; font-weight: 600; }
+        .foot .legal { flex-basis: 100%; font-size: 13px; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; padding-top: 88px; padding-bottom: 128px; }
+            .hero .phone { justify-self: end; }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .rows { gap: 112px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .fit { grid-template-columns: 1fr 1fr; }
+            .block { padding-bottom: 128px; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+        }
+
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="wrap top">
+        <a class="brand" href="./"><img src="../images/app-icon.png" width="44" height="44" alt="">Gemi Eraser</a>
+        <a class="lang" href="../" hreflang="en" lang="en">EN</a>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>Gemini 이미지의 별 로고,<br><em>원래 그림으로 되돌려요</em></h1>
+                <p class="def">Gemi Eraser는 Gemini로 만든 이미지 오른쪽 아래의 반투명 별 모양 로고(보이는 워터마크)를, 이미지를 업로드하지 않고 폰 안에서 계산해 지우는 안드로이드 앱이에요. 무료(광고 포함)로 하루 처리 횟수 제한 없이 쓰고, 광고 제거와 여러 장 일괄 처리는 한 번 결제하는 평생 이용권으로 열려요.</p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.geminieraser&hl=ko">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Google Play에서 받기</span>
+                </a>
+                <p class="meta">안드로이드 10 이상 · 무료(광고 포함)</p>
+            </div>
+            <div class="phone"><img src="../images/shot-home-ko.webp" width="720" height="1560" alt="Gemi Eraser 홈 화면. 이미지 선택·일괄 버튼과 최근 결과가 보여요."></div>
+        </section>
+
+        <section class="wrap block" id="features">
+            <h2>Gemi Eraser로 할 수 있는 것</h2>
+            <p class="intro">이미지를 고르면 오른쪽 아래 로고를 찾아 지워요. 처리는 폰 안에서 끝나고, 이미지는 어디에도 올라가지 않아요.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>이미지는 폰 안에서만</h3>
+                    <p>감지부터 제거까지 폰 안에서 처리하고, 이미지는 업로드하지 않아요. 그래서 인터넷이 없어도 처리돼요.</p>
+                </div>
+                <div class="card">
+                    <h3>여러 장 한 번에, 공유로 바로</h3>
+                    <p>다른 앱에서 이미지를 Gemi Eraser로 공유하면 바로 처리돼요. 여러 장을 골라 차례로 처리하는 일괄 처리는 프리미엄 기능이에요.</p>
+                </div>
+            </div>
+            <div class="rows">
+            <article class="row">
+                <div class="row-text">
+                    <h3>고르면 끝</h3>
+                    <p>이미지를 고르면 워터마크를 자동으로 찾아 지워요. 따로 맞출 설정이 없어요. 결과는 원본과 나란히 놓고 비교할 수 있어요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-result-ko.webp" width="720" height="1560" loading="lazy" alt="결과 화면. 워터마크를 지운 인물 사진과 이전·이후 버튼, &#x27;워터마크 제거됨&#x27; 표시가 있어요."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>덧칠이 아니라 되돌리기</h3>
+                    <p>Gemini 로고의 모양과 투명도를 알고 있어서, 로고가 얹힌 과정을 거꾸로 계산해 그 아래 원래 픽셀을 살려 내요. 바뀌는 건 워터마크 자리뿐이고, 결과는 무손실 PNG로 저장되며 원본 파일은 그대로 남아요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-restore-ko.webp" width="720" height="1560" loading="lazy" alt="결과 후보 화면에서 워터마크 자리를 확대한 모습(제거 후). 로고가 있던 어두운 배경이 깨끗해요."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>아쉬우면 후보 비교, 그래도 아쉬우면 직접 보정</h3>
+                    <p>&#x27;다른 결과 후보 보기&#x27;에서 여러 결과를 확대해 견줘 보고, &#x27;보정&#x27;에서 위치·크기·강도를 손으로 맞춰요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-compare-ko.webp" width="720" height="1560" loading="lazy" alt="결과 후보 화면에서 제거 전 별 로고를 확대한 모습. 이전·이후·전체·확대 전환과 보정 버튼이 있어요."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>보관함</h3>
+                    <p>지운 이미지는 앱 안 보관함에 모여서, 나중에 다시 저장·공유하거나 이미지로 복사할 수 있어요. 기본 100개까지 보관하고(무제한도 고를 수 있어요), 남기고 싶지 않으면 보관함 저장을 꺼 두면 돼요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-history-ko.webp" width="720" height="1560" loading="lazy" alt="보관함 탭. 지운 이미지가 격자로 모여 있어요."></div>
+            </article>
+            </div>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>무료와 프리미엄</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">무료</th><th scope="col" class="pro">프리미엄</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">가격</th><td>무료</td><td class="pro">광고 제거 평생 이용권 ₩2,900 · 한 번 결제, 구독 아님</td></tr>
+                            <tr><th scope="row">하루 처리 횟수</th><td>제한 없음</td><td class="pro">제한 없음</td></tr>
+                            <tr><th scope="row">처리 방식</th><td>한 장씩</td><td class="pro">한 장씩 + 여러 장 일괄 처리</td></tr>
+                            <tr><th scope="row">결과 전 광고</th><td>워터마크가 감지되면 결과 전에 광고 한 편 — 하루 첫 1회, 끝까지 보면 그날은 더 안 나와요</td><td class="pro">없어요</td></tr>
+                            <tr><th scope="row">앱 안 광고</th><td>배너·네이티브 광고, 앱을 열 때 뜨는 광고</td><td class="pro">없어요</td></tr>
+                            <tr><th scope="row">후보 비교·보정·보관함·공유로 받기</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">가격은 한국 기준이며 지역마다 다를 수 있어요(미국 US$1.99).</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>이런 분께 맞아요</h2>
+                <ul>
+                        <li>Gemini로 만든 이미지를 발표 자료나 블로그, SNS에 쓰려는데 오른쪽 아래 별 로고가 거슬리는 분 — 폰에서 고르기만 하면 돼요.</li>
+                        <li>이미지를 낯선 서버에 올리고 싶지 않은 분 — 처리는 폰 안에서 끝나요.</li>
+                        <li>로고 자리를 뭉개지 않고 원래 그림을 살리고 싶은 분 — 덧칠 대신 거꾸로 계산해 되돌리고, 무손실 PNG로 저장해요.</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>이런 분께는 안 맞아요</h2>
+                <ul>
+                        <li>Gemini 이미지의 별 로고가 아닌 것을 지우려는 분 — 다른 서비스의 로고나 워터마크, 사진 속 글자·물체, 동영상 워터마크는 지우지 못해요.</li>
+                        <li>스크린샷이나 자르고 크기를 바꾼 사본밖에 없는 분 — Gemini 원본 파일이 아니면 감지되지 않거나 일부가 남을 수 있어요.</li>
+                        <li>AI로 만든 흔적을 모두 없애려는 분 — 보이는 로고만 지우고, 보이지 않는 워터마크(SynthID)는 그대로 남아요.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="compare">
+            <h2>다른 방법과 비교하면</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">Gemi Eraser</th><th scope="col">사진 편집 앱의 지우개 기능</th><th scope="col">웹 워터마크 제거 도구</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">지우는 대상</th><td class="us">Gemini 이미지 오른쪽 아래 별 모양 로고만</td><td>칠한 곳은 무엇이든</td><td>도구마다 달라요</td></tr>
+                            <tr><th scope="row">지우는 방식</th><td class="us">로고 모양·투명도로 거꾸로 계산해 원래 픽셀을 되살려요</td><td>대개 주변을 보고 그 자리를 새로 채워요</td><td>도구마다 달라요</td></tr>
+                            <tr><th scope="row">이미 로고가 찍힌 이미지</th><td class="us"><span class="yes">✓</span> Gemini 원본 파일이면</td><td class="yes">✓</td><td>도구마다 달라요</td></tr>
+                            <tr><th scope="row">스크린샷·자른 사본</th><td class="us">감지되지 않거나 일부 남을 수 있어요</td><td><span class="yes">✓</span> 칠하면 지워져요</td><td>도구마다 달라요</td></tr>
+                            <tr><th scope="row">이미지 업로드</th><td class="us">안 해요, 폰 안에서 처리</td><td>앱마다 달라요</td><td>도구마다 달라요</td></tr>
+                            <tr><th scope="row">쓰려면</th><td class="us">안드로이드 10 이상. 무료(광고) 또는 평생 이용권</td><td>편집 앱</td><td>브라우저</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">범주 칸은 일반적인 특징이고 앱과 도구마다 다를 수 있어요.</p>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>자주 묻는 질문</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>폰에서 제미나이(나노바나나) 이미지 워터마크 지우는 앱 있나요?</h3></summary>
+                    <p>Gemi Eraser가 그 앱이에요. Gemini로 만든 이미지 오른쪽 아래의 반투명 별 모양 로고를 폰 안에서 계산해 지워요. 이미지를 고르면 워터마크를 자동으로 찾아 지우니 따로 설정할 건 없어요. 안드로이드 10 이상에서 쓸 수 있어요.</p>
+                </details>
+                <details>
+                    <summary><h3>무료로 쓸 수 있나요? 하루 제한이 있나요?</h3></summary>
+                    <p>네, 무료로 쓸 수 있고 하루 처리 횟수 제한도 없어요. 대신 워터마크가 감지되면 결과를 보여 주기 전에 광고가 한 편 나오고, 앱 안에도 광고가 있어요. 결과 전 광고는 하루 첫 1회만이에요. 끝까지 보면 그날 남은 처리는 광고 없이 바로 결과가 나오고, 중간에 닫으면 그 결과는 취소돼요. 여러 장을 한 번에 처리하는 건 프리미엄이에요.</p>
+                </details>
+                <details>
+                    <summary><h3>광고 없애려면 얼마예요? 구독인가요?</h3></summary>
+                    <p>구독이 아니라 한 번 결제하는 &#x27;광고 제거 평생 이용권&#x27;이에요. 한국에서는 ₩2,900이고, 가격은 지역마다 다를 수 있어요. 사면 모든 광고가 사라지고 여러 장 일괄 처리가 열려요.</p>
+                </details>
+                <details>
+                    <summary><h3>&quot;No watermark detected&quot;가 떠요. 왜 안 지워지나요?</h3></summary>
+                    <p>대부분 Gemini 원본 파일이 아닐 때 그래요. Gemi Eraser는 Gemini가 이미지에 넣는 별 모양 로고만 지워서, 다른 서비스의 로고나 워터마크가 없는 일반 사진에서는 찾을 게 없어요. Gemini 이미지라도 스크린샷이나 자르고 크기를 바꾼 사본, 다른 앱에서 다시 저장한 이미지는 감지되지 않을 수 있어요. Gemini에서 내려받은 그대로의 원본으로 해 보세요.</p>
+                </details>
+                <details>
+                    <summary><h3>워터마크가 조금 남았어요.</h3></summary>
+                    <p>결과 화면의 &#x27;다른 결과 후보 보기&#x27;에서 다른 후보를 확대해 비교해 보세요. 그래도 남으면 그 화면의 &#x27;보정&#x27;에서 위치·크기·강도를 직접 맞추면 돼요. 흔적이 남는 건 대부분 원본 파일이 아닐 때예요.</p>
+                </details>
+                <details>
+                    <summary><h3>이미지가 서버로 올라가나요? 인터넷 없이도 되나요?</h3></summary>
+                    <p>아니요, 이미지는 폰 안에서 처리되고 업로드되지 않아요. 그래서 이미지 처리는 인터넷 없이도 돼요. 앱이 인터넷을 쓰는 곳은 광고, 익명 사용 통계와 오류 보고, 앱 업데이트 확인, Google Play 구매 확인이에요.</p>
+                </details>
+                <details>
+                    <summary><h3>사진 접근 권한을 줘야 하나요?</h3></summary>
+                    <p>아니요, 사진·저장소 읽기 권한은 요청하지 않아요. 이미지는 안드로이드 사진 선택기로 고르거나 다른 앱에서 공유한 것만 받아요. 접근성 권한도 쓰지 않아요.</p>
+                </details>
+                <details>
+                    <summary><h3>화질이 떨어지나요? 결과는 어디에 저장되나요?</h3></summary>
+                    <p>워터마크 자리의 픽셀만 바뀌고 나머지는 그대로예요. 저장하거나 공유하면 무손실 PNG로 기기의 Pictures/GeminiEraser 폴더에 저장되고, 원본 파일은 바뀌지 않아요. 다만 약 1,890만 화소를 넘는 아주 큰 이미지는 처리 전에 축소돼요.</p>
+                </details>
+                <details>
+                    <summary><h3>SynthID도 지워지나요?</h3></summary>
+                    <p>아니요, SynthID는 그대로 남아요. Gemini 이미지에는 보이는 로고와 함께 보이지 않는 워터마크인 SynthID도 들어 있는데, Gemi Eraser는 보이는 로고만 지워요.</p>
+                </details>
+                <details>
+                    <summary><h3>여러 장을 한 번에 지울 수 있나요?</h3></summary>
+                    <p>프리미엄에서 돼요. 무료는 한 장씩이에요. 여러 장을 고르면 차례로 처리되고, 한 번에 고를 수 있는 장수는 안드로이드 사진 선택기가 정해요. 갤러리 같은 다른 앱에서 여러 장을 공유해 보내도 일괄 처리로 이어져요.</p>
+                </details>
+                <details>
+                    <summary><h3>아이폰이나 동영상에서도 쓸 수 있나요?</h3></summary>
+                    <p>아니요, Gemi Eraser는 안드로이드 10 이상용 앱이고 iPhone 버전은 없어요. 지울 수 있는 것도 이미지뿐이라, Flow 같은 도구로 만든 동영상의 워터마크는 지우지 못해요.</p>
+                </details>
+                <details>
+                    <summary><h3>폰을 바꾸면 보관함은 어떻게 되나요?</h3></summary>
+                    <p>보관함 이미지는 앱 안에만 저장되고, 앱을 지우면 함께 지워져요. 남겨 둘 이미지는 미리 저장해 두세요. 저장한 이미지는 기기의 Pictures/GeminiEraser 폴더에 있어요. 계정이나 로그인은 따로 없어요.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap" id="privacy">
+            <section class="privacy">
+                <h2>이미지는 폰 밖으로 나가지 않아요</h2>
+                <ul>
+                        <li>이미지는 폰 안에서 처리되고 업로드되지 않아요. 결과는 저장하거나 공유할 때 기기의 Pictures/GeminiEraser에 저장되고, 원본은 그대로 남아요.</li>
+                        <li>사진·저장소 읽기 권한을 요청하지 않아요. 사진 선택기로 고르거나 공유한 이미지만 받고, 계정·로그인도 없어요.</li>
+                        <li>앱은 광고(AdMob), 익명 사용 통계·오류 보고(Firebase), 업데이트 확인, Google Play 구매 확인에 인터넷을 써요. 자세한 내용은 <a href="../privacy_en.html">개인정보처리방침(영어)</a>에 있어요.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <ul>
+            <li>개발자 Mountain24</li>
+            <li>문의: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></li>
+            <li><a href="../privacy_en.html">개인정보처리방침(영어)</a></li>
+        </ul>
+        <p>최종 업데이트 2026-10-15</p>
+        <p class="legal">Gemi Eraser는 Google이 만든 앱이 아니며 Google과 제휴 관계가 없어요.</p>
+        <p class="legal">워터마크 제거 엔진은 MIT 라이선스 오픈소스 <a href="https://github.com/GargantuaX/gemini-watermark-remover">gemini-watermark-remover</a>를 옮겨 왔어요.</p>
+    </footer>
+</body>
+</html>

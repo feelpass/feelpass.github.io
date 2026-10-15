@@ -1,384 +1,545 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shade - 화면 보호 프라이버시 필터</title>
-    <meta name="description" content="엿보기 방지 화면 필터. 6가지 프라이버시 모드로 내 화면을 보호하세요.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Shade — Privacy screen filter &amp; anti-peep app for Android</title>
+    <meta name="description" content="Shade lays a privacy filter over your Android screen so people beside you on a train or in a café can&#x27;t easily read it. Dark Filter, Stripe and Auto-on are free.">
+    <link rel="canonical" href="https://feelpass.github.io/shade/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/shade/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/shade/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/shade/">
+    <link rel="icon" type="image/png" href="images/app-icon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shade">
+    <meta property="og:url" content="https://feelpass.github.io/shade/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:title" content="Shade — Privacy screen filter for Android">
+    <meta property="og:description" content="Keep your screen to yourself. One tap pulls a shade down over your screen.">
+    <meta property="og:image" content="https://feelpass.github.io/shade/images/og-en.png">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="1920">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shade — Privacy screen filter for Android">
+    <meta name="twitter:description" content="Keep your screen to yourself. One tap pulls a shade down over your screen.">
+    <meta name="twitter:image" content="https://feelpass.github.io/shade/images/og-en.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Shade",
+  "url": "https://feelpass.github.io/shade/",
+  "description": "Shade lays a privacy filter over your Android screen so people beside you on a train or in a café can't easily read it. Dark Filter, Stripe and Auto-on are free.",
+  "operatingSystem": "Android 10 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "en",
+  "image": "https://feelpass.github.io/shade/images/og-en.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.shade&hl=en",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.shade&hl=en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free with ads. Premium is a one-time lifetime in-app purchase, not a subscription."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "plantcode",
+    "url": "https://feelpass.github.io/",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there an app that stops people next to me from seeing my phone screen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shade is built for that. It lays a privacy filter, like darkening or stripes, over your screen so it's harder to read from the side. Turn it on or off with one tap from the app's power button, the Quick Settings tile, the home screen widget or the notification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Shade free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Dark Filter, Stripe, Auto-on, and turning the filter on and off from the tile, widget or notification are all free. There's no cap on how many apps or how often. The free version shows a banner ad and an ad when you open the app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Premium a subscription? What does it unlock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Premium is a one-time lifetime purchase, not a subscription. It unlocks the Noise, Gradient, Pixelate and Blur filters and a different filter for each app, and removes the ads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Shade need accessibility access? Can I use it without?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shade draws its filter over other apps through accessibility access, so it can't work without it. Its only other use is noticing when an app you added to Auto-on opens. Shade doesn't ask for the separate \"display over other apps\" permission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Shade read my screen or send anything off my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shade doesn't read what's on your screen. It checks which app is open only if you've added apps to Auto-on, and doesn't save or send that anywhere. Your filter and Auto-on settings are stored on your device. Ads (AdMob), usage stats and crash reports (Firebase) and purchase checks (Google Play) do use the internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it cover my screen automatically when I open my banking or chat app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Add the app to Auto-on and the filter turns on by itself whenever you open it. When Auto-on turned it on, it turns off again once you go to the home screen or another app. Auto-on is free; choosing a different filter for each app is Premium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The filter makes my screen too dark for me, too. What can I do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lower the opacity in the filter's settings. Shade lays a filter over your screen, so the stronger it is, the darker it looks to you, and above 80% you may barely see it. You can also change the stripe width and spacing, or the noise density."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it block side views like a privacy screen protector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in the same way. Shade is a software filter drawn over your screen, not a film or display that narrows the viewing angle. There's no measurement of how well it hides your screen at a given distance or angle. Try different filters and opacity where you actually use your phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Shade on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Shade runs only on Android 10 and later. There's no iPhone version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to Premium when I get a new phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Restore your purchase on the new phone with the same Google account. There's no separate sign-up or login. Premium from a promotion code works only on the device you redeemed it on, so it ends if you switch or reset that device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I try the Pro filters before buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. With protection off, you can pick a Pro filter and preview it. Before you buy, it's preview only; turning it on takes Premium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I enter a promotion code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter it in the promotion code field on the Premium screen. Premium turns on for the number of days the code gives you, on that device only."
+      }
+    }
+  ]
+}
+    </script>
     <style>
+        :root {
+            --ink: #121318;
+            --sub: rgba(18, 19, 24, .7);
+            --dim: rgba(18, 19, 24, .52);
+            --green: #C2334F;
+            --accent: #E94560;
+            --mint: #FF6B81;
+            --night: #121318;
+            --line: rgba(18, 19, 24, .1);
+            --card: #ffffff;
+            --tint: #FFF0F2;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html { -webkit-text-size-adjust: 100%; }
+
         body {
-            font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #263238 0%, #37474F 50%, #455A64 100%);
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
             min-height: 100vh;
-            color: #333;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 100% 0%, rgba(233, 69, 96, .2) 0%, rgba(233, 69, 96, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 0% 38%, rgba(233, 69, 96, .1) 0%, rgba(233, 69, 96, 0) 70%),
+                linear-gradient(176deg, #fffafb 0%, #fbf3f5 50%, var(--tint) 100%);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 16px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+        .lang { font-size: 14px; font-weight: 600; color: var(--sub); text-decoration: none; padding: 8px 12px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+        .lang:hover { color: var(--ink); background: rgba(255, 255, 255, .6); }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 96px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 76px); line-height: 1.1; letter-spacing: -.022em; }
+        .def { margin-top: 26px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .def + .def { margin-top: 12px; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #2a2c33; }
+        .play svg { flex: none; color: var(--mint); }
+        .meta { margin-top: 14px; font-size: 14px; color: var(--sub); }
+
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #e3d6d9, 0 0 0 1px #d6c5c9, 0 30px 70px rgba(90, 20, 40, .2);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #fffafb; }
+        .hero .phone { box-shadow: inset 0 0 0 2px #e3d6d9, 0 0 0 3px rgba(233, 69, 96, .45), 0 30px 80px rgba(90, 20, 40, .26); }
+
+        /* ── 공통 섹션 ────────────────────────── */
+        .block { padding-bottom: 104px; }
+        h2 { font-weight: 800; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.16; letter-spacing: -.02em; }
+        h3 { font-weight: 700; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.3; letter-spacing: -.012em; }
+        .intro { margin-top: 16px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+
+        /* ── 기능 ─────────────────────────────── */
+        .cards { display: grid; gap: 16px; margin-top: 40px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(90, 20, 40, .08); }
+        .card h3 { display: flex; align-items: center; gap: 10px; }
+        .card h3::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+        .card p { margin-top: 10px; font-size: 16px; color: var(--sub); }
+
+        .rows { display: grid; gap: 80px; margin-top: 80px; }
+        .row { display: grid; gap: 32px; align-items: center; }
+        .row p { margin-top: 12px; max-width: 26em; font-size: clamp(16px, 1.8vw, 18px); font-weight: 500; color: var(--sub); }
+        .row h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -.018em; }
+
+        /* ── 표 ───────────────────────────────── */
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(90, 20, 40, .22), rgba(90, 20, 40, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(90, 20, 40, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #faf3f4; border-bottom-color: rgba(18, 19, 24, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 34%; }
+        .cmp { min-width: 760px; }
+        .cmp thead td { width: 22%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(233, 69, 96, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #fde3e7; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        /* ── 맞는 분 / 안 맞는 분 ─────────────── */
+        .fit { display: grid; gap: 16px; }
+        .fit .card h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: rgba(18, 19, 24, .42); }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(194, 51, 79, .34), 0 14px 34px rgba(90, 20, 40, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(233, 69, 96, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(28px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .86); }
+        .privacy a { font-weight: 600; color: var(--mint); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--mint); }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; font-weight: 600; }
+        .foot .legal { flex-basis: 100%; font-size: 13px; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; padding-top: 88px; padding-bottom: 128px; }
+            .hero .phone { justify-self: end; }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .rows { gap: 112px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .fit { grid-template-columns: 1fr 1fr; }
+            .block { padding-bottom: 128px; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
         }
 
-        /* Hero */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            color: white;
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
         }
 
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .app-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 24px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #000;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        /* Features */
-        .features {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-        }
-
-        .feature-icon { font-size: 48px; margin-bottom: 20px; }
-        .feature-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #333; }
-        .feature-card p { color: #666; line-height: 1.6; }
-
-        /* Modes */
-        .modes {
-            background: #f0f2f5;
-            padding: 80px 0;
-        }
-
-        .modes h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .modes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-
-        .mode-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: transform 0.2s;
-        }
-
-        .mode-card:hover { transform: translateY(-3px); }
-        .mode-icon { font-size: 32px; flex-shrink: 0; }
-        .mode-card h3 { font-size: 1.1rem; margin-bottom: 6px; color: #263238; }
-        .mode-card p { color: #666; font-size: 0.95rem; line-height: 1.5; }
-
-        /* Comparison */
-        .comparison {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .comparison h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .plan-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .plan-card {
-            background: #f8f9fa;
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-        }
-
-        .plan-card.pro {
-            background: linear-gradient(135deg, #263238, #37474F);
-            color: white;
-        }
-
-        .plan-card h3 { font-size: 1.4rem; margin-bottom: 20px; }
-        .plan-card.pro h3 { color: #B0BEC5; }
-        .plan-card ul { list-style: none; text-align: left; }
-        .plan-card li { padding: 8px 0; font-size: 0.95rem; }
-        .plan-card li::before { content: '✓ '; color: #4CAF50; font-weight: bold; }
-        .plan-card.pro li::before { color: #81C784; }
-        .plan-badge {
-            display: inline-block;
-            background: #B0BEC5;
-            color: #263238;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a2e;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        footer a { color: #90A4AE; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .copyright { color: #888; font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .tagline { font-size: 1.2rem; }
-            .hero { padding: 60px 0; }
-            .plan-container { grid-template-columns: 1fr; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
         }
     </style>
 </head>
 <body>
+    <header class="wrap top">
+        <a class="brand" href="./"><img src="images/app-icon.png" width="44" height="44" alt="">Shade</a>
+        <a class="lang" href="ko/" hreflang="ko" lang="ko">한국어</a>
+    </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="app-icon">🛡️</div>
-                <div>
-                    <h1>Shade</h1>
-                    <p class="tagline">내 화면은 내 눈만 볼 수 있도록<br>6가지 프라이버시 필터로 화면을 보호하세요</p>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.yp.shade" class="download-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                    </svg>
-                    Google Play에서 다운로드
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>Keep your screen<br><em>to yourself</em></h1>
+                <p class="def">Shade is an Android app that lays a privacy filter over your screen — darkening, stripes and more — so the person next to you on the train or in a café can&#x27;t easily read it. Dark Filter and Stripe are free with ads; a one-time lifetime purchase unlocks the other four filters and removes the ads.</p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.shade&hl=en">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Get it on Google Play</span>
                 </a>
+                <p class="meta">Android 10 and later · Free with ads</p>
             </div>
-        </div>
-    </section>
+            <div class="phone"><img src="images/shot-home-en.webp" width="720" height="1362" alt="Shade&#x27;s main screen with protection on: the Dark Filter at 55% darkens the whole screen."></div>
+        </section>
 
-    <!-- Features -->
-    <section class="features">
-        <div class="container">
-            <h2>주요 기능</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>원터치 토글</h3>
-                    <p>빠른 설정 타일이나 알림으로 한 번의 터치로 프라이버시 필터를 켜고 끄세요.</p>
+        <section class="wrap block" id="features">
+            <h2>What Shade does</h2>
+            <p class="intro">One tap pulls a shade down over your screen. Tap again to lift it.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>A different filter for each app (Premium)</h3>
+                    <p>Pick which filter each Auto-on app uses — Stripe for your chat app, Blur for your bank.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>앱별 자동 활성화</h3>
-                    <p>원하는 앱을 열면 자동으로 Shade가 켜지고, 나가면 꺼집니다.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>완전한 커스터마이징</h3>
-                    <p>색상, 간격, 굵기, 각도까지 나만의 필터를 자유롭게 설정하세요.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔋</div>
-                    <h3>가볍고 효율적</h3>
-                    <p>배터리 친화적 설계. 필요할 때만 작동하고 백그라운드 부담 최소화.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>프라이버시 최우선</h3>
-                    <p>화면 내용을 읽거나 기록하지 않습니다. 개인 데이터 수집 없음.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Material Design 3</h3>
-                    <p>깔끔하고 모던한 디자인. 직관적인 인터페이스로 누구나 쉽게.</p>
+                <div class="card">
+                    <h3>Try before you buy</h3>
+                    <p>You can pick any of the four Pro filters and preview it before buying. Previews work while protection is off; turning a Pro filter on takes Premium.</p>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="rows">
+            <article class="row">
+                <div class="row-text">
+                    <h3>Six privacy filters</h3>
+                    <p>Choose from Dark Filter, Stripe, Noise, Gradient, Pixelate and Blur. Stripes run vertical, horizontal or diagonal either way, and Gradient fades from any of four sides.</p>
+                </div>
+                <div class="phone"><img src="images/shot-filters-en.webp" width="720" height="1362" loading="lazy" alt="Shade&#x27;s main screen with the six filters: Dark Filter, Stripe, Noise, Gradient, Pixelate and Blur. The last four carry a PRO badge."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>On and off in one tap, from four places</h3>
+                    <p>Use the power button in the app, the Quick Settings tile, the home screen widget or the notification. You can add the tile and the widget right from Shade&#x27;s main screen.</p>
+                </div>
+                <div class="phone"><img src="images/shot-tile-en.webp" width="720" height="1607" loading="lazy" alt="Android Quick Settings with the Shade tile, showing Dark Filter."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Auto-on for the apps you pick</h3>
+                    <p>Open your bank or chat app and the filter turns on by itself. When Auto-on turned it on, it turns off again as soon as you leave that app.</p>
+                </div>
+                <div class="phone"><img src="images/shot-auto-en.webp" width="720" height="1186" loading="lazy" alt="The Auto-on screen with Chrome, Gmail and Messages switched on, above the list of all apps."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Fine-tune every filter</h3>
+                    <p>Adjust opacity (0–95%), stripe width, spacing and direction, noise density, pixel size and blur strength, and reset to defaults anytime. Shade warns you above 80%, where your own screen may get hard to see.</p>
+                </div>
+                <div class="phone"><img src="images/shot-tune-en.webp" width="720" height="1362" loading="lazy" alt="Stripe settings with sliders for opacity (35%), thickness and gap, and buttons for stripe direction."></div>
+            </article>
+            </div>
+        </section>
 
-    <!-- 6 Modes -->
-    <section class="modes">
-        <div class="container">
-            <h2>🛡️ 6가지 프라이버시 모드</h2>
-            <div class="modes-grid">
-                <div class="mode-card">
-                    <span class="mode-icon">🌑</span>
-                    <div>
-                        <h3>다크 필터</h3>
-                        <p>시스템 한계를 넘어 화면을 어둡게. OLED에서 완벽한 블랙.</p>
-                    </div>
-                </div>
-                <div class="mode-card">
-                    <span class="mode-icon">📏</span>
-                    <div>
-                        <h3>스트라이프 패턴</h3>
-                        <p>줄무늬로 옆에서 보는 걸 차단. 방향, 색상, 간격 커스텀.</p>
-                    </div>
-                </div>
-                <div class="mode-card">
-                    <span class="mode-icon">📡</span>
-                    <div>
-                        <h3>노이즈</h3>
-                        <p>랜덤 노이즈 오버레이로 거리 밖에서는 화면 판독 불가.</p>
-                    </div>
-                </div>
-                <div class="mode-card">
-                    <span class="mode-icon">🌅</span>
-                    <div>
-                        <h3>그라디언트</h3>
-                        <p>한쪽부터 점진적으로 어두워져 옆 사람만 차단.</p>
-                    </div>
-                </div>
-                <div class="mode-card">
-                    <span class="mode-icon">🔲</span>
-                    <div>
-                        <h3>픽셀레이트</h3>
-                        <p>픽셀화 효과로 정면이 아니면 내용 식별 불가.</p>
-                    </div>
-                </div>
-                <div class="mode-card">
-                    <span class="mode-icon">💧</span>
-                    <div>
-                        <h3>블러</h3>
-                        <p>부드러운 블러로 은은한 프라이버시 보호.</p>
-                    </div>
-                </div>
+        <section class="wrap block" id="pricing">
+            <h2>Free and Premium</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">Free</th><th scope="col" class="pro">Premium</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">Price</th><td>Free</td><td class="pro">One-time lifetime purchase. Not a subscription</td></tr>
+                            <tr><th scope="row">Filters</th><td>Dark Filter, Stripe</td><td class="pro">All six (adds Noise, Gradient, Pixelate, Blur)</td></tr>
+                            <tr><th scope="row">Opacity and pattern settings</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Auto-on for chosen apps</th><td><span class="yes">✓</span> Any number of apps</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">A different filter for each app</th><td>— (every app uses your main filter)</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Turn on/off from the button, tile, widget or notification</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Ads</th><td>Banner, plus an ad when you open the app</td><td class="pro">None</td></tr>
+                            <tr><th scope="row">Moving to a new phone</th><td>—</td><td class="pro">Restore your purchase with the same Google account</td></tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-    </section>
+            <p class="note">Free features have no usage caps.</p>
+        </section>
 
-    <!-- Free vs Pro -->
-    <section class="comparison">
-        <div class="container">
-            <h2>무료 vs Pro</h2>
-            <div class="plan-container">
-                <div class="plan-card">
-                    <h3>무료</h3>
-                    <ul>
-                        <li>다크 필터 (투명도 조절)</li>
-                        <li>기본 스트라이프 패턴</li>
-                        <li>빠른 설정 타일</li>
-                        <li>알림 토글</li>
-                    </ul>
-                </div>
-                <div class="plan-card pro">
-                    <span class="plan-badge">일회성 구매</span>
-                    <h3>Pro</h3>
-                    <ul>
-                        <li>6가지 모드 전체</li>
-                        <li>앱별 자동 활성화</li>
-                        <li>앱별 개별 필터 모드</li>
-                        <li>패턴 완전 커스터마이징</li>
-                        <li>광고 제거</li>
-                    </ul>
-                </div>
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>Shade is a good fit if you</h2>
+                <ul>
+                        <li>feel eyes on your screen every time you open a chat or banking app on the train or in a café</li>
+                        <li>want certain apps covered automatically, without turning the filter on every time</li>
+                        <li>want to try a free option before buying a privacy screen protector. Dark Filter, Stripe and Auto-on are free with no caps.</li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <div class="card bad">
+                <h2>Shade isn&#x27;t for you if you</h2>
+                <ul>
+                        <li>use an iPhone or a phone on Android 9 or older. Shade needs Android 10 or later.</li>
+                        <li>don&#x27;t want to turn on accessibility access. Shade draws its filter through it, so with it off, the filter can&#x27;t come on.</li>
+                        <li>want your screen bright head-on and hidden only from the side. Shade lays a filter over the screen, so the stronger it is, the darker it looks to you too.</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacy_en.html">개인정보처리방침</a>
-                <a href="mailto:philleeran@gmail.com">문의하기</a>
-                <a href="../">전체 앱 보기</a>
+        <section class="wrap block" id="compare">
+            <h2>How Shade compares</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">Shade</th><th scope="col">Privacy screen protector</th><th scope="col">Screen dimmer apps</th><th scope="col">Lowering your phone&#x27;s brightness</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">How it hides the screen</th><td class="us">Lays a filter over it (software)</td><td>Narrows the viewing angle</td><td>Darkens the whole screen</td><td>Turns the brightness down</td></tr>
+                            <tr><th scope="row">What you see head-on</th><td class="us">The stronger the filter, the darker it looks to you</td><td>Usually a clear screen</td><td>A darker screen</td><td>A darker screen</td></tr>
+                            <tr><th scope="row">Turning it on and off</th><td class="us">One tap from the button, tile, widget or notification</td><td>Always on once applied</td><td>Varies by app</td><td>Brightness slider in Quick Settings</td></tr>
+                            <tr><th scope="row">Only in certain apps</th><td class="us">Auto-on turns it on in apps you pick</td><td>No</td><td>Varies by app</td><td>Usually not</td></tr>
+                            <tr><th scope="row">Filter types</th><td class="us">Six (two free)</td><td>—</td><td>Usually just dimming</td><td>—</td></tr>
+                            <tr><th scope="row">What it takes</th><td class="us">Accessibility access. Free with ads, or a lifetime purchase</td><td>Buying and applying a film</td><td>Varies by app</td><td>Nothing extra</td></tr>
+                    </tbody>
+                </table>
             </div>
-            <p class="copyright">© 2025 Shade. All rights reserved.</p>
+            <p class="note">Category columns describe typical behavior; individual products vary.</p>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>Questions people ask</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>Is there an app that stops people next to me from seeing my phone screen?</h3></summary>
+                    <p>Shade is built for that. It lays a privacy filter, like darkening or stripes, over your screen so it&#x27;s harder to read from the side. Turn it on or off with one tap from the app&#x27;s power button, the Quick Settings tile, the home screen widget or the notification.</p>
+                </details>
+                <details>
+                    <summary><h3>Is Shade free?</h3></summary>
+                    <p>Yes. Dark Filter, Stripe, Auto-on, and turning the filter on and off from the tile, widget or notification are all free. There&#x27;s no cap on how many apps or how often. The free version shows a banner ad and an ad when you open the app.</p>
+                </details>
+                <details>
+                    <summary><h3>Is Premium a subscription? What does it unlock?</h3></summary>
+                    <p>Premium is a one-time lifetime purchase, not a subscription. It unlocks the Noise, Gradient, Pixelate and Blur filters and a different filter for each app, and removes the ads.</p>
+                </details>
+                <details>
+                    <summary><h3>Why does Shade need accessibility access? Can I use it without?</h3></summary>
+                    <p>Shade draws its filter over other apps through accessibility access, so it can&#x27;t work without it. Its only other use is noticing when an app you added to Auto-on opens. Shade doesn&#x27;t ask for the separate &quot;display over other apps&quot; permission.</p>
+                </details>
+                <details>
+                    <summary><h3>Does Shade read my screen or send anything off my phone?</h3></summary>
+                    <p>Shade doesn&#x27;t read what&#x27;s on your screen. It checks which app is open only if you&#x27;ve added apps to Auto-on, and doesn&#x27;t save or send that anywhere. Your filter and Auto-on settings are stored on your device. Ads (AdMob), usage stats and crash reports (Firebase) and purchase checks (Google Play) do use the internet.</p>
+                </details>
+                <details>
+                    <summary><h3>Can it cover my screen automatically when I open my banking or chat app?</h3></summary>
+                    <p>Yes. Add the app to Auto-on and the filter turns on by itself whenever you open it. When Auto-on turned it on, it turns off again once you go to the home screen or another app. Auto-on is free; choosing a different filter for each app is Premium.</p>
+                </details>
+                <details>
+                    <summary><h3>The filter makes my screen too dark for me, too. What can I do?</h3></summary>
+                    <p>Lower the opacity in the filter&#x27;s settings. Shade lays a filter over your screen, so the stronger it is, the darker it looks to you, and above 80% you may barely see it. You can also change the stripe width and spacing, or the noise density.</p>
+                </details>
+                <details>
+                    <summary><h3>Does it block side views like a privacy screen protector?</h3></summary>
+                    <p>Not in the same way. Shade is a software filter drawn over your screen, not a film or display that narrows the viewing angle. There&#x27;s no measurement of how well it hides your screen at a given distance or angle. Try different filters and opacity where you actually use your phone.</p>
+                </details>
+                <details>
+                    <summary><h3>Is Shade on iPhone?</h3></summary>
+                    <p>No. Shade runs only on Android 10 and later. There&#x27;s no iPhone version.</p>
+                </details>
+                <details>
+                    <summary><h3>What happens to Premium when I get a new phone?</h3></summary>
+                    <p>Restore your purchase on the new phone with the same Google account. There&#x27;s no separate sign-up or login. Premium from a promotion code works only on the device you redeemed it on, so it ends if you switch or reset that device.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I try the Pro filters before buying?</h3></summary>
+                    <p>Yes. With protection off, you can pick a Pro filter and preview it. Before you buy, it&#x27;s preview only; turning it on takes Premium.</p>
+                </details>
+                <details>
+                    <summary><h3>Where do I enter a promotion code?</h3></summary>
+                    <p>Enter it in the promotion code field on the Premium screen. Premium turns on for the number of days the code gives you, on that device only.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap" id="privacy">
+            <section class="privacy">
+                <h2>It covers your screen. It doesn&#x27;t read it.</h2>
+                <ul>
+                        <li>Shade doesn&#x27;t read what&#x27;s on your screen. It checks which app is open only for Auto-on, and doesn&#x27;t save or send that anywhere.</li>
+                        <li>Your filter and Auto-on settings are stored on your device. There&#x27;s no account, and no Shade server that receives them.</li>
+                        <li>Ads in the free version (AdMob) and usage stats and crash reports (Firebase) use the internet. The <a href="privacy_en.html">privacy policy</a> explains what they collect.</li>
+                </ul>
+            </section>
         </div>
+    </main>
+
+    <footer class="wrap foot">
+        <ul>
+            <li>Developer: <a href="https://feelpass.github.io/">plantcode</a></li>
+            <li>Contact: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></li>
+            <li><a href="privacy_en.html">Privacy policy</a></li>
+        </ul>
+        <p>Last updated 2026-10-15</p>
     </footer>
-
 </body>
 </html>

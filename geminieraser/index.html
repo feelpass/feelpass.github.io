@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemi Eraser — Gemini watermark remover for Android</title>
+    <meta name="description" content="Remove the sparkle logo from images made with Google Gemini, right on your Android phone. Nothing is uploaded. Free with ads and no daily limit.">
+    <link rel="canonical" href="https://feelpass.github.io/geminieraser/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/geminieraser/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/geminieraser/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/geminieraser/">
+    <link rel="icon" type="image/png" href="images/app-icon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gemi Eraser">
+    <meta property="og:url" content="https://feelpass.github.io/geminieraser/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:title" content="Gemi Eraser — Gemini watermark remover for Android">
+    <meta property="og:description" content="Take the sparkle off your Gemini images. Processed on your phone, never uploaded.">
+    <meta property="og:image" content="https://feelpass.github.io/geminieraser/images/og-en.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gemi Eraser — Gemini watermark remover for Android">
+    <meta name="twitter:description" content="Take the sparkle off your Gemini images. Processed on your phone, never uploaded.">
+    <meta name="twitter:image" content="https://feelpass.github.io/geminieraser/images/og-en.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Gemi Eraser",
+  "url": "https://feelpass.github.io/geminieraser/",
+  "description": "Remove the sparkle logo from images made with Google Gemini, right on your Android phone. Nothing is uploaded. Free with ads and no daily limit.",
+  "operatingSystem": "Android 10 or later",
+  "applicationCategory": "MultimediaApplication",
+  "inLanguage": "en",
+  "image": "https://feelpass.github.io/geminieraser/images/og-en.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.geminieraser&hl=en",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.geminieraser&hl=en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free with ads and no daily limit. The Ad-free Lifetime Pass is a one-time in-app purchase (US$1.99), not a subscription."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mountain24",
+    "url": "https://play.google.com/store/apps/developer?id=Mountain24",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I remove the Gemini (Nano Banana) watermark on my Android phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use Gemi Eraser. It removes the semi-transparent sparkle logo in the bottom-right corner of images made with Gemini, right on your phone. Pick an image and it finds and removes the watermark on its own; there's nothing to set up. It runs on Android 10 and later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free Gemini watermark remover with no daily limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gemi Eraser is free and has no daily limit. In return, an ad plays before the result when a watermark is found, and there are ads in the app. The ad before the result only comes the first time each day: watch it to the end and the rest of the day's results show right away, but if you close it early, that result is canceled. Cleaning several images at once is a Premium feature."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to remove the ads? Is it a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a one-time purchase, the Ad-free Lifetime Pass, not a subscription. It's US$1.99 in the US, and prices vary by region. It removes all ads and unlocks batch processing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it say \"No watermark detected\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually because the image isn't an original Gemini file. Gemi Eraser only removes the sparkle logo Gemini adds to its images, so there's nothing to find on other services' logos or on regular photos. Even with a Gemini image, a screenshot, a cropped or resized copy, or a file re-saved by another app may not be detected. Try the original image exactly as you downloaded it from Gemini."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Part of the watermark is still there. What can I do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the result screen, tap View other results to zoom in and compare other candidates. If traces remain, use Adjust on that screen to set the position, size and strength by hand. Leftover traces usually mean the image isn't the original file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my images uploaded? Does it work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your images are processed on your phone and never uploaded. That's why image processing works without an internet connection. The app does go online for ads, anonymous usage stats and crash reports, checking for app updates, and verifying purchases through Google Play."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it need access to my photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Gemi Eraser doesn't ask for permission to read your photos or storage. It only gets the images you pick with Android's photo picker or share to it from another app. It doesn't use accessibility access either."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my image lose quality? Where are results saved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only the pixels in the watermark area change; the rest stays as it was. When you save or share a result, it's stored as a lossless PNG in Pictures/GeminiEraser on your device, and your original file isn't changed. Very large images, over about 18.9 megapixels, are scaled down before processing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it remove SynthID too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, SynthID stays in the image. Gemini images carry both the visible logo and SynthID, an invisible watermark; Gemi Eraser removes only the visible logo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I remove watermarks from several images at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with Premium. On the free plan, you clean one image at a time. Select several images and they're cleaned one after another; Android's photo picker sets how many you can select at once. Sharing several images from your gallery or another app also starts a batch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an iPhone version? Does it work on videos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Gemi Eraser is for Android 10 and later, and there's no iPhone version. It works on images only, so it can't remove watermarks from videos, such as those made with Flow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my History when I switch phones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Images in History are stored only inside the app and are deleted when you uninstall it. Save the ones you want to keep first; saved images are in Pictures/GeminiEraser on your device. There's no account or sign-in."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --ink: #12101e;
+            --sub: rgba(18, 16, 30, .7);
+            --dim: rgba(18, 16, 30, .52);
+            --green: #5B43D6;
+            --accent: #7C63F0;
+            --mint: #C9BCFF;
+            --night: #0d0c1c;
+            --line: rgba(18, 16, 30, .1);
+            --card: #ffffff;
+            --tint: #F1EEFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
+            min-height: 100vh;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 100% 0%, rgba(124, 99, 240, .2) 0%, rgba(124, 99, 240, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 0% 38%, rgba(124, 99, 240, .1) 0%, rgba(124, 99, 240, 0) 70%),
+                linear-gradient(176deg, #fbfaff 0%, #f3f1fc 50%, var(--tint) 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 16px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+        .lang { font-size: 14px; font-weight: 600; color: var(--sub); text-decoration: none; padding: 8px 12px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+        .lang:hover { color: var(--ink); background: rgba(255, 255, 255, .6); }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 96px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 76px); line-height: 1.1; letter-spacing: -.022em; }
+        .def { margin-top: 26px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .def + .def { margin-top: 12px; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #24223a; }
+        .play svg { flex: none; color: var(--mint); }
+        .meta { margin-top: 14px; font-size: 14px; color: var(--sub); }
+
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #dcd7ee, 0 0 0 1px #cdc6e6, 0 30px 70px rgba(50, 30, 120, .2);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #fbfaff; }
+        .hero .phone { box-shadow: inset 0 0 0 2px #dcd7ee, 0 0 0 3px rgba(124, 99, 240, .45), 0 30px 80px rgba(50, 30, 120, .26); }
+
+        /* ── 공통 섹션 ────────────────────────── */
+        .block { padding-bottom: 104px; }
+        h2 { font-weight: 800; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.16; letter-spacing: -.02em; }
+        h3 { font-weight: 700; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.3; letter-spacing: -.012em; }
+        .intro { margin-top: 16px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+
+        /* ── 기능 ─────────────────────────────── */
+        .cards { display: grid; gap: 16px; margin-top: 40px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(50, 30, 120, .08); }
+        .card h3 { display: flex; align-items: center; gap: 10px; }
+        .card h3::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+        .card p { margin-top: 10px; font-size: 16px; color: var(--sub); }
+
+        .rows { display: grid; gap: 80px; margin-top: 80px; }
+        .row { display: grid; gap: 32px; align-items: center; }
+        .row p { margin-top: 12px; max-width: 26em; font-size: clamp(16px, 1.8vw, 18px); font-weight: 500; color: var(--sub); }
+        .row h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -.018em; }
+
+        /* ── 표 ───────────────────────────────── */
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(50, 30, 120, .22), rgba(50, 30, 120, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(50, 30, 120, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #f5f3fd; border-bottom-color: rgba(18, 16, 30, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 34%; }
+        .cmp { min-width: 760px; }
+        .cmp thead td { width: 22%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(124, 99, 240, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #e9e4ff; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        /* ── 맞는 분 / 안 맞는 분 ─────────────── */
+        .fit { display: grid; gap: 16px; }
+        .fit .card h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: rgba(18, 16, 30, .42); }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(91, 67, 214, .34), 0 14px 34px rgba(50, 30, 120, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(124, 99, 240, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(28px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .86); }
+        .privacy a { font-weight: 600; color: var(--mint); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--mint); }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; font-weight: 600; }
+        .foot .legal { flex-basis: 100%; font-size: 13px; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; padding-top: 88px; padding-bottom: 128px; }
+            .hero .phone { justify-self: end; }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .rows { gap: 112px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .fit { grid-template-columns: 1fr 1fr; }
+            .block { padding-bottom: 128px; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+        }
+
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="wrap top">
+        <a class="brand" href="./"><img src="images/app-icon.png" width="44" height="44" alt="">Gemi Eraser</a>
+        <a class="lang" href="ko/" hreflang="ko" lang="ko">한국어</a>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>Take the sparkle off<br><em>your Gemini images</em></h1>
+                <p class="def">Gemi Eraser is an Android app that removes the visible watermark — the sparkle logo in the bottom-right corner — from images made with Google Gemini, entirely on your phone, without uploading them. It&#x27;s free with ads and has no daily limit; a one-time lifetime purchase removes the ads and unlocks batch processing.</p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.geminieraser&hl=en">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Get it on Google Play</span>
+                </a>
+                <p class="meta">Android 10 and later · Free with ads</p>
+            </div>
+            <div class="phone"><img src="images/shot-home-en.webp" width="720" height="1560" alt="Gemi Eraser&#x27;s home screen with a Select image button, a Batch button and recent results."></div>
+        </section>
+
+        <section class="wrap block" id="features">
+            <h2>What Gemi Eraser does</h2>
+            <p class="intro">Pick an image and Gemi Eraser finds the logo in the corner and removes it. It all happens on your phone. Nothing gets uploaded.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Processed on your phone</h3>
+                    <p>Detection and removal both happen on your device, and your images are never uploaded. That also means it works without an internet connection.</p>
+                </div>
+                <div class="card">
+                    <h3>Share straight in, or clean a batch</h3>
+                    <p>Share an image from another app to Gemi Eraser and it gets cleaned right away. Picking several images and cleaning them in one go is a Premium feature.</p>
+                </div>
+            </div>
+            <div class="rows">
+            <article class="row">
+                <div class="row-text">
+                    <h3>Pick an image. That&#x27;s it.</h3>
+                    <p>Gemi Eraser finds the watermark and removes it on its own. There&#x27;s nothing to set up. You can check the result side by side with the original.</p>
+                </div>
+                <div class="phone"><img src="images/shot-result-en.webp" width="720" height="1560" loading="lazy" alt="The Result screen showing a cleaned portrait, with Before and After buttons and a Watermark Removed check."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Restored, not painted over</h3>
+                    <p>Because the logo&#x27;s shape and transparency are known, Gemi Eraser reverses the blend to recover the original pixels underneath. Only the watermark area changes. Results are saved as lossless PNG, and your original file stays untouched.</p>
+                </div>
+                <div class="phone"><img src="images/shot-restore-en.webp" width="720" height="1560" loading="lazy" alt="Result candidates zoomed in on the watermark area after removal: the dark background is clean where the logo was."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Compare results, or fine-tune by hand</h3>
+                    <p>Not quite clean? Tap View other results to zoom in and compare candidates, then use Adjust to set the position, size and strength yourself.</p>
+                </div>
+                <div class="phone"><img src="images/shot-compare-en.webp" width="720" height="1560" loading="lazy" alt="Result candidates zoomed in on the sparkle logo before removal, with Before, After, Full and Zoom toggles and an Adjust button."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>History</h3>
+                    <p>Cleaned images collect in History, where you can save, share or copy them again later. It keeps 100 by default (or unlimited, if you choose), and you can turn History off if you&#x27;d rather not keep anything.</p>
+                </div>
+                <div class="phone"><img src="images/shot-history-en.webp" width="720" height="1560" loading="lazy" alt="The History tab with a grid of cleaned images."></div>
+            </article>
+            </div>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>Free and Premium</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">Free</th><th scope="col" class="pro">Premium</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">Price</th><td>Free</td><td class="pro">Ad-free Lifetime Pass, US$1.99. One-time purchase, not a subscription</td></tr>
+                            <tr><th scope="row">Daily limit</th><td>None</td><td class="pro">None</td></tr>
+                            <tr><th scope="row">How images are cleaned</th><td>One at a time</td><td class="pro">One at a time, or in batches</td></tr>
+                            <tr><th scope="row">Ad before the result</th><td>One ad when a watermark is found — only the first time each day. Watch it to the end and you won&#x27;t see it again that day</td><td class="pro">None</td></tr>
+                            <tr><th scope="row">Ads in the app</th><td>Banner and native ads, plus an ad when you open the app</td><td class="pro">None</td></tr>
+                            <tr><th scope="row">Compare results, Adjust, History, share to clean</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Price shown is for the US and varies by region (₩2,900 in Korea).</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>Gemi Eraser is a good fit if you</h2>
+                <ul>
+                        <li>want to use a Gemini image in slides, a blog post or on social media, but the sparkle in the corner gets in the way. Just pick the image on your phone.</li>
+                        <li>don&#x27;t want to upload your images to someone else&#x27;s server. Everything is processed on your phone.</li>
+                        <li>want the original picture back, not a smudge where the logo was. Gemi Eraser reverses the blend instead of painting over it, and saves lossless PNG.</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>Gemi Eraser isn&#x27;t for you if you</h2>
+                <ul>
+                        <li>need to remove something other than Gemini&#x27;s sparkle logo. It can&#x27;t remove other services&#x27; logos or watermarks, text or objects in photos, or watermarks on videos.</li>
+                        <li>only have a screenshot or a cropped or resized copy. If it isn&#x27;t the original Gemini file, the watermark may not be detected or may not come off completely.</li>
+                        <li>want to erase every sign that an image was made with AI. Gemi Eraser removes only the visible logo; SynthID, the invisible watermark, stays in the image.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="compare">
+            <h2>How it compares</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">Gemi Eraser</th><th scope="col">Photo editor erase tools</th><th scope="col">Web watermark removers</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">What it removes</th><td class="us">Only the sparkle logo in the bottom-right of Gemini images</td><td>Whatever you brush over</td><td>Varies by tool</td></tr>
+                            <tr><th scope="row">How</th><td class="us">Reverses the blend using the logo&#x27;s known shape and transparency, recovering the original pixels</td><td>Usually fills the area in from its surroundings</td><td>Varies by tool</td></tr>
+                            <tr><th scope="row">Images that already have the logo</th><td class="us"><span class="yes">✓</span> If it&#x27;s the original Gemini file</td><td class="yes">✓</td><td>Varies by tool</td></tr>
+                            <tr><th scope="row">Screenshots and cropped copies</th><td class="us">May not be detected, or traces may remain</td><td><span class="yes">✓</span> Brush over it</td><td>Varies by tool</td></tr>
+                            <tr><th scope="row">Uploads your image</th><td class="us">No, processed on your phone</td><td>Varies by app</td><td>Varies by tool</td></tr>
+                            <tr><th scope="row">What you need</th><td class="us">Android 10 or later. Free with ads, or a lifetime purchase</td><td>A photo editing app</td><td>A browser</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Category columns describe typical behavior; individual apps and tools vary.</p>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>Questions people ask</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>How do I remove the Gemini (Nano Banana) watermark on my Android phone?</h3></summary>
+                    <p>Use Gemi Eraser. It removes the semi-transparent sparkle logo in the bottom-right corner of images made with Gemini, right on your phone. Pick an image and it finds and removes the watermark on its own; there&#x27;s nothing to set up. It runs on Android 10 and later.</p>
+                </details>
+                <details>
+                    <summary><h3>Is there a free Gemini watermark remover with no daily limit?</h3></summary>
+                    <p>Gemi Eraser is free and has no daily limit. In return, an ad plays before the result when a watermark is found, and there are ads in the app. The ad before the result only comes the first time each day: watch it to the end and the rest of the day&#x27;s results show right away, but if you close it early, that result is canceled. Cleaning several images at once is a Premium feature.</p>
+                </details>
+                <details>
+                    <summary><h3>How much does it cost to remove the ads? Is it a subscription?</h3></summary>
+                    <p>It&#x27;s a one-time purchase, the Ad-free Lifetime Pass, not a subscription. It&#x27;s US$1.99 in the US, and prices vary by region. It removes all ads and unlocks batch processing.</p>
+                </details>
+                <details>
+                    <summary><h3>Why does it say &quot;No watermark detected&quot;?</h3></summary>
+                    <p>Usually because the image isn&#x27;t an original Gemini file. Gemi Eraser only removes the sparkle logo Gemini adds to its images, so there&#x27;s nothing to find on other services&#x27; logos or on regular photos. Even with a Gemini image, a screenshot, a cropped or resized copy, or a file re-saved by another app may not be detected. Try the original image exactly as you downloaded it from Gemini.</p>
+                </details>
+                <details>
+                    <summary><h3>Part of the watermark is still there. What can I do?</h3></summary>
+                    <p>On the result screen, tap View other results to zoom in and compare other candidates. If traces remain, use Adjust on that screen to set the position, size and strength by hand. Leftover traces usually mean the image isn&#x27;t the original file.</p>
+                </details>
+                <details>
+                    <summary><h3>Are my images uploaded? Does it work offline?</h3></summary>
+                    <p>No. Your images are processed on your phone and never uploaded. That&#x27;s why image processing works without an internet connection. The app does go online for ads, anonymous usage stats and crash reports, checking for app updates, and verifying purchases through Google Play.</p>
+                </details>
+                <details>
+                    <summary><h3>Does it need access to my photos?</h3></summary>
+                    <p>No. Gemi Eraser doesn&#x27;t ask for permission to read your photos or storage. It only gets the images you pick with Android&#x27;s photo picker or share to it from another app. It doesn&#x27;t use accessibility access either.</p>
+                </details>
+                <details>
+                    <summary><h3>Will my image lose quality? Where are results saved?</h3></summary>
+                    <p>Only the pixels in the watermark area change; the rest stays as it was. When you save or share a result, it&#x27;s stored as a lossless PNG in Pictures/GeminiEraser on your device, and your original file isn&#x27;t changed. Very large images, over about 18.9 megapixels, are scaled down before processing.</p>
+                </details>
+                <details>
+                    <summary><h3>Does it remove SynthID too?</h3></summary>
+                    <p>No, SynthID stays in the image. Gemini images carry both the visible logo and SynthID, an invisible watermark; Gemi Eraser removes only the visible logo.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I remove watermarks from several images at once?</h3></summary>
+                    <p>Yes, with Premium. On the free plan, you clean one image at a time. Select several images and they&#x27;re cleaned one after another; Android&#x27;s photo picker sets how many you can select at once. Sharing several images from your gallery or another app also starts a batch.</p>
+                </details>
+                <details>
+                    <summary><h3>Is there an iPhone version? Does it work on videos?</h3></summary>
+                    <p>No. Gemi Eraser is for Android 10 and later, and there&#x27;s no iPhone version. It works on images only, so it can&#x27;t remove watermarks from videos, such as those made with Flow.</p>
+                </details>
+                <details>
+                    <summary><h3>What happens to my History when I switch phones?</h3></summary>
+                    <p>Images in History are stored only inside the app and are deleted when you uninstall it. Save the ones you want to keep first; saved images are in Pictures/GeminiEraser on your device. There&#x27;s no account or sign-in.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap" id="privacy">
+            <section class="privacy">
+                <h2>Your images stay on your phone</h2>
+                <ul>
+                        <li>Images are processed on your phone and never uploaded. Results are saved to Pictures/GeminiEraser on your device only when you save or share them, and your original stays as it was.</li>
+                        <li>Gemi Eraser doesn&#x27;t ask for permission to read your photos or storage. It only gets images you pick or share to it, and there&#x27;s no account or sign-in.</li>
+                        <li>The app uses the internet for ads (AdMob), anonymous usage stats and crash reports (Firebase), update checks, and Google Play purchase checks. See the <a href="privacy_en.html">privacy policy</a> for details.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <ul>
+            <li>Developer: Mountain24</li>
+            <li>Contact: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></li>
+            <li><a href="privacy_en.html">Privacy policy</a></li>
+        </ul>
+        <p>Last updated 2026-10-15</p>
+        <p class="legal">Gemi Eraser is an independent app, not made by or affiliated with Google.</p>
+        <p class="legal">The removal engine is ported from <a href="https://github.com/GargantuaX/gemini-watermark-remover">gemini-watermark-remover</a> (MIT License).</p>
+    </footer>
+</body>
+</html>

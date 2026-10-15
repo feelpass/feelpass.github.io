@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shade — 엿보기 방지 화면 필터, 안드로이드 사생활 보호 앱</title>
+    <meta name="description" content="지하철·카페에서 옆 사람이 내 화면을 엿보지 못하게 보호 필터를 덮는 안드로이드 앱. 다크 필터·줄무늬와 앱별 자동 켜기는 무료예요.">
+    <link rel="canonical" href="https://feelpass.github.io/shade/ko/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/shade/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/shade/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/shade/">
+    <link rel="icon" type="image/png" href="../images/app-icon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shade">
+    <meta property="og:url" content="https://feelpass.github.io/shade/ko/">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Shade — 엿보기 방지 화면 필터">
+    <meta property="og:description" content="옆자리 시선에서 내 화면을 가려요. 버튼 한 번이면 화면 위로 필터가 내려와요.">
+    <meta property="og:image" content="https://feelpass.github.io/shade/images/og-ko.png">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="1920">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shade — 엿보기 방지 화면 필터">
+    <meta name="twitter:description" content="옆자리 시선에서 내 화면을 가려요. 버튼 한 번이면 화면 위로 필터가 내려와요.">
+    <meta name="twitter:image" content="https://feelpass.github.io/shade/images/og-ko.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Shade",
+  "url": "https://feelpass.github.io/shade/ko/",
+  "description": "지하철·카페에서 옆 사람이 내 화면을 엿보지 못하게 보호 필터를 덮는 안드로이드 앱. 다크 필터·줄무늬와 앱별 자동 켜기는 무료예요.",
+  "operatingSystem": "Android 10 이상",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "ko",
+  "image": "https://feelpass.github.io/shade/images/og-ko.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.shade&hl=ko",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.shade&hl=ko",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW",
+    "description": "무료(광고 포함). 프리미엄은 구독이 아닌 한 번 결제하는 평생 이용권이에요."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "plantcode",
+    "url": "https://feelpass.github.io/",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "지하철에서 옆 사람이 내 폰 화면을 못 보게 하는 앱이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shade가 그런 앱이에요. 화면 위에 어둡게·줄무늬 같은 보호 필터를 덮어서 옆에서 화면을 엿보기 어렵게 해요. 앱의 전원 버튼이나 빠른 설정 타일, 홈 화면 위젯, 알림에서 한 번 눌러 켜고 꺼요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "엿보기 방지 앱 Shade는 무료인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 다크 필터와 줄무늬 필터, 앱별 자동 켜기, 타일·위젯·알림으로 켜고 끄기는 무료예요. 앱 개수나 사용 횟수 제한도 없어요. 무료판에는 배너 광고와 앱을 열 때 뜨는 광고가 나와요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "프리미엄은 구독인가요? 무엇이 열리나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "구독이 아니라 한 번 결제하는 평생 이용권이에요. 노이즈·그라데이션·픽셀화·블러 필터 4종과 앱마다 다른 필터가 열리고, 광고가 사라져요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "왜 접근성 권한이 필요한가요? 없이도 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "필터를 다른 앱 위에 띄우는 데 접근성 권한을 쓰기 때문에, 이 권한 없이는 쓸 수 없어요. 그 밖에는 자동 켜기에 넣은 앱이 열렸는지 알아차리는 데만 써요. '다른 앱 위에 표시' 권한은 따로 요청하지 않아요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "화면 내용을 읽거나 어디로 보내지는 않나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "화면에 보이는 내용은 읽지 않아요. 어떤 앱이 열렸는지는 자동 켜기에 앱을 넣었을 때만 확인하고, 저장하거나 휴대폰 밖으로 보내지 않아요. 필터와 자동 켜기 같은 설정은 기기 안에 저장돼요. 다만 광고(AdMob)와 사용 통계·오류 보고(Firebase), 구매 확인(Google Play)은 인터넷을 써요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "은행 앱이나 메신저를 열 때만 자동으로 화면을 가릴 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 앱별 자동 켜기에 그 앱을 넣으면 열 때마다 필터가 저절로 켜져요. 자동으로 켜진 필터는 홈 화면이나 다른 앱으로 넘어가면 다시 꺼져요. 자동 켜기는 무료이고, 앱마다 다른 필터를 정하는 건 프리미엄이에요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "필터를 켜니까 나도 화면이 잘 안 보여요.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "필터 설정에서 진하기를 낮춰 보세요. Shade는 화면 위에 필터를 덮는 방식이라 진할수록 내 눈에도 어두워지고, 80%를 넘기면 거의 안 보일 수 있어요. 줄무늬는 굵기와 간격을, 노이즈는 밀도를 바꿔 보는 것도 방법이에요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "보호 필름처럼 옆에서는 완전히 안 보이나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, Shade는 보는 각도를 바꾸는 필름이나 프라이버시 디스플레이가 아니라 화면 위에 그리는 소프트웨어 필터예요. 어느 거리와 각도에서 얼마나 가려지는지 잰 자료는 없어요. 쓰는 자리에서 필터 종류와 진하기를 직접 맞춰 보세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "아이폰에서도 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, Shade는 안드로이드 10 이상에서만 돼요. iPhone 버전은 없어요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "폰을 바꾸면 프리미엄은 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "새 폰에서 같은 Google 계정으로 구매를 복원하면 돼요. 계정 가입이나 로그인은 따로 없어요. 프로모션 코드로 켠 프리미엄은 그 기기에서만 쓸 수 있어서, 기기를 바꾸거나 초기화하면 꺼져요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "프로 필터를 사기 전에 볼 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 보호를 끈 상태에서 프로 필터를 골라 미리 볼 수 있어요. 구매 전에는 미리보기만 되고, 실제로 켜서 쓰려면 프리미엄이 필요해요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "프로모션 코드는 어디에 넣나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "프리미엄 화면의 프로모션 코드 칸에 넣으면 돼요. 코드에 정해진 일수 동안 프리미엄이 켜지고, 그 기기에서만 쓸 수 있어요."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --ink: #121318;
+            --sub: rgba(18, 19, 24, .7);
+            --dim: rgba(18, 19, 24, .52);
+            --green: #C2334F;
+            --accent: #E94560;
+            --mint: #FF6B81;
+            --night: #121318;
+            --line: rgba(18, 19, 24, .1);
+            --card: #ffffff;
+            --tint: #FFF0F2;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
+            min-height: 100vh;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 100% 0%, rgba(233, 69, 96, .2) 0%, rgba(233, 69, 96, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 0% 38%, rgba(233, 69, 96, .1) 0%, rgba(233, 69, 96, 0) 70%),
+                linear-gradient(176deg, #fffafb 0%, #fbf3f5 50%, var(--tint) 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 16px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+        .lang { font-size: 14px; font-weight: 600; color: var(--sub); text-decoration: none; padding: 8px 12px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+        .lang:hover { color: var(--ink); background: rgba(255, 255, 255, .6); }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 96px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 76px); line-height: 1.1; letter-spacing: -.022em; }
+        .def { margin-top: 26px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .def + .def { margin-top: 12px; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #2a2c33; }
+        .play svg { flex: none; color: var(--mint); }
+        .meta { margin-top: 14px; font-size: 14px; color: var(--sub); }
+
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #e3d6d9, 0 0 0 1px #d6c5c9, 0 30px 70px rgba(90, 20, 40, .2);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #fffafb; }
+        .hero .phone { box-shadow: inset 0 0 0 2px #e3d6d9, 0 0 0 3px rgba(233, 69, 96, .45), 0 30px 80px rgba(90, 20, 40, .26); }
+
+        /* ── 공통 섹션 ────────────────────────── */
+        .block { padding-bottom: 104px; }
+        h2 { font-weight: 800; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.16; letter-spacing: -.02em; }
+        h3 { font-weight: 700; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.3; letter-spacing: -.012em; }
+        .intro { margin-top: 16px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+
+        /* ── 기능 ─────────────────────────────── */
+        .cards { display: grid; gap: 16px; margin-top: 40px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(90, 20, 40, .08); }
+        .card h3 { display: flex; align-items: center; gap: 10px; }
+        .card h3::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+        .card p { margin-top: 10px; font-size: 16px; color: var(--sub); }
+
+        .rows { display: grid; gap: 80px; margin-top: 80px; }
+        .row { display: grid; gap: 32px; align-items: center; }
+        .row p { margin-top: 12px; max-width: 26em; font-size: clamp(16px, 1.8vw, 18px); font-weight: 500; color: var(--sub); }
+        .row h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -.018em; }
+
+        /* ── 표 ───────────────────────────────── */
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(90, 20, 40, .22), rgba(90, 20, 40, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(90, 20, 40, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #faf3f4; border-bottom-color: rgba(18, 19, 24, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 34%; }
+        .cmp { min-width: 760px; }
+        .cmp thead td { width: 22%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(233, 69, 96, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #fde3e7; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        /* ── 맞는 분 / 안 맞는 분 ─────────────── */
+        .fit { display: grid; gap: 16px; }
+        .fit .card h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: rgba(18, 19, 24, .42); }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(194, 51, 79, .34), 0 14px 34px rgba(90, 20, 40, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(233, 69, 96, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(28px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .86); }
+        .privacy a { font-weight: 600; color: var(--mint); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--mint); }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; font-weight: 600; }
+        .foot .legal { flex-basis: 100%; font-size: 13px; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; padding-top: 88px; padding-bottom: 128px; }
+            .hero .phone { justify-self: end; }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .rows { gap: 112px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .fit { grid-template-columns: 1fr 1fr; }
+            .block { padding-bottom: 128px; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+        }
+
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="wrap top">
+        <a class="brand" href="./"><img src="../images/app-icon.png" width="44" height="44" alt="">Shade</a>
+        <a class="lang" href="../" hreflang="en" lang="en">EN</a>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>옆자리 시선에서<br><em>내 화면을 가려요</em></h1>
+                <p class="def">Shade는 지하철이나 카페에서 옆 사람이 내 휴대폰 화면을 엿보지 못하게, 화면 위에 어둡게·줄무늬 같은 보호 필터를 덮어 주는 안드로이드 앱이에요. 다크 필터와 줄무늬 필터는 무료(광고 포함)이고, 나머지 필터 4종과 광고 제거는 한 번 결제하는 평생 이용권으로 열려요.</p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.shade&hl=ko">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Google Play에서 받기</span>
+                </a>
+                <p class="meta">안드로이드 10 이상 · 무료(광고 포함)</p>
+            </div>
+            <div class="phone"><img src="../images/shot-home-ko.webp" width="720" height="1362" alt="보호를 켠 Shade 메인 화면. 다크 필터 55%가 화면 전체를 어둡게 덮고 있어요."></div>
+        </section>
+
+        <section class="wrap block" id="features">
+            <h2>Shade로 할 수 있는 것</h2>
+            <p class="intro">버튼 한 번이면 화면 위로 필터가 내려와요. 다시 누르면 걷혀요.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>앱마다 다른 필터 (프리미엄)</h3>
+                    <p>자동 켜기에 넣은 앱마다 쓸 필터를 따로 정해요. 메신저는 줄무늬, 은행 앱은 블러처럼요.</p>
+                </div>
+                <div class="card">
+                    <h3>사기 전에 미리 보기</h3>
+                    <p>프로 필터 4종은 구매 전에도 골라서 화면에 어떻게 덮이는지 볼 수 있어요. 미리보기는 보호를 끈 상태에서 되고, 실제로 켜려면 프리미엄이 필요해요.</p>
+                </div>
+            </div>
+            <div class="rows">
+            <article class="row">
+                <div class="row-text">
+                    <h3>보호 필터 6가지</h3>
+                    <p>다크 필터, 줄무늬, 노이즈, 그라데이션, 픽셀화, 블러 중에서 고르면 돼요. 줄무늬는 세로·가로·대각선 두 방향, 그라데이션은 네 방향으로 바꿀 수 있어요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-filters-ko.webp" width="720" height="1362" loading="lazy" alt="Shade 메인 화면의 필터 6가지. 다크 필터·줄무늬·노이즈·그라데이션·픽셀화·블러 중 뒤의 4개에 PRO 표시가 있어요."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>한 번 눌러 켜고 끄기, 네 군데에서</h3>
+                    <p>앱의 전원 버튼, 알림창의 빠른 설정 타일, 홈 화면 위젯, 알림에서 바로 켜고 꺼요. 타일과 위젯은 Shade 첫 화면에서 추가할 수 있어요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-tile-ko.webp" width="720" height="1607" loading="lazy" alt="안드로이드 빠른 설정에 있는 Shade 타일. 다크 필터로 설정되어 있어요."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>앱별 자동 켜기</h3>
+                    <p>은행 앱이나 메신저처럼 고른 앱을 열면 필터가 저절로 켜져요. 자동으로 켜진 필터는 그 앱을 벗어나면 다시 꺼져요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-auto-ko.webp" width="720" height="1186" loading="lazy" alt="자동 켜기 화면. Chrome·Gmail·메시지가 켜져 있고 아래에 전체 앱 목록이 있어요."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>진하기와 무늬까지 세밀하게</h3>
+                    <p>진하기(0~95%)와 줄 굵기·간격·방향, 노이즈 밀도, 픽셀 크기, 블러 강도를 필터마다 맞추고, 언제든 기본값으로 되돌려요. 80%를 넘기면 내 눈에도 어두울 수 있다고 미리 알려 줘요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-tune-ko.webp" width="720" height="1362" loading="lazy" alt="줄무늬 설정 화면. 진하기(35%)·두께·간격 막대와 줄 방향 버튼이 있어요."></div>
+            </article>
+            </div>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>무료와 프리미엄</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">무료</th><th scope="col" class="pro">프리미엄</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">가격</th><td>무료</td><td class="pro">평생 이용권 · 한 번 결제, 구독 아님</td></tr>
+                            <tr><th scope="row">필터</th><td>다크 필터, 줄무늬</td><td class="pro">6가지 모두 (노이즈·그라데이션·픽셀화·블러 추가)</td></tr>
+                            <tr><th scope="row">진하기·무늬 세부 조절</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">앱별 자동 켜기</th><td><span class="yes">✓</span> 앱 개수 제한 없음</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">앱마다 다른 필터</th><td>— (모든 앱이 메인과 같은 필터)</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">버튼·타일·위젯·알림으로 켜고 끄기</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">광고</th><td>배너, 앱을 열 때 뜨는 광고</td><td class="pro">없어요</td></tr>
+                            <tr><th scope="row">새 폰으로 옮길 때</th><td>—</td><td class="pro">같은 Google 계정으로 구매 복원</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">무료로 쓰는 기능에는 사용 개수나 횟수 제한이 없어요.</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>이런 분께 맞아요</h2>
+                <ul>
+                        <li>지하철이나 카페에서 메신저·은행 앱을 열 때마다 옆자리 시선이 신경 쓰이는 분</li>
+                        <li>매번 켜고 끄기 귀찮아서, 정해 둔 앱에서만 저절로 가려졌으면 하는 분</li>
+                        <li>보호 필름을 붙이기 전에 무료로 먼저 써 보고 싶은 분 — 다크 필터·줄무늬와 자동 켜기는 개수 제한 없이 무료예요.</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>이런 분께는 안 맞아요</h2>
+                <ul>
+                        <li>iPhone이나 안드로이드 9 이하 폰을 쓰는 분 — Shade는 안드로이드 10 이상에서만 돼요.</li>
+                        <li>접근성 권한을 켜고 싶지 않은 분 — Shade는 이 권한으로 필터를 띄워서, 꺼 두면 필터를 켤 수 없어요.</li>
+                        <li>정면에서는 밝게 보이고 옆에서만 안 보이길 바라는 분 — Shade는 화면 위에 필터를 덮는 방식이라, 진하게 할수록 내 눈에도 어두워져요.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="compare">
+            <h2>다른 방법과 비교하면</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">Shade</th><th scope="col">사생활 보호 필름</th><th scope="col">화면을 어둡게 하는 앱</th><th scope="col">폰 기본 밝기 낮추기</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">가리는 방식</th><td class="us">화면 위에 필터를 덮어요(소프트웨어)</td><td>보는 각도를 좁혀요</td><td>화면 전체를 어둡게 해요</td><td>화면 밝기만 낮춰요</td></tr>
+                            <tr><th scope="row">정면에서 내 눈에는</th><td class="us">필터가 진할수록 나도 어둡게 보여요</td><td>대개 정면은 잘 보여요</td><td>어두워져요</td><td>어두워져요</td></tr>
+                            <tr><th scope="row">켜고 끄기</th><td class="us">버튼·타일·위젯·알림에서 한 번에</td><td>붙이면 늘 켜져 있어요</td><td>앱마다 달라요</td><td>알림창 밝기 막대로 조절해요</td></tr>
+                            <tr><th scope="row">특정 앱에서만</th><td class="us">자동 켜기로 고른 앱에서 저절로 켜져요</td><td>안 돼요</td><td>앱마다 달라요</td><td>대개 안 돼요</td></tr>
+                            <tr><th scope="row">필터 종류</th><td class="us">6가지(무료 2가지)</td><td>—</td><td>대개 어둡게 하기 하나</td><td>—</td></tr>
+                            <tr><th scope="row">필요한 것</th><td class="us">접근성 권한. 무료(광고) 또는 평생 이용권</td><td>필름을 사서 붙여요</td><td>앱마다 달라요</td><td>따로 필요 없어요</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">범주 칸은 일반적인 특징이고 제품마다 다를 수 있어요.</p>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>자주 묻는 질문</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>지하철에서 옆 사람이 내 폰 화면을 못 보게 하는 앱이 있나요?</h3></summary>
+                    <p>Shade가 그런 앱이에요. 화면 위에 어둡게·줄무늬 같은 보호 필터를 덮어서 옆에서 화면을 엿보기 어렵게 해요. 앱의 전원 버튼이나 빠른 설정 타일, 홈 화면 위젯, 알림에서 한 번 눌러 켜고 꺼요.</p>
+                </details>
+                <details>
+                    <summary><h3>엿보기 방지 앱 Shade는 무료인가요?</h3></summary>
+                    <p>네, 다크 필터와 줄무늬 필터, 앱별 자동 켜기, 타일·위젯·알림으로 켜고 끄기는 무료예요. 앱 개수나 사용 횟수 제한도 없어요. 무료판에는 배너 광고와 앱을 열 때 뜨는 광고가 나와요.</p>
+                </details>
+                <details>
+                    <summary><h3>프리미엄은 구독인가요? 무엇이 열리나요?</h3></summary>
+                    <p>구독이 아니라 한 번 결제하는 평생 이용권이에요. 노이즈·그라데이션·픽셀화·블러 필터 4종과 앱마다 다른 필터가 열리고, 광고가 사라져요.</p>
+                </details>
+                <details>
+                    <summary><h3>왜 접근성 권한이 필요한가요? 없이도 쓸 수 있나요?</h3></summary>
+                    <p>필터를 다른 앱 위에 띄우는 데 접근성 권한을 쓰기 때문에, 이 권한 없이는 쓸 수 없어요. 그 밖에는 자동 켜기에 넣은 앱이 열렸는지 알아차리는 데만 써요. &#x27;다른 앱 위에 표시&#x27; 권한은 따로 요청하지 않아요.</p>
+                </details>
+                <details>
+                    <summary><h3>화면 내용을 읽거나 어디로 보내지는 않나요?</h3></summary>
+                    <p>화면에 보이는 내용은 읽지 않아요. 어떤 앱이 열렸는지는 자동 켜기에 앱을 넣었을 때만 확인하고, 저장하거나 휴대폰 밖으로 보내지 않아요. 필터와 자동 켜기 같은 설정은 기기 안에 저장돼요. 다만 광고(AdMob)와 사용 통계·오류 보고(Firebase), 구매 확인(Google Play)은 인터넷을 써요.</p>
+                </details>
+                <details>
+                    <summary><h3>은행 앱이나 메신저를 열 때만 자동으로 화면을 가릴 수 있나요?</h3></summary>
+                    <p>네, 앱별 자동 켜기에 그 앱을 넣으면 열 때마다 필터가 저절로 켜져요. 자동으로 켜진 필터는 홈 화면이나 다른 앱으로 넘어가면 다시 꺼져요. 자동 켜기는 무료이고, 앱마다 다른 필터를 정하는 건 프리미엄이에요.</p>
+                </details>
+                <details>
+                    <summary><h3>필터를 켜니까 나도 화면이 잘 안 보여요.</h3></summary>
+                    <p>필터 설정에서 진하기를 낮춰 보세요. Shade는 화면 위에 필터를 덮는 방식이라 진할수록 내 눈에도 어두워지고, 80%를 넘기면 거의 안 보일 수 있어요. 줄무늬는 굵기와 간격을, 노이즈는 밀도를 바꿔 보는 것도 방법이에요.</p>
+                </details>
+                <details>
+                    <summary><h3>보호 필름처럼 옆에서는 완전히 안 보이나요?</h3></summary>
+                    <p>아니요, Shade는 보는 각도를 바꾸는 필름이나 프라이버시 디스플레이가 아니라 화면 위에 그리는 소프트웨어 필터예요. 어느 거리와 각도에서 얼마나 가려지는지 잰 자료는 없어요. 쓰는 자리에서 필터 종류와 진하기를 직접 맞춰 보세요.</p>
+                </details>
+                <details>
+                    <summary><h3>아이폰에서도 쓸 수 있나요?</h3></summary>
+                    <p>아니요, Shade는 안드로이드 10 이상에서만 돼요. iPhone 버전은 없어요.</p>
+                </details>
+                <details>
+                    <summary><h3>폰을 바꾸면 프리미엄은 어떻게 되나요?</h3></summary>
+                    <p>새 폰에서 같은 Google 계정으로 구매를 복원하면 돼요. 계정 가입이나 로그인은 따로 없어요. 프로모션 코드로 켠 프리미엄은 그 기기에서만 쓸 수 있어서, 기기를 바꾸거나 초기화하면 꺼져요.</p>
+                </details>
+                <details>
+                    <summary><h3>프로 필터를 사기 전에 볼 수 있나요?</h3></summary>
+                    <p>네, 보호를 끈 상태에서 프로 필터를 골라 미리 볼 수 있어요. 구매 전에는 미리보기만 되고, 실제로 켜서 쓰려면 프리미엄이 필요해요.</p>
+                </details>
+                <details>
+                    <summary><h3>프로모션 코드는 어디에 넣나요?</h3></summary>
+                    <p>프리미엄 화면의 프로모션 코드 칸에 넣으면 돼요. 코드에 정해진 일수 동안 프리미엄이 켜지고, 그 기기에서만 쓸 수 있어요.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap" id="privacy">
+            <section class="privacy">
+                <h2>화면은 가리기만 하고, 읽지 않아요</h2>
+                <ul>
+                        <li>화면에 보이는 내용은 읽지 않아요. 어떤 앱이 열렸는지는 자동 켜기에만 쓰고, 저장하거나 휴대폰 밖으로 보내지 않아요.</li>
+                        <li>필터·자동 켜기 같은 설정은 기기 안에 저장돼요. 계정도, 설정을 받는 Shade 서버도 없어요.</li>
+                        <li>무료판 광고(AdMob)와 사용 통계·오류 보고(Firebase)는 인터넷을 써요. 무엇을 수집하는지는 <a href="../privacy_en.html">개인정보처리방침(영어)</a>에 있어요.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <ul>
+            <li>개발자 <a href="https://feelpass.github.io/">plantcode</a></li>
+            <li>문의: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></li>
+            <li><a href="../privacy_en.html">개인정보처리방침(영어)</a></li>
+        </ul>
+        <p>최종 업데이트 2026-10-15</p>
+    </footer>
+</body>
+</html>

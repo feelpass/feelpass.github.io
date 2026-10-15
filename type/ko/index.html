@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type — 자주 쓰는 문구를 단축어로, 안드로이드 텍스트 대치 앱</title>
+    <meta name="description" content="단축어를 치면 자주 쓰는 문장으로 바뀌는 안드로이드 텍스트 대치 앱. 키보드는 그대로 쓰고, 단축어 20개까지 무료예요.">
+    <link rel="canonical" href="https://feelpass.github.io/type/ko/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/type/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/type/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/type/">
+    <link rel="icon" type="image/png" href="../images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Type">
+    <meta property="og:url" content="https://feelpass.github.io/type/ko/">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Type — 안드로이드 텍스트 대치·단축어 앱">
+    <meta property="og:description" content="짧게 입력하고, 길게 완성하세요. 키보드는 지금 쓰는 그대로예요.">
+    <meta property="og:image" content="https://feelpass.github.io/type/images/og.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Type — 안드로이드 텍스트 대치·단축어 앱">
+    <meta name="twitter:description" content="짧게 입력하고, 길게 완성하세요. 키보드는 지금 쓰는 그대로예요.">
+    <meta name="twitter:image" content="https://feelpass.github.io/type/images/og.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Type",
+  "alternateName": "Type - 텍스트 대치, 단축어",
+  "url": "https://feelpass.github.io/type/ko/",
+  "description": "단축어를 치면 자주 쓰는 문장으로 바뀌는 안드로이드 텍스트 대치 앱. 키보드는 그대로 쓰고, 단축어 20개까지 무료예요.",
+  "operatingSystem": "Android 10 이상",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "ko",
+  "image": "https://feelpass.github.io/type/images/og.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.typeaction",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.typeaction",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW",
+    "description": "단축어 20개까지 무료(광고 포함). 프리미엄은 한 번 결제하는 평생 이용권(₩44,000, 가격은 지역마다 다를 수 있어요)으로, 개수 제한과 광고가 없어져요."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "plantcode",
+    "url": "https://feelpass.github.io/",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "안드로이드에서 자주 쓰는 문구를 단축어로 자동 입력하는 앱이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type이 그런 앱이에요. 단축어와 바꿀 문장을 저장해 두고 다른 앱에서 단축어를 치면, 마지막 글자를 치는 순간 문장으로 바뀌어요. 스페이스는 칠 필요 없고, 단축어 앞이 비어 있거나 띄어쓰기·줄바꿈일 때 바뀌어요. 처음 한 번 안드로이드 접근성 설정에서 Type을 켜면 돼요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Type은 무료인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 무료로 받아 단축어 20개까지 쓸 수 있어요. 무료 버전에는 광고가 나오고, 내 폴더는 1개까지 만들 수 있어요. 변수, 액션 단축어, 기본 명령어, 커맨드 팔레트, 계산기, 파일 백업은 무료에서도 똑같이 써요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "단축어가 20개가 안 되는데 한도라고 떠요.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "꺼 둔 단축어, 액션·이미지 단축어, 설치한 팩 단축어도 모두 20개에 들어가요. 프리미엄을 사면 개수 제한이 없어져요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Type 프리미엄은 얼마예요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "한 번 결제하는 평생 이용권이 ₩44,000이에요(미국 US$29.99, 가격은 지역마다 다를 수 있어요). 앱을 처음 실행한 뒤 7일 동안은 ₩22,000에 살 수 있어요. 프리미엄을 사면 단축어·폴더 개수 제한과 광고가 없어지고, 제외 앱과 단축어 팩 설치를 쓸 수 있어요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "키보드를 바꿔야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, 지금 쓰는 키보드 그대로 써요. Type은 키보드가 아니라 안드로이드 접근성 서비스로 단축어를 알아채고 바꿔요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "모든 앱에서 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반 입력창에서는 되지만, 웹 입력창과 Type 앱 안에서는 자동으로 바뀌지 않아요. 인앱 브라우저 같은 웹 입력창에서는 결과를 클립보드에 복사하니, 친 단축어를 지우고 붙여넣으면 돼요. Type 앱 안에서는 연습장에서 단축어를 시험해 볼 수 있어요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "내가 입력한 내용을 수집하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 단축어를 알아채려고 입력창 글자를 읽을 뿐, 입력한 글은 어떤 서버로도 보내지 않아요. 단축어와 설정은 기기에 저장되고, 개발자에게는 이를 받는 서버가 없어요. 사용 통계에는 실행한 액션의 종류 같은 이벤트만 담기고, 단축어 내용이나 입력한 글은 들어가지 않아요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "접근성 권한은 왜 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "단축어가 이 권한으로 동작하기 때문이에요. 꺼지면 모든 기능이 멈춰요. Type은 접근성 서비스로 입력을 감지해 글자를 바꾸고, 다른 앱 위에 추천 팝업과 커맨드 팔레트를 띄우고, 홈·뒤로·스크린샷 같은 시스템 동작을 실행해요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "아이폰에서도 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요, Type은 안드로이드 10 이상에서만 돼요. iPhone·iPad·PC 버전은 없어요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "폰을 바꾸면 단축어와 프리미엄은 어떻게 옮기나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "단축어는 설정 › 백업 및 복원에서 .json 파일로 내보낸 뒤, 새 폰에서 그 파일을 가져오면 돼요. 이미지 단축어는 파일에 함께 들어가지만, 단축어 팩·제외 앱·테마 같은 설정은 들어가지 않아요. 기기끼리 자동으로 맞춰 주는 클라우드 동기화는 없어요. 프리미엄은 새 폰에서 설정 맨 위 프리미엄 카드의 '구매 복원하기'를 누르면 돌아와요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "문장 말고 앱 실행이나 명령도 단축어로 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 단축어로 앱 열기, 화면 분할로 두 앱 열기, 연락처에 전화 걸기, 웹사이트 열기, Tasker 작업 실행 같은 액션을 할 수 있어요. //command/home, //media/next처럼 설정 없이 바로 쓰는 기본 명령어도 있어요. 물리 키보드에서 Ctrl+Space를 누르면 단축어·앱·설정을 검색해 실행하는 커맨드 팔레트가 열려요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "문장에 오늘 날짜나 복사한 내용을 자동으로 넣을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, {date}, {time}, {clipboard} 같은 변수를 넣으면 쓸 때마다 그 값으로 채워져요. {date:yyyy년 M월 d일}처럼 날짜 형식을 정하거나, {date offset=\"+3d\"}로 사흘 뒤 날짜를 넣을 수도 있어요. {fill:이름}을 넣으면 쓸 때 값을 물어보고, 같은 이름이 여러 군데 있어도 한 번만 물어서 모두 채워요."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --ink: #101412;
+            --sub: rgba(16, 20, 18, .68);
+            --dim: rgba(16, 20, 18, .5);
+            --green: #15803D;
+            --cursor: #22C55E;
+            --night: #171717;
+            --line: rgba(16, 20, 18, .1);
+            --card: #fff;
+            --mono: ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.5;
+            min-height: 100vh;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 0% 0%, rgba(34, 197, 94, .2) 0%, rgba(34, 197, 94, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 100% 100%, rgba(34, 197, 94, .13) 0%, rgba(34, 197, 94, 0) 70%),
+                linear-gradient(172deg, #fbfdfb 0%, #f1f5f2 55%, #e9efeb 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; box-shadow: 0 0 0 1px var(--line); }
+        .lang { display: flex; gap: 2px; }
+        .lang a, .lang span { font-size: 14px; font-weight: 500; color: var(--sub); padding: 8px 10px; border-radius: 8px; text-decoration: none; }
+        .lang a:hover { color: var(--ink); }
+        .lang [aria-current="page"] { color: var(--ink); font-weight: 700; }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 64px; padding-bottom: 88px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 80px); line-height: 1.1; letter-spacing: -.022em; }
+        .lead { margin-top: 22px; max-width: 26em; font-size: clamp(17px, 2.1vw, 21px); font-weight: 500; color: var(--sub); letter-spacing: -.005em; }
+        .nb { display: inline-block; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 34px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #2a2c2b; }
+        .play svg { flex: none; }
+
+        /* 데모: 알약 카드 + 메시지 입력줄 */
+        .demo { width: 100%; max-width: 420px; justify-self: center; }
+        .pill {
+            display: flex; align-items: center; gap: 12px; width: max-content; max-width: 100%;
+            margin: 0 14px 16px auto;
+            padding: 13px 22px; border-radius: 20px; background: #fff; font-size: clamp(19px, 5.6vw, 25px); white-space: nowrap;
+            box-shadow: 0 0 0 2px rgba(21, 128, 61, .5), 0 20px 44px rgba(20, 50, 32, .2);
+        }
+        .pill-key { color: var(--dim); }
+        .pill-key.mono { font-family: var(--mono); }
+        .pill-out { font-weight: 700; letter-spacing: -.01em; }
+        .pill svg { flex: none; width: 1em; height: 1em; }
+        .pill svg, .pill-out { transition: opacity .25s; }
+        .demo.is-waiting .pill svg, .demo.is-waiting .pill-out { opacity: .22; }
+
+        .chat {
+            padding: 14px 12px 12px; border-radius: 26px; background: #f7f9fe;
+            box-shadow: 0 0 0 2px var(--line), 0 30px 70px rgba(20, 50, 32, .2);
+        }
+        .bubble { width: fit-content; max-width: 86%; padding: 11px 16px; border-radius: 20px; background: #eceef6; font-size: 15px; line-height: 1.4; color: #1f2123; }
+        .stamp { margin: 6px 0 14px 8px; font-size: 11px; color: #5b5e66; }
+        .field { display: flex; align-items: center; gap: 10px; }
+        .field > svg { flex: none; }
+        .input {
+            flex: 1; min-width: 0; display: flex; align-items: center; height: 46px; padding: 0 16px;
+            border-radius: 23px; background: #eceef6; font-size: 15px; color: #1f2123; white-space: nowrap; overflow: hidden;
+        }
+        .typed { border-radius: 4px; }
+        .typed.is-new { animation: land .8s ease-out; }
+        .caret { flex: none; width: 2px; height: 20px; margin-left: 1px; background: var(--cursor); }
+        .demo.is-live .caret { animation: blink 1.06s steps(1) infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        @keyframes land { from { background: rgba(34, 197, 94, .34); box-shadow: 0 0 0 3px rgba(34, 197, 94, .34); } to { background: rgba(34, 197, 94, 0); box-shadow: 0 0 0 3px rgba(34, 197, 94, 0); } }
+
+        /* ── 기능 ─────────────────────────────── */
+        .rows { display: grid; gap: 88px; padding-bottom: 104px; }
+        .row { display: grid; gap: 36px; align-items: center; }
+        h2 { font-weight: 800; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.14; letter-spacing: -.02em; }
+        .row p { margin-top: 16px; max-width: 24em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #d3dad5, 0 0 0 1px #c3ccc6, 0 30px 70px rgba(20, 50, 32, .18);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #f1f4fb; }
+
+        /* ── 정의 문장 ─────────────────────────── */
+        .intro { padding-bottom: 88px; }
+        .intro p { max-width: 44em; font-size: clamp(18px, 2vw, 21px); font-weight: 500; line-height: 1.6; letter-spacing: -.005em; }
+
+        /* ── 표·맞는 분·FAQ 공통 ─────────────── */
+        .block { padding-bottom: 88px; }
+        .block > h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+        code { font-family: var(--mono); font-size: .9em; padding: .05em .35em; border-radius: 5px; background: rgba(21, 128, 61, .08); color: var(--ink); white-space: nowrap; }
+
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(20, 50, 32, .22), rgba(20, 50, 32, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(20, 50, 32, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #f3f7f4; border-bottom-color: rgba(16, 20, 18, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 36%; }
+        .cmp { min-width: 820px; }
+        .cmp thead td { width: 16%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(34, 197, 94, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #e2f3e7; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        .fit { display: grid; gap: 16px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(20, 50, 32, .08); }
+        .fit h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: var(--dim); }
+
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(21, 128, 61, .34), 0 14px 34px rgba(20, 50, 32, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(34, 197, 94, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+        .faq code { white-space: normal; }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(32px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy em { color: #4ADE80; }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--cursor); font-size: 16px; line-height: 1.55; color: rgba(255, 255, 255, .86); }
+        .privacy .note { margin-top: 26px; font-size: 14px; line-height: 1.55; color: rgba(255, 255, 255, .64); }
+        .privacy .more { display: inline-block; margin-top: 14px; font-weight: 600; color: #4ADE80; text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: #4ADE80; }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot .meta { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+        .foot a { text-decoration: none; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 420px; gap: 48px; padding-top: 96px; padding-bottom: 128px; }
+            .demo { justify-self: end; }
+            .rows { gap: 120px; padding-bottom: 136px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+            .intro, .block { padding-bottom: 128px; }
+            .fit { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="wrap top">
+        <div class="brand"><img src="../images/app-icon.png" width="44" height="44" alt="">Type</div>
+        <nav class="lang" aria-label="언어">
+            <a href="../" hreflang="en" lang="en">EN</a>
+            <span aria-current="page" lang="ko">한국어</span>
+        </nav>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>짧게 입력하고,<br><em>길게 완성하세요</em></h1>
+                <p class="lead">키워드 하나가 여러 앱에서 긴 문장으로 바뀌어요. <span class="nb">키보드는 지금 쓰는 그대로예요.</span></p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.typeaction">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Google Play에서 받기</span>
+                </a>
+            </div>
+
+            <div class="demo" aria-hidden="true">
+                <div class="pill">
+                    <span class="pill-key">ㄱㅅ</span>
+                    <svg viewBox="0 0 24 24"><path fill="#15803D" d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"/></svg>
+                    <span class="pill-out">감사합니다!</span>
+                </div>
+                <div class="chat">
+                    <div class="bubble">내일 회의 자료 방금 보냈어요!</div>
+                    <div class="stamp">오전 9:40</div>
+                    <div class="field">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#44474e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+                        <div class="input"><span class="typed">감사합니다!</span><span class="caret"></span></div>
+                        <svg width="26" height="26" viewBox="0 0 24 24"><path fill="none" stroke="#4a5fa8" stroke-width="1.8" stroke-linejoin="round" d="M4 4.5l16 7.5-16 7.5v-5.8l9-1.7-9-1.7z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap intro">
+            <p>Type은 지금 쓰는 키보드 그대로, 짧은 단축어를 치면 자주 쓰는 문장으로 바꿔 주고 앱 실행·시스템 동작까지 해 주는 안드로이드 텍스트 대치(텍스트 확장) 앱이에요. 단축어 20개까지는 무료이고, 한 번 결제하는 평생 이용권(₩44,000)을 사면 개수 제한과 광고가 없어져요.</p>
+        </section>
+
+        <section class="wrap rows">
+            <article class="row">
+                <div class="row-text">
+                    <h2>변수로 만드는<br><em>똑똑한 문장</em></h2>
+                    <p>오늘 날짜, 시간, 클립보드를 자동으로 넣어요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-edit-ko.webp" width="720" height="1607" loading="lazy" alt="단축어 수정 화면. 본문에 날짜·시간 변수가 들어 있어요."></div>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2>텍스트를 넘어<br><em>액션까지</em></h2>
+                    <p>//를 입력해 앱을 열고 명령을 실행하세요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-command-ko.webp" width="720" height="1607" loading="lazy" alt="메시지 앱에서 //를 입력하자 명령·설정·앱 추천이 뜬 화면."></div>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2>검색 한 번이면<br><em>무엇이든</em></h2>
+                    <p>앱·설정·단축어를 어디서나 찾아 실행해요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-palette-ko.webp" width="720" height="1607" loading="lazy" alt="검색창에 입력하자 앱·설정·단축어가 한 목록에 나온 화면."></div>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2>모든 단축어를<br><em>폴더로 깔끔하게</em></h2>
+                    <p>폴더와 하위 폴더로 정리하세요. 스위치 하나로 폴더 안 단축어를 모두 끌 수 있어요.</p>
+                </div>
+                <div class="phone"><img src="../images/shot-list-ko.webp" width="720" height="1607" loading="lazy" alt="폴더와 단축어가 정리된 Type 첫 화면."></div>
+            </article>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>무료와 프리미엄</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">무료</th><th scope="col" class="pro">프리미엄</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">가격</th><td>무료</td><td class="pro">평생 이용권 ₩44,000 (한 번 결제)</td></tr>
+                        <tr><th scope="row">단축어</th><td>20개까지 (텍스트·액션·이미지·꺼 둔 단축어·설치한 팩 단축어 모두 포함)</td><td class="pro">제한 없음</td></tr>
+                        <tr><th scope="row">내 폴더</th><td>1개 (하위 폴더 포함)</td><td class="pro">제한 없음</td></tr>
+                        <tr><th scope="row">광고</th><td>있어요</td><td class="pro">없어요</td></tr>
+                        <tr><th scope="row">제외 앱 (특정 앱에서 Type 끄기)</th><td>—</td><td class="pro yes">✓</td></tr>
+                        <tr><th scope="row">단축어 팩 설치</th><td>미리보기만</td><td class="pro yes">✓</td></tr>
+                        <tr><th scope="row">변수·액션 단축어·기본 명령어·커맨드 팔레트·계산기·연습장·파일 백업</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">앱을 처음 실행한 뒤 7일 동안은 평생 이용권을 ₩22,000에 살 수 있어요. 가격은 지역마다 다를 수 있어요.</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>이런 분께 맞아요</h2>
+                <ul>
+                    <li>같은 인사말과 답장을 하루에도 몇 번씩 치지만, 손에 익은 키보드는 바꾸고 싶지 않은 분</li>
+                    <li>오늘 날짜나 방금 복사한 내용이 들어가는, 형식이 정해진 글을 자주 쓰는 분</li>
+                    <li>물리 키보드를 연결해 쓰면서, 앱과 설정을 Ctrl+Space 한 번으로 찾아 열고 싶은 분</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>이런 분께는 안 맞아요</h2>
+                <ul>
+                    <li>iPhone이나 iPad를 쓰는 분 — Type은 안드로이드 10 이상에서만 돼요.</li>
+                    <li>접근성 서비스 권한을 주고 싶지 않은 분 — Type은 이 권한이 꺼지면 아무것도 하지 못해요.</li>
+                    <li>여러 기기의 단축어가 저절로 맞춰져야 하는 분 — 지금은 파일로 내보내고 가져와야 해요.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="compare">
+            <h2>다른 방법과 비교하면</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">Type</th><th scope="col">키보드에 들어 있는 단축어 기능</th><th scope="col">자체 키보드로 바꿔 쓰는 텍스트 확장 앱</th><th scope="col">클립보드·상용구 관리 앱</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">쓰려면</th><td class="us">접근성 서비스를 켜요. 키보드는 그대로</td><td>그 키보드를 써야 해요</td><td>그 앱의 키보드로 바꿔야 해요</td><td>복사해 두고 붙여넣어요</td></tr>
+                        <tr><th scope="row">치는 순간 바뀌나</th><td class="us">단축어 마지막 글자에서 바로 바뀌어요</td><td>대개 추천 단어로 떠서 눌러야 들어가요</td><td>그 키보드 안에서 바뀌어요</td><td>직접 골라 붙여넣어요</td></tr>
+                        <tr><th scope="row">날짜·클립보드 같은 변수</th><td class="us"><code>{date}</code>·<code>{clipboard}</code>·<code>{fill}</code> 등</td><td>대개 고정 문장만</td><td>앱마다 달라요</td><td>앱마다 달라요</td></tr>
+                        <tr><th scope="row">앱 실행·시스템 동작</th><td class="us">액션 단축어, <code>//</code> 명령, 커맨드 팔레트</td><td>대개 없어요</td><td>대개 없어요</td><td>대개 없어요</td></tr>
+                        <tr><th scope="row">웹 입력창(인앱 브라우저 등)</th><td class="us">자동으로 못 바꿔요. 클립보드에 복사되니 한 번 더 붙여넣어요</td><td>키보드가 직접 넣으니 그대로 돼요</td><td>대개 그대로 돼요</td><td>붙여넣으면 돼요</td></tr>
+                        <tr><th scope="row">기기를 옮길 때</th><td class="us"><code>.json</code> 파일로 내보내고 가져와요. 자동 동기화는 없어요</td><td>계정 동기화를 지원하는 키보드도 있어요</td><td>앱마다 달라요</td><td>앱마다 달라요</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>자주 묻는 질문</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>안드로이드에서 자주 쓰는 문구를 단축어로 자동 입력하는 앱이 있나요?</h3></summary>
+                    <p>Type이 그런 앱이에요. 단축어와 바꿀 문장을 저장해 두고 다른 앱에서 단축어를 치면, 마지막 글자를 치는 순간 문장으로 바뀌어요. 스페이스는 칠 필요 없고, 단축어 앞이 비어 있거나 띄어쓰기·줄바꿈일 때 바뀌어요. 처음 한 번 안드로이드 접근성 설정에서 Type을 켜면 돼요.</p>
+                </details>
+                <details>
+                    <summary><h3>Type은 무료인가요?</h3></summary>
+                    <p>네, 무료로 받아 단축어 20개까지 쓸 수 있어요. 무료 버전에는 광고가 나오고, 내 폴더는 1개까지 만들 수 있어요. 변수, 액션 단축어, 기본 명령어, 커맨드 팔레트, 계산기, 파일 백업은 무료에서도 똑같이 써요.</p>
+                </details>
+                <details>
+                    <summary><h3>단축어가 20개가 안 되는데 한도라고 떠요.</h3></summary>
+                    <p>꺼 둔 단축어, 액션·이미지 단축어, 설치한 팩 단축어도 모두 20개에 들어가요. 프리미엄을 사면 개수 제한이 없어져요.</p>
+                </details>
+                <details>
+                    <summary><h3>Type 프리미엄은 얼마예요?</h3></summary>
+                    <p>한 번 결제하는 평생 이용권이 ₩44,000이에요(미국 US$29.99, 가격은 지역마다 다를 수 있어요). 앱을 처음 실행한 뒤 7일 동안은 ₩22,000에 살 수 있어요. 프리미엄을 사면 단축어·폴더 개수 제한과 광고가 없어지고, 제외 앱과 단축어 팩 설치를 쓸 수 있어요.</p>
+                </details>
+                <details>
+                    <summary><h3>키보드를 바꿔야 하나요?</h3></summary>
+                    <p>아니요, 지금 쓰는 키보드 그대로 써요. Type은 키보드가 아니라 안드로이드 접근성 서비스로 단축어를 알아채고 바꿔요.</p>
+                </details>
+                <details>
+                    <summary><h3>모든 앱에서 되나요?</h3></summary>
+                    <p>일반 입력창에서는 되지만, 웹 입력창과 Type 앱 안에서는 자동으로 바뀌지 않아요. 인앱 브라우저 같은 웹 입력창에서는 결과를 클립보드에 복사하니, 친 단축어를 지우고 붙여넣으면 돼요. Type 앱 안에서는 연습장에서 단축어를 시험해 볼 수 있어요.</p>
+                </details>
+                <details>
+                    <summary><h3>내가 입력한 내용을 수집하나요?</h3></summary>
+                    <p>아니요. 단축어를 알아채려고 입력창 글자를 읽을 뿐, 입력한 글은 어떤 서버로도 보내지 않아요. 단축어와 설정은 기기에 저장되고, 개발자에게는 이를 받는 서버가 없어요. 사용 통계에는 실행한 액션의 종류 같은 이벤트만 담기고, 단축어 내용이나 입력한 글은 들어가지 않아요.</p>
+                </details>
+                <details>
+                    <summary><h3>접근성 권한은 왜 필요한가요?</h3></summary>
+                    <p>단축어가 이 권한으로 동작하기 때문이에요. 꺼지면 모든 기능이 멈춰요. Type은 접근성 서비스로 입력을 감지해 글자를 바꾸고, 다른 앱 위에 추천 팝업과 커맨드 팔레트를 띄우고, 홈·뒤로·스크린샷 같은 시스템 동작을 실행해요.</p>
+                </details>
+                <details>
+                    <summary><h3>아이폰에서도 쓸 수 있나요?</h3></summary>
+                    <p>아니요, Type은 안드로이드 10 이상에서만 돼요. iPhone·iPad·PC 버전은 없어요.</p>
+                </details>
+                <details>
+                    <summary><h3>폰을 바꾸면 단축어와 프리미엄은 어떻게 옮기나요?</h3></summary>
+                    <p>단축어는 설정 › 백업 및 복원에서 <code>.json</code> 파일로 내보낸 뒤, 새 폰에서 그 파일을 가져오면 돼요. 이미지 단축어는 파일에 함께 들어가지만, 단축어 팩·제외 앱·테마 같은 설정은 들어가지 않아요. 기기끼리 자동으로 맞춰 주는 클라우드 동기화는 없어요. 프리미엄은 새 폰에서 설정 맨 위 프리미엄 카드의 &#x27;구매 복원하기&#x27;를 누르면 돌아와요.</p>
+                </details>
+                <details>
+                    <summary><h3>문장 말고 앱 실행이나 명령도 단축어로 되나요?</h3></summary>
+                    <p>네. 단축어로 앱 열기, 화면 분할로 두 앱 열기, 연락처에 전화 걸기, 웹사이트 열기, Tasker 작업 실행 같은 액션을 할 수 있어요. <code>//command/home</code>, <code>//media/next</code>처럼 설정 없이 바로 쓰는 기본 명령어도 있어요. 물리 키보드에서 Ctrl+Space를 누르면 단축어·앱·설정을 검색해 실행하는 커맨드 팔레트가 열려요.</p>
+                </details>
+                <details>
+                    <summary><h3>문장에 오늘 날짜나 복사한 내용을 자동으로 넣을 수 있나요?</h3></summary>
+                    <p>네, <code>{date}</code>, <code>{time}</code>, <code>{clipboard}</code> 같은 변수를 넣으면 쓸 때마다 그 값으로 채워져요. <code>{date:yyyy년 M월 d일}</code>처럼 날짜 형식을 정하거나, <code>{date offset=&quot;+3d&quot;}</code>로 사흘 뒤 날짜를 넣을 수도 있어요. <code>{fill:이름}</code>을 넣으면 쓸 때 값을 물어보고, 같은 이름이 여러 군데 있어도 한 번만 물어서 모두 채워요.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap">
+            <section class="privacy">
+                <h2>기기에 저장하고,<br><em>기기에서 처리해요</em></h2>
+                <div>
+                    <ul>
+                        <li>단축어와 설정, 입력한 글은 기기에 저장되고 기기에서 처리돼요. 개발자에게는 이를 받는 서버가 없어요.</li>
+                        <li>입력한 글은 어떤 서버로도 전송되지 않아요.</li>
+                        <li>접근성 서비스는 단축어를 실행하는 데 써요. 입력을 감지하고, 글자를 바꾸거나 액션을 실행하고, 추천 팝업을 띄워요.</li>
+                        <li>Type이 단축어 사본을 기기 밖으로 보내는 건 직접 파일로 내보낼 때뿐이에요. Android 자체 기기 백업에는 앱 데이터가 포함될 수 있어요.</li>
+                    </ul>
+                    <p class="note">앱에 들어 있는 광고·사용 통계·오류 보고 서비스가 무엇을 수집하는지도 개인정보처리방침에 적어 두었어요.</p>
+                    <a class="more" href="../privacy_ko.html">개인정보처리방침 보기</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <nav>
+            <a href="../guide/ko/index.html">사용 가이드</a>
+            <a href="../privacy_ko.html">개인정보처리방침</a>
+            <a href="mailto:philleeran@gmail.com">문의</a>
+        </nav>
+        <div class="meta">
+            <p>최종 업데이트 2026-10-15</p>
+            <p>© 2026 Type</p>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        var EXAMPLES = [["ㄱㅅ", "감사합니다!"], ["ㅇㅋ", "알겠습니다"], ["ㅎㅇ", "안녕하세요!"]];
+        var demo = document.querySelector('.demo');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;   // 정적 마크업이 첫 예시를 보여 준다
+        var pillKey = demo.querySelector('.pill-key');
+        var pillOut = demo.querySelector('.pill-out');
+        var typed = demo.querySelector('.typed');
+        var i = 0;
+
+        demo.classList.add('is-live');
+        function next() {
+            var pair = EXAMPLES[i++ % EXAMPLES.length], n = 0;
+            pillKey.textContent = pair[0];
+            pillOut.textContent = pair[1];
+            demo.classList.add('is-waiting');
+            typed.classList.remove('is-new');
+            typed.textContent = '';
+            (function key() {
+                if (n < pair[0].length) {
+                    typed.textContent = pair[0].slice(0, ++n);
+                    setTimeout(key, 170);
+                } else {
+                    setTimeout(function () {
+                        typed.textContent = pair[1];
+                        void typed.offsetWidth;
+                        typed.classList.add('is-new');
+                        demo.classList.remove('is-waiting');
+                        setTimeout(next, 2400);
+                    }, 480);
+                }
+            })();
+        }
+        next();
+    })();
+    </script>
+</body>
+</html>

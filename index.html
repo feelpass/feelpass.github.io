@@ -1,116 +1,212 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>plantcode Apps</title>
+    <title>plantcode — Android apps</title>
+    <meta name="description" content="plantcode makes Android apps on Google Play: Type (text expander), Type History (typing history), Shade (privacy screen filter), Cloak (app lock) and more.">
+    <link rel="canonical" href="https://feelpass.github.io/">
+    <link rel="icon" type="image/png" href="type/images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="plantcode">
+    <meta property="og:url" content="https://feelpass.github.io/">
+    <meta property="og:title" content="plantcode — Android apps">
+    <meta property="og:description" content="Type, Type History, Shade, Cloak, One Swipe, Shortcut Pro and PromptPal — Android apps by plantcode.">
+    <meta property="og:image" content="https://feelpass.github.io/type/images/og.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "plantcode",
+  "url": "https://feelpass.github.io/",
+  "email": "philleeran@gmail.com"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Android apps by plantcode",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "Type", "url": "https://feelpass.github.io/type/", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "installUrl": "https://play.google.com/store/apps/details?id=com.coco.typeaction" } },
+    { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "Type History", "url": "https://feelpass.github.io/typehistory/", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "installUrl": "https://play.google.com/store/apps/details?id=com.coco.typehistory" } },
+    { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "Shade", "url": "https://feelpass.github.io/shade/", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "installUrl": "https://play.google.com/store/apps/details?id=com.coco.shade" } },
+    { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareApplication", "name": "Cloak", "url": "https://play.google.com/store/apps/details?id=com.feelpass.applocker", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "installUrl": "https://play.google.com/store/apps/details?id=com.feelpass.applocker" } },
+    { "@type": "ListItem", "position": 5, "item": { "@type": "SoftwareApplication", "name": "One Swipe", "url": "https://play.google.com/store/apps/details?id=com.oneswipe", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "installUrl": "https://play.google.com/store/apps/details?id=com.oneswipe" } },
+    { "@type": "ListItem", "position": 6, "item": { "@type": "SoftwareApplication", "name": "Shortcut Pro", "url": "https://play.google.com/store/apps/details?id=com.oneswipe.shortcut", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "installUrl": "https://play.google.com/store/apps/details?id=com.oneswipe.shortcut" } },
+    { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareApplication", "name": "PromptPal", "url": "https://feelpass.github.io/promptpal/index_en.html", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "installUrl": "https://play.google.com/store/apps/details?id=com.yp.promptpal" } }
+  ]
+}
+    </script>
     <style>
+        :root {
+            --ink: #101412;
+            --sub: rgba(16, 20, 18, .68);
+            --dim: rgba(16, 20, 18, .5);
+            --green: #15803D;
+            --line: rgba(16, 20, 18, .1);
+            --card: #fff;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.5;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 0% 0%, rgba(34, 197, 94, .16) 0%, rgba(34, 197, 94, 0) 70%),
+                linear-gradient(172deg, #fbfdfb 0%, #f1f5f2 55%, #e9efeb 100%);
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: center;
+
+        a { color: inherit; }
+        em { font-style: normal; color: var(--green); }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+        .top { padding-top: 28px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; }
+
+        .hero { padding-top: 56px; padding-bottom: 56px; }
+        h1 { font-weight: 800; font-size: clamp(34px, 8vw, 60px); line-height: 1.1; letter-spacing: -.022em; }
+        .lead { margin-top: 20px; max-width: 34em; font-size: clamp(17px, 2vw, 20px); font-weight: 500; color: var(--sub); }
+        .lead + .lead { margin-top: 8px; font-size: 16px; }
+
+        h2 { font-weight: 800; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -.015em; }
+
+        .apps { list-style: none; display: grid; gap: 14px; margin-top: 24px; padding-bottom: 72px; }
+        .app {
+            display: flex; gap: 16px; align-items: flex-start; padding: 22px 20px; border-radius: 22px;
+            background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(20, 50, 32, .07);
         }
-        .logo { font-size: 48px; margin-bottom: 10px; }
-        h1 { color: #333; margin-bottom: 10px; font-size: 28px; }
-        .tagline { color: #666; margin-bottom: 30px; font-size: 16px; }
-        .apps { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
-        .app-card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .icon {
+            flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px;
+            background: #e2f3e7; color: var(--green); font-weight: 800; font-size: 20px;
+            box-shadow: 0 0 0 1px var(--line); overflow: hidden;
         }
-        .app-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .icon img { display: block; width: 100%; height: 100%; }
+        .app-body { min-width: 0; }
+        .app h3 { font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+        .app h3 a { text-decoration: none; }
+        .app h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+        .app p { margin-top: 6px; font-size: 16px; color: var(--sub); }
+        .app p[lang="ko"] { margin-top: 2px; font-size: 15px; color: rgba(16, 20, 18, .6); }
+        .links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; font-size: 14px; font-weight: 600; }
+        .links a { color: var(--green); text-underline-offset: 4px; }
+
+        .about { padding-bottom: 72px; }
+        .about p { margin-top: 14px; max-width: 40em; font-size: 16px; color: var(--sub); }
+
+        .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 28px; padding-bottom: 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--sub); }
+        .foot a { text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { padding-top: 88px; padding-bottom: 72px; }
+            .apps { grid-template-columns: 1fr 1fr; }
         }
-        .app-icon { font-size: 36px; }
-        .app-info { text-align: left; }
-        .app-name { font-weight: 600; color: #333; font-size: 18px; }
-        .app-desc { color: #666; font-size: 14px; margin-top: 4px; }
-        .contact {
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            color: #888;
-            font-size: 14px;
-        }
-        .contact a { color: #667eea; text-decoration: none; }
-        .contact a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">🌱</div>
-        <h1>plantcode Apps</h1>
-        <p class="tagline">생활을 더 편리하게 만드는 앱들</p>
-        
-        <div class="apps">
-            <a href="./promptpal/" class="app-card">
-                <span class="app-icon">🤖</span>
-                <div class="app-info">
-                    <div class="app-name">PromptPal</div>
-                    <div class="app-desc">AI 프롬프트 관리 도우미</div>
-                </div>
-            </a>
-            <a href="#" class="app-card">
-                <span class="app-icon">📋</span>
-                <div class="app-info">
-                    <div class="app-name">ClipGenius</div>
-                    <div class="app-desc">스마트 클립보드 매니저</div>
-                </div>
-            </a>
-            <a href="#" class="app-card">
-                <span class="app-icon">👆</span>
-                <div class="app-info">
-                    <div class="app-name">OneSwipe</div>
-                    <div class="app-desc">원스와이프로 빠른 실행</div>
-                </div>
-            </a>
-            <a href="./type/" class="app-card">
-                <img src="./type/images/icon-192.png" alt="type" style="width:36px;height:36px;border-radius:8px;">
-                <div class="app-info">
-                    <div class="app-name">type</div>
-                    <div class="app-desc">스마트 텍스트 단축어 & 액션</div>
-                </div>
-            </a>
-            <a href="./shade/" class="app-card">
-                <span class="app-icon">🛡️</span>
-                <div class="app-info">
-                    <div class="app-name">Shade</div>
-                    <div class="app-desc">화면 보호 프라이버시 필터</div>
-                </div>
-            </a>
-            <a href="#" class="app-card">
-                <span class="app-icon">⚡</span>
-                <div class="app-info">
-                    <div class="app-name">Shortcut Pro</div>
-                    <div class="app-desc">나만의 단축키 설정</div>
-                </div>
-            </a>
-        </div>
-        
-        <div class="contact">
-            <p>문의: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
-        </div>
-    </div>
+    <header class="wrap top">plantcode</header>
+
+    <main>
+        <section class="wrap hero">
+            <h1>Android apps<br><em>by plantcode</em></h1>
+            <p class="lead">plantcode is the Google Play developer behind the Android apps below: Type, Type History, Shade, Cloak, One Swipe, Shortcut Pro and PromptPal.</p>
+            <p class="lead" lang="ko">plantcode가 Google Play에 내놓은 안드로이드 앱이에요.</p>
+        </section>
+
+        <section class="wrap" aria-labelledby="apps-title">
+            <h2 id="apps-title">Apps</h2>
+            <ul class="apps">
+                <li class="app">
+                    <span class="icon"><img src="type/images/app-icon.png" width="48" height="48" alt=""></span>
+                    <div class="app-body">
+                        <h3><a href="type/">Type</a></h3>
+                        <p>A text expander for Android: short keywords turn into full text in your apps, with the keyboard you already use.</p>
+                        <p lang="ko">단축어를 치면 자주 쓰는 문장으로 바꿔 주는 텍스트 대치 앱이에요. 키보드는 그대로 써요.</p>
+                        <div class="links"><a href="type/">About Type</a><a href="type/ko/" hreflang="ko" lang="ko">한국어 소개</a><a href="https://play.google.com/store/apps/details?id=com.coco.typeaction">Google Play</a></div>
+                    </div>
+                </li>
+                <li class="app">
+                    <span class="icon"><img src="typehistory/images/app-icon.png" width="48" height="48" alt=""></span>
+                    <div class="app-body">
+                        <h3><a href="typehistory/">Type History</a></h3>
+                        <p>Keeps what you type on your device, so you can find lost text, drafts and notes and copy them back.</p>
+                        <p lang="ko">키보드로 입력한 글을 이 기기에 기록해 두고, 앱이 튕기거나 날아간 글을 찾아 다시 복사할 수 있어요.</p>
+                        <div class="links"><a href="typehistory/">About Type History</a><a href="typehistory/ko/" hreflang="ko" lang="ko">한국어 소개</a><a href="https://play.google.com/store/apps/details?id=com.coco.typehistory">Google Play</a></div>
+                    </div>
+                </li>
+                <li class="app">
+                    <span class="icon" aria-hidden="true">S</span>
+                    <div class="app-body">
+                        <h3><a href="shade/">Shade</a></h3>
+                        <p>A privacy screen filter with 6 privacy modes and a one-tap toggle.</p>
+                        <p lang="ko">엿보기 방지 화면 필터예요. 6가지 프라이버시 모드를 탭 한 번으로 켜고 꺼요.</p>
+                        <div class="links"><a href="shade/">About Shade</a><a href="https://play.google.com/store/apps/details?id=com.coco.shade">Google Play</a></div>
+                    </div>
+                </li>
+                <li class="app">
+                    <span class="icon" aria-hidden="true">C</span>
+                    <div class="app-body">
+                        <h3><a href="https://play.google.com/store/apps/details?id=com.feelpass.applocker">Cloak</a></h3>
+                        <p>An app lock with fingerprint unlock, a disguise mode and intruder photos.</p>
+                        <p lang="ko">지문으로 여는 앱 잠금이에요. 위장 모드와 침입자 사진 촬영 기능이 있어요.</p>
+                        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.feelpass.applocker">Google Play</a></div>
+                    </div>
+                </li>
+                <li class="app">
+                    <span class="icon" aria-hidden="true">O</span>
+                    <div class="app-body">
+                        <h3><a href="https://play.google.com/store/apps/details?id=com.oneswipe">One Swipe</a></h3>
+                        <p>Edge gestures: swipe from the edge of the screen, drag and release to launch.</p>
+                        <p lang="ko">화면 가장자리에서 스와이프하고, 드래그해서 놓으면 실행되는 엣지 제스처 앱이에요.</p>
+                        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.oneswipe">Google Play</a></div>
+                    </div>
+                </li>
+                <li class="app">
+                    <span class="icon" aria-hidden="true">S</span>
+                    <div class="app-body">
+                        <h3><a href="https://play.google.com/store/apps/details?id=com.oneswipe.shortcut">Shortcut Pro</a></h3>
+                        <p>Creates home screen shortcuts for apps and contacts.</p>
+                        <p lang="ko">앱과 연락처 바로가기를 홈 화면에 만들어요.</p>
+                        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.oneswipe.shortcut">Google Play</a></div>
+                    </div>
+                </li>
+                <li class="app">
+                    <span class="icon" aria-hidden="true">P</span>
+                    <div class="app-body">
+                        <h3><a href="promptpal/index_en.html">PromptPal</a></h3>
+                        <p>An AI prompt manager: save, organize and share prompts, and reuse them with variables.</p>
+                        <p lang="ko">AI 프롬프트를 저장·정리하고 변수로 다시 쓰는 프롬프트 관리 앱이에요.</p>
+                        <div class="links"><a href="promptpal/index_en.html">About PromptPal</a><a href="promptpal/" hreflang="ko" lang="ko">한국어 소개</a><a href="https://play.google.com/store/apps/details?id=com.yp.promptpal">Google Play</a></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="wrap about" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <p>Questions about any plantcode app: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
+            <p lang="ko">앱 문의: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
+        </section>
+    </main>
+
+    <footer class="wrap foot">
+        <p>Last updated 2026-10-15</p>
+        <p>© 2026 plantcode</p>
+    </footer>
 </body>
 </html>

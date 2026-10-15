@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppVolume — Per-app volume control &amp; auto mute for Android</title>
+    <meta name="description" content="AppVolume sets each app&#x27;s media volume when it opens and restores yours when you leave. Mute games, set Bluetooth and night levels. Free, no limit on apps.">
+    <link rel="canonical" href="https://feelpass.github.io/appvolume/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/appvolume/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/appvolume/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/appvolume/">
+    <link rel="icon" type="image/png" href="images/app-icon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AppVolume">
+    <meta property="og:url" content="https://feelpass.github.io/appvolume/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:title" content="AppVolume — Per-app volume control for Android">
+    <meta property="og:description" content="Every app at its own volume, and yours comes back when you leave. Per-app volume and mute are free, with no limit on apps.">
+    <meta property="og:image" content="https://feelpass.github.io/appvolume/images/og-en.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AppVolume — Per-app volume control for Android">
+    <meta name="twitter:description" content="Every app at its own volume, and yours comes back when you leave. Per-app volume and mute are free, with no limit on apps.">
+    <meta name="twitter:image" content="https://feelpass.github.io/appvolume/images/og-en.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "AppVolume",
+  "url": "https://feelpass.github.io/appvolume/",
+  "description": "AppVolume sets each app's media volume when it opens and restores yours when you leave. Mute games, set Bluetooth and night levels. Free, no limit on apps.",
+  "operatingSystem": "Android 10 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "en",
+  "image": "https://feelpass.github.io/appvolume/images/og-en.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.coco.appvolume&hl=en",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.coco.appvolume&hl=en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free with ads. AppVolume Pro is a one-time in-app purchase (US$4.99), not a subscription."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mountain24",
+    "url": "https://play.google.com/store/apps/developer?id=Mountain24",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-10-15"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there an app to control volume per app on Android?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AppVolume does exactly that. Set a media volume for each app, and it switches to that level when the app comes on screen, then goes back to your previous volume when you leave. No root needed, and no persistent notification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep music playing and turn down just the game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. AppVolume can't mix two apps playing at the same time. Android has one media volume, so while a muted game is on screen, music playing in the background goes quiet too. If your phone has a per-app volume mixer built in, it may be the better fit for this."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it mute games automatically when I open them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Set the game's volume to 0% and it's muted every time you open it, with your volume back when you leave. That's free, for as many apps as you like. To cover games you install later too, turn on category rules in Pro. They follow the category each app declares, so apps that don't declare one need to be added by hand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a different volume with Bluetooth earbuds, or a lower one at night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Conditional rules set a different volume for the speaker, wired headphones or Bluetooth, or for hours you choose. Time rules are checked when you open the app, so if the hour changes while you're using it, the new volume applies the next time you open it. You get 2 conditional rules for free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is AppVolume free? How many apps can I use it with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Per-app volume, mute, volume key modes, pause and the Quick Settings tile are free, with no limit on apps. The free limits are 2 conditional rules (app and category rules combined) and 1 custom category. The free version shows banner, app-open and full-screen ads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get rid of the ads? Is Pro a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, AppVolume Pro removes all banner, app-open and full-screen ads, and it's a one-time purchase, not a subscription. It's US$4.99 in the US, and prices vary by region. Pro also unlocks category rules, unlimited conditional rules and custom categories, and settings backup and restore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does AppVolume need accessibility access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It needs to know which app is on screen to apply that app's volume. Android doesn't let ordinary apps see that, so AppVolume uses its accessibility service for this one job. If the service is off, the volume won't change, and AppVolume sends a notification when it gets turned off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does AppVolume read my screen or send my app names anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It doesn't read text on your screen or what you type, and it doesn't send app names or package names. The accessibility service checks only the package name and window class of the active window and whether a picture-in-picture window is open, and it never taps or types for you. Usage stats (Firebase Analytics) include things like the app type Android assigns (for example, game), the volume level and the output type. Ads (AdMob), crash reports (Crashlytics) and purchase checks (Google Play) also use the internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I change the volume with the volume keys inside an app? Can I lock it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You choose: Ignore, Remember or Lock. Ignore is the default and keeps your preset after you leave, Remember saves the new level as the preset, and Lock puts the volume back to the preset even while you're in the app. Set it for all apps at once or app by app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it change ringtone or alarm volume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, only media volume. Ringtone, notification and alarm volumes stay as they are."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I move my settings to a new phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. With Pro's backup and restore, export your settings to a file and load it on the new phone. The backup file is saved wherever you choose. There's no account or login; your settings are stored on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is AppVolume on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. AppVolume runs only on Android 10 and later. There's no iPhone version."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --ink: #10121e;
+            --sub: rgba(16, 18, 30, .7);
+            --dim: rgba(16, 18, 30, .52);
+            --green: #4453E6;
+            --accent: #5567FF;
+            --mint: #8F9BFF;
+            --night: #0f1118;
+            --line: rgba(16, 18, 30, .1);
+            --card: #ffffff;
+            --tint: #EEF0FF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink);
+            line-height: 1.55;
+            min-height: 100vh;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 100% 0%, rgba(85, 103, 255, .2) 0%, rgba(85, 103, 255, 0) 70%),
+                radial-gradient(min(760px, 130vw) 640px at 0% 38%, rgba(85, 103, 255, .1) 0%, rgba(85, 103, 255, 0) 70%),
+                linear-gradient(176deg, #fafbff 0%, #f1f3fd 50%, var(--tint) 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; }
+        em { font-style: normal; color: var(--green); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        section { scroll-margin-top: 16px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+        .lang { font-size: 14px; font-weight: 600; color: var(--sub); text-decoration: none; padding: 8px 12px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+        .lang:hover { color: var(--ink); background: rgba(255, 255, 255, .6); }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 96px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 76px); line-height: 1.1; letter-spacing: -.022em; }
+        .def { margin-top: 26px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .def + .def { margin-top: 12px; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+            padding: 15px 24px 15px 20px; border-radius: 14px;
+            background: var(--night); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            transition: background-color .15s;
+        }
+        .play:hover { background: #262a36; }
+        .play svg { flex: none; color: var(--mint); }
+        .meta { margin-top: 14px; font-size: 14px; color: var(--sub); }
+
+        .phone {
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: #fff;
+            box-shadow: inset 0 0 0 2px #d5d9ee, 0 0 0 1px #c6cbe6, 0 30px 70px rgba(30, 40, 120, .2);
+        }
+        .phone img { display: block; width: 100%; height: auto; border-radius: 32px; background: #fafbff; }
+        .hero .phone { box-shadow: inset 0 0 0 2px #d5d9ee, 0 0 0 3px rgba(85, 103, 255, .45), 0 30px 80px rgba(30, 40, 120, .26); }
+
+        /* ── 공통 섹션 ────────────────────────── */
+        .block { padding-bottom: 104px; }
+        h2 { font-weight: 800; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.16; letter-spacing: -.02em; }
+        h3 { font-weight: 700; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.3; letter-spacing: -.012em; }
+        .intro { margin-top: 16px; max-width: 34em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+
+        /* ── 기능 ─────────────────────────────── */
+        .cards { display: grid; gap: 16px; margin-top: 40px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--card); box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(30, 40, 120, .08); }
+        .card h3 { display: flex; align-items: center; gap: 10px; }
+        .card h3::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+        .card p { margin-top: 10px; font-size: 16px; color: var(--sub); }
+
+        .rows { display: grid; gap: 80px; margin-top: 80px; }
+        .row { display: grid; gap: 32px; align-items: center; }
+        .row p { margin-top: 12px; max-width: 26em; font-size: clamp(16px, 1.8vw, 18px); font-weight: 500; color: var(--sub); }
+        .row h3 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -.018em; }
+
+        /* ── 표 ───────────────────────────────── */
+        /* 표가 오른쪽으로 더 있으면 가장자리 그림자로 알린다(background-attachment local/scroll, JS 없음) */
+        .table-scroll {
+            margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px;
+            background:
+                linear-gradient(to left, var(--card) 40%, rgba(255, 255, 255, 0)) right center / 48px 100% no-repeat local,
+                radial-gradient(farthest-side at 100% 50%, rgba(30, 40, 120, .22), rgba(30, 40, 120, 0)) right center / 16px 100% no-repeat scroll,
+                var(--card);
+            box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(30, 40, 120, .08);
+        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); background: #f3f5fd; border-bottom-color: rgba(16, 18, 30, .14); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 34%; }
+        .cmp { min-width: 760px; }
+        .cmp thead td { width: 22%; }
+        .cmp tbody th, .cmp thead td { position: sticky; left: 0; z-index: 1; box-shadow: inset -1px 0 0 var(--line); }
+        .cmp tbody th { background: var(--card); }
+        .price .pro, .cmp .us { background: rgba(85, 103, 255, .08); color: var(--ink); }
+        .price thead .pro, .cmp thead .us { background: #e3e7ff; }
+        .table-scroll .yes { color: var(--green); font-weight: 700; }
+
+        /* ── 맞는 분 / 안 맞는 분 ─────────────── */
+        .fit { display: grid; gap: 16px; }
+        .fit .card h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--green); }
+        .fit .bad li::before { content: "✕"; color: rgba(16, 18, 30, .42); }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--line); transition: box-shadow .16s; }
+        .faq details[open] { box-shadow: 0 0 0 1px rgba(68, 83, 230, .34), 0 14px 34px rgba(30, 40, 120, .08); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--green); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: rgba(85, 103, 255, .12); font-size: 20px; line-height: 1; font-weight: 500; color: var(--green); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 ───────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(28px, 6vw, 64px); border-radius: 32px; background: var(--night); color: #fff; }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .86); }
+        .privacy a { font-weight: 600; color: var(--mint); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--mint); }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot a { text-decoration: none; font-weight: 600; }
+        .foot .legal { flex-basis: 100%; font-size: 13px; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; padding-top: 88px; padding-bottom: 128px; }
+            .hero .phone { justify-self: end; }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .rows { gap: 112px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .fit { grid-template-columns: 1fr 1fr; }
+            .block { padding-bottom: 128px; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+        }
+
+        /* 360px: 가격표(3열)는 한 화면에, 비교표(5열)는 첫 열 고정 + 가로 스크롤 */
+        @media (max-width: 559px) {
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+            .cmp { min-width: 640px; }
+            .cmp thead td { width: 108px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="wrap top">
+        <a class="brand" href="./"><img src="images/app-icon.png" width="44" height="44" alt="">AppVolume</a>
+        <a class="lang" href="ko/" hreflang="ko" lang="ko">한국어</a>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>Every app at its own volume.<br><em>Yours comes back when you leave.</em></h1>
+                <p class="def">AppVolume is an Android app that switches your media volume to the level you set for each app when that app comes on screen, and puts your previous volume back when you leave. Per-app volume and mute are free with no limit on apps (with ads); AppVolume Pro, a one-time purchase, removes ads and adds category rules and more.</p>
+                <p class="def">It&#x27;s not a mixer for two apps playing at once. Android has one media volume, and AppVolume sets it for whichever app is on screen.</p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.coco.appvolume&hl=en">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <span>Get it on Google Play</span>
+                </a>
+                <p class="meta">Android 10 and later · Free with ads · No limit on apps</p>
+            </div>
+            <div class="phone"><img src="images/shot-home-en.webp" width="720" height="1607" alt="AppVolume&#x27;s home screen: Auto volume control is on, with category groups and per-app volumes for YouTube, Maps, YouTube Music, Photos and Chrome."></div>
+        </section>
+
+        <section class="wrap block" id="features">
+            <h2>What AppVolume does</h2>
+            <p class="intro">Mute your games, keep videos low, and use another level on Bluetooth. AppVolume does the volume-button dance every time you switch apps, so you don&#x27;t have to.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>One volume per app</h3>
+                    <p>Set a media volume for each app, from 0 to 100% in 1% steps. It kicks in when the app comes on screen, and your previous volume comes back when you leave. Set it to 0% to mute the app, and it holds while a video stays open in a picture-in-picture window.</p>
+                </div>
+                <div class="card">
+                    <h3>When you press the volume keys in an app</h3>
+                    <p>Choose whether AppVolume ignores the change, remembers it as the new volume, or locks the app to its preset. Set it once for every app, or app by app.</p>
+                </div>
+            </div>
+            <div class="rows">
+            <article class="row">
+                <div class="row-text">
+                    <h3>Another level for Bluetooth, headphones or night</h3>
+                    <p>Conditional rules give an app a different volume on the speaker, wired headphones or Bluetooth, or during hours you choose. When more than one rule matches, the one on top wins. Drag to reorder.</p>
+                </div>
+                <div class="phone"><img src="images/shot-rules-en.webp" width="720" height="1607" loading="lazy" alt="YouTube Music&#x27;s settings: media volume at 60%, with conditional rules for Bluetooth at 80% and 23:00–07:00 at 20%."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>All your games at once</h3>
+                    <p>Category rules in Pro set one volume each for Games, Video, Social, Music &amp; audio, News, Maps &amp; navigation, Photos and Productivity, including apps you install later. With My categories, you group your own apps under one volume. One is free.</p>
+                </div>
+                <div class="phone"><img src="images/shot-categories-en.webp" width="720" height="1607" loading="lazy" alt="Category rules: recommended presets, a custom category called Work at 10%, and the Games category muted at 0%."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>Pause when you need to</h3>
+                    <p>Pause everything, or a single app, for 5 minutes up to 6 hours, or until you turn it back on. The Auto volume tile in Quick Settings pauses and resumes it in one tap.</p>
+                </div>
+                <div class="phone"><img src="images/shot-pause-en.webp" width="720" height="1607" loading="lazy" alt="The pause dialog with options from 5 minutes to 6 hours, or until you turn it back on."></div>
+            </article>
+            <article class="row">
+                <div class="row-text">
+                    <h3>A quick on-screen notice</h3>
+                    <p>When a volume is applied or restored, a short notice shows at the top or bottom of the screen. Its menu lets you adjust the volume, pause, or stop managing that app.</p>
+                </div>
+                <div class="phone"><img src="images/shot-notice-en.webp" width="720" height="833" loading="lazy" alt="AppVolume&#x27;s on-screen menu over a blurred video app: volume at 25%, Pause, volume key modes and Stop managing this app."></div>
+            </article>
+            </div>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>Free and AppVolume Pro</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">Free</th><th scope="col" class="pro">AppVolume Pro</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">Price</th><td>Free</td><td class="pro">US$4.99, paid once. Not a subscription</td></tr>
+                            <tr><th scope="row">Per-app volume and mute</th><td><span class="yes">✓</span> No limit on apps</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Volume key modes, pause, Quick Settings tile</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Conditional rules (output device, time of day)</th><td>Up to 2 (app and category rules combined)</td><td class="pro">Unlimited</td></tr>
+                            <tr><th scope="row">My categories</th><td>1</td><td class="pro">Unlimited</td></tr>
+                            <tr><th scope="row">App category rules (Games, Video and 6 more)</th><td>—</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Settings backup and restore</th><td>—</td><td class="pro yes">✓</td></tr>
+                            <tr><th scope="row">Ads</th><td>Banner, app-open and full-screen ads</td><td class="pro">None</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Rules and categories you&#x27;ve already made keep working, even past the free limits. Price shown is for the US and varies by region (₩6,900 in Korea).</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>AppVolume is a good fit if you</h2>
+                <ul>
+                        <li>reach for the volume buttons every time you open a game or a short-video app. Apps you&#x27;ve set mute themselves when they open, and your volume comes back when you leave.</li>
+                        <li>want a different level on Bluetooth earbuds or a speaker than on your phone speaker, and something quieter at night</li>
+                        <li>want to try it for free first. Per-app volume and mute are free, with no limit on apps.</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>AppVolume isn&#x27;t for you if you</h2>
+                <ul>
+                        <li>want to mix two sounds at once, like loud music behind a quiet game. AppVolume changes the one media volume, so while a muted game is on screen, the music behind it goes quiet too. If your phone has a per-app volume mixer built in, that may suit you better.</li>
+                        <li>need to change ringtone, notification or alarm volume, or go louder than 100%. AppVolume changes media volume only, from 0 to 100%.</li>
+                        <li>use an iPhone, or don&#x27;t want to turn on accessibility access. AppVolume needs Android 10 or later, and with its accessibility service off, the volume won&#x27;t change.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="compare">
+            <h2>How AppVolume compares</h2>
+            <div class="table-scroll">
+                <table class="cmp">
+                    <thead>
+                        <tr><td></td><th scope="col" class="us">AppVolume</th><th scope="col">Built-in per-app volume mixer (some phone makers)</th><th scope="col">Pressing the volume buttons each time</th><th scope="col">Volume control apps (sliders, widgets)</th></tr>
+                    </thead>
+                    <tbody>
+                            <tr><th scope="row">Separate levels for two apps playing at once</th><td class="us">No. It sets the one media volume for the app on screen</td><td>Usually yes</td><td>No</td><td>Usually no</td></tr>
+                            <tr><th scope="row">Switching volume as you open and leave apps</th><td class="us">Automatic, and restored when you leave</td><td>Varies by maker</td><td>By hand, every time</td><td>Usually by hand</td></tr>
+                            <tr><th scope="row">Different levels for Bluetooth, headphones or time of day</th><td class="us">Conditional rules (2 free)</td><td>Varies by maker</td><td>By hand</td><td>Varies by app</td></tr>
+                            <tr><th scope="row">Which volume it changes</th><td class="us">Media volume only</td><td>Varies by maker</td><td>Media, ringtone and other system volumes</td><td>Usually several system volumes</td></tr>
+                            <tr><th scope="row">Phones it works on</th><td class="us">Android 10 and later</td><td>Only that maker&#x27;s phones</td><td>Any phone</td><td>Varies by app</td></tr>
+                            <tr><th scope="row">What it takes</th><td class="us">Accessibility access. Free with ads, or Pro as a one-time purchase</td><td>Nothing extra</td><td>Nothing extra</td><td>Varies by app</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Category columns describe typical behavior; individual phones and apps vary.</p>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>Questions people ask</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>Is there an app to control volume per app on Android?</h3></summary>
+                    <p>AppVolume does exactly that. Set a media volume for each app, and it switches to that level when the app comes on screen, then goes back to your previous volume when you leave. No root needed, and no persistent notification.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I keep music playing and turn down just the game?</h3></summary>
+                    <p>No. AppVolume can&#x27;t mix two apps playing at the same time. Android has one media volume, so while a muted game is on screen, music playing in the background goes quiet too. If your phone has a per-app volume mixer built in, it may be the better fit for this.</p>
+                </details>
+                <details>
+                    <summary><h3>Can it mute games automatically when I open them?</h3></summary>
+                    <p>Yes. Set the game&#x27;s volume to 0% and it&#x27;s muted every time you open it, with your volume back when you leave. That&#x27;s free, for as many apps as you like. To cover games you install later too, turn on category rules in Pro. They follow the category each app declares, so apps that don&#x27;t declare one need to be added by hand.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I use a different volume with Bluetooth earbuds, or a lower one at night?</h3></summary>
+                    <p>Yes. Conditional rules set a different volume for the speaker, wired headphones or Bluetooth, or for hours you choose. Time rules are checked when you open the app, so if the hour changes while you&#x27;re using it, the new volume applies the next time you open it. You get 2 conditional rules for free.</p>
+                </details>
+                <details>
+                    <summary><h3>Is AppVolume free? How many apps can I use it with?</h3></summary>
+                    <p>Yes. Per-app volume, mute, volume key modes, pause and the Quick Settings tile are free, with no limit on apps. The free limits are 2 conditional rules (app and category rules combined) and 1 custom category. The free version shows banner, app-open and full-screen ads.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I get rid of the ads? Is Pro a subscription?</h3></summary>
+                    <p>Yes, AppVolume Pro removes all banner, app-open and full-screen ads, and it&#x27;s a one-time purchase, not a subscription. It&#x27;s US$4.99 in the US, and prices vary by region. Pro also unlocks category rules, unlimited conditional rules and custom categories, and settings backup and restore.</p>
+                </details>
+                <details>
+                    <summary><h3>Why does AppVolume need accessibility access?</h3></summary>
+                    <p>It needs to know which app is on screen to apply that app&#x27;s volume. Android doesn&#x27;t let ordinary apps see that, so AppVolume uses its accessibility service for this one job. If the service is off, the volume won&#x27;t change, and AppVolume sends a notification when it gets turned off.</p>
+                </details>
+                <details>
+                    <summary><h3>Does AppVolume read my screen or send my app names anywhere?</h3></summary>
+                    <p>It doesn&#x27;t read text on your screen or what you type, and it doesn&#x27;t send app names or package names. The accessibility service checks only the package name and window class of the active window and whether a picture-in-picture window is open, and it never taps or types for you. Usage stats (Firebase Analytics) include things like the app type Android assigns (for example, game), the volume level and the output type. Ads (AdMob), crash reports (Crashlytics) and purchase checks (Google Play) also use the internet.</p>
+                </details>
+                <details>
+                    <summary><h3>What happens if I change the volume with the volume keys inside an app? Can I lock it?</h3></summary>
+                    <p>You choose: Ignore, Remember or Lock. Ignore is the default and keeps your preset after you leave, Remember saves the new level as the preset, and Lock puts the volume back to the preset even while you&#x27;re in the app. Set it for all apps at once or app by app.</p>
+                </details>
+                <details>
+                    <summary><h3>Does it change ringtone or alarm volume?</h3></summary>
+                    <p>No, only media volume. Ringtone, notification and alarm volumes stay as they are.</p>
+                </details>
+                <details>
+                    <summary><h3>Can I move my settings to a new phone?</h3></summary>
+                    <p>Yes. With Pro&#x27;s backup and restore, export your settings to a file and load it on the new phone. The backup file is saved wherever you choose. There&#x27;s no account or login; your settings are stored on your device.</p>
+                </details>
+                <details>
+                    <summary><h3>Is AppVolume on iPhone?</h3></summary>
+                    <p>No. AppVolume runs only on Android 10 and later. There&#x27;s no iPhone version.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap" id="privacy">
+            <section class="privacy">
+                <h2>It only checks which app is on screen</h2>
+                <ul>
+                        <li>The accessibility service only checks which app is on screen (package name, window class, and whether a picture-in-picture window is open). It doesn&#x27;t read text on your screen or what you type.</li>
+                        <li>Your per-app volumes, rules and categories are stored on your device. There&#x27;s no account or login.</li>
+                        <li>Ads (AdMob), usage stats and crash reports (Firebase) and purchase checks (Google Play) use the internet; app names and package names aren&#x27;t sent. The <a href="privacy_en.html">privacy policy</a> has the details.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <ul>
+            <li>Developer: Mountain24</li>
+            <li>Contact: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></li>
+            <li><a href="privacy_en.html">Privacy policy</a></li>
+        </ul>
+        <p>Last updated 2026-10-15</p>
+    </footer>
+</body>
+</html>
