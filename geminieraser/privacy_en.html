@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Gem Eraser</title>
+    <title>Privacy Policy - Gemi Eraser</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -34,86 +34,101 @@
         .highlight strong { color: #4A6CF7; }
         .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
         a { color: #4A6CF7; }
+        .lang { float: right; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="container">
+        <p class="lang"><a href="privacy_ko.html" lang="ko">한국어</a></p>
         <h1>Privacy Policy</h1>
-        <p class="app-name">Gem Eraser - AI Watermark Remover</p>
+        <p class="app-name">Gemi Eraser</p>
 
         <div class="highlight">
-            <strong>Key Point:</strong> Gem Eraser processes all images entirely on your device. Your images are never uploaded to any external server.
+            <strong>Key Point:</strong> Gemi Eraser removes watermarks on your device. Your images are not uploaded to any server. The app uses the internet for ads, usage statistics and crash reports, update checks and Google Play purchases, as described below.
         </div>
 
         <h2>1. Information We Collect</h2>
-        <p>Gem Eraser is designed with privacy as a core principle. We collect minimal information:</p>
+        <p>Gemi Eraser has no account or sign-in, and we do not run a server of our own for the app. Gemi Eraser handles the following information:</p>
         <ul>
-            <li><strong>Image data:</strong> Images you select for watermark removal are processed entirely on your device. They are never transmitted to any server.</li>
-            <li><strong>App preferences:</strong> Settings such as theme preference and processing history count are stored only on your device's local storage.</li>
-            <li><strong>Purchase information:</strong> If you purchase the premium plan, the transaction is handled entirely by Google Play. We do not collect or store any payment details.</li>
-            <li><strong>Usage &amp; diagnostics data:</strong> We use Google Firebase to collect anonymous app usage events and crash diagnostics. This data helps us improve the app and is not used to personally identify you.</li>
+            <li><strong>Images you choose:</strong> Images you pick with the system photo picker or share to the app are processed on your device. They are not sent to any server.</li>
+            <li><strong>History:</strong> When "Save to History" is on (it is on by default), each cleaned image is saved as a file in the app's internal storage, together with its size, the time it was made and whether it came from batch processing. Your original images are not copied into History. History keeps up to 100 images by default; you can change the limit to 50, 200, 500 or Unlimited in Settings. When the limit is exceeded, the oldest images are deleted first. You can turn "Save to History" off, delete images, or clear History at any time.</li>
+            <li><strong>Batch processing files:</strong> While you clean several images at once (a premium feature), the app keeps a copy of each original image and its result in the app's cache on your device, so you can review and adjust the results. These files are deleted when you start a new batch, cancel it or go back to the home screen, and Android may also clear them. They are not sent.</li>
+            <li><strong>App settings:</strong> Theme, language, History settings, premium status, the number of images processed, the date you last watched a rewarded ad, and when the app last asked for a review are stored in the app's private storage on your device. They are not sent to us.</li>
+            <li><strong>Purchase information:</strong> If you buy the Ad-free Lifetime Pass, Google Play handles the payment. To turn on the pass, Gemi Eraser receives the purchase record from Google Play (such as the product, order number, purchase status and purchase token) and saves the premium status on your device. It does not receive your payment card details.</li>
+            <li><strong>Usage statistics:</strong> Firebase Analytics collects events it records automatically (such as first open and app sessions) and events Gemi Eraser logs: watermark removal started and completed (success, duration, number of images, single or batch, free or premium), images saved (count, single or batch) or shared, premium screen shown (and what opened it), purchase started, completed, failed or restored (product ID and error message), and rewarded ad shown, completed or failed. It also records whether you have premium. With these events, Firebase receives an app instance identifier, your advertising ID (if available), device model, OS version, app version, language and an approximate location (country or region) derived from your IP address. These events do not include your images or file names.</li>
+            <li><strong>Crash reports:</strong> When the app crashes, Firebase Crashlytics collects the crash log, device model, OS version, app version, the time of the crash and a Crashlytics installation identifier.</li>
+            <li><strong>Advertising data:</strong> On the free plan, Google AdMob shows banner or native ads, an ad when the app opens, and a rewarded ad before a result is shown (once a day, when a watermark is found). AdMob may collect your advertising ID, IP address, device information and how you interact with ads, to serve personalized or non-personalized ads. The Ad-free Lifetime Pass removes these ads.</li>
         </ul>
 
         <h2>2. Permissions We Request</h2>
-        <p>Gem Eraser requests only the minimum permissions necessary:</p>
+        <p>Gemi Eraser does not request permission to read your photos or storage. You choose images with the Android system photo picker or by sharing them to the app, and the app can open only the images you choose. On Android 10 and later, saving to the Pictures/GeminiEraser folder does not need a storage permission.</p>
+        <p>The app declares the following permissions:</p>
         <ul>
-            <li><strong>Photo/Media access:</strong> Required to read images for watermark removal and to save processed images to your device.</li>
-            <li><strong>Internet:</strong> Used solely for serving advertisements and processing in-app purchases. Image processing does not require internet access.</li>
+            <li><strong>Internet and network state (INTERNET, ACCESS_NETWORK_STATE):</strong> Used for ads, usage statistics, crash reports, Remote Config (update checks and ad format settings), in-app reviews and in-app purchases. Before a rewarded ad, the app checks whether a VPN is on so it can tell you that ads may not load. This check is not stored or sent. Image processing does not need the internet.</li>
+            <li><strong>Google Play billing (com.android.vending.BILLING):</strong> Used for in-app purchases.</li>
+            <li><strong>Advertising ID and Android ad services (AD_ID, ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS):</strong> Used by the Google AdMob SDK to serve and measure ads.</li>
+            <li><strong>Other permissions added by libraries:</strong> Wake lock (WAKE_LOCK) and install referrer (BIND_GET_INSTALL_REFERRER_SERVICE, used by Firebase Analytics to see that the app was installed from Google Play).</li>
         </ul>
 
-        <h2>3. Offline Processing</h2>
-        <p>All watermark detection and removal processing is performed 100% on your device using local algorithms. Specifically:</p>
+        <h2>3. On-Device Image Processing</h2>
+        <p>Watermark detection and removal run on your device. Specifically:</p>
         <ul>
-            <li>No images are uploaded to any cloud service or remote server.</li>
-            <li>No image data is transmitted over the network.</li>
-            <li>The watermark removal engine operates entirely offline.</li>
-            <li>The app functions fully without an internet connection (ads and purchases excluded).</li>
+            <li>Your images are not uploaded to any cloud service or server.</li>
+            <li>Image data is not sent over the network, and is not included in usage statistics or crash reports.</li>
+            <li>Watermark removal works without an internet connection. On the free plan, if a rewarded ad cannot be loaded, the result is shown without the ad.</li>
+            <li>When you save, share or copy a result, the cleaned image is saved to Pictures/GeminiEraser on your device. Sharing or copying from History uses the History file and does not save a new copy. Sharing sends the image only to the app you choose, and copying places the image on your device's clipboard.</li>
         </ul>
 
         <h2>4. Third-Party Services</h2>
-        <p>Gem Eraser uses the following third-party services:</p>
+        <p>Gemi Eraser uses the following third-party services:</p>
         <ul>
-            <li><strong>Google AdMob:</strong> Serves advertisements to free-tier users. AdMob may collect device identifiers and usage data to serve relevant ads. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
-            <li><strong>Google Play Billing:</strong> Processes premium plan purchases. Purchase information is handled by Google Play. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
-            <li><strong>Firebase Analytics:</strong> Collects anonymous app usage events (such as feature interactions) to help us understand how the app is used. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
-            <li><strong>Firebase Crashlytics:</strong> Collects crash reports and diagnostic information to improve app stability. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+            <li><strong>Google AdMob:</strong> Serves ads on the free plan. AdMob may collect your advertising ID, IP address, device information and ad interaction data. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank">How Google uses information from sites or apps that use its services</a>.</li>
+            <li><strong>Google Play Billing:</strong> Processes Ad-free Lifetime Pass purchases. Purchase information is handled by Google Play. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+            <li><strong>Firebase Analytics:</strong> Collects usage statistics as described in section 1. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a>.</li>
+            <li><strong>Firebase Crashlytics:</strong> Collects crash reports and device information. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a>.</li>
+            <li><strong>Firebase Remote Config:</strong> Downloads app settings such as the latest and required app version (for update notices) and the ad format (banner or native), which may be tested with Firebase A/B Testing. To do this, Firebase receives a Firebase installation identifier and basic app and device information. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a>.</li>
+            <li><strong>Google Play In-App Review:</strong> Shows the Google Play rating window inside the app. Your rating and review go to Google Play, not to us. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
         </ul>
 
         <h2>5. How We Use Information</h2>
-        <p>Information is used solely for the following purposes:</p>
+        <p>Information is used for the following purposes:</p>
         <ul>
-            <li>To provide watermark detection and removal functionality</li>
-            <li>To save your app preferences locally</li>
-            <li>To display advertisements (free-tier users)</li>
+            <li>To provide watermark detection and removal, and History</li>
+            <li>To save your app settings on your device</li>
+            <li>To display advertisements on the free plan</li>
             <li>To process in-app purchases</li>
+            <li>To notify you of app updates</li>
             <li>To analyze app usage and improve stability (analytics and crash diagnostics)</li>
         </ul>
 
         <h2>6. Data Retention and Deletion</h2>
         <ul>
-            <li>All local data (preferences, processing history) is permanently deleted when you uninstall the app.</li>
-            <li>Processed images are saved only where you choose to save them on your device.</li>
+            <li>Batch processing files in the app's cache are deleted as described in section 1.</li>
+            <li>History images and app settings stay in the app's internal storage until you delete them, the History limit removes them, or you uninstall the app or clear its storage. Uninstalling the app deletes them.</li>
+            <li>If Android backup is turned on, Android may include the app's internal data, including History images, in your device backup to your Google account, following Android's backup settings.</li>
+            <li>Images saved to Pictures/GeminiEraser stay in your gallery until you delete them. Uninstalling the app does not delete them.</li>
+            <li>Usage statistics, crash reports and advertising data are kept by Google according to its own retention policies.</li>
             <li>You can reset your advertising ID or opt out of personalized ads in your device settings.</li>
         </ul>
 
         <h2>7. Data Security</h2>
-        <p>We implement appropriate measures to protect your data:</p>
         <ul>
-            <li>All image processing occurs locally — no data leaves your device.</li>
-            <li>App preferences are stored in the app's private storage area, inaccessible to other apps.</li>
-            <li>Communication with third-party services (ads, billing) uses encrypted connections (HTTPS).</li>
+            <li>Images are processed on your device and are not uploaded.</li>
+            <li>History images and app settings are kept in the app's private storage area.</li>
+            <li>The third-party services above connect over encrypted connections (HTTPS).</li>
         </ul>
 
         <h2>8. Children's Privacy</h2>
-        <p>Gem Eraser does not knowingly collect personal information from children under 13. Since all image processing is performed locally and no personal data is collected, there is minimal risk of children's data being exposed.</p>
+        <p>Gemi Eraser does not knowingly collect personal information from children under 13. If you believe a child has provided personal information, please contact us.</p>
 
         <h2>9. Changes to This Policy</h2>
         <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated effective date.</p>
 
         <h2>10. Contact Us</h2>
         <p>For privacy inquiries or concerns, please contact us at: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
+        <p>If you send feedback from the app, your email app opens with the app version, device model and Android version filled in (feedback from Settings also includes whether you have premium). You can edit or delete them before sending. We use what you send only to reply and fix problems.</p>
 
-        <p class="date">Effective Date: June 12, 2026</p>
+        <p class="date">Effective Date: October 16, 2026</p>
     </div>
 </body>
 </html>

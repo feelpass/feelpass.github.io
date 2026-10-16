@@ -26,77 +26,100 @@
         ul { padding-left: 20px; }
         .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
         a { color: #37474F; }
+        .lang { float: right; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="container">
+        <p class="lang"><a href="privacy_ko.html" lang="ko">한국어</a></p>
         <h1>Privacy Policy</h1>
-        <p class="app-name">Shade - Private Display Guard</p>
+        <p class="app-name">Shade</p>
 
         <h2>1. Information We Collect</h2>
-        <p>Shade collects minimal information necessary to operate and improve the app:</p>
+        <p>Shade has no account or sign-in, and we do not run a server of our own for the app. Shade handles the following information:</p>
         <ul>
-            <li><strong>Filter settings and preferences:</strong> Stored only on your device's local storage.</li>
-            <li><strong>Analytics data:</strong> We use Firebase Analytics to collect anonymous usage statistics such as app opens, feature usage, and crash reports. This data does not include personally identifiable information.</li>
-            <li><strong>Crash reports:</strong> Firebase Crashlytics automatically collects crash logs and device information (device model, OS version) to help us fix bugs and improve stability.</li>
-            <li><strong>Advertising ID:</strong> Google AdMob may collect your advertising ID to serve personalized or non-personalized ads based on your preferences.</li>
+            <li><strong>Settings stored on your device:</strong> Your filter choice and adjustments, theme, the apps you added to Auto-on and the filter chosen for each, and your premium status are stored in the app's private storage on your device. They are not sent to us.</li>
+            <li><strong>List of installed apps:</strong> So you can pick apps for Auto-on, Shade reads the apps installed on your device (app name, package name, launch screen, version, install and update time, and whether it is a system app) and keeps a copy in its local database. This list stays on your device and is not sent.</li>
+            <li><strong>Promotion code data:</strong> When you redeem a promotion code, Shade checks it on your device against the code list it downloads with Firebase Remote Config. It then saves the code, its expiry date and your device's Android ID on your device so the code works only on this device. These are not sent.</li>
+            <li><strong>Usage statistics:</strong> Firebase Analytics collects events it records automatically (such as first open and app sessions) and events Shade logs on the Premium screen (screen viewed, purchase or restore started and completed). With these events, Firebase receives an app instance identifier, your advertising ID (if available), device model, OS version, app version, language and an approximate location (country or region) derived from your IP address. Shade does not send your name, email address or anything shown on your screen.</li>
+            <li><strong>Crash reports:</strong> When the app crashes, Firebase Crashlytics collects the crash log, device model, OS version, app version, the time of the crash and a Crashlytics installation identifier.</li>
+            <li><strong>Advertising data:</strong> The free version shows banner ads and ads when the app opens, served by Google AdMob. AdMob may collect your advertising ID, IP address, device information and how you interact with ads, to serve personalized or non-personalized ads. Premium removes these ads.</li>
+            <li><strong>Purchase information:</strong> Google Play handles payment. To turn on premium, Shade receives the purchase record from Google Play (such as the product, order number, purchase status and purchase token) and saves the premium status on your device. Shade does not receive your payment card details.</li>
         </ul>
 
-        <h2>2. Permissions We Request</h2>
-        <p>Shade requests the following permissions to provide its core functionality:</p>
+        <h2>2. Accessibility Service</h2>
+        <p>Shade needs its accessibility service turned on to work. It uses the service for two things:</p>
         <ul>
-            <li><strong>Display over other apps (Overlay):</strong> Required to draw privacy filters on top of your screen. This is the core functionality of the app.</li>
-            <li><strong>Accessibility Service:</strong> Used to detect the current foreground app for per-app filter settings. This service does not collect, store, or transmit any personal data.</li>
-            <li><strong>Internet:</strong> Required for serving ads, syncing analytics data, fetching remote configuration, and processing in-app purchases.</li>
-            <li><strong>Notifications:</strong> Used to provide quick toggle controls for the privacy filter via the notification bar.</li>
-            <li><strong>Foreground Service:</strong> Required to keep the privacy filter active while in use.</li>
+            <li><strong>Showing the privacy filter over other apps:</strong> The filter is drawn as an accessibility overlay. When the accessibility service is off, Shade cannot show the filter.</li>
+            <li><strong>Auto-on:</strong> Turning the filter on when an app you added to Auto-on opens, and turning it off again when you leave that app.</li>
         </ul>
+        <p>What the service reads, and what it does not:</p>
+        <ul>
+            <li>The service receives only "window changed" events. Shade does not read what is on your screen: it does not request access to window content, and it uses only the app's package name and screen (activity) name from each event. It is also set up so it cannot perform taps or gestures.</li>
+            <li>Only while at least one app is in your Auto-on list, Shade looks at the package name and screen (activity) name of the app that came to the front, to decide whether to turn the filter on or off. When the list is empty, Shade ignores these events.</li>
+            <li>This information is kept in memory only while the service runs. Shade does not save it to storage, send it off your device, or pass it to Firebase or AdMob.</li>
+        </ul>
+        <p>To turn the service off, go to your device's Settings &gt; Accessibility &gt; Shade. To stop only Auto-on, remove all apps from your Auto-on list.</p>
 
-        <h2>3. Third-Party Services</h2>
+        <h2>3. Permissions We Request</h2>
+        <p>Shade declares the following permissions:</p>
+        <ul>
+            <li><strong>Accessibility service (BIND_ACCESSIBILITY_SERVICE):</strong> Shows the privacy filter and runs Auto-on. See section 2.</li>
+            <li><strong>See all installed apps (QUERY_ALL_PACKAGES):</strong> Shows the list of installed apps when you choose apps for Auto-on, and lets Auto-on check whether the app that came to the front is a launchable app or the home screen.</li>
+            <li><strong>Notifications (POST_NOTIFICATIONS):</strong> Shows a notification with the filter status and buttons to turn the filter on or off.</li>
+            <li><strong>Internet and network state (INTERNET, ACCESS_NETWORK_STATE):</strong> Used for ads, usage statistics, crash reports, Remote Config and in-app purchases.</li>
+            <li><strong>Google Play billing (com.android.vending.BILLING):</strong> Used for in-app purchases.</li>
+            <li><strong>Advertising ID and Android ad services (AD_ID, ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS):</strong> Added by the Google AdMob SDK to serve and measure ads.</li>
+            <li><strong>Other permissions added by libraries:</strong> Wake lock (WAKE_LOCK), install referrer (BIND_GET_INSTALL_REFERRER_SERVICE, used by Firebase Analytics to see that the app was installed from Google Play) and REORDER_TASKS.</li>
+            <li><strong>Declared but not used by any current feature:</strong> Foreground service (FOREGROUND_SERVICE), usage access (PACKAGE_USAGE_STATS), vibration (VIBRATE) and the Tasker run-tasks permission (net.dinglisch.android.tasker.PERMISSION_RUN_TASKS). Shade does not ask you to grant usage access and does not read your app usage history. Shade has no Tasker integration.</li>
+        </ul>
+        <p>Shade does not use the "Display over other apps" permission (SYSTEM_ALERT_WINDOW).</p>
+
+        <h2>4. Third-Party Services</h2>
         <p>Shade uses the following third-party services that may collect data:</p>
         <ul>
-            <li><strong>Google AdMob:</strong> Serves advertisements. AdMob may collect device identifiers and usage data. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
-            <li><strong>Firebase Analytics:</strong> Collects anonymous usage statistics. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a>.</li>
+            <li><strong>Google AdMob:</strong> Serves ads in the free version. AdMob may collect your advertising ID, IP address, device information and ad interaction data. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank">How Google uses information from sites or apps that use its services</a>.</li>
+            <li><strong>Firebase Analytics:</strong> Collects usage statistics as described in section 1. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a>.</li>
             <li><strong>Firebase Crashlytics:</strong> Collects crash reports and device information. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a>.</li>
-            <li><strong>Firebase Remote Config:</strong> Fetches app configuration from server. No personal data is collected.</li>
+            <li><strong>Firebase Remote Config:</strong> Downloads app settings such as the latest version number, the product list and the promotion code list. To do this, Firebase receives a Firebase installation identifier and basic app and device information. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a>.</li>
             <li><strong>Google Play Billing:</strong> Processes in-app purchases. Purchase information is handled by Google Play. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+            <li><strong>Google Play In-App Review:</strong> Shows the Google Play rating window inside the app. Your rating and review go to Google Play, not to us. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
         </ul>
 
-        <h2>4. How We Use Information</h2>
+        <h2>5. How We Use Information</h2>
         <p>Information is used for the following purposes:</p>
         <ul>
-            <li>To provide and maintain the privacy filter functionality</li>
-            <li>To display advertisements</li>
-            <li>To analyze app usage and improve user experience</li>
+            <li>To provide the privacy filter and Auto-on</li>
+            <li>To display advertisements in the free version</li>
+            <li>To analyze app usage and improve the app</li>
             <li>To diagnose crashes and fix bugs</li>
-            <li>To process in-app purchases</li>
+            <li>To process in-app purchases and promotion codes</li>
         </ul>
 
-        <h2>5. Data Retention and Deletion</h2>
+        <h2>6. Data Retention and Deletion</h2>
         <ul>
-            <li>Local settings are permanently deleted when you uninstall the app.</li>
-            <li>Analytics and crash data are retained by Firebase according to Google's data retention policies.</li>
+            <li>Data stored on your device (settings, Auto-on list, installed app list, promotion code data) is deleted when you uninstall the app or clear its storage. If Android backup is turned on, Android may include this data in your device backup to your Google account, following Android's backup settings.</li>
+            <li>Usage statistics, crash reports and advertising data are kept by Google according to its own retention policies.</li>
             <li>You can reset your advertising ID or opt out of personalized ads in your device settings.</li>
         </ul>
 
-        <h2>6. Data Security</h2>
-        <p>We implement appropriate security measures to protect your data:</p>
+        <h2>7. Data Security</h2>
         <ul>
-            <li>All filter settings are stored in the app's private storage area</li>
-            <li>Communication with third-party services uses encrypted connections (HTTPS)</li>
-            <li>No sensitive personal data is collected or stored</li>
+            <li>Data stored on your device is kept in the app's private storage area.</li>
+            <li>The third-party services above connect over encrypted connections (HTTPS).</li>
         </ul>
 
-        <h2>7. Children's Privacy</h2>
+        <h2>8. Children's Privacy</h2>
         <p>Shade does not knowingly collect personal information from children under 13. If you believe a child has provided personal information, please contact us.</p>
 
-        <h2>8. Changes to This Policy</h2>
+        <h2>9. Changes to This Policy</h2>
         <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated effective date.</p>
 
-        <h2>9. Contact Us</h2>
+        <h2>10. Contact Us</h2>
         <p>For privacy inquiries or concerns, please contact us at: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
+        <p>If you send feedback from the app, your email app opens with the app version, device model and Android version filled in. You can edit or delete them before sending. We use what you send only to reply and fix problems.</p>
 
-        <p class="date">Effective Date: March 8, 2025</p>
+        <p class="date">Effective Date: October 16, 2026</p>
     </div>
 </body>
 </html>

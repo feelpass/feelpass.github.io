@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - Gemi Eraser</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #1a1a2e; }
+        .app-name { color: #666; margin-bottom: 30px; }
+        h2 { font-size: 1.3rem; margin: 30px 0 15px; color: #333; }
+        p, li { margin-bottom: 12px; color: #555; }
+        ul { padding-left: 20px; }
+        .highlight {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border: 1px solid #dde4ff;
+        }
+        .highlight strong { color: #4A6CF7; }
+        .date { color: #888; font-size: 0.9rem; margin-top: 40px; }
+        a { color: #4A6CF7; }
+        .lang { float: right; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="lang"><a href="privacy_en.html" lang="en">English</a></p>
+        <h1>개인정보처리방침</h1>
+        <p class="app-name">Gemi Eraser</p>
+
+        <div class="highlight">
+            <strong>핵심:</strong> Gemi Eraser는 기기 안에서 워터마크를 지웁니다. 이미지는 어떤 서버에도 업로드하지 않습니다. 앱은 광고, 사용 통계와 오류 보고, 업데이트 확인, Google Play 구매에 인터넷을 쓰며, 자세한 내용은 아래에 적었습니다.
+        </div>
+
+        <h2>1. 수집하는 정보</h2>
+        <p>Gemi Eraser에는 계정이나 로그인이 없고, 앱을 위해 따로 운영하는 서버도 없습니다. Gemi Eraser가 다루는 정보는 다음과 같습니다.</p>
+        <ul>
+            <li><strong>고른 이미지:</strong> 시스템 사진 선택기로 고르거나 앱으로 공유한 이미지는 기기 안에서 처리합니다. 어떤 서버로도 보내지 않습니다.</li>
+            <li><strong>보관함:</strong> "보관함에 저장"이 켜져 있으면(기본값은 켜짐) 정리한 이미지를 앱 내부 저장 공간에 파일로 저장하고, 이미지 크기, 만든 시각, 일괄 처리로 만들었는지를 함께 기록합니다. 원본 이미지는 보관함에 복사하지 않습니다. 보관함은 기본으로 100개까지 보관하며, 설정에서 50개, 200개, 500개, 무제한으로 바꿀 수 있습니다. 보관 개수를 넘으면 오래된 이미지부터 삭제합니다. "보관함에 저장"은 언제든 끌 수 있고, 이미지를 지우거나 보관함을 비울 수 있습니다.</li>
+            <li><strong>일괄 처리 파일:</strong> 여러 이미지를 한 번에 정리하는 동안(프리미엄 기능), 결과를 확인하고 조정할 수 있도록 원본 이미지와 결과 이미지의 사본을 기기 안의 앱 캐시에 둡니다. 이 파일은 새 일괄 처리를 시작하거나, 취소하거나, 처음 화면으로 돌아가면 삭제되고, Android가 캐시를 비울 때도 삭제될 수 있습니다. 전송하지 않습니다.</li>
+            <li><strong>앱 설정:</strong> 테마, 언어, 보관함 설정, 프리미엄 이용 상태, 처리한 이미지 수, 보상형 광고를 마지막으로 본 날짜, 앱이 마지막으로 리뷰를 요청한 시각은 기기 안의 앱 전용 저장 공간에 저장합니다. 개발자에게 보내지 않습니다.</li>
+            <li><strong>구매 정보:</strong> 광고 제거 평생 이용권을 구매하면 결제는 Google Play가 처리합니다. Gemi Eraser는 이용권을 켜기 위해 Google Play에서 구매 기록(상품, 주문 번호, 구매 상태, 구매 토큰 등)을 받고, 프리미엄 이용 상태를 기기에 저장합니다. 카드 정보 같은 결제 정보는 받지 않습니다.</li>
+            <li><strong>사용 통계:</strong> Firebase Analytics는 자동으로 기록하는 이벤트(첫 실행, 앱 사용 세션 등)와 Gemi Eraser가 기록하는 이벤트를 수집합니다. 앱이 기록하는 이벤트는 워터마크 제거 시작과 완료(성공 여부, 걸린 시간, 이미지 수, 단일·일괄 처리 여부, 무료·프리미엄 여부), 이미지 저장(개수, 단일·일괄 여부)·공유, 프리미엄 화면 표시(어떤 상황에서 열렸는지), 구매 시작·완료·실패·복원(상품 ID와 오류 메시지), 보상형 광고 표시·시청 완료·실패이고, 프리미엄 이용 여부도 함께 기록합니다. 이때 Firebase는 앱 인스턴스 식별자, 광고 ID(사용할 수 있는 경우), 기기 모델, OS 버전, 앱 버전, 언어, IP 주소로 추정한 대략적인 위치(국가 또는 지역)를 함께 받습니다. 이 이벤트에는 이미지나 파일 이름이 들어가지 않습니다.</li>
+            <li><strong>오류 보고:</strong> 앱이 비정상 종료되면 Firebase Crashlytics가 오류 기록, 기기 모델, OS 버전, 앱 버전, 오류가 난 시각, Crashlytics 설치 식별자를 수집합니다.</li>
+            <li><strong>광고 관련 정보:</strong> 무료 플랜에서는 Google AdMob이 배너 또는 네이티브 광고, 앱을 열 때 뜨는 광고, 결과를 보여 주기 전 보상형 광고(워터마크를 찾았을 때 하루 한 번)를 보여 줍니다. AdMob은 맞춤 광고 또는 일반 광고를 보여 주기 위해 광고 ID, IP 주소, 기기 정보, 광고와 상호작용한 기록을 수집할 수 있습니다. 광고 제거 평생 이용권을 구매하면 이 광고가 나오지 않습니다.</li>
+        </ul>
+
+        <h2>2. 요청하는 권한</h2>
+        <p>Gemi Eraser는 사진이나 저장소를 읽는 권한을 요청하지 않습니다. 이미지는 Android 시스템 사진 선택기로 고르거나 앱으로 공유해서 넣으며, 앱은 직접 고른 이미지만 열 수 있습니다. Android 10 이상에서는 Pictures/GeminiEraser 폴더에 저장할 때 저장소 권한이 필요하지 않습니다.</p>
+        <p>앱이 선언한 권한은 다음과 같습니다.</p>
+        <ul>
+            <li><strong>인터넷과 네트워크 상태(INTERNET, ACCESS_NETWORK_STATE):</strong> 광고, 사용 통계, 오류 보고, Remote Config(업데이트 확인과 광고 형식 설정), 인앱 리뷰, 인앱 구매에 씁니다. 보상형 광고를 보여 주기 전에 VPN이 켜져 있는지 확인해, 광고가 안 나올 수 있다고 알려 줍니다. 이 확인 결과는 저장하거나 보내지 않습니다. 이미지 처리에는 인터넷이 필요하지 않습니다.</li>
+            <li><strong>Google Play 결제(com.android.vending.BILLING):</strong> 인앱 구매에 씁니다.</li>
+            <li><strong>광고 ID와 Android 광고 서비스(AD_ID, ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS):</strong> Google AdMob SDK가 광고를 보여 주고 성과를 측정하는 데 씁니다.</li>
+            <li><strong>라이브러리가 추가하는 그 밖의 권한:</strong> 기기 절전 방지(WAKE_LOCK), 설치 리퍼러(BIND_GET_INSTALL_REFERRER_SERVICE, Firebase Analytics가 앱이 Google Play에서 설치되었는지 확인하는 데 씀).</li>
+        </ul>
+
+        <h2>3. 기기 안 이미지 처리</h2>
+        <p>워터마크 감지와 제거는 기기 안에서 실행합니다. 구체적으로는 다음과 같습니다.</p>
+        <ul>
+            <li>이미지를 클라우드 서비스나 서버에 업로드하지 않습니다.</li>
+            <li>이미지 데이터를 네트워크로 보내지 않으며, 사용 통계나 오류 보고에도 넣지 않습니다.</li>
+            <li>워터마크 제거는 인터넷 연결 없이도 동작합니다. 무료 플랜에서는 보상형 광고를 불러오지 못하면 광고 없이 결과를 보여 줍니다.</li>
+            <li>결과를 저장, 공유, 복사하면 정리한 이미지가 기기의 Pictures/GeminiEraser 폴더에 저장됩니다. 보관함에서 공유하거나 복사할 때는 보관함 파일을 그대로 쓰고 새로 저장하지 않습니다. 공유하면 직접 고른 앱으로만 이미지가 전달되고, 복사하면 이미지가 기기의 클립보드에 들어갑니다.</li>
+        </ul>
+
+        <h2>4. 제3자 서비스</h2>
+        <p>Gemi Eraser는 다음 제3자 서비스를 사용합니다.</p>
+        <ul>
+            <li><strong>Google AdMob:</strong> 무료 플랜에서 광고를 보여 줍니다. AdMob은 광고 ID, IP 주소, 기기 정보, 광고 상호작용 기록을 수집할 수 있습니다. <a href="https://policies.google.com/privacy?hl=ko" target="_blank">Google 개인정보처리방침</a>과 <a href="https://policies.google.com/technologies/partner-sites?hl=ko" target="_blank">Google 서비스를 사용하는 사이트 또는 앱에서 Google이 정보를 사용하는 방법</a>을 참고하세요.</li>
+            <li><strong>Google Play 결제:</strong> 광고 제거 평생 이용권 구매를 처리합니다. 구매 정보는 Google Play가 처리합니다. <a href="https://policies.google.com/privacy?hl=ko" target="_blank">Google 개인정보처리방침</a>을 참고하세요.</li>
+            <li><strong>Firebase Analytics:</strong> 1절에 적은 사용 통계를 수집합니다. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 개인정보 보호</a>를 참고하세요.</li>
+            <li><strong>Firebase Crashlytics:</strong> 오류 보고와 기기 정보를 수집합니다. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 개인정보 보호</a>를 참고하세요.</li>
+            <li><strong>Firebase Remote Config:</strong> 업데이트 안내에 쓰는 최신·필수 앱 버전, 광고 형식(배너 또는 네이티브) 같은 앱 설정을 내려받습니다. 광고 형식은 Firebase A/B Testing으로 비교할 수 있습니다. 이때 Firebase는 Firebase 설치 식별자와 기본적인 앱·기기 정보를 받습니다. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 개인정보 보호</a>를 참고하세요.</li>
+            <li><strong>Google Play 인앱 리뷰:</strong> 앱 안에서 Google Play 평가 창을 보여 줍니다. 별점과 리뷰는 개발자가 아니라 Google Play로 전달됩니다. <a href="https://policies.google.com/privacy?hl=ko" target="_blank">Google 개인정보처리방침</a>을 참고하세요.</li>
+        </ul>
+
+        <h2>5. 정보 이용 목적</h2>
+        <p>정보는 다음 목적으로 이용합니다.</p>
+        <ul>
+            <li>워터마크 감지·제거와 보관함 제공</li>
+            <li>앱 설정을 기기에 저장</li>
+            <li>무료 플랜의 광고 표시</li>
+            <li>인앱 구매 처리</li>
+            <li>앱 업데이트 안내</li>
+            <li>앱 사용 분석과 안정성 개선(사용 통계와 오류 진단)</li>
+        </ul>
+
+        <h2>6. 보관과 삭제</h2>
+        <ul>
+            <li>앱 캐시의 일괄 처리 파일은 1절에 적은 때에 삭제됩니다.</li>
+            <li>보관함 이미지와 앱 설정은 직접 지우거나, 보관 개수 제한으로 삭제되거나, 앱을 삭제하거나 앱 저장 공간을 지울 때까지 앱 내부 저장 공간에 남습니다. 앱을 삭제하면 함께 삭제됩니다.</li>
+            <li>기기의 Android 백업이 켜져 있으면 Android 백업 설정에 따라 보관함 이미지를 포함한 앱 내부 데이터가 Google 계정의 기기 백업에 포함될 수 있습니다.</li>
+            <li>Pictures/GeminiEraser 폴더에 저장한 이미지는 직접 지울 때까지 갤러리에 남습니다. 앱을 삭제해도 지워지지 않습니다.</li>
+            <li>사용 통계, 오류 보고, 광고 관련 정보는 Google의 보관 정책에 따라 보관됩니다.</li>
+            <li>광고 ID는 기기 설정에서 재설정하거나 맞춤 광고를 끌 수 있습니다.</li>
+        </ul>
+
+        <h2>7. 데이터 보호</h2>
+        <ul>
+            <li>이미지는 기기 안에서 처리하며 업로드하지 않습니다.</li>
+            <li>보관함 이미지와 앱 설정은 앱 전용 저장 공간에 둡니다.</li>
+            <li>위 제3자 서비스와는 암호화된 연결(HTTPS)로 통신합니다.</li>
+        </ul>
+
+        <h2>8. 아동의 개인정보</h2>
+        <p>Gemi Eraser는 만 13세 미만 아동의 개인정보를 알면서 수집하지 않습니다. 아동이 개인정보를 제공했다고 생각되면 연락해 주세요.</p>
+
+        <h2>9. 방침 변경</h2>
+        <p>이 개인정보처리방침은 바뀔 수 있습니다. 바뀌면 이 페이지에 게시하고 시행일을 새로 적습니다.</p>
+
+        <h2>10. 문의</h2>
+        <p>개인정보 관련 문의는 다음 주소로 보내 주세요: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
+        <p>앱에서 문의 메일을 쓰면 메일 앱이 열리고 앱 버전, 기기 모델, Android 버전이 미리 채워집니다(설정에서 보내는 문의에는 프리미엄 이용 여부도 들어갑니다). 보내기 전에 고치거나 지울 수 있습니다. 받은 내용은 답장과 문제 해결에만 씁니다.</p>
+
+        <p class="date">시행일: 2026년 10월 16일</p>
+    </div>
+</body>
+</html>
