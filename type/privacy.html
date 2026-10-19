@@ -36,11 +36,12 @@
         <p class="app-name">type</p>
 
         <h2>1. Information We Collect</h2>
-        <p>Your shortcuts, settings, and the text you type are stored and processed on your device. type itself does not collect them, and the developer has no server that receives them. Third-party services included in the app collect limited technical data, as described in section 7.</p>
+        <p>Your shortcuts, settings, and the text you type are stored and processed on your device. type itself does not collect them, and the developer has no server that receives them. Third-party services included in the app collect limited technical data, as described in section 8.</p>
         <ul>
-            <li><strong>Shortcut data:</strong> Stored in the device's internal storage. A copy leaves your device only if you export it to a file or turn on Google Drive backup yourself (section 6).</li>
+            <li><strong>Shortcut data:</strong> Stored in the device's internal storage. A copy leaves your device only if you export it to a file or turn on Google Drive backup yourself (section 7).</li>
             <li><strong>App settings:</strong> Stored in the device's internal storage</li>
             <li><strong>The text you type is never transmitted to any server</strong></li>
+            <li><strong>Type Keyboard:</strong> What the keyboard stores on your device, and its limits, is described in section 3. It all stays on your device and is never sent to any server.</li>
         </ul>
 
         <h2>2. Accessibility Service</h2>
@@ -52,25 +53,36 @@
             <li>Running action shortcuts, including system actions such as Home, Back, lock screen, and screenshot</li>
             <li>Knowing which app is in front and whether a keyboard is showing, so that shortcuts limited to certain apps work only there, the command palette closes when you leave, and the optional per-app keyboard auto switch can change the keyboard</li>
             <li>Receiving hardware key presses to move through, confirm, or close the suggestion popup and to open the command palette with its keyboard shortcut</li>
-            <li>Reading the text you select or copy, so that the clipboard variable can insert it. This text is kept in memory only and is not saved</li>
+            <li>Reading the text you select or copy, so that the clipboard variable ({clipboard}) can insert it. Text read by the accessibility service is kept in memory only and is not saved. (Type Keyboard's clipboard history is separate and described in section 3.)</li>
             <li>Switching to the Type keyboard while you try it in the app, and switching back when you leave</li>
             <li>Opening type's own screens, such as returning to the app right after you turn the service on</li>
         </ul>
         <p>The Accessibility Service is used only to provide type's features, including those listed above. What it reads is processed on your device, and type does not send it to any server.</p>
         <p>Separately, if you turn on the optional Usage access permission (Type Keyboard settings), per-app keyboard auto switch also reads which app most recently came to the front, on screens the Accessibility Service cannot see. The same permission also lets the play/pause action find the music app you used last. This is processed on your device and is not sent anywhere.</p>
 
-        <h2>3. Use of Information</h2>
+        <h2>3. Type Keyboard</h2>
+        <p>When you use Type Keyboard (the input method), the text you type is processed on your device and never sent to any server. The keyboard saves the following in the app's private storage on your device. This data is excluded from Android's automatic backup, device-to-device transfer, and type's Google Drive backup.</p>
+        <ul>
+            <li><strong>Typing-accuracy learning:</strong> how you tap keys (average touch position per key, sample counts, recent touch points, correction counts). The letters you type and their order are not saved. Turning off typing accuracy in keyboard settings deletes it.</li>
+            <li><strong>Recent emoji and chosen skin tones:</strong> used to show your recent emoji and default skin tones in the emoji panel.</li>
+            <li><strong>Clipboard history (optional, off by default):</strong> only if you turn it on in keyboard settings, Type Keyboard saves the text it sees on the clipboard after you turn it on (including text already on the clipboard, copied less than an hour earlier, when the keyboard opens) and when it was copied. It does not save images or files, clips that apps mark as sensitive (such as password managers), text read while Type Keyboard is connected to a password field, text that looks like a verification code, or text longer than 10,000 characters. Unpinned items are deleted one hour after they were copied (if the device is in battery-saving idle or the app was force-stopped, deletion may wait until the app next runs, but items older than an hour are never shown in the keyboard), up to 20 items. Pinned items stay until you delete them (up to 20); if you unpin one, it is deleted an hour later. Turning clipboard history off deletes everything saved right away.</li>
+        </ul>
+        <p><strong>Voice input:</strong> the keyboard's voice button switches to a voice input keyboard installed on your device (such as Google voice typing). That keyboard processes your voice; type does not listen to or save audio. Its handling of voice data is governed by that provider's policy.</p>
+        <p>Usage statistics and crash reports (third-party services in section 8) never include the text you type or clipboard contents or their length.</p>
+
+        <h2>4. Use of Information</h2>
         <p>Usage statistics and crash reports are used only to understand how features are used and to fix problems. Advertising data is used by Google AdMob to show ads in the free version.</p>
 
-        <h2>4. Data Retention and Deletion</h2>
+        <h2>5. Data Retention and Deletion</h2>
         <p>Data stored on your device is deleted when you uninstall the app. You can also export and import your shortcuts as files for backup purposes; exported files stay wherever you saved them.</p>
+        <p>Data saved by Type Keyboard (section 3) is deleted when you turn off the related feature in keyboard settings, delete clipboard items or tap "Clear all" (unpinned items), or uninstall the app. It is not included in Android device backups.</p>
         <p>If you turned on Google Drive backup, the backup stays in your Google Drive after you uninstall the app. Delete it in the app (Settings &gt; Backup &amp; restore &gt; Delete backup from Drive) before uninstalling, or in Google Drive under Settings &gt; Manage apps.</p>
         <p>If Android's own device backup is turned on for your Google Account, Android may include type's app data in that device backup. That backup is created and managed by Android and Google, not by type.</p>
 
-        <h2>5. Third-Party Sharing</h2>
-        <p>type does not share your shortcuts or the text you type with anyone. The third-party services listed in section 7 receive the technical data they collect themselves.</p>
+        <h2>6. Third-Party Sharing</h2>
+        <p>type does not share your shortcuts or the text you type with anyone. The third-party services listed in section 8 receive the technical data they collect themselves.</p>
 
-        <h2>6. Google Drive Backup (Optional)</h2>
+        <h2>7. Google Drive Backup (Optional)</h2>
         <p>Google Drive backup is off unless you turn it on. It is a Premium feature.</p>
         <ul>
             <li><strong>What is saved:</strong> Your shortcuts (including everything you put in them, such as replacement text, images, and phone numbers or links used by action shortcuts) and your folders. App settings are not included.</li>
@@ -81,7 +93,7 @@
         </ul>
         <p>The backup is stored by Google under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. type's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>.</p>
 
-        <h2>7. Third-Party Services</h2>
+        <h2>8. Third-Party Services</h2>
         <p>type may use the following third-party services:</p>
         <ul>
             <li><strong>Google AdMob:</strong> For displaying advertisements. Ads are shown in the free version only. AdMob may collect device information and the advertising ID for ad delivery and personalization. Please refer to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
@@ -89,16 +101,16 @@
             <li><strong>Firebase (Analytics, Crashlytics, Remote Config):</strong> For usage statistics, crash reporting, and remote app settings. Firebase collects an app instance identifier, device and OS information, and events such as which kind of feature was used. The text you type and the content of your shortcuts are never included. Please refer to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
         </ul>
 
-        <h2>8. Children's Privacy</h2>
+        <h2>9. Children's Privacy</h2>
         <p>type does not knowingly collect personal information from children under the age of 13. If you believe a child has provided us with personal information, please contact us.</p>
 
-        <h2>9. Changes to This Policy</h2>
+        <h2>10. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
 
-        <h2>10. Contact Us</h2>
+        <h2>11. Contact Us</h2>
         <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a></p>
 
-        <p class="date">Effective date: October 13, 2026</p>
+        <p class="date">Effective date: October 20, 2026</p>
     </div>
 </body>
 </html>
