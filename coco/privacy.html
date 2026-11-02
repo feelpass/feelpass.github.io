@@ -40,15 +40,18 @@
         <p>It is the OAuth client that the open-source command-line tool gog uses to read the developer's own Gmail account. That account is where questions about the developer's apps arrive.</p>
 
         <h2>2. Google Data It Accesses</h2>
-        <p>It requests only these scopes:</p>
+        <p>It is used with six Gmail accounts, all owned by the developer: a personal account and accounts used to run the developer's apps.</p>
+        <p>It requests these scopes:</p>
         <ul>
-            <li><strong>gmail.readonly:</strong> Search messages and read their content and attachments. It cannot send, change, or delete email.</li>
-            <li><strong>userinfo.email:</strong> See the email address of the signed-in Google account.</li>
-            <li><strong>openid:</strong> Sign in with the Google account.</li>
+            <li><strong>gmail.readonly (five accounts):</strong> Search messages and read their content and attachments. It cannot send, change, or delete email.</li>
+            <li><strong>gmail.modify (the ad inquiry account only):</strong> Read messages, and create and edit reply drafts in the Drafts folder. This scope also allows sending email, but the tool does not send or delete email. The developer sends each reply from Gmail.</li>
+            <li><strong>gmail.settings.basic, gmail.settings.sharing (the ad inquiry account only):</strong> Check which addresses the account can send from (send-as aliases). The tool does not change any settings.</li>
+            <li><strong>userinfo.email (all accounts):</strong> See the email address of the signed-in Google account.</li>
+            <li><strong>openid (all accounts):</strong> Sign in with the Google account.</li>
         </ul>
 
         <h2>3. How the Data Is Used</h2>
-        <p>Email content is used only by the developer to reply to questions about the developer's apps.</p>
+        <p>Email content is used only by the developer to reply to questions about the developer's apps and to ad inquiries. For the ad inquiry account, it is also used to write reply drafts.</p>
 
         <h2>4. Where It Is Processed and Stored</h2>
         <p>Everything is processed on the developer's own computer. There is no separate server. The sign-in token (refresh token) is stored in the macOS Keychain on that computer.</p>
@@ -65,7 +68,7 @@
         <h2>8. Contact</h2>
         <p>For questions about this Privacy Policy, contact <a href="mailto:philleeran@gmail.com">philleeran@gmail.com</a>.</p>
 
-        <p class="date">Effective date: November 3, 2026</p>
+        <p class="date">Last updated: November 3, 2026</p>
     </div>
 </body>
 </html>
