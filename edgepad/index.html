@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F1F4FB" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121318" media="(prefers-color-scheme: dark)">
+    <title>EdgePad — Edge gesture launcher for Android</title>
+    <meta name="description" content="Swipe in from the screen edge to open a pad of your apps, folders and contacts, then let go on one to launch it. Free, with no ads. Android 10+.">
+    <link rel="canonical" href="https://feelpass.github.io/edgepad/">
+    <link rel="alternate" hreflang="en" href="https://feelpass.github.io/edgepad/">
+    <link rel="alternate" hreflang="ko" href="https://feelpass.github.io/edgepad/ko/">
+    <link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/edgepad/">
+    <link rel="icon" type="image/png" href="images/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EdgePad">
+    <meta property="og:url" content="https://feelpass.github.io/edgepad/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:title" content="EdgePad — Edge gesture launcher for Android">
+    <meta property="og:description" content="Swipe in from the edge, slide onto an app, let go. A one-handed app pad for Android.">
+    <meta property="og:image" content="https://feelpass.github.io/edgepad/images/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EdgePad — Edge gesture launcher for Android">
+    <meta name="twitter:description" content="Swipe in from the edge, slide onto an app, let go. A one-handed app pad for Android.">
+    <meta name="twitter:image" content="https://feelpass.github.io/edgepad/images/og.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EdgePad",
+  "alternateName": "One Swipe - Edge Gestures",
+  "url": "https://feelpass.github.io/edgepad/",
+  "description": "Swipe in from the screen edge to open a pad of your apps, folders and contacts, then let go on one to launch it. Free, with no ads. Android 10+.",
+  "operatingSystem": "Android 10 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "en",
+  "image": "https://feelpass.github.io/edgepad/images/og.png",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.oneswipe",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.oneswipe",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free. Premium is a one-time purchase."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "plantcode",
+    "url": "https://feelpass.github.io/",
+    "email": "philleeran@gmail.com"
+  },
+  "dateModified": "2026-11-14"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does EdgePad need accessibility access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's how EdgePad shows the handles, the floating button and the pad over other apps, and runs system actions like Home, Back, lock screen and screenshot. When you switch apps, it reads the app's name for the Recent apps folder and excluded apps. It reads what's on screen only when you run a Paste action. None of this is sent to the developer or any third party."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are my pads and settings stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On your device. The developer doesn't receive them. Usage stats record only which kind of pad item you used, never app names or screen content. If Android's own device backup is on, they may be included in your Google device backup, like other app data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does the Google Drive backup go?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To a hidden app folder in your own Google Drive. Only EdgePad can open it, and it doesn't appear among your Drive files. EdgePad can access only this folder, so it can't see or change your other files. Backups go straight from your device to Google and never reach the developer. Drive backup stays off until you connect it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is EdgePad free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Handles, the floating button, pads and folders, picking without lifting your finger, and slots for apps, contacts, websites and system actions are all free. There are no ads in either version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Premium add?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a one-time purchase you can add Recent apps folder, Previous app and Current app slots, the controls pad and widget pads. You can also keep the pad from opening in apps you choose or in landscape, lock EdgePad and chosen pad items with a PIN, and back up to a file or Google Drive. The price is shown on Google Play."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same app as One Swipe (OneSwipe)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it's the same app. It's being renamed to EdgePad, so you may still see it as One Swipe on Google Play."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is EdgePad on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. EdgePad runs only on Android 10 and later. There's no iPhone or iPad version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does EdgePad ask for notification access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To show what's playing in the controls pad, Android requires notification access. EdgePad reads only the song title, artist, album art and the app that's playing, and doesn't read your notifications. Song details are never saved or sent. Without it, the media buttons still work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it get in the way of the Back gesture?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Where a handle sits, swiping in opens the pad instead of going back. You can change a handle's position and length, or open the pad with a floating button instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I move to a new phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Back up to a file or Google Drive in Settings › Backup & restore (Premium), then restore on the new phone (free). Your app lock PIN and permissions aren't included, so set them up again there. To get Premium back, tap Restore purchase on the Premium screen."
+      }
+    }
+  ]
+}
+    </script>
+    <style>
+        :root {
+            --bg: #F1F4FB; --surface: #FFFFFF; --ink: #1B1B1F; --sub: #45464F; --dim: #767680; --line: #C6C6D0;
+            --primary: #0051E0; --primary-cont: #DBE1FF; --on-primary-cont: #00174D; --tint: rgba(0, 81, 224, .06);
+            --band: #171717; --band-ink: #FFFFFF; --band-sub: rgba(255, 255, 255, .72); --band-accent: #B5C4FF;
+            --glow-a: rgba(47, 107, 255, .16); --glow-b: rgba(79, 70, 229, .10);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121318; --surface: #1A1B20; --ink: #E4E2E6; --sub: #C6C6D0; --dim: #8F909A; --line: #45464F;
+                --primary: #B5C4FF; --primary-cont: #003CAC; --on-primary-cont: #DBE1FF; --tint: rgba(181, 196, 255, .08);
+                --band: #24252A; --band-ink: #E4E2E6; --band-sub: #C6C6D0; --band-accent: #B5C4FF;
+                --glow-a: rgba(47, 107, 255, .14); --glow-b: rgba(79, 70, 229, .10);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+            color: var(--ink); line-height: 1.5; min-height: 100vh; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased;
+            background:
+                radial-gradient(min(820px, 130vw) 620px at 0% 0%, var(--glow-a) 0%, transparent 70%),
+                radial-gradient(min(760px, 130vw) 640px at 100% 100%, var(--glow-b) 0%, transparent 70%),
+                var(--bg);
+        }
+        em { font-style: normal; color: var(--primary); }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+        .sprite { position: absolute; }
+        .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── 상단 ─────────────────────────────── */
+        .top { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-decoration: none; }
+        .brand img { display: block; width: 44px; height: 44px; border-radius: 10px; box-shadow: 0 0 0 1px var(--line); }
+        .lang { display: flex; gap: 2px; }
+        .lang a, .lang span { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 500; color: var(--sub); padding: 10px 12px; border-radius: 8px; text-decoration: none; }
+        .lang a:hover { color: var(--ink); }
+        .lang [aria-current="page"] { color: var(--ink); font-weight: 700; }
+
+        /* ── 푸터 ─────────────────────────────── */
+        .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; padding-top: 44px; padding-bottom: 48px; font-size: 14px; color: var(--sub); }
+        .foot nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        .foot .meta { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+        .foot a { text-decoration: none; }
+        .foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+        /* ── 히어로 ───────────────────────────── */
+        .hero { display: grid; gap: 56px; align-items: center; padding-top: 64px; padding-bottom: 88px; }
+        h1 { font-weight: 800; font-size: clamp(36px, 10.4vw, 80px); line-height: 1.1; letter-spacing: -.022em; }
+        .lead { margin-top: 22px; max-width: 26em; font-size: clamp(17px, 2.1vw, 21px); font-weight: 500; color: var(--sub); letter-spacing: -.005em; }
+        .nb { display: inline-block; }
+        .play {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 34px; min-height: 56px; padding: 0 28px 0 22px; border-radius: 999px;
+            background: linear-gradient(135deg, #3B5BFF 0%, #4F46E5 100%); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+            box-shadow: 0 10px 28px rgba(79, 70, 229, .40), 0 2px 6px rgba(79, 70, 229, .30); transition: box-shadow .16s, transform .12s;
+        }
+        .play:hover { box-shadow: 0 14px 34px rgba(79, 70, 229, .48), 0 2px 6px rgba(79, 70, 229, .30); }
+        .play:active { transform: scale(.98); }
+        .play svg { flex: none; width: 22px; height: 22px; fill: currentColor; }
+        @media (prefers-color-scheme: dark) {
+            .play { box-shadow: 0 10px 28px rgba(79, 70, 229, .55), 0 0 0 1px rgba(181, 196, 255, .18); }
+        }
+
+        /* ── 정의 문장 ─────────────────────────── */
+        .intro { padding-bottom: 88px; }
+        .intro p { max-width: 44em; font-size: clamp(18px, 2vw, 21px); font-weight: 500; line-height: 1.6; letter-spacing: -.005em; }
+
+        /* ── 기능 ─────────────────────────────── */
+        .rows { display: grid; gap: 88px; padding-bottom: 104px; }
+        .row { display: grid; gap: 36px; align-items: center; }
+        h2 { font-weight: 800; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.14; letter-spacing: -.02em; }
+        .row p { margin-top: 16px; max-width: 24em; font-size: clamp(17px, 1.9vw, 19px); font-weight: 500; color: var(--sub); }
+
+        /* ── 기기 목업 (HTML/CSS, 이미지 0장) ─── */
+        .phone {
+            --board: #DBE1FF; --plate: rgba(27, 27, 31, .14); --face: rgba(255, 255, 255, .72); --track: rgba(27, 27, 31, .14);
+            --scrim: rgba(0, 0, 0, .5); --app1: #E7E9EF; --app2: #D4D8E2; --handle: rgba(0, 81, 224, .72); --on: #1B1B1F; --onv: #45464F;
+            width: min(300px, 74vw); justify-self: center; padding: 8px; border-radius: 40px; background: var(--surface);
+            box-shadow: inset 0 0 0 2px var(--line), 0 24px 60px rgba(16, 24, 64, .12);
+        }
+        @media (prefers-color-scheme: dark) {
+            .phone {
+                --board: #2B3042; --plate: rgba(228, 226, 230, .14); --face: rgba(255, 255, 255, .06); --track: rgba(228, 226, 230, .14);
+                --scrim: rgba(0, 0, 0, .55); --app1: #202229; --app2: #2A2D36; --handle: rgba(181, 196, 255, .72); --on: #E4E2E6; --onv: #C6C6D0;
+                box-shadow: inset 0 0 0 2px var(--line), 0 24px 60px rgba(0, 0, 0, .45);
+            }
+        }
+        /* .screen 자신이 컨테이너라 여기선 cqw 대신 % */
+        .screen { container-type: inline-size; position: relative; aspect-ratio: 9 / 19.5; border-radius: 32px; overflow: hidden;
+            background: repeating-linear-gradient(180deg, var(--app1) 0 8.3%, var(--app2) 8.3% 9%); }
+        .screen::before { content: ""; position: absolute; left: 8cqw; top: 3.2cqw; width: 10cqw; height: 2.2cqw; border-radius: 2cqw; background: var(--plate); }
+        .scrim { position: absolute; inset: 0; background: var(--scrim); }
+        .board { position: absolute; left: 5.5cqw; width: 89cqw; padding: 2cqw; border-radius: 7cqw; background: var(--board);
+            display: grid; grid-template-columns: repeat(5, 17cqw); grid-auto-rows: 17cqw; }
+        .c { display: grid; place-items: center; }
+        .c i { width: 12cqw; height: 12cqw; border-radius: 50%; background: var(--k, var(--plate)); display: grid; place-items: center; }
+        .c svg { width: 6.4cqw; height: 6.4cqw; fill: #fff; }
+        .c.e i { width: 2.2cqw; height: 2.2cqw; background: var(--plate); }
+        .c.hv i { transform: scale(1.12); box-shadow: 0 0 0 .9cqw var(--board), 0 0 0 1.6cqw var(--primary); }
+        .c.fd i { border-radius: 3.5cqw; background: #8FA3F0; display: grid; grid-template-columns: 1fr 1fr; place-items: stretch; gap: 1cqw; padding: 2.4cqw; }
+        .c.fd i b { border-radius: 50%; background: rgba(255, 255, 255, .8); }
+        .name { position: absolute; left: 0; right: 0; text-align: center; color: #fff; font-size: 4.3cqw; font-weight: 500; }
+        .finger { position: absolute; left: 0; top: 0; width: 11cqw; height: 11cqw; border-radius: 50%; background: rgba(255, 255, 255, .55);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .18), 0 .6cqw 2.4cqw rgba(0, 0, 0, .22); }
+        .handle { position: absolute; right: .8cqw; top: 92cqw; width: 1.2cqw; height: 26cqw; border-radius: 1cqw; background: var(--handle); }
+        .bulge { position: absolute; right: .8cqw; width: 3.4cqw; height: 20cqw; border-radius: 50% 0 0 50% / 50%; background: var(--handle); }
+        .trail { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .trail path { fill: none; stroke: var(--primary); stroke-opacity: .7; stroke-width: .9; stroke-dasharray: 1.6 1.8; stroke-linecap: round; }
+        /* 앱 색 (일반 글리프 — 실제 로고 아님) */
+        .k1 { --k: #3D7BFF; } .k2 { --k: #6E56CF; } .k3 { --k: #1E9E6A; } .k4 { --k: #E5484D; } .k5 { --k: #F2994A; }
+        .k6 { --k: #2BA84A; } .k7 { --k: #0091FF; } .k8 { --k: #8E8E93; } .k9 { --k: #C2410C; }
+
+        /* 장면 A — 정적 = 열림 프레임, 움직임은 reduced-motion이 아닐 때만 */
+        .sa .board { top: 74cqw; transform-origin: 100% 40%; }
+        .sa .name { top: 149cqw; }
+        .sa .finger { transform: translate(48cqw, 99.5cqw); }
+        .sa .handle, .sa .bulge { opacity: 0; }
+        .sa .bulge { top: 94cqw; }
+        @media (prefers-reduced-motion: no-preference) {
+            /* 첫 화면이 빈 기기로 보이지 않게 열림 구간(-2.2s)부터 시작 */
+            .sa .finger { animation: aFinger 7.2s cubic-bezier(.2, 0, 0, 1) -2.2s infinite; }
+            .sa .board  { animation: aBoard 7.2s cubic-bezier(.2, 0, 0, 1) -2.2s infinite; }
+            .sa .scrim  { animation: aScrim 7.2s linear -2.2s infinite; }
+            .sa .name   { animation: aName 7.2s linear -2.2s infinite; }
+            .sa .handle { animation: aHandle 7.2s linear -2.2s infinite; }
+            .sa .bulge  { animation: aBulge 7.2s cubic-bezier(.2, 0, 0, 1) -2.2s infinite; }
+            .sa .c.hv i { animation: aHv 7.2s linear -2.2s infinite; }
+        }
+        @keyframes aFinger {
+            0%, 8%    { opacity: 0; transform: translate(91.5cqw, 98.5cqw) scale(.9); }
+            14%       { opacity: 1; transform: translate(91.5cqw, 98.5cqw) scale(1); }
+            24%       { opacity: 1; transform: translate(77.5cqw, 98.5cqw); }
+            40%       { opacity: 1; transform: translate(64cqw, 112cqw); }
+            56%, 66%  { opacity: 1; transform: translate(48cqw, 99.5cqw); }
+            72%, 100% { opacity: 0; transform: translate(48cqw, 99.5cqw) scale(.9); }
+        }
+        @keyframes aBoard {
+            0%, 24%   { opacity: 0; transform: scale(.86); }
+            29%, 66%  { opacity: 1; transform: scale(1); }
+            72%, 100% { opacity: 0; transform: scale(.96); }
+        }
+        @keyframes aScrim { 0%, 24% { opacity: 0; } 27%, 66% { opacity: 1; } 72%, 100% { opacity: 0; } }
+        @keyframes aName  { 0%, 52% { opacity: 0; } 56%, 66% { opacity: 1; } 69%, 100% { opacity: 0; } }
+        @keyframes aHandle {
+            0%, 8%    { opacity: 1; width: 1.2cqw; }
+            10%, 24%  { opacity: 1; width: 1.8cqw; }
+            26%       { opacity: 0; width: 1.8cqw; }
+            72%       { opacity: 0; width: 1.2cqw; }
+            75%, 100% { opacity: 1; width: 1.2cqw; }
+        }
+        @keyframes aBulge { 0%, 14% { opacity: 1; width: 0; } 24% { opacity: 1; width: 3.4cqw; } 26%, 100% { opacity: 0; width: 3.4cqw; } }
+        @keyframes aHv {
+            0%, 52%   { transform: none; box-shadow: none; }
+            56%, 66%  { transform: scale(1.12); box-shadow: 0 0 0 .9cqw var(--board), 0 0 0 1.6cqw var(--primary); }
+            70%, 100% { transform: none; box-shadow: none; }
+        }
+
+        /* 장면 B — 호버로 고르기 */
+        .sb .board { top: 74cqw; } .sb .name { top: 149cqw; } .sb .finger { transform: translate(31cqw, 116.5cqw); }
+        /* 장면 C — 부모 판 흐리게 + 폴더 판 */
+        .sc .board.parent, .se .board.parent { top: 66cqw; opacity: .45; }
+        .sc .board.folder { left: 22.5cqw; width: 55cqw; top: 86cqw; grid-template-columns: repeat(3, 17cqw); box-shadow: 0 0 0 .5cqw rgba(255, 255, 255, .18); }
+        .sc .name { top: 141cqw; }
+        .sc .badge { display: inline-grid; place-items: center; width: 5cqw; height: 5cqw; border-radius: 50%; background: var(--primary-cont); vertical-align: -1cqw; margin-right: 1.2cqw; }
+        .sc .badge svg { width: 3.4cqw; height: 3.4cqw; fill: var(--on-primary-cont); }
+        /* 장면 D — 컨트롤 판 */
+        .sd .board { top: 58cqw; }
+        .sd .name { top: 150cqw; }
+        .media { grid-column: 1 / span 5; grid-row: span 2; margin: 1.2cqw; border-radius: 4cqw; background: var(--face); padding: 3cqw 3cqw 1.6cqw;
+            display: flex; flex-direction: column; justify-content: space-between; }
+        .mtop { display: flex; gap: 2.6cqw; align-items: center; }
+        .cover { width: 12.5cqw; height: 12.5cqw; border-radius: 2.6cqw; flex: none; background: linear-gradient(135deg, #F28B5B, #B4428C 60%, #3E2A78); }
+        .mtxt { flex: 1; display: grid; gap: 1.6cqw; } .mtxt b { height: 2.6cqw; border-radius: 2cqw; background: var(--plate); } .mtxt b + b { width: 60%; }
+        .mbtn { display: flex; justify-content: center; align-items: center; gap: 6cqw; }
+        .mb { width: 11cqw; height: 11cqw; border-radius: 50%; display: grid; place-items: center; }
+        .mb svg { width: 7cqw; height: 7cqw; fill: var(--on); }
+        .mb.main { background: var(--primary); } .mb.main svg { fill: var(--surface); }
+        .tile { display: grid; place-items: center; }
+        .tile i { width: 12cqw; height: 12cqw; border-radius: 50%; background: var(--plate); display: grid; place-items: center; }
+        .tile svg { width: 6.4cqw; height: 6.4cqw; fill: var(--on); }
+        .tile.on i { background: var(--primary); } .tile.on svg { fill: var(--surface); }
+        .slider { grid-column: 1 / span 5; display: flex; align-items: center; gap: 2.4cqw; padding: 0 2.4cqw; }
+        .slider i { width: 12cqw; height: 12cqw; border-radius: 50%; background: var(--plate); display: grid; place-items: center; flex: none; }
+        .slider i svg { width: 6.4cqw; height: 6.4cqw; fill: var(--on); }
+        .v60 { --v: 60%; } .v40 { --v: 40%; }
+        .track { flex: 1; height: 6.4cqw; border-radius: 3.2cqw; background: linear-gradient(90deg, var(--primary) 0 var(--v), var(--track) var(--v)); }
+        /* 장면 E — 위젯 판 */
+        .se .wboard { position: absolute; left: 8cqw; width: 84cqw; top: 80cqw; height: 48cqw; border-radius: 6cqw; background: var(--surface); color: var(--on);
+            padding: 4.5cqw 5cqw; display: grid; grid-template-rows: auto 1fr; }
+        .wtop { display: flex; align-items: center; gap: 3cqw; }
+        .wtop .t { font-size: 13cqw; font-weight: 300; line-height: 1; letter-spacing: -.02em; }
+        .wtop svg { width: 11cqw; height: 11cqw; fill: #F5A524; }
+        .wtop .s { display: grid; gap: 1.6cqw; margin-left: auto; width: 22cqw; } .wtop .s b { height: 2.4cqw; border-radius: 2cqw; background: var(--plate); } .wtop .s b + b { width: 70%; justify-self: end; }
+        .hours { display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; gap: 2cqw; }
+        .hours span { display: grid; justify-items: center; gap: 1.4cqw; }
+        .hours svg { width: 6cqw; height: 6cqw; fill: var(--onv); }
+        .hours b { width: 8cqw; height: 2cqw; border-radius: 2cqw; background: var(--plate); }
+        .stack { position: absolute; right: 3.2cqw; top: 98cqw; display: grid; gap: 1.6cqw; }
+        .stack b { width: 1.6cqw; height: 1.6cqw; border-radius: 50%; background: rgba(255, 255, 255, .5); } .stack b:first-child { background: #fff; }
+        .se .name { top: 141cqw; }
+        /* 장면 F — 앱 화면(백업) */
+        .screen.sf { background: var(--bg); color: var(--on); }
+        .screen.sf::before { display: none; }
+        .appbar { display: flex; align-items: center; gap: 4cqw; padding: 11cqw 5cqw 4cqw; font-size: 6.2cqw; font-weight: 500; }
+        .appbar svg { width: 7.4cqw; height: 7.4cqw; fill: var(--on); }
+        .sec { font-size: 4cqw; font-weight: 500; color: var(--primary); margin: 5cqw 8cqw 2cqw; }
+        .grp { margin: 0 4cqw; border-radius: 4cqw; overflow: hidden; display: grid; gap: 1px; background: var(--bg); }
+        .r { display: flex; align-items: center; gap: 3.6cqw; padding: 0 4cqw; min-height: 16cqw; background: var(--surface); font-size: 4.5cqw; font-weight: 500; }
+        .r .ri { width: 10cqw; height: 10cqw; border-radius: 50%; background: var(--plate); display: grid; place-items: center; flex: none; }
+        .r .ri svg { width: 5.6cqw; height: 5.6cqw; fill: var(--on); }
+        .r .tx { flex: 1; min-width: 0; }
+        .r .bar { display: block; width: 34cqw; height: 2.6cqw; border-radius: 2cqw; background: var(--plate); margin-top: 1.6cqw; }
+        .sw { width: 11cqw; height: 6.6cqw; border-radius: 3.3cqw; background: var(--primary); position: relative; flex: none; }
+        .sw::after { content: ""; position: absolute; right: 1cqw; top: 1cqw; width: 4.6cqw; height: 4.6cqw; border-radius: 50%; background: var(--surface); }
+
+        /* ── 표·맞는 분·FAQ (보더 0·그림자 0, 면 톤 차이만) ── */
+        .block { padding-bottom: 88px; }
+        .block > h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .note { margin-top: 16px; max-width: 44em; font-size: 15px; color: var(--sub); }
+        .table-scroll { margin-top: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px; background: var(--surface); }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; line-height: 1.55; }
+        th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--bg); }
+        tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+        thead th, thead td { font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--ink); border-bottom: 1px solid var(--line); }
+        tbody th { font-weight: 600; }
+        td { color: var(--sub); }
+        .price { table-layout: fixed; }
+        .price thead td { width: 36%; }
+        .price .pro { background: var(--tint); color: var(--ink); }
+        .price thead .pro { background: var(--primary-cont); color: var(--on-primary-cont); }
+        .table-scroll .yes { color: var(--primary); font-weight: 700; }
+        .table-scroll .no { color: var(--dim); }
+
+        .fit { display: grid; gap: 16px; }
+        .card { padding: 26px 24px; border-radius: 24px; background: var(--surface); }
+        .fit h2 { font-size: clamp(22px, 2.8vw, 28px); }
+        .fit ul { list-style: none; display: grid; gap: 14px; margin-top: 18px; }
+        .fit li { position: relative; padding-left: 28px; font-size: 16px; color: var(--sub); }
+        .fit li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+        .fit .good li::before { content: "✓"; color: var(--primary); }
+        .fit .bad li::before { content: "✕"; color: var(--dim); }
+
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { border-radius: 18px; background: var(--surface); }
+        .faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 20px; border-radius: 18px; cursor: pointer; list-style: none; }
+        .faq details[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; box-shadow: 0 1px 0 var(--bg); margin-bottom: 18px; }
+        .faq summary:focus-visible { outline-offset: -2px; border-radius: 18px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary h3 { font-size: 17px; font-weight: 700; line-height: 1.45; transition: color .16s; }
+        .faq summary:hover h3 { color: var(--primary); }
+        .faq summary::after {
+            content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -2px -4px 0 0; border-radius: 50%;
+            background: var(--tint); font-size: 20px; line-height: 1; font-weight: 500; color: var(--primary); transition: transform .16s;
+        }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq details p { max-width: 44em; padding: 0 20px 22px; font-size: 16px; line-height: 1.7; color: var(--sub); }
+
+        /* ── 프라이버시 띠 ─────────────────────── */
+        .privacy { display: grid; gap: 32px; padding: clamp(32px, 6vw, 64px); border-radius: 32px; background: var(--band); color: var(--band-ink); }
+        .privacy h2 { font-size: clamp(28px, 3.6vw, 38px); }
+        .privacy em { color: var(--band-accent); }
+        .privacy ul { list-style: none; display: grid; gap: 18px; }
+        .privacy li { padding-left: 18px; border-left: 3px solid var(--band-accent); font-size: 16px; line-height: 1.55; color: var(--band-sub); }
+        .privacy .note { margin-top: 26px; font-size: 14px; line-height: 1.55; color: var(--band-sub); }
+        .privacy .more { display: inline-block; margin-top: 14px; font-weight: 600; color: var(--band-accent); text-underline-offset: 4px; }
+        .privacy :focus-visible { outline-color: var(--band-accent); }
+
+        @media (min-width: 880px) {
+            .top { padding-top: 36px; }
+            .hero { grid-template-columns: minmax(0, 1fr) 420px; gap: 48px; padding-top: 96px; padding-bottom: 128px; }
+            /* 글 열(≤524px)에 H1 두 줄이 그대로 들어가게 — 가장 긴 줄 ≈ 7em */
+            h1 { font-size: clamp(48px, 5.8vw, 74px); }
+            .hero .phone { justify-self: end; }
+            .rows { gap: 120px; padding-bottom: 136px; }
+            .row { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .row:nth-child(even) .row-text { order: 2; }
+            .privacy { grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+            .intro, .block { padding-bottom: 128px; }
+            .fit { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* 360px: 거터 16px(단축 속성 금지 — 섹션 위아래 패딩을 지운다), 가격표 3열은 한 화면에 */
+        @media (max-width: 559px) {
+            .wrap { padding-left: 16px; padding-right: 16px; }
+            table { font-size: 14px; }
+            th, td { padding: 12px 10px; }
+            thead th, thead td { font-size: 13px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <svg class="sprite" width="0" height="0" aria-hidden="true">
+        <symbol id="i-gplay" viewBox="0 0 24 24"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></symbol>
+        <symbol id="i-next" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></symbol>
+        <symbol id="i-prev" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></symbol>
+        <symbol id="i-flash" viewBox="0 0 24 24"><path d="M6 2h12v5H6zM6 9h12l-3 4.5V22H9v-8.5z"/></symbol>
+        <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0020 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 004 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></symbol>
+        <symbol id="i-dnd" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z"/></symbol>
+        <symbol id="i-bell" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z"/></symbol>
+        <symbol id="i-vol" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></symbol>
+        <symbol id="i-cloud-done" viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM10 17l-3.5-3.5 1.41-1.41L10 14.17 15.18 9l1.41 1.41L10 17z"/></symbol>
+        <symbol id="i-save" viewBox="0 0 24 24"><path d="M17 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></symbol>
+        <symbol id="i-restore" viewBox="0 0 24 24"><path d="M13 3a9 9 0 00-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0013 21a9 9 0 000-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></symbol>
+        <symbol id="i-back" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></symbol>
+        <symbol id="i-camera" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 13.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4z"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></symbol>
+        <symbol id="i-music" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+        <symbol id="i-call" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></symbol>
+        <symbol id="i-cal" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-2 .9-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></symbol>
+    </svg>
+
+    <header class="wrap top">
+        <div class="brand"><img src="images/app-icon.png" width="44" height="44" alt="">EdgePad</div>
+        <nav class="lang" aria-label="Language">
+            <span aria-current="page" lang="en">EN</span>
+            <a href="ko/" hreflang="ko" lang="ko">한국어</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="wrap hero">
+            <div>
+                <h1>Swipe in, slide,<br><em>let go to launch</em></h1>
+                <p class="lead">Swipe a handle on the edge to open a pad of apps, folders and controls. <span class="nb">Right where you are.</span></p>
+                <a class="play" href="https://play.google.com/store/apps/details?id=com.oneswipe">
+                    <svg width="22" height="22" aria-hidden="true"><use href="#i-gplay"/></svg>
+                    <span>Get it on Google Play</span>
+                </a>
+            </div>
+
+            <figure class="phone" role="img" aria-label="A finger swipes in from the handle on the right edge, the pad opens, and the finger slides onto an app to pick it">
+                <div class="screen sa" aria-hidden="true">
+                    <div class="scrim"></div>
+                    <div class="board">
+                        <span class="c k1"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k2"><i><svg><use href="#i-camera"/></svg></i></span><span class="c k3"><i><svg><use href="#i-pin"/></svg></i></span><span class="c fd"><i><b></b><b></b><b></b><b></b></i></span><span class="c k4"><i><svg><use href="#i-music"/></svg></i></span>
+                        <span class="c k5"><i><svg><use href="#i-mail"/></svg></i></span><span class="c k6"><i><svg><use href="#i-call"/></svg></i></span><span class="c k7 hv"><i><svg><use href="#i-cal"/></svg></i></span><span class="c k8"><i><svg><use href="#i-clock"/></svg></i></span><span class="c k9"><i><svg><use href="#i-sun"/></svg></i></span>
+                        <span class="c fd"><i><b></b><b></b><b></b><b></b></i></span><span class="c k3"><i><svg><use href="#i-cloud"/></svg></i></span><span class="c e"><i></i></span><span class="c k1"><i><svg><use href="#i-music"/></svg></i></span><span class="c k2"><i><svg><use href="#i-mail"/></svg></i></span>
+                        <span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span>
+                    </div>
+                    <div class="name">Calendar</div>
+                    <div class="handle"></div><div class="bulge"></div>
+                    <div class="finger"></div>
+                </div>
+            </figure>
+        </section>
+
+        <section class="wrap intro">
+            <p>EdgePad (formerly One Swipe) is an Android gesture launcher: swipe a handle on the edge, or tap a floating button, to open a pad of apps, folders, contacts and system actions. Slide onto one and let go to launch it. The controls pad and home screen widgets open there too. Handles, pads and folders are free, with no ads. Runs on Android 10 and later.</p>
+        </section>
+
+        <section class="wrap rows">
+            <article class="row">
+                <div class="row-text">
+                    <h2>One motion,<br><em>from edge to app</em></h2>
+                    <p>Keep your finger down as the pad opens, slide onto an app, let go. Long-press a slot and slide to pick again.</p>
+                </div>
+                <figure class="phone" role="img" aria-label="A finger&#x27;s path runs from the edge across the pad and stops on the Camera slot, which is highlighted">
+                    <div class="screen sb" aria-hidden="true">
+                        <div class="scrim"></div>
+                        <div class="board">
+                            <span class="c k1"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k3"><i><svg><use href="#i-pin"/></svg></i></span><span class="c k4"><i><svg><use href="#i-music"/></svg></i></span><span class="c k5"><i><svg><use href="#i-mail"/></svg></i></span><span class="c fd"><i><b></b><b></b><b></b><b></b></i></span>
+                            <span class="c k6"><i><svg><use href="#i-call"/></svg></i></span><span class="c k7"><i><svg><use href="#i-cal"/></svg></i></span><span class="c k8"><i><svg><use href="#i-clock"/></svg></i></span><span class="c k9"><i><svg><use href="#i-sun"/></svg></i></span><span class="c k1"><i><svg><use href="#i-cloud"/></svg></i></span>
+                            <span class="c e"><i></i></span><span class="c k2 hv"><i><svg><use href="#i-camera"/></svg></i></span><span class="c fd"><i><b></b><b></b><b></b><b></b></i></span><span class="c k3"><i><svg><use href="#i-music"/></svg></i></span><span class="c e"><i></i></span>
+                            <span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span>
+                        </div>
+                        <svg class="trail" viewBox="0 0 100 216.67" preserveAspectRatio="none"><path d="M97 104 C 86 104, 74 106, 62 112 S 43 121.5, 36.5 122"/></svg>
+                        <div class="name">Camera</div>
+                        <div class="finger"></div>
+                    </div>
+                </figure>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2>A pad or an action<br><em>for every handle</em></h2>
+                    <p>Apps on the left handle, Recent apps folder on the right, or one that runs an action. Folders fit their items.</p>
+                </div>
+                <figure class="phone" role="img" aria-label="A Recent apps folder opens in three columns and two rows over the dimmed pad">
+                    <div class="screen sc" aria-hidden="true">
+                        <div class="scrim"></div>
+                        <div class="board parent">
+                            <span class="c k1"><i></i></span><span class="c k3"><i></i></span><span class="c k4"><i></i></span><span class="c k5"><i></i></span><span class="c k6"><i></i></span>
+                            <span class="c k7"><i></i></span><span class="c k8"><i></i></span><span class="c k9"><i></i></span><span class="c k2"><i></i></span><span class="c k1"><i></i></span>
+                            <span class="c k3"><i></i></span><span class="c fd"><i><b></b><b></b><b></b><b></b></i></span><span class="c k4"><i></i></span><span class="c k5"><i></i></span><span class="c e"><i></i></span>
+                            <span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span>
+                        </div>
+                        <div class="board folder">
+                            <span class="c k2"><i><svg><use href="#i-camera"/></svg></i></span><span class="c k1"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k3"><i><svg><use href="#i-pin"/></svg></i></span>
+                            <span class="c k4"><i><svg><use href="#i-music"/></svg></i></span><span class="c k5"><i><svg><use href="#i-mail"/></svg></i></span><span class="c k7"><i><svg><use href="#i-cal"/></svg></i></span>
+                        </div>
+                        <div class="name"><span class="badge"><svg><use href="#i-clock"/></svg></span>Recent apps folder</div>
+                        <div class="handle"></div>
+                    </div>
+                </figure>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2>Skip the<br><em>notification shade</em></h2>
+                    <p>Now playing, Flashlight, Do Not Disturb, brightness and volume, all on one pad. Hover over one to change it.</p>
+                </div>
+                <figure class="phone" role="img" aria-label="A controls pad with a now-playing card, five switches, and brightness and volume sliders">
+                    <div class="screen sd" aria-hidden="true">
+                        <div class="scrim"></div>
+                        <div class="board">
+                            <div class="media">
+                                <div class="mtop"><span class="cover"></span><span class="mtxt"><b></b><b></b></span></div>
+                                <div class="mbtn"><span class="mb"><svg><use href="#i-prev"/></svg></span><span class="mb main"><svg><use href="#i-pause"/></svg></span><span class="mb"><svg><use href="#i-next"/></svg></span></div>
+                            </div>
+                            <span class="tile on"><i><svg><use href="#i-flash"/></svg></i></span><span class="tile"><i><svg><use href="#i-rotate"/></svg></i></span><span class="tile on"><i><svg><use href="#i-dnd"/></svg></i></span><span class="tile"><i><svg><use href="#i-bell"/></svg></i></span><span class="tile"><i><svg><use href="#i-moon"/></svg></i></span>
+                            <div class="slider"><i><svg><use href="#i-sun"/></svg></i><span class="track v60"></span></div>
+                            <div class="slider"><i><svg><use href="#i-vol"/></svg></i><span class="track v40"></span></div>
+                        </div>
+                        <div class="name">Controls</div>
+                    </div>
+                </figure>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2>Home screen widgets,<br><em>inside any app</em></h2>
+                    <p>Put a weather or calendar widget in a pad and swipe to check it. Stack several widgets in the same spot.</p>
+                </div>
+                <figure class="phone" role="img" aria-label="A weather widget opens over the dimmed pad, with three dots beside it for the widgets stacked underneath">
+                    <div class="screen se" aria-hidden="true">
+                        <div class="scrim"></div>
+                        <div class="board parent">
+                            <span class="c k1"><i></i></span><span class="c k3"><i></i></span><span class="c k4"><i></i></span><span class="c k5"><i></i></span><span class="c k6"><i></i></span>
+                            <span class="c k7"><i></i></span><span class="c k8"><i></i></span><span class="c k9"><i></i></span><span class="c k2"><i></i></span><span class="c k1"><i></i></span>
+                            <span class="c k3"><i></i></span><span class="c fd"><i><b></b><b></b><b></b><b></b></i></span><span class="c k4"><i></i></span><span class="c k5"><i></i></span><span class="c e"><i></i></span>
+                            <span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span>
+                        </div>
+                        <div class="wboard">
+                            <div class="wtop"><svg><use href="#i-sun"/></svg><span class="t">18°</span><span class="s"><b></b><b></b></span></div>
+                            <div class="hours"><span><svg><use href="#i-sun"/></svg><b></b></span><span><svg><use href="#i-sun"/></svg><b></b></span><span><svg><use href="#i-cloud"/></svg><b></b></span><span><svg><use href="#i-cloud"/></svg><b></b></span><span><svg><use href="#i-moon"/></svg><b></b></span></div>
+                        </div>
+                        <div class="stack"><b></b><b></b><b></b></div>
+                        <div class="name">Widget</div>
+                    </div>
+                </figure>
+            </article>
+
+            <article class="row">
+                <div class="row-text">
+                    <h2>New phone,<br><em>same pads</em></h2>
+                    <p>Back up your pads, favorites and handles to a file or your own Google Drive. Restoring is free.</p>
+                </div>
+                <figure class="phone" role="img" aria-label="The Backup &amp; restore screen with Back up to a file, Restore from a file, and Google Drive with Back up now and Auto backup on">
+                    <div class="screen sf" aria-hidden="true">
+                        <div class="appbar"><svg><use href="#i-back"/></svg>Backup &amp; restore</div>
+                        <div class="sec">File</div>
+                        <div class="grp">
+                            <div class="r"><span class="ri"><svg><use href="#i-save"/></svg></span><span class="tx">Back up to a file</span></div>
+                            <div class="r"><span class="ri"><svg><use href="#i-restore"/></svg></span><span class="tx">Restore from a file</span></div>
+                        </div>
+                        <div class="sec">Google Drive</div>
+                        <div class="grp">
+                            <div class="r"><span class="ri"><svg><use href="#i-cloud-done"/></svg></span><span class="tx">Google Drive<span class="bar"></span></span></div>
+                            <div class="r"><span class="ri"><svg><use href="#i-cloud"/></svg></span><span class="tx">Back up now</span></div>
+                            <div class="r"><span class="tx">Auto backup</span><span class="sw"></span></div>
+                            <div class="r"><span class="ri"><svg><use href="#i-restore"/></svg></span><span class="tx">Restore from Drive</span></div>
+                        </div>
+                    </div>
+                </figure>
+            </article>
+        </section>
+
+        <section class="wrap block" id="pricing">
+            <h2>Free and Premium</h2>
+            <div class="table-scroll">
+                <table class="price">
+                    <thead>
+                        <tr><td></td><th scope="col">Free</th><th scope="col" class="pro">Premium</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Price</th><td>Free</td><td class="pro">One-time purchase</td></tr>
+                        <tr><th scope="row">Ads</th><td>None</td><td class="pro">None</td></tr>
+                        <tr><th scope="row">Handles, pads, folders, handle actions</th><td class="yes">✓</td><td class="pro yes">✓</td></tr>
+                        <tr><th scope="row">Recent apps folder, Previous app, Current app</th><td class="no"><span aria-hidden="true">—</span><span class="sr">Not included</span></td><td class="pro yes">✓</td></tr>
+                        <tr><th scope="row">Controls pad, widget pad</th><td class="no"><span aria-hidden="true">—</span><span class="sr">Not included</span></td><td class="pro yes">✓</td></tr>
+                        <tr><th scope="row">Turn off the pad in chosen apps or landscape</th><td class="no"><span aria-hidden="true">—</span><span class="sr">Not included</span></td><td class="pro yes">✓</td></tr>
+                        <tr><th scope="row">App lock (PIN)</th><td class="no"><span aria-hidden="true">—</span><span class="sr">Not included</span></td><td class="pro yes">✓</td></tr>
+                        <tr><th scope="row">Backup (file, Google Drive)</th><td>Restore only</td><td class="pro yes">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Premium is a one-time purchase that you keep. Prices vary by region and are shown on Google Play.</p>
+        </section>
+
+        <section class="wrap block fit" id="fit">
+            <div class="card good">
+                <h2>EdgePad is a good fit if you</h2>
+                <ul>
+                    <li>use a big phone with one hand and want the apps you open most within reach of your thumb</li>
+                    <li>want to skip a track, change brightness or turn on the flashlight without leaving the app you&#x27;re in</li>
+                    <li>want a quick look at a home screen widget from inside any app</li>
+                </ul>
+            </div>
+            <div class="card bad">
+                <h2>EdgePad isn&#x27;t for you if you</h2>
+                <ul>
+                    <li>use an iPhone or iPad. EdgePad runs only on Android 10 and later.</li>
+                    <li>don&#x27;t want to grant accessibility access. Without it, the handles and the pad can&#x27;t appear.</li>
+                    <li>want a launcher that replaces your home screen. EdgePad works on top of the one you have.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap block" id="faq">
+            <h2>FAQ</h2>
+            <div class="faq">
+                <details>
+                    <summary><h3>Why does EdgePad need accessibility access?</h3></summary>
+                    <p>It&#x27;s how EdgePad shows the handles, the floating button and the pad over other apps, and runs system actions like Home, Back, lock screen and screenshot. When you switch apps, it reads the app&#x27;s name for the Recent apps folder and excluded apps. It reads what&#x27;s on screen only when you run a Paste action. None of this is sent to the developer or any third party.</p>
+                </details>
+                <details>
+                    <summary><h3>Where are my pads and settings stored?</h3></summary>
+                    <p>On your device. The developer doesn&#x27;t receive them. Usage stats record only which kind of pad item you used, never app names or screen content. If Android&#x27;s own device backup is on, they may be included in your Google device backup, like other app data.</p>
+                </details>
+                <details>
+                    <summary><h3>Where does the Google Drive backup go?</h3></summary>
+                    <p>To a hidden app folder in your own Google Drive. Only EdgePad can open it, and it doesn&#x27;t appear among your Drive files. EdgePad can access only this folder, so it can&#x27;t see or change your other files. Backups go straight from your device to Google and never reach the developer. Drive backup stays off until you connect it.</p>
+                </details>
+                <details>
+                    <summary><h3>Is EdgePad free?</h3></summary>
+                    <p>Yes. Handles, the floating button, pads and folders, picking without lifting your finger, and slots for apps, contacts, websites and system actions are all free. There are no ads in either version.</p>
+                </details>
+                <details>
+                    <summary><h3>What does Premium add?</h3></summary>
+                    <p>With a one-time purchase you can add Recent apps folder, Previous app and Current app slots, the controls pad and widget pads. You can also keep the pad from opening in apps you choose or in landscape, lock EdgePad and chosen pad items with a PIN, and back up to a file or Google Drive. The price is shown on Google Play.</p>
+                </details>
+                <details>
+                    <summary><h3>Is this the same app as One Swipe (OneSwipe)?</h3></summary>
+                    <p>Yes, it&#x27;s the same app. It&#x27;s being renamed to EdgePad, so you may still see it as One Swipe on Google Play.</p>
+                </details>
+                <details>
+                    <summary><h3>Is EdgePad on iPhone?</h3></summary>
+                    <p>No. EdgePad runs only on Android 10 and later. There&#x27;s no iPhone or iPad version.</p>
+                </details>
+                <details>
+                    <summary><h3>Why does EdgePad ask for notification access?</h3></summary>
+                    <p>To show what&#x27;s playing in the controls pad, Android requires notification access. EdgePad reads only the song title, artist, album art and the app that&#x27;s playing, and doesn&#x27;t read your notifications. Song details are never saved or sent. Without it, the media buttons still work.</p>
+                </details>
+                <details>
+                    <summary><h3>Does it get in the way of the Back gesture?</h3></summary>
+                    <p>Where a handle sits, swiping in opens the pad instead of going back. You can change a handle&#x27;s position and length, or open the pad with a floating button instead.</p>
+                </details>
+                <details>
+                    <summary><h3>How do I move to a new phone?</h3></summary>
+                    <p>Back up to a file or Google Drive in Settings › Backup &amp; restore (Premium), then restore on the new phone (free). Your app lock PIN and permissions aren&#x27;t included, so set them up again there. To get Premium back, tap Restore purchase on the Premium screen.</p>
+                </details>
+            </div>
+        </section>
+
+        <div class="wrap">
+            <section class="privacy">
+                <h2>Stored on <span class="nb">your device,</span><br><em>backed up to <span class="nb">your Drive</span></em></h2>
+                <div>
+                    <ul>
+                        <li>Your pads, folders and settings are stored on your device. The developer doesn&#x27;t receive them.</li>
+                        <li>Nothing EdgePad gets through the accessibility service is sent to the developer or any third party.</li>
+                        <li>Google Drive backup runs only if you turn it on, and saves to a hidden app folder in your own Drive.</li>
+                        <li>No ads, and no use of the Advertising ID.</li>
+                    </ul>
+                    <p class="note">The privacy policy also covers what the crash reporting and usage statistics services collect, and Android&#x27;s own device backup.</p>
+                    <a class="more" href="privacy.html">Read the privacy policy</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="wrap foot">
+        <nav aria-label="Site links">
+            <a href="privacy.html">Privacy policy</a>
+            <a href="mailto:philleeran@gmail.com">Contact</a>
+        </nav>
+        <div class="meta">
+            <p>Last updated 2026-11-14</p>
+            <p>© 2026 EdgePad</p>
+        </div>
+    </footer>
+</body>
+</html>

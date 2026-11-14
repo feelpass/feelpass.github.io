@@ -19,6 +19,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/type/"/>
   </url>
   <url>
+    <loc>https://feelpass.github.io/edgepad/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://feelpass.github.io/edgepad/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://feelpass.github.io/edgepad/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/edgepad/"/>
+  </url>
+  <url>
+    <loc>https://feelpass.github.io/edgepad/ko/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://feelpass.github.io/edgepad/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://feelpass.github.io/edgepad/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://feelpass.github.io/edgepad/"/>
+  </url>
+  <url>
     <loc>https://feelpass.github.io/typehistory/</loc>
     <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://feelpass.github.io/typehistory/"/>
