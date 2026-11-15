@@ -308,11 +308,8 @@
 .stage .v::before { content:""; position:absolute; inset:0; background:var(--st-glow); }
 .pad { position:absolute; inset:0; }
 .bgp { position:absolute; inset:0; }
-.bd, .tr { position:absolute; left:13cqw; top:10cqw; width:68cqw; height:68cqw; border-radius:5cqw; }
+.bd { position:absolute; left:13cqw; top:10cqw; width:68cqw; height:68cqw; border-radius:5cqw; }
 .bd { background:var(--bd); box-shadow:var(--bd-sh); }
-.tr { background:linear-gradient(135deg,#5B8CFF,#4F46E5); }
-.t1 { opacity:var(--tra); transform:translateX(1.5cqw); }
-.t2 { opacity:var(--trb); transform:translateX(3cqw); }
 .cells { position:absolute; left:13cqw; top:10cqw; width:68cqw; height:68cqw; display:grid;
   grid-template-columns:repeat(5,13.6cqw); grid-auto-rows:13.6cqw; }
 .c { position:relative; display:grid; place-items:center; }
@@ -397,7 +394,7 @@
 .r .sw { width:10.6cqw; height:6.2cqw; border-radius:4cqw; background:var(--pri); position:relative; flex:none; }
 .r .sw::after { content:""; position:absolute; right:.9cqw; top:.9cqw; width:4.4cqw; height:4.4cqw; border-radius:50%; background:var(--on-pri); }
 .stage { --st:#FFFFFF; --st-glow:radial-gradient(58% 58% at 50% 42%, rgba(47,107,255,.10), transparent 72%);
-  --bd:#DBE1FF; --bd-sh:none; --tra:.55; --trb:.28; --dot:rgba(79,70,229,.18); --hov:rgba(79,70,229,.14); --fold:#C3CDF6;
+  --bd:#DBE1FF; --bd-sh:none; --dot:rgba(79,70,229,.18); --hov:rgba(79,70,229,.14); --fold:#C3CDF6;
   --nmc:#45464F; --hdl:rgba(0,81,224,.72); --fgf:rgba(27,27,31,.10); --fgr:rgba(27,27,31,.34);
   --face:rgba(255,255,255,.72); --plate:rgba(27,27,31,.10); --track:rgba(27,27,31,.12); --on:#1B1B1F; --onv:#45464F; --pri:#0051E0; --on-pri:#FFFFFF;
   --bg-app:#F1F4FB; --surf-app:#FFFFFF; }
@@ -406,7 +403,7 @@
   --st-glow:radial-gradient(64% 64% at 50% 45%, rgba(79,70,229,.40) 0%, rgba(79,70,229,.16) 52%, transparent 76%), radial-gradient(30% 42% at 88% 44%, rgba(47,107,255,.26), transparent 72%);
   --bd:linear-gradient(180deg,#343A52 0%,#2B3042 52%,#252939 100%);
   --bd-sh:inset 0 0 0 1px rgba(255,255,255,.08), inset 0 1px 0 rgba(255,255,255,.10);
-  --tra:.70; --trb:.38; --dot:rgba(143,176,255,.26); --hov:rgba(143,176,255,.20); --fold:#414A6B;
+  --dot:rgba(143,176,255,.26); --hov:rgba(143,176,255,.20); --fold:#414A6B;
   --face:rgba(255,255,255,.07); --plate:rgba(228,226,230,.14); --track:rgba(228,226,230,.16); --on:#E4E2E6; --onv:#C6C6D0; --pri:#B5C4FF; --on-pri:#00174D; } }
 /* 정지 프레임(기본) — 모션 끔이면 이 그림만 보인다 */
 .sa .fg { transform:translate(45.10cqw,42.10cqw); } .sa .hd { opacity:0; }
@@ -422,8 +419,6 @@
 .sa .bu { animation:aBu 3420ms var(--base) infinite; }
 .sa .pad { animation:aPad 3420ms var(--base) infinite; }
 .sa .bgp { animation:aBg 3420ms var(--base) infinite; }
-.sa .t1 { animation:aT1 3420ms var(--base) infinite; }
-.sa .t2 { animation:aT2 3420ms var(--base) infinite; }
 .sa .c { animation:aCvT 3420ms infinite, aCvO 3420ms infinite; animation-delay:calc(var(--base) + var(--r) * 1ms); }
 .sa .nm .n0 { animation:aN0 3420ms var(--base) infinite; }
 .sa .nm .n1 { animation:aN1 3420ms var(--base) infinite; }
@@ -505,8 +500,6 @@
 @keyframes aBu{0%{opacity:1;transform:scaleX(0)}9.064%{opacity:1;transform:scaleX(0);animation-timing-function:cubic-bezier(0,0,.2,1)}26.608%{opacity:1;transform:scaleX(1);animation-timing-function:cubic-bezier(.4,0,1,1)}30.994%{opacity:0;transform:scaleX(1);animation-timing-function:step-end}31.023%{opacity:0;transform:scaleX(0)}100%{opacity:0;transform:scaleX(0)}}
 @keyframes aPad{0%{opacity:1}86.257%{opacity:1;animation-timing-function:cubic-bezier(.4,0,1,1)}89.766%{opacity:0}100%{opacity:0}}
 @keyframes aBg{0%{opacity:0}34.795%{opacity:0;animation-timing-function:cubic-bezier(.33,0,.67,1)}40.643%{opacity:1}95.614%{opacity:1;animation-timing-function:step-end}95.643%{opacity:0}100%{opacity:0}}
-@keyframes aT1{0%{transform:translateX(0)}40.643%{transform:translateX(0);animation-timing-function:cubic-bezier(.4,0,.2,1)}45.906%{transform:translateX(1.5cqw)}95.614%{transform:translateX(1.5cqw);animation-timing-function:step-end}95.643%{transform:translateX(0)}100%{transform:translateX(0)}}
-@keyframes aT2{0%{transform:translateX(0)}41.813%{transform:translateX(0);animation-timing-function:cubic-bezier(.4,0,.2,1)}47.076%{transform:translateX(3.0cqw)}95.614%{transform:translateX(3.0cqw);animation-timing-function:step-end}95.643%{transform:translateX(0)}100%{transform:translateX(0)}}
 @keyframes aCvT{0%{transform:translate(var(--dx),var(--dy)) scale(1.5)}26.608%{transform:translate(var(--dx),var(--dy)) scale(1.5);animation-timing-function:cubic-bezier(.22,1,.36,1)}36.433%{transform:none}95.614%{transform:none;animation-timing-function:step-end}95.643%{transform:translate(var(--dx),var(--dy)) scale(1.5)}100%{transform:translate(var(--dx),var(--dy)) scale(1.5)}}
 @keyframes aCvO{0%{opacity:0}26.608%{opacity:0;animation-timing-function:linear}29.561%{opacity:1}95.614%{opacity:1;animation-timing-function:step-end}95.643%{opacity:0}100%{opacity:0}}
 @keyframes aN0{0%{opacity:0}52.193%{opacity:0;animation-timing-function:cubic-bezier(.4,0,.2,1)}53.947%{opacity:1}55.994%{opacity:1;animation-timing-function:cubic-bezier(.4,0,.2,1)}57.749%{opacity:0}100%{opacity:0}}
@@ -632,7 +625,7 @@
             <figure class="stage sa" data-loop role="img" aria-label="A finger swipes in from the handle on the right edge, the pad opens, and the finger slides onto Calendar and lets go">
                 <div class="v" aria-hidden="true">
 <div class="pad">
-<div class="bgp"><i class="tr t2"></i><i class="tr t1"></i><i class="bd"></i></div>
+<div class="bgp"><i class="bd"></i></div>
 <div class="cells"><span class="c k1" style="--dx:-32.10cqw;--dy:-12.30cqw;--r:140"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k2" style="--dx:-25.30cqw;--dy:-12.30cqw;--r:114"><i><svg><use href="#i-camera"/></svg></i></span><span class="c k3" style="--dx:-18.50cqw;--dy:-12.30cqw;--r:90"><i><svg><use href="#i-pin"/></svg></i></span><span class="c fd" style="--dx:-11.70cqw;--dy:-12.30cqw;--r:69"><i><b class="k5"></b><b class="k6"></b><b class="k7"></b><b class="k8"></b></i></span><span class="c k4" style="--dx:-4.90cqw;--dy:-12.30cqw;--r:54"><i><svg><use href="#i-music"/></svg></i></span><span class="c k5" style="--dx:-32.10cqw;--dy:-5.50cqw;--r:133"><i><svg><use href="#i-mail"/></svg></i></span><span class="c k6" style="--dx:-25.30cqw;--dy:-5.50cqw;--r:105"><i><svg><use href="#i-call"/></svg></i></span><span class="c k8" style="--dx:-18.50cqw;--dy:-5.50cqw;--r:79"><i><svg><use href="#i-clock"/></svg></i></span><span class="c k9" style="--dx:-11.70cqw;--dy:-5.50cqw;--r:53"><i><svg><use href="#i-sun"/></svg></i></span><span class="c k7" style="--dx:-4.90cqw;--dy:-5.50cqw;--r:30"><i><svg><use href="#i-photo"/></svg></i></span><span class="c fd" style="--dx:-32.10cqw;--dy:1.30cqw;--r:131"><i><b class="k1"></b><b class="k4"></b><b class="k3"></b><b class="k2"></b></i></span><span class="c k3" style="--dx:-25.30cqw;--dy:1.30cqw;--r:103"><i><svg><use href="#i-cloud"/></svg></i></span><span class="c k7 h22 hv" style="--dx:-18.50cqw;--dy:1.30cqw;--r:75"><i><svg><use href="#i-cal"/></svg></i></span><span class="c k1 h23" style="--dx:-11.70cqw;--dy:1.30cqw;--r:48"><i><svg><use href="#i-note"/></svg></i></span><span class="c k2 h24" style="--dx:-4.90cqw;--dy:1.30cqw;--r:21"><i><svg><use href="#i-mail"/></svg></i></span><span class="c k4" style="--dx:-32.10cqw;--dy:8.10cqw;--r:135"><i><svg><use href="#i-music"/></svg></i></span><span class="c e" style="--dx:-25.30cqw;--dy:8.10cqw;--r:108"><i></i></span><span class="c k6" style="--dx:-18.50cqw;--dy:8.10cqw;--r:82"><i><svg><use href="#i-chat"/></svg></i></span><span class="c e" style="--dx:-11.70cqw;--dy:8.10cqw;--r:58"><i></i></span><span class="c k5" style="--dx:-4.90cqw;--dy:8.10cqw;--r:39"><i><svg><use href="#i-pin"/></svg></i></span><span class="c e" style="--dx:-32.10cqw;--dy:14.90cqw;--r:144"><i></i></span><span class="c e" style="--dx:-25.30cqw;--dy:14.90cqw;--r:119"><i></i></span><span class="c e" style="--dx:-18.50cqw;--dy:14.90cqw;--r:97"><i></i></span><span class="c e" style="--dx:-11.70cqw;--dy:14.90cqw;--r:77"><i></i></span><span class="c e" style="--dx:-4.90cqw;--dy:14.90cqw;--r:64"><i></i></span></div>
 <div class="nm"><span class="n0">Mail</span><span class="n1">Notes</span><span class="n2 on">Calendar</span></div>
 </div>
@@ -654,7 +647,7 @@
                 <figure class="stage sb" data-loop role="img" aria-label="On an open pad, a finger long-presses a slot and slides, the name below changing slot by slot, then lets go on Camera">
                     <div class="v" aria-hidden="true">
 <div class="pad">
-<div class="bgp"><i class="tr t2"></i><i class="tr t1"></i><i class="bd"></i></div>
+<div class="bgp"><i class="bd"></i></div>
 <div class="cells"><span class="c k1"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k3"><i><svg><use href="#i-pin"/></svg></i></span><span class="c k4"><i><svg><use href="#i-music"/></svg></i></span><span class="c k5"><i><svg><use href="#i-mail"/></svg></i></span><span class="c fd"><i><b class="k2"></b><b class="k7"></b><b class="k6"></b><b class="k9"></b></i></span><span class="c k6"><i><svg><use href="#i-call"/></svg></i></span><span class="c k7"><i><svg><use href="#i-cal"/></svg></i></span><span class="c k8 h12"><i><svg><use href="#i-clock"/></svg></i></span><span class="c k9 h13"><i><svg><use href="#i-sun"/></svg></i></span><span class="c k1"><i><svg><use href="#i-cloud"/></svg></i></span><span class="c k5"><i><svg><use href="#i-note"/></svg></i></span><span class="c k2 h21 hv"><i><svg><use href="#i-camera"/></svg></i></span><span class="c fd h22"><i><b class="k3"></b><b class="k1"></b><b class="k4"></b><b class="k5"></b></i></span><span class="c k3 h23"><i><svg><use href="#i-music"/></svg></i></span><span class="c k7"><i><svg><use href="#i-photo"/></svg></i></span><span class="c k4"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k6"><i><svg><use href="#i-mail"/></svg></i></span><span class="c e"><i></i></span><span class="c k2 h33"><i><svg><use href="#i-pin"/></svg></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span></div>
 <div class="nm"><span class="n0">Maps</span><span class="n1">Music</span><span class="n2">Weather</span><span class="n3">Clock</span><span class="n4">Work</span><span class="n5 on">Camera</span></div>
 </div>
@@ -672,7 +665,7 @@
                     <div class="v" aria-hidden="true">
 <div class="pad">
 <div class="par" style="transform-origin:47.0cqw 44.0cqw">
-<div class="bgp"><i class="tr t2"></i><i class="tr t1"></i><i class="bd"></i></div>
+<div class="bgp"><i class="bd"></i></div>
 <div class="cells"><span class="c k1"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k3"><i><svg><use href="#i-pin"/></svg></i></span><span class="c k4"><i><svg><use href="#i-music"/></svg></i></span><span class="c k5"><i><svg><use href="#i-mail"/></svg></i></span><span class="c k6"><i><svg><use href="#i-call"/></svg></i></span><span class="c k7"><i><svg><use href="#i-cal"/></svg></i></span><span class="c k8"><i><svg><use href="#i-clock"/></svg></i></span><span class="c k9"><i><svg><use href="#i-sun"/></svg></i></span><span class="c k2"><i><svg><use href="#i-camera"/></svg></i></span><span class="c k1"><i><svg><use href="#i-cloud"/></svg></i></span><span class="c k3"><i><svg><use href="#i-note"/></svg></i></span><span class="c fd"><i><b class="k5"></b><b class="k2"></b><b class="k7"></b><b class="k4"></b></i></span><span class="c fd hp22 fdr"><i><b class="k2"></b><b class="k4"></b><b class="k6"></b><b class="k1"></b></i><em class="bdg"><svg><use href="#i-clock"/></svg></em></span><span class="c k6 hp23"><i><svg><use href="#i-photo"/></svg></i></span><span class="c e"><i></i></span><span class="c k4"><i><svg><use href="#i-chat"/></svg></i></span><span class="c k5"><i><svg><use href="#i-mail"/></svg></i></span><span class="c k1"><i><svg><use href="#i-music"/></svg></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span><span class="c e"><i></i></span></div></div>
 <div class="fol" style="left:26.6cqw;top:23.6cqw">
 <i class="fbd"></i><div class="prev"><b class="k2"></b><b class="k4"></b><b class="k6"></b><b class="k1"></b></div>
@@ -692,7 +685,7 @@
                 <figure class="stage sd" data-loop role="img" aria-label="On the controls pad, a finger rests on Flashlight until its ring fills and it turns on, then turns up the brightness">
                     <div class="v" aria-hidden="true">
 <div class="pad">
-<div class="bgp"><i class="tr t2"></i><i class="tr t1"></i><i class="bd"></i></div>
+<div class="bgp"><i class="bd"></i></div>
 <div class="media"><div class="mtop"><span class="cover"></span><span class="mtxt"><b></b><b></b></span></div><div class="mbtn"><span class="mb"><svg><use href="#i-prev"/></svg></span><span class="mb main"><svg><use href="#i-pause"/></svg></span><span class="mb"><svg><use href="#i-next"/></svg></span></div></div>
 <span class="tl" style="left:13.0cqw;top:37.2cqw"><span class="tw"><i><svg><use href="#i-rotate"/></svg></i><b class="onl"><svg><use href="#i-rotate"/></svg></b></span></span><span class="tl on" style="left:26.6cqw;top:37.2cqw"><span class="tw"><i><svg><use href="#i-dnd"/></svg></i><b class="onl"><svg><use href="#i-dnd"/></svg></b></span></span><span class="tl" style="left:40.2cqw;top:37.2cqw"><span class="tw"><i><svg><use href="#i-bell"/></svg></i><b class="onl"><svg><use href="#i-bell"/></svg></b></span></span><span class="tl" style="left:53.8cqw;top:37.2cqw"><span class="tw"><i><svg><use href="#i-moon"/></svg></i><b class="onl"><svg><use href="#i-moon"/></svg></b></span></span><span class="tl hs4 fl" style="left:67.4cqw;top:37.2cqw"><span class="tw"><i><svg><use href="#i-flash"/></svg></i><b class="onl"><svg><use href="#i-flash"/></svg></b><svg class="ring" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" pathLength="100"/></svg></span></span>
 <div class="sl br" style="top:50.8cqw;--v:71%"><span class="fillrow"><b></b></span><i><svg><use href="#i-sun"/></svg></i><span class="trk"><b></b></span></div>
